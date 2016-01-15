@@ -3,36 +3,35 @@ description: na
 keywords: na
 title: Remove protection from a file by using the Rights Management sharing application
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da95b938-eaad-4c83-a21e-ff1d4872aae4
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Remove protection from a file by using the Rights Management sharing application
-To remove protection from a file (that is, unprotect a file) that was previously protected by using the RMS sharing application, use the **Remove Protection** option from File Explorer.
+# Odebrat ochranu ze souboru s použit&#237;m Rights Management, aplikace pro sd&#237;len&#237;
+Odebrat ochranu ze souboru (což je odemknout souboru) který byl dříve chráněn pomocí aplikace pro sdílení obsahu RMS, použijte **odebrat ochranu** možnost z Průzkumníka souboru.
 
 > [!IMPORTANT]
-> You must be an owner of the file to remove protection.
+> Musíte být vlastníkem souboru odebrat ochranu.
 
-### To remove protection from a file
+### Chcete-li odebrat ochranu ze souboru
 
-1.  From File Explorer, right-click the file (for example, Sample.ptxt), select **Protect with RMS**, click **Protect in-place**, and then click **Remove Protection**:
+1.  File Explorer, klikněte pravým tlačítkem na soubor (například Sample.ptxt), vyberte možnost **chránit s RMS**, klikněte na tlačítko **chránit místně**, a potom klikněte na tlačítko **odebrat ochranu**:
 
     ![](../Image/ADRMS_MSRMSApp_RemoveProtection.png)
 
-    You might be prompted for credentials.
+    Můžete být vyzváni k zadání pověření.
 
-The original protected file is deleted (for example, Sample.ptxt) and replaced with a file that has the same name but with the unprotected file name extension (for example, Sample.txt).
+Původní chráněný soubor je odstraněna (například Sample.ptxt) a nahradit soubor, který má stejný název, ale nechráněné příponu názvu (například Sample.txt).
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Příklady a další informace
+Příklady pro jak je možné použít Rights Management, sdílení aplikací a návody, naleznete v následujících částech v uživatelské příručce sdílení aplikace Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Příklady použití aplikace pro sdílení obsahu RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [Co chcete provést?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Viz také
+[Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md)
 

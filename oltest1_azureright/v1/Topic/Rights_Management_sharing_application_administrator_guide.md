@@ -3,481 +3,479 @@ description: na
 keywords: na
 title: Rights Management sharing application administrator guide
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d9992e30-f3d1-48d5-aedc-4e721f7d7c25
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Rights Management sharing application administrator guide
-Use the following information if you are responsible for the Microsoft Rights Management sharing application on an enterprise network, or if you want more technical information than is in the [Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md) or [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971):
+# Průvodce Rights Management sd&#237;len&#237; aplikace Spr&#225;vce
+Následující informace použijte, pokud jste zodpovědní za sdílení aplikace v podnikové síti Microsoft Rights Management, nebo pokud chcete další technické informace, než je v [Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md) nebo [Nejčastější dotazy týkající se společnost Microsoft Rights Management sdílení aplikací pro systém Windows](http://go.microsoft.com/fwlink/?LinkId=303971):
 
--   [Automatic deployment for the Microsoft Rights Management sharing application](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_ScriptedInstall)
+-   [Automatické nasazení pro aplikace pro sdílení Microsoft Rights Management](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_ScriptedInstall)
 
-    -   [Verifying installation success](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted)
+    -   [Probíhá ověření úspěšné instalace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted)
 
-    -   [Uninstall commands](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_uninstallscripted)
+    -   [Odinstalační příkazy](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_uninstallscripted)
 
-    -   [Suppressing automatic updates](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SuppressAutomaticUpdates)
+    -   [Potlačení prostřednictvím služby Automatické aktualizace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SuppressAutomaticUpdates)
 
-    -   [Azure RMS only: Configuring document tracking](#BKMK_DocumentTracking)
+    -   [Pouze Azure RMS: Konfigurace sledování dokumentu.](#BKMK_DocumentTracking)
 
-    -   [AD RMS only: Support for multiple email domains within your organization](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_FederatedDomains)
+    -   [Služby AD RMS pouze: Podpora pro více domén e-mailu v rámci vaší organizace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_FederatedDomains)
 
--   [Technical overview for the Microsoft Rights Management sharing application](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_AdminOverview)
+-   [Technický přehled pro aplikace pro sdílení Microsoft Rights Management](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_AdminOverview)
 
-    -   [Levels of protection – native and generic](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_LevelsofProtection)
+    -   [Úroveň ochrany – nativní a obecný](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_LevelsofProtection)
 
-    -   [Supported file types and file name extensions](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes)
+    -   [Podporované typy souborů a přípon souborů](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes)
 
-    -   [Changing the default protection level of files](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_ChangeDefaultProtection)
+    -   [Změna úrovně ochrany výchozí souborů](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_ChangeDefaultProtection)
 
 > [!TIP]
-> If you are new to the RMS sharing app, or looking for more information, see [How RMS protects all file types – by using the RMS sharing app](https://curah.microsoft.com/191031/how-rms-protects-all-file-types-by-using-the-rms-sharing-app).
+> Pokud jste novou aplikaci sdílení RMS nebo hledáte další informace, podívejte se na téma [jak RMS chrání všechny typy souborů – pomocí aplikace sdílení RMS](https://curah.microsoft.com/191031/how-rms-protects-all-file-types-by-using-the-rms-sharing-app).
 
-The RMS sharing application is best suited to work with Azure RMS, because this deployment configuration supports sending protected attachments to users in another organization, and options such as email notifications and document tracking with revocation.  However, with some limitations, it also works with the on-premises version, AD RMS. For a comprehensive comparison of features that are supported by Azure RMS and AD RMS, see [Comparing Azure Rights Management and AD RMS](https://technet.microsoft.com/library/jj739831.aspx). If you have AD RMS and want to migrate to Azure RMS, see [Migrating from AD RMS to Azure Rights Management](https://technet.microsoft.com/library/dn858447.aspx).
+Aplikace pro sdílení obsahu RMS je nejvhodnější pro práci s Azure RMS, protože tato konfigurace nasazení podporuje odesílání chráněné přílohy uživatelům v jiné organizaci a možnosti, například e-mailová oznámení a sledování s odvolání dokumentů.  Ovšem s určitými omezeními také funguje s místní verzí, služby AD RMS. Komplexní porovnání funkcí, které jsou podporovány Azure RMS a služby AD RMS naleznete v tématu [porovnání Rights Management Azure a služby AD RMS](https://technet.microsoft.com/library/jj739831.aspx). Pokud jste službu AD RMS a chcete přejít na Azure RMS, naleznete v části [migrace ze služby AD RMS na Azure Rights Management](https://technet.microsoft.com/library/dn858447.aspx).
 
-## <a name="BKMK_ScriptedInstall"></a>Automatic deployment for the Microsoft Rights Management sharing application
-The Windows version of the RMS sharing application supports a scripted installation, which makes it suitable for enterprise deployments.
+## <a name="BKMK_ScriptedInstall"></a>Automatické nasazení pro aplikace pro sdílení Microsoft Rights Management
+Verze systému Windows aplikace sdílení RMS podporuje instalaci typu skriptů, díky čemuž je vhodný pro podnikového nasazení.
 
-The only prerequisites for installations are that the computers run a minimum version of Windows 7 Service Pack 1, and that the Microsoft Framework, minimum version 4.0 is installed. If you need to install the Microsoft .NET Framework 4.0, you can [download it for installation from the Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=17718).
+Pouze požadavky pro zařízení jsou spuštění počítače s minimální verze aktualizace Service Pack 1 pro systém Windows 7 a zda je nainstalován Microsoft Framework, minimální verze 4.0. Pokud je třeba nainstalovat rozhraní Microsoft .NET Framework 4.0, můžete [ji stáhnout z Microsoft Download Center instalaci](http://www.microsoft.com/download/details.aspx?id=17718).
 
-#### To download the RMS sharing application for automatic deployment
+#### Chcete-li stáhnout žádost o automatického nasazení pro sdílení obsahu RMS
 
-1.  Go to the [Microsoft Rights Management sharing application for Windows](http://www.microsoft.com/download/details.aspx?id=40857) page in the Microsoft Download Center, and click **Download**.
+1.  Přejděte do [Microsoft Rights Management aplikace pro Windows pro sdílení](http://www.microsoft.com/download/details.aspx?id=40857) stránky v Microsoft Download Center a klikněte na tlačítko **Stáhnout**.
 
-2.  Select and download the files that you need. There are two client installation packages: one for Windows 64-bit (Microsoft Rights Management sharing application x64.zip), and another for Windows 32-bit (Microsoft Rights Management sharing application x86.zip).
+2.  Vyberte a stahování souborů, které potřebujete. Existují dvě klienta instalačních balíčků: jeden pro Windows 64-bit (Microsoft Rights Management sdílení aplikace x64.zip) a druhou pro systém Windows 32 bitů (Microsoft Rights Management sdílení x86.zip aplikace).
 
-3.  Extract the files from the compressed installation packages, for example, by double-clicking them. Then copy the extracted files to a network location that client computers can access.
+3.  Extrahujte soubory z komprimované instalační balíčky, například poklepáním. Zkopírujte extrahovaných souborů do umístění v síti, může přistupovat klientských počítačů.
 
-The setup packages for the RMS sharing application supports different deployment scenarios and includes the following:
+Instalační balíčky pro aplikace pro sdílení obsahu RMS podporuje různých scénářů nasazení a obsahuje následující položky:
 
-|Description|Deployment scenario|
-|---------------|-----------------------|
-|Microsoft Online Sign-In Assistant|Office 2010 and Azure RMS<br /><br />Office 2013 and Azure RMS if you have not installed the [June 9, 2015, update for Office 2013](https://support.microsoft.com/kb/3054853) (KB3054853)|
-|Hotfix for Office (KB 2596501)|Office 2010 and Azure RMS<br /><br />Office 2010 and Active Directory RMS|
-|Hotfix to enable the AD RMS Client 1.0 to work with Azure RMS (KB 2843630)|Office 2010 and Azure RMS<br /><br />Office 2010 and Active Directory RMS|
-|AD RMS Client and the RMS sharing application|Office 2016 or Office 2013 and Azure RMS or Active Directory RMS<br /><br />Office 2010 and Azure RMS<br /><br />Office 2010 and Active Directory RMS<br /><br />RMS sharing application and Office add-in only|
-|Office add-in for the ribbon|Office 2016 or Office 2013 and Azure RMS or Active Directory RMS<br /><br />Office 2010 and Azure RMS<br /><br />Office 2010 and Active Directory RMS<br /><br />RMS sharing application and Office add-in only|
-|Azure Active Directory Rights Management preparation tool|Office 2010 and Azure RMS|
-Use the following procedures to identify the commands required to deploy the RMS sharing application for these deployment scenarios:
+|Popis|Scénář nasazení|
+|---------|-------------------|
+|Společnost Microsoft Online Pomocníka pro přihlášení|Požadováno pro následující:<br /><br />-   Systém Office 2010 a Azure RMS<br />-   Office 2013 a Azure RMS, pokud není nainstalován [9. června 2015 aktualizace pro Office 2013](https://support.microsoft.com/kb/3054853) (KB3054853)|
+|Oprava hotfix pro systém Office (KB 2596501)|Požadováno pro následující:<br /><br />-   Systém Office 2010 a Azure RMS<br />-   Systém Office 2010 a služby Active Directory RMS|
+|Oprava hotfix Chcete-li povolit klienta služby AD RMS 1.0 budete chtít pracovat s Azure RMS (KB 2843630)|Požadováno pro následující:<br /><br />-   Systém Office 2010 a Azure RMS<br />-   Systém Office 2010 a služby Active Directory RMS|
+|Klienta služby AD RMS a aplikace pro sdílení obsahu RMS|Požadováno pro následující:<br /><br />-   Office 2016 nebo Office 2013 a Azure RMS nebo RMS služby Active Directory<br />-   Systém Office 2010 a Azure RMS<br />-   Systém Office 2010 a služby Active Directory RMS<br />-   Sdílení aplikací a doplněk Office pouze RMS|
+|Doplněk Office pro pás karet|Požadováno pro následující:<br /><br />-   Office 2016 nebo Office 2013 a Azure RMS nebo RMS služby Active Directory<br />-   Systém Office 2010 a Azure RMS<br />-   Systém Office 2010 a služby Active Directory RMS<br />-   Sdílení aplikací a doplněk Office pouze RMS|
+|Nástroj pro přípravu Azure Active Directory Rights Management|Požadováno pro následující:<br /><br />-   Systém Office 2010 a Azure RMS|
+Chcete-li identifikovat příkazy potřebné k nasazení aplikace pro tyto scénáře nasazení pro sdílení obsahu RMS pomocí následujících postupů:
 
--   **Office 2016 or Office 2013 and Azure RMS or Active Directory RMS**
+-   **Office 2016 nebo Office 2013 a Azure RMS nebo RMS služby Active Directory**
 
-    Your users are running Office 2016 or Office 2013, your organization uses Azure RMS or Active Directory RMS, and users collaborate with other organizations who use Azure RMS or Active Directory RMS.
+    Vaši uživatelé se systémem Office 2016 nebo Office 2013, vaše organizace používá Azure RMS nebo Active Directory RMS a uživatelé spolupracovat s jinými organizacemi, kteří používají Azure RMS nebo Active Directory RMS.
 
--   **Office 2010 and Azure RMS**
+-   **Systém Office 2010 a Azure RMS**
 
-    Your users are running Office 2010, your organization uses Azure RMS, and users collaborate with other organizations who use Azure RMS or Active Directory RMS.
+    Vaši uživatelé se systémem Office 2010, vaše organizace používá Azure RMS a uživatelé spolupracovat s jinými organizacemi, kteří používají Azure RMS nebo Active Directory RMS.
 
--   **Office 2010 and Active Directory RMS**
+-   **Systém Office 2010 a služby Active Directory RMS**
 
-    Your users are running Office 2010, your organization uses AD RMS, and users collaborate with other organizations who use Azure RMS.
+    Vaši uživatelé se systémem Office 2010, vaše organizace používá službu AD RMS a uživatelé spolupracovat s jinými organizacemi, kteří používají Azure RMS.
 
--   **RMS sharing application and Office add-in only**
+-   **Sdílení aplikací a doplněk Office pouze RMS**
 
-    Your users are running Office 2016, Office 2013, or Office 2010, your organization uses AD RMS, and users do not need to collaborate with other organizations who use Azure RMS. This installation lets you install just the sharing application and Office add-in.
+    Vaši uživatelé se systémem Office 2016, Office 2013 nebo systému Office 2010, vaše organizace používá službu AD RMS a není nutné uživatelé spolupracovat s jinými organizacemi, kteří používají Azure RMS. Tato instalace vám umožní nainstalovat jen sdílení aplikací a doplněk Office.
 
 > [!NOTE]
-> In these scenarios, if your organization is running AD RMS, your users can receive protected content from other organizations who use Azure RMS, but your users cannot send protected content to users in an organization that uses Azure RMS. However, if your organization is running Azure RMS, your users can send and receive protected content from other organizations.
+> V těchto případech Pokud vaše organizace je spuštěna služba AD RMS, vaši uživatelé mohou přijímat chráněný obsah od jiných organizací, kteří používají Azure RMS, ale vaši uživatelé nelze odeslat chráněný obsah uživatelům v organizaci používající Azure RMS. Však pokud vaše organizace běží Azure RMS, vaše uživatelé mohou odesílat a přijímat chráněný obsah od jiných organizací.
 
-To complete the installation for each procedure, the computer must restart. You can initiate an automatic restart by using a command such as shutdown /i.
+K dokončení instalace pro každou proceduru, nutné restartovat počítač. Automatické restartování můžete spustit pomocí příkazu, například vypínání /i.
 
-#### To deploy the RMS sharing application for Office 2016 or Office 2013 and Azure RMS or Active Directory RMS
+#### Chcete-li nasadit aplikace pro Office 2016 Office 2013 a Azure RMS nebo Active Directory RMS pro sdílení obsahu RMS
 
--   On each computer on which you want to install the RMS sharing application and related components, run the following command with elevated privileges:
+-   V každém počítači, ve kterém chcete nainstalovat aplikaci a související součásti pro sdílení obsahu RMS spusťte se zvýšenými oprávněními následující příkaz:
 
     ```
     setup.exe /s
     ```
 
-To verify success, see the [Verifying installation success](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) section in this topic.
+Chcete-li ověřit úspěch, podívejte se na téma [Probíhá ověření úspěšné instalace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) v tomto tématu.
 
-#### To deploy the RMS sharing application for Office 2010 and Azure RMS
+#### Chcete-li nasadit aplikaci pro systém Office 2010 a Azure RMS pro sdílení obsahu RMS
 
-1.  You must be the global administrator for your Office 365 or Azure Active Directory tenant so that you can get your organization’s certification service URL by running the Azure Active Directory Rights Management preparation tool. You need run this tool only once, on a single computer. You will use the certification service URL when you install the RMS sharing application on each computer:
+1.  Musí být globální správce vašeho klienta služby Azure Active Directory nebo Office 365, tak, aby spuštěním nástroj pro přípravu Azure Active Directory Rights Management můžete získat adresu URL organizace certifikační služby. Tento nástroj je nutné spustit pouze jednou v jednom počítači. Adresa URL certifikační služby budete používat při instalaci aplikace v každém počítači pro sdílení obsahu RMS:
 
-    1.  Log in to a computer by using a local administrator account.
+    1.  Přihlaste se k počítači pomocí účtu místního správce.
 
-    2.  On that computer, [download and install the Microsoft Online Sign In Assistant](http://www.microsoft.com/download/details.aspx?id=28177).
+    2.  V tomto počítači [Stáhnout a nainstalovat Microsoft Online v Pomocníkovi pro přihlášení](http://www.microsoft.com/download/details.aspx?id=28177).
 
-    3.  Run the following command to see displayed on the screen the certification service URL, which you can then copy and save for the next step:
+    3.  Spusťte následující příkaz zobrazíte zobrazené na obrazovce adresa URL certifikační služby, které lze zkopírovat a uložit na další krok:
 
-        -   For Windows 8.1 and Windows 8, 64-bit:
+        -   Pro Windows 8.1 a Windows 8, 64bitová verze:
 
             ```
             x64\aadrmprep.exe /findCertificationUrl /logfile "<log file path and name>"
             ```
 
-        -   For Windows 8.1 and  Windows 8, 32-bit:
+        -   Pro Windows 8.1 a Windows 8, 32 bitů:
 
             ```
             X86\aadrmprep.exe /findCertificationUrl /logfile "<log file path and name>"
             ```
 
-        -   For Windows 7, 64-bit:
+        -   Pro systém Windows 7, 64bitová verze:
 
             ```
             x64\win7\aadrmprep.exe /findCertificationUrl /logfile "<log file path and name>"
             ```
 
         > [!NOTE]
-        > This command might prompt you to enter your credentials for Azure. If the computer is not joined to a domain, you will be prompted. If the computer is joined to a domain, the tool might be able to use cached credentials.
+        > Tento příkaz může zobrazit výzvu k zadání pověření pro Azure. Pokud počítač není připojen k doméně, budete vyzváni. Pokud je počítač připojen k doméně, může být tento nástroj moci použít pověření uložená v mezipaměti.
 
-2.  On each computer on which you will install the RMS sharing application, run the following command with elevated privileges:
+2.  V každém počítači, na který nainstalujete aplikaci sdílení RMS spusťte se zvýšenými oprávněními následující příkaz:
 
     ```
     setup.exe /s /configureO2010Admin /certificationUrl <certification_url>
     ```
 
-3.  On each computer on which you will install the RMS sharing application, users must run the following command (does not need elevated privileges). There are different ways to achieve this, including asking users to run the command (for example, a link in an email message or a link on the help desk portal) or you can add it to their logon script:
+3.  V každém počítači, na který nainstalujete aplikaci sdílení RMS, musí uživatelé spusťte následující příkaz (nemusí zvýšenými oprávněními). K tomuto účelu včetně pokládání uživatelům spustit příkaz (například na odkaz v e-mailovou zprávu nebo odkaz na portálu oddělení technické podpory nápovědy) různými způsoby nebo ho můžete přidat do jejich přihlašovacího skriptu:
 
     ```
     bin\RMSSetup.exe /configureO2010Only
     ```
 
-To verify success, see the [Verifying installation success](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) section in this topic.
+Chcete-li ověřit úspěch, podívejte se na téma [Probíhá ověření úspěšné instalace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) v tomto tématu.
 
-#### To deploy the RMS sharing application for Office 2010 and Active Directory RMS
+#### Chcete-li nasadit aplikaci pro systém Office 2010 a Active Directory RMS pro sdílení obsahu RMS
 
-1.  On each computer on which you will install the RMS sharing application, run the following command with elevated privileges:
+1.  V každém počítači, na který nainstalujete aplikaci sdílení RMS spusťte se zvýšenými oprávněními následující příkaz:
 
     ```
     setup.exe /s /configureO2010Admin
     ```
 
-2.  On each computer on which you will install the RMS sharing application, users must run the following command (does not need elevated privileges). There are different ways to achieve this, including asking users to run the command (for example, a link in an email message or a link on the help desk portal) or you can add it to their logon script:
+2.  V každém počítači, na který nainstalujete aplikaci sdílení RMS, musí uživatelé spusťte následující příkaz (nemusí zvýšenými oprávněními). K tomuto účelu včetně pokládání uživatelům spustit příkaz (například na odkaz v e-mailovou zprávu nebo odkaz na portálu oddělení technické podpory nápovědy) různými způsoby nebo ho můžete přidat do jejich přihlašovacího skriptu:
 
-    -   For Windows 10, Windows 8.1  and Windows 8, 64-bit:
+    -   Pro Windows 10, Windows 8.1 a Windows 8, 64bitová verze:
 
         ```
         x64\aadrmprep.exe /configureO2010
         ```
 
-    -   For Windows 10, Windows 8.1 and Windows 8, 32-bit:
+    -   Pro Windows 10, Windows 8.1 a Windows 8, 32 bitů:
 
         ```
         X86\aadrmprep.exe /configureO2010
         ```
 
-    -   For Windows 7, 64-bit:
+    -   Pro systém Windows 7, 64bitová verze:
 
         ```
         x64\win7\aadrmpep.exe /configureO2010
         ```
 
-To verify success, see the [Verifying installation success](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) section in this topic.
+Chcete-li ověřit úspěch, podívejte se na téma [Probíhá ověření úspěšné instalace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) v tomto tématu.
 
-#### To install the RMS sharing application and Office add-in only
+#### Chcete-li nainstalovat aplikaci a doplněk Office pouze pro sdílení obsahu RMS
 
-1.  Install the AD RMS Client and the RMS sharing application by using the following command:
+1.  Instalace klienta služby AD RMS a sdílení aplikací pomocí následujícího příkazu:
 
-    -   For 64-bit Windows:
+    -   64bitová verze systému Windows:
 
         ```
         x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    -   For 32-bit Windows:
+    -   Pro 32bitová verze systému Windows:
 
         ```
         X86\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
+    Příklad: `\\server5\apps\rms\x64\setup_ipviewer.exe /norestart /quiet /msicl "MSIRESTARTMANAGERCONTROL=Disable" /log "C:\Log files\ipviewerinstall.log"`
 
-2.  Install the Office add-in by using the following commands:
+2.  Nainstalujte doplněk Office pomocí následujících příkazů:
 
-    -   For 64-bit version of Office:
+    -   Pro 64bitové verze systému Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "<log file path and name>"
         ```
 
-    -   For 32-bit version of Office:
+    -   Pro 32bitové verze systému Office:
 
         ```
         msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x86\Setup.msi" /L*v "<log file path and name>"
         ```
 
-    For example: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsofficeinstall.log"`
+    Příklad: `\\server5\apps\rms\msiexec.exe /norestart /quiet MSIRESTARTMANAGERCONTROL=Disable /i "x64\Setup64.msi" /L*v "C:\Log files\rmsofficeinstall.log"`
 
-To verify success, see the [Verifying installation success](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) section in this topic.
+Chcete-li ověřit úspěch, podívejte se na téma [Probíhá ověření úspěšné instalace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_verifyscripted) v tomto tématu.
 
-### <a name="BKMK_verifyscripted"></a>Verifying installation success
-You can use the installation log files to verify a successful installation.
+### <a name="BKMK_verifyscripted"></a>Probíhá ověření úspěšné instalace
+Soubory protokolu instalace slouží k ověření úspěšné instalace.
 
-##### To verify installation success for the RMS sharing application for Office 2016 or Office 2013 and Azure RMS or Active Directory RMS
+##### Chcete-li ověřit úspěch instalace pro aplikace pro Office 2016 Office 2013 a Azure RMS nebo Active Directory RMS pro sdílení obsahu RMS
 
--   To verify success of the Setup.exe command, on each computer, search for the installation log file **RMInstaller.log** in the *%temp%\RMS_installer_&lt;guid&gt;* folder, and then identify the exit code.
+-   Chcete-li ověřte, zda úspěšný příkaz Setup.exe v každém počítači, vyhledejte soubor protokolu instalace **RMInstaller.log** v *%temp%\RMS_installer_ &lt; guid &gt;* složku a potom identifikovat ukončovací kód.
 
-    A successful installation has an exit code of 0 and any other number indicates a failed installation.
+    V případě úspěšné instalace má ukončovací kód s hodnotou 0 a jakékoli jiné číslo označuje selhání instalace.
 
-    Example log file name: **C:\temp\RMS_Installer_9352fc91-1982-43bf-958a-2ef1fe9c2ed0\RMInstaller.log**
+    Příklad názvu souboru protokolu: **C:\temp\RMS_Installer_9352fc91-1982-43bf-958a-2ef1fe9c2ed0\RMInstaller.log**
 
-##### To verify installation success for the RMS sharing application for Office 2010 and Azure RMS
+##### Chcete-li ověřit úspěch instalace pro aplikace pro systém Office 2010 a Azure RMS pro sdílení obsahu RMS
 
-1.  To verify success of the Setup.exe command, on each computer, search for the installation log file **RMInstaller.log** in the *%temp%\RMS_installer_&lt;guid&gt;* folder, and then identify the exit code.
+1.  Chcete-li ověřte, zda úspěšný příkaz Setup.exe v každém počítači, vyhledejte soubor protokolu instalace **RMInstaller.log** v *%temp%\RMS_installer_ &lt; guid &gt;* složku a potom identifikovat ukončovací kód.
 
-    A successful installation has an exit code of 0 and any other number indicates a failed installation.
+    V případě úspěšné instalace má ukončovací kód s hodnotou 0 a jakékoli jiné číslo označuje selhání instalace.
 
-    Example log file name: **C:\temp\RMS_Installer_9352fc91-1982-43bf-958a-2ef1fe9c2ed0**
+    Příklad názvu souboru protokolu: **C:\temp\RMS_Installer_9352fc91-1982-43bf-958a-2ef1fe9c2ed0**
 
-2.  To verify success for the RMSSetup.exe command, the user should have the following files created in their *%localappdata%\microsoft\drm* folder:
+2.  Chcete-li ověřit úspěch pro příkaz RMSSetup.exe, by měl mít uživatel následující soubory vytvořené v jejich *%localappdata%\microsoft\drm* složky:
 
-    -   CERT-Machine-2048.drm
+    -   CERTIFIKÁTU. počítač 2048.drm
 
-    -   CERT-Machine.drm
+    -   Machine.drm certifikátu.
 
-    -   CLC-&#42;.drm
+    -   CLC &#42;.drm
 
-    -   GIC-&#42;.drm
+    -   GIKU &#42;.drm
 
-    Example of a CLC-&#42;.drm file:
+    Příklad CLC &#42;.drm souboru:
 
-    **CLC-alice@isvtenant999.onmicrosoft.com-{1b9cfccf;k5b11;k4a10;kac15;k29b2b6980f4c}.drm**
+    **.Drm CLC-alice@isvtenant999.onmicrosoft.com-{1b9cfccf; k5b11; k4a10; kac15; k29b2b6980f4c}**
 
-##### To verify installation success for the RMS sharing application for Office 2010 and Active Directory RMS
+##### Chcete-li ověřit úspěch instalace pro aplikace pro systém Office 2010 a Active Directory RMS pro sdílení obsahu RMS
 
-1.  To verify success of the Setup.exe command, on each computer, search for the installation log file in the *%temp%\RMS_installer_&lt;guid&gt;* folder, and identify the exit code.
+1.  Chcete-li ověřte, zda úspěšný příkaz Setup.exe v každém počítači, vyhledejte v souboru protokolu instalace *%temp%\RMS_installer_ &lt; guid &gt;* složku a identifikovat ukončovací kód.
 
-    A successful installation has an exit code of 0 and any other number indicates a failed installation.
+    V případě úspěšné instalace má ukončovací kód s hodnotou 0 a jakékoli jiné číslo označuje selhání instalace.
 
-    Example log file name: **C:\temp\RMS_Installer_9352fc91-1982-43bf-958a-2ef1fe9c2ed0**
+    Příklad názvu souboru protokolu: **C:\temp\RMS_Installer_9352fc91-1982-43bf-958a-2ef1fe9c2ed0**
 
-2.  To verify success of the aadrmprep.exe command, on each computer, search for the following text in the installation log file: **aadrmprep.exe exited with status SUCCESS**
+2.  Chcete-li ověřte, zda úspěšný příkaz aadrmprep.exe v každém počítači, vyhledejte následující text v souboru protokolu instalace: **aadrmprep.exe byl ukončen s stav úspěch**
 
     > [!NOTE]
-    > Sometimes, this installation can run twice; the first occurrence fails and the second is successful.
+    > V některých případech mohou tuto instalaci spustit dvakrát. první výskyt se nezdaří a druhou je úspěšné.
 
-    If you want to manually check the registry changes that this tool makes, they are as follows:
+    Pokud chcete zkontrolovat změny registru, které tento nástroj provádí ručně, že jsou následující:
 
     -   [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDRM\Federation]
 
-        "FederationHomeRealm"="urn:HostedRmsOnlineService:Certification"
+        "FederationHomeRealm"="urn: HostedRmsOnlineService:Certification"
 
     -   [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\MSDRM\Federation]
 
-        "FederationHomeRealm"="urn:HostedRmsOnlineService:Certification"
+        "FederationHomeRealm"="urn: HostedRmsOnlineService:Certification"
 
     -   [HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\MSDRM\ServiceLocation\Activation]
 
-        @="&lt;certification url&gt;"
+        @= "&lt; certifikační adresa url &gt;"
 
     -   [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\14.0\Common\DRM]
 
-        DefaultUser="&lt;default_user&gt;"
+        DefaultUser = "&lt; default_user &gt;"
 
-##### To verify installation success for the RMS sharing application and Office add-in only
+##### Chcete-li ověřit úspěch instalace pro aplikaci a doplněk Office pouze pro sdílení obsahu RMS
 
-1.  To verify success of the Setup_ipviewer.exe command, search for the following text in the installation log file: **Installation success or error status: 0**
+1.  Chcete-li ověřit úspěch příkaz Setup_ipviewer.exe, vyhledejte následující text v souboru protokolu instalace: **Stav chyby nebo úspěšné instalace: 0**
 
-    Example lines from a successful installation:
+    Příklad řádky z úspěšné instalace:
 
-    **MSI (s) (F0:B8) [14:19:57:854]: Product: Active Directory Rights Management Services Client 2.1 -- Installation completed successfully.**
+    **MSI (s) (F0:B8) [14:19:57:854]: Produkt: Active Directory klient Rights Management Services 2.1 – instalace byla úspěšně dokončena.**
 
-    **MSI (s) (F0:B8) [14:19:57:854]: Windows Installer installed the product. Product Name: Active Directory Rights Management Services Client 2.1. Product Version: 1.0.1179.1. Product Language: 1033. Manufacturer: Microsoft Corporation. Installation success or error status: 0.**
+    **MSI (s) (F0:B8) [14:19:57:854]: Instalační služba systému Windows je nainstalován produkt. Název produktu: Služby Active Directory Rights Management Services Client 2.1. Verze produktu: 1.0.1179.1. Jazyk produktu: 1033. Výrobce: Společnost Microsoft Corporation. Stav chyby nebo úspěšné instalace: 0.**
 
-2.  To verify success of the Office add-in, on each computer, search for the following text in the installation log file: **Installation success or error status: 0**
+2.  Chcete-li ověřit úspěch doplněk Office, v každém počítači, hledat následující text v souboru protokolu instalace: **Stav chyby nebo úspěšné instalace: 0**
 
-    Example lines from a successful installation:
+    Příklad řádky z úspěšné instalace:
 
-    **MSI (s) (9C:88) [18:49:04:007]: Product: Microsoft RMS Office Addins -- Installation completed successfully.**
+    **MSI (s) (9C: 88) [18:49:04:007]: Produkt: Aplikace Microsoft Office RMS doplňků--Instalace byla úspěšně dokončena.**
 
-    **MSI (s) (9C:88) [18:49:04:007]: Windows Installer installed the product. Product Name: Microsoft RMS Office Addins. Product Version: 1.0.7. Product Language: 1033. Manufacturer: Microsoft. Installation success or error status: 0.**
+    **MSI (s) (9C: 88) [18:49:04:007]: Instalační služba systému Windows je nainstalován produkt. Název produktu: Doplňky systému Office RMS společnosti Microsoft. Verze produktu: 1.0.7. Jazyk produktu: 1033. Výrobce: Společnost Microsoft. Stav chyby nebo úspěšné instalace: 0.**
 
-### <a name="BKMK_uninstallscripted"></a>Uninstall commands
-Not all of the installation commands that are required for these deployments support an uninstallation command. You can uninstall the AD RMS client and the sharing application, and you can uninstall the Office add-in. Use the following commands to uninstall these elements.
+### <a name="BKMK_uninstallscripted"></a>Odinstalační příkazy
+Příkazy instalace, které jsou požadovány pro tyto nasazení nepodporují příkazu odinstalaci. Klient služby AD RMS a sdílení aplikací můžete odinstalovat a odinstalujete doplněk Office. Pomocí následujících příkazů odinstalace těchto elementů.
 
-##### To uninstall the AD RMS Client and the RMS sharing application
+##### Chcete-li odinstalovat klienta služby AD RMS a aplikace pro sdílení obsahu RMS
 
--   Use the following commands:
+-   Pomocí následujících příkazů:
 
-    -   For 64-bit Windows:
+    -   64bitová verze systému Windows:
 
         ```
         x64\setup_ipviewer.exe /uninstall /quiet
         ```
 
-    -   For 32-bit Windows:
+    -   Pro 32bitová verze systému Windows:
 
         ```
         x86\setup_ipviewer.exe /uninstall /quiet
         ```
 
-##### To uninstall the Office add-in
+##### Chcete-li odinstalovat doplněk Office
 
--   Use the following commands:
+-   Pomocí následujících příkazů:
 
-    -   For 64-bit version of Office:
+    -   Pro 64bitové verze systému Office:
 
         ```
         msiexec /x \x64\Setup[64].msi /quiet
         ```
 
-    -   For 32-bit version of Office:
+    -   Pro 32bitové verze systému Office:
 
         ```
         msiexec /x \x86\Setup.msi /quiet
         ```
 
-### <a name="BKMK_SuppressAutomaticUpdates"></a>Suppressing automatic updates
-By default, users are notified if there is a later version of the RMS sharing application, and prompted to download it. You can suppress this notification by making the following registry edit:
+### <a name="BKMK_SuppressAutomaticUpdates"></a>Potlačení prostřednictvím služby Automatické aktualizace
+Ve výchozím nastavení jsou uživatelé upozornění, pokud existuje novější verze aplikace sdílení RMS a vyzváni, abyste ji stáhnout. Toto oznámení můžete potlačit tím, že následující registru upravit:
 
-1.  Navigate to **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC** and if not already present, create a new key named **RmsSharingApp**.
+1.  Přejděte na **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC** a pokud dosud neexistují, vytvořte nový klíč s názvem **RmsSharingApp**.
 
-2.  Select **RmsSharingApp**, create a new DWORD Value of **AllowUpdatePrompt**, and set the value to **0**.
+2.  Vyberte **RmsSharingApp**, vytvořte novou hodnotu DWORD **AllowUpdatePrompt**, a nastavte hodnotu na **0**.
 
-Because the RMS sharing application is not supported by WSUS, you can use the following technique to test any new versions of the RMS sharing application before deploying it to all users:
+Vzhledem k tomu, že aplikace sdílení RMS není podporována službou WSUS, můžete provádět následující postup můžete otestovat všechny nové verze aplikace před nasazením všem uživatelům aplikace pro sdílení obsahu RMS:
 
-1.  On all users’ computers, run a script to suppress automatic updates. On the computers that administrators use to test new versions, do not run this script.
+1.  V počítačích všech uživatelů spusťte skript, chcete-li potlačit automatické aktualizace. V počítačích, které správci používat k testování nové verze nespouštějte tento skript.
 
-2.  When a new version is available, administrators download it and test it.
+2.  Pokud je k dispozici nová verze, správci ji stáhnout a otestovat.
 
-3.  When testing is complete and any issues resolved, deploy the latest version to all users by using the automatic deployment instructions in this guide.
+3.  Po dokončení testování není a všechny problémy vyřešit, nasazení na nejnovější verzi pro všechny uživatele pomocí automatického nasazení pokyny v tomto průvodci.
 
-### <a name="BKMK_DocumentTracking"></a>Azure RMS only: Configuring document tracking
-If you have a [subscription that supports document tracking](https://technet.microsoft.com/en-us/dn858608), the document tracking site is enabled by default for all users in your organization.  Document tracking shows information such as email addresses of the people who attempted to access protected documents that users shared, when these people tried to access them, and their location. If displaying this information is prohibited in your organization because of privacy requirements, you can disable access to the document tracking site by using the  [Disable-AadrmDocumentTrackingFeature](http://go.microsoft.com/fwlink/?LinkId=623032) cmdlet. You can re-enable access to the site at any time, by using the [Enable-AadrmDocumentTrackingFeature](http://go.microsoft.com/fwlink/?LinkId=623037), and you can check whether access is currently enabled or disabled by using [Get-AadrmDocumentTrackingFeature](http://go.microsoft.com/fwlink/?LinkId=623037).
+### <a name="BKMK_DocumentTracking"></a>Pouze Azure RMS: Konfigurace sledování dokumentu.
+Máte-li [odběr, který podporuje sledování dokumentů](https://technet.microsoft.com/en-us/dn858608), sledování dokumentů webu je povolena ve výchozím nastavení pro všechny uživatele ve vaší organizaci.  Sledování dokumentů zobrazuje informace, jako jsou e-mailové adresy uživatelů, kteří se pokusil o přístup k chráněné dokumenty uživatelé sdílet, pokud tyto osoby se pokusil o přístup a jejich umístění. Pokud tyto informace zobrazení je zakázáno ve vaší organizaci vzhledem k požadavkům ochrany osobních údajů, můžete zakázat přístup k dokumentu sledování webu pomocí  [Disable-AadrmDocumentTrackingFeature](http://go.microsoft.com/fwlink/?LinkId=623032) rutiny. Můžete je znovu povolit přístup k webu kdykoli, s použitím [Povolení AadrmDocumentTrackingFeature](http://go.microsoft.com/fwlink/?LinkId=623037), a můžete zkontrolovat, zda je aktuálně povoleno nebo zakázáno pomocí přístup [Get-AadrmDocumentTrackingFeature](http://go.microsoft.com/fwlink/?LinkId=623037).
 
-To run these cmdlets, you must have at least version **2.3.0.0** of the Azure RMS module for Windows PowerShell.  For installation instructions, see [Installing Windows PowerShell for Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx).
+ Chcete-li spustit tyto rutiny, můžete musí mít alespoň verze **2.3.0.0** modulu Azure RMS pro prostředí Windows PowerShell.  Pokyny k instalaci, naleznete v části [instalaci prostředí Windows PowerShell pro službu Rights Management Azure](https://technet.microsoft.com/library/jj585012.aspx).
 
 > [!TIP]
-> If you have previously downloaded and installed the module, check the version number by running: `(Get-Module aadrm –ListAvailable).Version`
+> Pokud byly dříve staženy a nainstalovány v modulu, zkontrolujte číslo verze spuštěním: `(Get-Module aadrm –ListAvailable).Version`
 
-The following URLs are used for document tracking and must be allowed (for example, add them to your Trusted Sites if you're using Internet Explorer with Enhanced Security):
+Následující adresy URL se používají pro sledování dokumentů a musí být povoleno (například, přidejte je do důvěryhodné servery používáte-li aplikaci Internet Explorer se zvýšeným zabezpečením):
 
 -   https://&#42;.azurerms.com
 
 -   https://ecn.dev.virtualearth.net
 
     > [!NOTE]
-    > This URL is for Bing maps.
+    > je tato adresa URL pro Bing maps.
 
 -   https://&#42;.microsoftonline.com
 
 -   https://&#42;.microsoftonline-p.com
 
-### <a name="BKMK_FederatedDomains"></a>AD RMS only: Support for multiple email domains within your organization
-If you use AD RMS and users in your organization have multiple email domains, perhaps as a result of a merger or acquisition, you must make the following registry edit:
+### <a name="BKMK_FederatedDomains"></a>Služby AD RMS pouze: Podpora pro více domén e-mailu v rámci vaší organizace
+Pokud používáte službu AD RMS a uživatele ve vaší organizaci máte více domén e-mailu, pravděpodobně v důsledku fúze nebo získání, je nutné provést následující registru upravit:
 
-1.  Navigate to **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC** and if not already present, create a new key named **RmsSharingApp**.
+1.  Přejděte na **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC** a pokud dosud neexistují, vytvořte nový klíč s názvem **RmsSharingApp**.
 
-2.  Select **RmsSharingApp**, create a new Multi-String Value named **FederatedDomains**, and then add the domains and all the subdomains that your organization uses. Wildcards are not supported.
+2.  Vyberte **RmsSharingApp**, vytvořte novou hodnotu Víceřetězcová hodnota s názvem **FederatedDomains**, a pak přidejte domény a všechny subdomény, které vaše organizace používá. Zástupné znaky nejsou podporovány.
 
-    For example: The company Coho Vineyard &amp; Winery has a standard email domain of **cohovineyardandwinery.com**, but as a result of mergers, they also use the email domains **cohowinery.com**, **eastcoast.cohowinery.com**, and **cohovineyard**. For the **FederatedDomains** value data, the administrator enters: **cohowinery.com; eastcoast.cohowinery.com; cohovineyard**
+    Příklad: Společnost ABC &amp; firma má standardní e-mailová doména **cohovineyardandwinery.com**, ale v důsledku fúze, domény e-mailu také použít **cohowinery.com**, **eastcoast.cohowinery.com**, a **cohovineyard**. Pro **FederatedDomains** správce zadá hodnotu dat: **cohowinery.com; eastcoast.cohowinery.com; cohovineyard**
 
-If you do not make this registry change, users might not be able to consume content that has been protected by other users in their organization. This registry edit is not needed if you use Azure RMS.
+Pokud neprovedete tato změna v registru, uživatelé nebudou moci spotřebovávat obsah, který je chráněn ostatním uživatelům ve své organizaci. Tato úprava registru není vyžadován, pokud použijete Azure RMS.
 
-## <a name="BKMK_AdminOverview"></a>Technical overview for the Microsoft Rights Management sharing application
-The Microsoft Rights Management sharing application is an optional downloadable application for Microsoft Windows and other platforms that provides the following:
+## <a name="BKMK_AdminOverview"></a>Technický přehled pro aplikace pro sdílení Microsoft Rights Management
+Microsoft Rights Management, aplikace pro sdílení je volitelný ke stažení aplikace pro systém Microsoft Windows a další platformy jsou k dispozici následující:
 
--   Protection of a single file or bulk protection of multiple files as well as all files within a selected folder.
+-   Ochranu k jednomu souboru nebo hromadného ochrany více souborů také všechny soubory v rámci vybrané složky.
 
--   Full support for protection of any type of file and a built-in viewer for commonly used text and image file types.
+-   Plná podpora pro ochranu libovolný typ souboru a integrované prohlížeče pro nejčastěji používané typy souborů textu a obrázků.
 
--   Generic protection for files that do not support RMS protection.
+-   Obecný ochranu pro soubory, které nepodporují ochranu RMS.
 
--   Full interoperability with files protected using Office Information Rights Management (IRM).
+-   Úplnou interakci s soubory chráněné pomocí sady Office informace Rights Management (IRM).
 
--   Full interoperability with PDF files protected using SharePoint, FCI, and supported PDF authoring tools.
+-   Úplnou interakci s ochránit pomocí služby SharePoint, FCI a podporované PDF, nástroje pro vytváření souborů PDF.
 
-The Microsoft Rights Management sharing application uses the new [AD RMS Client 2.1 runtime](http://www.microsoft.com/download/details.aspx?id=38396). By using the functionality of AD RMS 2.1, the Microsoft Rights Management sharing application provides end users a simple protection and consumption experience.
+Microsoft Rights Management, aplikace pro sdílení využívá novou [klienta služby AD RMS 2.1 runtime](http://www.microsoft.com/download/details.aspx?id=38396). Pomocí funkce služby AD RMS 2.1, Microsoft Rights Management, aplikace pro sdílení poskytuje koncovým uživatelům jednoduché použití ochrany a spotřeby.
 
-With the October 2013 release of RMS, you can natively protect documents by using Office 2010 and send them to people in another company, who can then consume them by using Azure RMS. In addition, with this release, if you use AD RMS in Cryptographic Mode 2, you can use RMS for individuals and consume content from people in another company that uses Azure RMS. For more information about Cryptographic Mode 2, see [AD RMS Cryptographic Modes](http://technet.microsoft.com/library/hh867439%28v=ws.10%29.aspx).
+S vydáním říjen 2013 RMS můžete nativně chránit dokumenty pomocí systému Office 2010 a poslat lidem v jiné společnosti, který poté můžou pomocí nich pomocí Azure RMS. Kromě toho se této verze při použití služby AD RMS v kryptografických režim 2, můžete použít RMS pro uživatele a spotřebovávat obsah od osob v jiné společnosti, která používá Azure RMS. Další informace o kryptografických režim 2, naleznete v části [AD RMS kryptografických režimy](http://technet.microsoft.com/library/hh867439%28v=ws.10%29.aspx).
 
-### <a name="BKMK_LevelsofProtection"></a>Levels of protection – native and generic
-Microsoft Rights Management sharing application supports protection at two different levels, as described in the following table.
+### <a name="BKMK_LevelsofProtection"></a>Úroveň ochrany – nativní a obecný
+Microsoft Rights Management aplikace pro sdílení podporuje ochrany ve dvou různých úrovních, jak je uvedeno v následující tabulce.
 
-|Type of protection|Native|Generic|
-|----------------------|----------|-----------|
-|Description|For text, image, Microsoft Office (Word, Excel, PowerPoint) files, .pdf files, and other application file types that support AD RMS, native protection provides a strong level of protection that includes both encryption and enforcement of rights (permissions).|For all other applications and file types, generic protection provides a level of protection that includes both file encapsulation using the .pfile file type and authentication to verify if a user is authorized to open the file.|
-|Protection|Files are fully encrypted and protection is enforced in the following ways:<br /><br />Before protected content is rendered, successful authentication must occur for those who receive the file through email or are given access to it through file or share permissions.<br /><br />Additionally, usage rights and policy set by the content owner when files are protected are fully enforced when the content is rendered in either IP Viewer (for protected text and image files) or the associated application (for all other supported file types).|File protection is enforced in the following ways:<br /><br />Before protected content is rendered, successful authentication must occur for those who are authorized to open the file and given access to it. If authorization fails, the file does not open.<br /><br />Usage rights and policy set by the content owner are displayed to inform authorized users of the intended usage policy.<br /><br />Audit logging of authorized users opening and accessing files occurs, however, no usage rights are enforced by non-supporting applications.|
-|Default for file types|This is the default level of protection for the following file types:<br /><br />Text and image files<br /><br />Microsoft Office (Word, Excel, PowerPoint) files<br /><br />Portable document format (.pdf)<br /><br />For more information, see the following section, [Supported file types and file name extensions](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes).|This is the default protection for all other file types (such as .vsdx, .rtf, and so on) that are not supported by full protection.|
-You can change the default protection level that the RMS sharing application applies. You can change the default level of native to generic, from generic to native, and even prevent the RMS sharing application from applying protection. For more information, see the [Changing the default protection level of files](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_ChangeDefaultProtection) section in this topic.
+|Typ ochrany|Nativní|Obecná|
+|---------------|-----------|----------|
+|Popis|Nativní ochrany pro text, obrázek, aplikace Microsoft Office (Word, Excel, PowerPoint) soubory, soubory PDF a další typy souborů aplikace, které podporují služby AD RMS, poskytuje silné úroveň ochrany, který zahrnuje jak šifrování a vynucení práva (oprávnění).|Obecný ochranu pro všechny ostatní aplikace a typy souborů, poskytuje úroveň ochrany, která obsahuje oba zapouzdření souboru pomocí .pfile typ souboru a ověřování k ověření, pokud je uživatel oprávnění k otevření souboru.|
+|Ochrana|Soubory jsou plně zašifrovány a vynucení ochrany z následujících způsobů:<br /><br />-   Předtím, než je vykreslen chráněný obsah, který musí nastat úspěšné ověřování pro uživatele, kteří příjem souborů prostřednictvím e-mailu nebo jsou udělen přístup k němu prostřednictvím souboru nebo sdílené složky oprávnění.<br />-   Navíc práva k používání a zásad nastavených modulem na vlastníka obsahu, když jsou chráněny soubory jsou plně uplatněna při vykreslení obsahu v prohlížeči IP (pro chráněný text a soubory obrázků) nebo k aplikaci (pro všechny ostatní podporované typy souborů).|Ochrana souborů je vynuceno z následujících způsobů:<br /><br />-   Předtím, než je vykreslen chráněný obsah, který úspěšném ověření musí být stejné pro uživatele, kteří jsou oprávnění k otevření souboru a vzhledem k přístupu k němu. Pokud ověření selže, soubor nebude možné otevřít.<br />-   Práva k používání a zásad nastavených modulem na vlastníka obsahu jsou zobrazeny na autorizované uživatele informují o zamýšlené využití zásad.<br />-   Dojde k protokolování auditu autorizovaných uživatelů otevírání a přístupu k souborům, ale žádná práva k používání vynucuje podpora aplikací.|
+|Výchozí nastavení pro typy souborů|Toto je výchozí úroveň ochrany pro následující typy souborů:<br /><br />-   Text a soubory obrázků<br />-   Soubory aplikace Microsoft Office (Word, Excel, PowerPoint)<br />-   Formát přenosných dokumentu (PDF)<br /><br />Další informace naleznete v následující části [Podporované typy souborů a přípon souborů](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes).|Toto je výchozí ochrany pro všechny ostatní typy souborů (například .vsdx a ve formátu RTF) není podporován prostřednictvím úplnou ochranu.|
+Můžete změnit výchozí úroveň ochrany, která se použije aplikace sdílení RMS. Můžete změnit výchozí úroveň nativní pro obecný, z obecného na nativní a dokonce i zabránit aplikaci z použití ochrany pro sdílení obsahu RMS. Další informace naleznete [Změna úrovně ochrany výchozí souborů](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_ChangeDefaultProtection) v tomto tématu.
 
-### <a name="BKMK_SupportFileTypes"></a>Supported file types and file name extensions
-The following table lists file types that are natively supported by Microsoft Rights Management sharing application. For these file types, the original file name extension is changed when native protected is applied, and these files become read-only.
+### <a name="BKMK_SupportFileTypes"></a>Podporované typy souborů a přípon souborů
+Následující tabulka uvádí typy souborů, které jsou nativně podporovaných sdílení aplikací Microsoft Rights Management. Pro tyto typy souborů původní příponu názvu souboru se změní, když je použit nativní chráněné a tyto soubory stát jen pro čtení.
 
-In addition, when the RMS sharing application natively protects a Word, Excel, or PowerPoint file that users protect by sharing, this action automatically creates a second file that is a copy of the original with the same file name but with a **.ppdf** file name extension ¹. This version of the file ensures that recipients who install the RMS sharing application can always open the file that has native protection applied.
+Kromě toho při nativní aplikace pro sdílení obsahu RMS chrání Word, Excel nebo PowerPoint soubor, který uživatelům chránit tím, že sdílení, tato akce automaticky vytvoří druhý soubor, který je kopií původního se stejným názvem, ale s **.ppdf** přípony názvu ¹ souboru. Tato verze souboru zajišťuje, příjemci, kteří nainstalovat aplikaci sdílení RMS vždy otevřít soubor, který byl použit nativní ochrany.
 
-For files that are generically protected, the original file name extension is always changed to .pfile.
+Pro soubory, které jsou obecně chráněny se změní na .pfile vždy původní příponu názvu souboru.
 
 > [!WARNING]
-> If you have firewalls, web proxies, or security software that inspect and take action according to file name extensions, you might need to reconfigure these to support these new file name extensions.
+> Pokud máte brány firewall, proxy servery webových nebo softwaru pro zabezpečení, který zkontrolovat a provést akci podle přípon názvů souborů, může být nutné překonfigurovat tyto pro podporu nové přípony názvů souborů.
 
-|Original file name extension|RMS-protected file name extension|
-|--------------------------------|-------------------------------------|
-|.txt|.ptxt|
-|.xml|.pxml|
-|.jpg|.pjpg|
-|.jpeg|.ppng|
-|.pdf|.ppdf|
-|.png|.ppng|
-|.tif|.ptif|
-|.tiff|.ptiff|
-|.bmp|.pbmp|
-|.gif|.pgif|
+|Původní příponu názvu souboru|Příponu názvu souboru chráněného RMS|
+|---------------------------------|----------------------------------------|
+|TXT|.ptxt|
+|XML|.pxml|
+|JPG|.pjpg|
+|JPEG|.ppng|
+|PDF|.ppdf|
+|PNG|.ppng|
+|TIFF|.ptiff|
+|BMP|.pbmp|
+|GIF|.pgif|
 |.giff|.pgiff|
-|.jpe|.pjpe|
-|.jfif|.pjfif|
+|JPE|.pjpe|
+|JFIF|.pjfif|
 |.jif|.pjif|
-|.jt|.pjt|
-¹ PDF Rendering Powered by Foxit. Copyright © 2003–2014 by Foxit Corporation.
+|.JT|.PJT|
+Používá technologii programem Foxit ¹ vykreslování PDF. Copyright © 2003 – 2014, programem Foxit Corporation.
 
-The following table lists the file types that the Microsoft Rights Management sharing application natively supports in Microsoft Office 2016,  Office 2013, and Office 2010. For these files, the file name extension remains the same after the file is protected by RMS.
+Následující tabulka uvádí typy souborů, které sdílení aplikace Microsoft Rights Management nativně podporuje v aplikaci Microsoft Office 2016, Office 2013 a Office 2010. Pro tyto soubory příponu názvu souboru se nezmění po soubor je chráněn systémem RMS.
 
-|File types supported by Office|File types supported by Office|
-|----------------------------------|----------------------------------|
-|.doc<br /><br />.docm<br /><br />.docx<br /><br />.dot<br /><br />.dotm<br /><br />.dotx<br /><br />.potm<br /><br />.potx<br /><br />.pps<br /><br />.ppsm<br /><br />.ppsx<br /><br />.ppt<br /><br />.pptm|.pptx<br /><br />.thmx<br /><br />.xla<br /><br />.xlam<br /><br />.xls<br /><br />.xlsb<br /><br />.xlt<br /><br />.xlsm<br /><br />.xlsx<br /><br />.xltm<br /><br />.xltx<br /><br />.xps|
+|Typy souborů podporované v Office|Typy souborů podporované v Office|
+|-------------------------------------|-------------------------------------|
+|DOC<br /><br />DOCM<br /><br />.docx<br /><br />.dot<br /><br />dotm<br /><br />dotx<br /><br />potm<br /><br />POTX<br /><br />PPS<br /><br />ppsm<br /><br />PPSX<br /><br />ppt<br /><br />pptm|PPTX<br /><br />.thmx<br /><br />XLA<br /><br />xlam<br /><br />.xls<br /><br />XLSB<br /><br />xlt<br /><br />XLSM<br /><br />XLSX<br /><br />XLTM<br /><br />XLTX<br /><br />XPS|
 
-### <a name="BKMK_ChangeDefaultProtection"></a>Changing the default protection level of files
-You can change how the RMS sharing application protects files by editing the registry. For example, you can force files that support native protection to be generically protected by the RMS sharing application.
+### <a name="BKMK_ChangeDefaultProtection"></a>Změna úrovně ochrany výchozí souborů
+Je možné změnit, jak aplikace pro sdílení obsahu RMS chrání soubory úpravou registru. Můžete například vynutit soubory, které podporují nativní ochrany ke generické chybě chráněny pomocí aplikace sdílení RMS.
 
-Reasons for why you might want to do this:
+Důvody proč můžete chtít provést, postupujte takto:
 
--   To ensure that all users can open the file from their mobile devices.
+-   Chcete-li zajistit, aby všichni uživatelé umožňující otevřít soubor ze svých mobilních zařízení.
 
--   To ensure that all users can open the file if they don’t have an application that supports native protection.
+-   Chcete-li zajistit, aby všichni uživatelé umožňující otevřít soubor, když nemají aplikaci, která podporuje nativní ochrany.
 
--   To accommodate security systems that take action on files by their file name extension and can be reconfigured to accommodate the .pfile file name extension but cannot be reconfigured to accommodate multiple file name extensions for native protection.
+-   Chcete-li zohlednit systémech zabezpečení, které provést akce se soubory podle jejich příponu názvu souboru a může být nakonfigurovat tak, zohlednit příponu názvu souboru .pfile, ale nelze musí překonfigurovat skutečnost zohlednit více přípon názvů souborů pro nativní ochrany.
 
-Similarly, you can force the RMS sharing application to apply native protection to files that by default, would have generic protection applied. This might be appropriate if you have an application that supports the RMS APIs – for example, a line-of-business application written by your internal developers or an application purchased from an independent software vendor (ISV).
+Podobně můžete vynutit aplikujte nativní ochrany souborů, které jsou ve výchozím nastavení, bude mít obecný ochranu použité pro sdílení obsahu RMS. To může být vhodné, pokud máte aplikace, která podporuje rozhraní API služby RMS – například, aplikace – firemní vytvořené své interní vývojáři nebo aplikaci, zakoupili od nezávislým dodavatelem softwaru (ISV).
 
-You can also force the RMS sharing application to block the protection of files (not apply native protection or generic protection). For example, this might be required if you have an automated application or service that must be able to open a specific file to process its contents. When you block protection for a file type, users cannot use the RMS sharing application to protect a file that has that file type. When they try, they see a message that the administrator has prevented protection and they must cancel their action to protect the file.
+Můžete také vynutit aplikace k blokování ochrany souborů pro sdílení obsahu RMS (nevztahuje nativní ochranu nebo obecný protection). Například to může být vyžadována Pokud máte automatizované aplikace nebo služby, které musí být možné otevřít určitý soubor ke zpracování jeho obsah. Pokud zablokujete ochranu pro určitý typ souboru, uživatelé k ochraně soubor, který má daný typ souboru nelze použít aplikaci sdílení RMS. Při pokusu, se uživatelům zobrazí zprávu, že správce zabránil ochrany a jejich musíte zrušit jejich akci, která má chráněný soubor.
 
-To configure the RMS sharing application to apply generic protection to all files that by default, would have native protection applied, make the following registry edits:
+Chcete-li nakonfigurovat aplikaci, aby použít obecný ochrany pro všechny soubory, které ve výchozím nastavení, by měly nativní ochrany, které jsou použity pro sdílení obsahu RMS, proveďte následující úpravy registru:
 
-1.  **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection**: Create a new key named **&#42;**.
+1.  **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection**: Vytvořit nový klíč s názvem **&#42;**.
 
-    This setting denotes files with any file name extension.
+    Toto nastavení označuje soubory s jakoukoliv příponou názvu souboru.
 
-2.  In the newly added key of **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection\&#42;**, create a new string value (REG_SZ) named **Encryption** that has the data value of **Pfile**.
+2.  V klíči nově přidané **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection\ &#42;**, vytvořte novou hodnotu řetězce (REG_SZ) s názvem **šifrování** má hodnotu dat **Pfile**.
 
-    This setting results in the RMS sharing application applying generic protection.
+    Toto nastavení je výsledkem použití obecný Ochrana aplikace pro sdílení obsahu RMS.
 
-These two settings result in the RMS sharing application applying generic protection to all files that have a file name extension. If this is your goal, no further configuration is required. However, you can define exceptions for specific file types, so that they are still natively protected. To do this, you must make three additional registry edits for each file type:
+Tyto dvě nastavení je výsledkem použití obecný ochranu pro všechny soubory, které mají příponu názvu souboru aplikace pro sdílení obsahu RMS. Pokud je to určitého cíle, není vyžadována žádná další konfigurace. Výjimky pro určité typy souborů, však můžete definovat tak, že jsou stále nativně chráněny. Chcete-li to provést, je třeba provést tři další registru úpravy pro každý typ souboru:
 
-1.  **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection**: Add a new key that has the name of the file name extension (without the preceding period).
+1.  **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection**: Přidáte nový klíč, který má název příponu názvu souboru (bez předchozího období).
 
-    For example, for files that have a .docx file name extension, create a key named **DOCX**.
+    Například pro soubory, které mají .docx, přípony názvu souboru, vytvořte klíč s názvem **DOCX**.
 
-2.  In the newly added file type key (for example, **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection\DOCX**), create a new DWORD Value named **AllowPFILEEncryption** that has a value of **0**.
+2.  V klíči typ nově přidaného souboru (například **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection\DOCX**), vytvořte novou hodnotu DWORD s názvem **AllowPFILEEncryption** má hodnotu **0**.
 
-3.  In the newly added file type key (for example, **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection\DOCX**), create a new String Value named **Encryption** that has a value of **Native**.
+3.  V klíči typ nově přidaného souboru (například **HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\RMSSharingApp\FileProtection\DOCX**), vytvořte novou hodnotu řetězce s názvem **šifrování** má hodnotu **nativní**.
 
-As a result of these settings, all files are generically protected except files that have a .docx file name extension, which are natively protected by the RMS sharing application.
+V důsledku tato nastavení jsou všechny soubory ke generické chybě chráněny kromě souborů, které mají příponu názvu souboru .docx, které jsou nativně chráněny pomocí aplikace sdílení RMS.
 
-Repeat these three steps for other file types that you want to define as exceptions because they support native protection and you do not want them to be generically protected by the RMS sharing application.
+Opakujte tyto tři kroky pro jiné typy souborů, které chcete definovat jako výjimky, protože podporují nativní ochrany a nechcete, aby mohly být obecně chráněny pomocí aplikace sdílení RMS.
 
-You can make similar registry edits for other scenarios by changing the value of the **Encryption** string that supports the following values:
+Můžete provádět podobné úpravy registru pro další scénáře změnou hodnotu **šifrování** řetězec, který podporuje následující hodnoty:
 
--   **Pfile**: Generic protection
+-   **Pfile**: Obecný ochrany
 
--   **Native**: Native protection
+-   **Nativní**: Nativní ochrany
 
--   **Off**: Block protection
+-   **Off**: Ochrana bloku
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Viz také
+[Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md)
 

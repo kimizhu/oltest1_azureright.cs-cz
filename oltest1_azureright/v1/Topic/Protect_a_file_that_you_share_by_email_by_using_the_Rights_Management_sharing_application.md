@@ -3,79 +3,78 @@ description: na
 keywords: na
 title: Protect a file that you share by email by using the Rights Management sharing application
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4c1cd1d3-78dd-4f90-8b37-dcc9205a6736
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Protect a file that you share by email by using the Rights Management sharing application
-When you protect a file that you share by email, it creates a new version of the original file. The original file remains unprotected and the new version is protected and automatically attached to an email that you then send.
+# Soubor, kter&#253; můžete sd&#237;let e-mailem pomoc&#237; Rights Management, aplikace pro sd&#237;len&#237; chr&#225;nit
+Pokud zadáte ochranu souboru, který můžete sdílet e-mailem, vytvoří novou verzi původní soubor. Původní soubor zůstane nechráněné a nové verze je chráněný a automatické připojení k e-mailu, kterou pak odeslat.
 
-In some cases (for files that are created by Microsoft Word, Excel, and PowerPoint), the RMS sharing application creates two versions of the file that it attaches to the email message. The second version of the file has a **.ppdf** file name extension and it is a PDF shadow copy of the file. This version of the file ensures that recipients can always read the file, even if they don’t have the same application installed that you used to create it. This is often the case when people read their email on mobile devices, and want to view their email attachments. All they need to open the file, is the RMS sharing application. Then, they can read the attached file, but they won’t be able to change it until they open the other version of the file by using an application that supports RMS.
+V některých případech (pro soubory, které jsou vytvořeny tak, že aplikace Microsoft Word, Excel a PowerPoint) vytvoří aplikace pro sdílení obsahu RMS dvě verze souboru, který ji připojí k e-mailové zprávě. Druhý verze souboru má **.ppdf** příponu názvu souboru a je ve formátu PDF stínovou kopii souboru. Tato verze souboru zajišťuje, že příjemců, kterým se může vždy přečíst soubor, i v případě, že nemají stejné aplikace nainstalována, který jste použili při jeho vytvoření. To je často případ, kdy uživatelé číst e-mailu na mobilních zařízeních a chcete zobrazit jejich příloh e-mailů. Stačí k otevření souboru, je aplikace pro sdílení obsahu RMS. Potom může číst připojený soubor, ale nebudou moci změnit, dokud se otevřou jiné verzi souboru pomocí aplikace podporující RMS.
 
-If your organization uses Azure RMS, you can keep track of the files that you protect by sharing:
+Pokud vaše organizace používá Azure RMS, můžete sledovat určité soubory, které můžete ochránit sdílení:
 
--   Select an option to receive emails when somebody tries to open these protected attachments. Each time the file is accessed, you will be notified who tried to open the file and when, and whether they were successful (they were successfully authenticated) or not.
+-   Vyberte možnost přijímat e-mailů, když někdo pokusí otevřít tyto chráněné přílohy. Pokaždé, když je získat přístup k souboru, zobrazí se upozornění, kteří se pokusili otevřít soubor a kdy a zda byly úspěšné (byly úspěšně ověřeny) nebo ne.
 
--   Use the documentation tracking site. You can even stop sharing the file, by revoking access to it in the document tracking site. For more information, see [Track and revoke your documents when you use the RMS sharing application](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).
+-   Použijte dokumentaci sledování webu. Můžete dokonce ukončit sdílení souborů, tím, že odvolá k němu přístup na webu sledování dokumentu. Další informace naleznete v tématu [Sledování a odvolání dokumenty, pokud použijete aplikaci sdílení RMS](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).
 
-## Using Outlook: To protect a file that you share by email
+## Používání aplikace Outlook: K ochraně soubor, který můžete sdílet e-mailem
 
-1.  Create your email message and attach the file. Then, on the **Message** tab, in the **RMS** group, click **Share Protected** and then click **Share Protected** again:
+1.  Umožňuje vytvořit e-mailové zprávě a připojit jako přílohu. Poté na **zpráva** ve **RMS** klikněte na možnost **sdílet chráněné** a potom klikněte na tlačítko **sdílet chráněné** znovu:
 
     ![](../Image/ADRMS_MSRMSApp_SP_OutlookToolbar.png)
 
-    If you do not see this button, it’s likely that either the RMS sharing application is not installed on your computer, the latest version isn’t installed, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+    Pokud nevidíte toto tlačítko, je pravděpodobné, že buď není v počítači nainstalována aplikace pro sdílení obsahu RMS, není nainstalována nejnovější verze, nebo k dokončení instalace je nutné restartovat váš počítač. Další informace o tom, jak nainstalovat aplikaci sdílení naleznete v tématu [Stáhněte si a nainstalujte Rights Management, aplikace pro sdílení](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-2.  Specify the options that you want for this file in the [share protected dialog box](http://technet.microsoft.com/library/dn574738.aspx), and then click **Send Now**.
+2.  Zadejte možnosti, které chcete použít pro tento soubor v [sdílet chráněné dialogové okno](http://technet.microsoft.com/library/dn574738.aspx), a potom klikněte na tlačítko **Odeslat nyní**.
 
-### Other ways to protect a file that you share by email
-In addition to sharing a protected file by using Outlook, you can also use these alternatives:
+### Další možnosti, jak chránit soubor, který sdílíte e-mailem
+Kromě sdílení chráněných souborů pomocí aplikace Outlook, můžete použít také tyto možnosti:
 
--   From File Explorer: This method works for all files.
+-   Z Průzkumníka souboru: Tuto metodu lze použít pro všechny soubory.
 
--   From an Office application: This method works for applications that the RMS sharing application supports by using the Office add-in so that you see the **RMS** group on the ribbon.
+-   Z aplikace sady Office: Tuto metodu lze použít pro aplikace, které aplikace pro sdílení obsahu RMS podporuje pomocí doplněk Office tak, aby se zobrazily **RMS** skupina na pásu karet.
 
-##### Using File Explorer or an Office application: To protect a file that you share by email
+##### Pomocí Průzkumníka souboru nebo aplikace systému Office: K ochraně soubor, který můžete sdílet e-mailem
 
-1.  Use one of the following options:
+1.  Použijte jednu z následujících možností:
 
-    -   For File Explorer: Right-click the file, select **Protect with RMS**, and then select **Share Protected**:
+    -   Pro soubor Explorer: Klikněte pravým tlačítkem soubor, vyberte možnost **chránit s RMS**, a potom vyberte **sdílet chráněné**:
 
         ![](../Image/ADRMS_MSRMSApp_ShareProtectedMenu.png)
 
-    -   For the Office applications, Word, Excel, and PowerPoint: Make sure that you have saved the file first. Then, on the **Home** tab, in the **RMS** group, click **Share Protected** and then click **Share Protected** again:
+    -   Pro Office aplikací, Word, Excel a PowerPoint: Ujistěte se, že jste uložili soubor nejprve. Poté na **Home** ve **RMS** klikněte na možnost **sdílet chráněné** a potom klikněte na tlačítko **sdílet chráněné** znovu:
 
         ![](../Image/ADRMS_MSRMSApp_SP_OfficeToolbar.png)
 
-    If you do not see these options for protection, it’s likely that either the RMS sharing application is not installed on your computer, the latest version isn’t installed, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+    Pokud tyto možnosti pro ochranu nevidíte, je pravděpodobné, že buď není v počítači nainstalována aplikace pro sdílení obsahu RMS, není nainstalována nejnovější verze, nebo k dokončení instalace je nutné restartovat váš počítač. Další informace o tom, jak nainstalovat aplikaci sdílení naleznete v tématu [Stáhněte si a nainstalujte Rights Management, aplikace pro sdílení](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-2.  Specify the options that you want for this file in the [share protected dialog box](http://technet.microsoft.com/library/dn574738.aspx), and then click **Send**.
+2.  Zadejte možnosti, které chcete použít pro tento soubor v [sdílet chráněné dialogové okno](http://technet.microsoft.com/library/dn574738.aspx), a potom klikněte na tlačítko **Odeslat**.
 
-3.  You might quickly see a dialog box to tell you that the file is being protected, and then you see an email message created for you that tells the recipients that the attachments are protected with Microsoft RMS, and that they must sign in. When they click the link to sign in, they see instructions and links to ensure that they can open your protected attachment.
+3.  Může se rychle zobrazit dialogové okno o tom, zda soubor je chráněn a zobrazí se e-mailovou zprávu pro vás vytvořen, která udává příjemci, že přílohy jsou chráněny pomocí aplikace Microsoft RMS a, musí se přihlásit. Po klepnutí na odkaz pro přihlášení, naleznete pokyny a odkazů, abyste měli jistotu, mohou otevřít chráněné přílohu.
 
-    Example:
+    Příklad:
 
     ![](../Image/ADRMS_MSRMSApp_EmailMessage.PNG)
 
-    Are you wondering: [What’s the .ppdf file that’s automatically created?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)
+    Jsou vám zajímá: [Co je .ppdf soubor, který se automaticky vytvoří?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)
 
-4.  Optional: You can change anything that you want in this email message. For example, you can add to or change the subject or text in the message.
+4.  Volitelné: Je možné změnit cokoli, co chcete, aby v této e-mailové zprávě. Například můžete přidat nebo změnit předmět nebo text ve zprávě.
 
     > [!WARNING]
-    > Although you can add or remove people from this email message, this does not change the permissions for the attachment that you specified in the **share protected** dialog box. If you want to change those permissions, for example, give a new person permissions to open the file, close the email message without saving or sending it, and return to step 1.
+    > I když můžete přidat nebo odebrat uživatele z tohoto e-mailu, tím nedojde ke změně oprávnění pro přílohy, které jste zadali v **sdílet chráněné** dialogového okna. Pokud chcete změnit oprávnění, například udělit oprávnění k otevření souboru, zavřete e-mailovou zprávu bez uložení nebo jeho odesláním nové osoby a vraťte se ke kroku 1.
 
-5.  Send the email message.
+5.  Odešlete e-mailovou zprávu.
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Příklady a další informace
+Příklady pro jak je možné použít Rights Management, sdílení aplikací a návody, naleznete v následujících částech v uživatelské příručce sdílení aplikace Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Příklady použití aplikace pro sdílení obsahu RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [Co chcete provést?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Viz také
+[Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md)
 

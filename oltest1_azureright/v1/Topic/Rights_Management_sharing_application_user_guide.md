@@ -3,52 +3,51 @@ description: na
 keywords: na
 title: Rights Management sharing application user guide
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eaf6d02c-aa36-4915-856e-49bb71ab1484
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Rights Management sharing application user guide
-The Microsoft Rights Management (RMS) sharing application for Windows helps you keep important documents and pictures safe from people who shouldn’t see them, even if you email them or save them to another device. You can also use this application to open and use files that other people have protected by using the same Rights Management technology.
+# Průvodce Rights Management sd&#237;len&#237; aplikace uživatele
+Aplikaci Microsoft RMS (Rights Management) aplikace pro Windows pomáhají pro sdílení můžete zabezpečit důležité dokumenty a obrázky od uživatele, kteří by neměl vidět, i když e-mailem nebo je uložit do jiného zařízení. Tuto aplikaci lze také použít k otevření a použití soubory, které mají ostatní uživatelé chráněny pomocí stejné technologie Rights Management.
 
-All you need is a computer that runs at least Windows 7 with Service Pack 1. Then [download and install](http://go.microsoft.com/fwlink/?LinkId=303970) this free application from Microsoft.
+Vše, co potřebujete je počítač, který spouští alespoň Windows 7 s aktualizací Service Pack 1 a účtu místního správce, chcete-li nainstalovat aplikaci sdílení RMS. Potom [Stáhnout a nainstalovat](http://go.microsoft.com/fwlink/?LinkId=303970) této bezplatné aplikace od společnosti Microsoft.
 
-If you have questions that are not answered by this guide, see [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Pokud máte dotazy, které nejsou zodpovězeny tímto průvodcem, naleznete v části [Nejčastější dotazy týkající se společnost Microsoft Rights Management sdílení aplikací pro systém Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## <a name="BKMK_SharingExamples"></a>Examples for using the RMS sharing application
-Here are just some examples of how you might use the RMS sharing application, to help protect your files.
+## <a name="BKMK_SharingExamples"></a>Příklady použití aplikace pro sdílení obsahu RMS
+Zde jsou jen několik příkladů jak mohou pomocí aplikace sdílení RMS, chránit soubory.
 
-|I want to ….|How to do this|
-|----------------|------------------|
-|**… safely share financial information with somebody I trust who works for another organization**<br /><br />You work with a partner company and want to email them an Excel spreadsheet that contains projected sales figures. You want them to be able to view the figures but not change them.|You use the **Share Protected** button on the ribbon in Excel, type the email addresses of the two people that you work with in the partner company, select **Viewer – View Only**, and click **Send**.<br /><br />When the email arrives at the partner company, only the recipients in the email can view the spreadsheet and they cannot save, edit, print, or forward it.<br /><br />Step-by-step: [Protect a file that you share by email by using the Rights Management sharing application](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
-|**… safely send a document by email to somebody who uses an iOS device**<br /><br />You want to email a highly confidential Word document to a coworker, who you know, regularly checks email on their iOS device.|You use File Explorer to right-click the file, and select **Share Protected** to. send the file as an attachment to your coworker.<br /><br />The recipient receives the email on their iOS device, clicks the link in the email that tells them how to download the sharing application, installs the version for iOS devices, and then views the document¹.<br /><br />Step-by-step: [Protect a file that you share by email by using the Rights Management sharing application](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
-|**… check who’s opened my protected documents and when, and revoke access if necessary**<br /><br />You safely shared a confidential design document with potential suppliers and now you want to see who accessed it, when, and from where. Then, when one of the suppliers is awarded the business, you want to revoke access to the original document so the people you shared it with can no longer read it.|After you share a document by email, you go to the [document tracking site](http://go.microsoft.com/fwlink/?LinkId=529562) to check who has access that document and when. When you need to stop sharing it, you select the option to revoke access.<br /><br />Step-by-step: [Track and revoke your documents when you use the RMS sharing application](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).|
-|**… read an attachment I’ve received in an email message that has a securely shared file attachment but I can’t read it because my company doesn’t use Rights Management**<br /><br />The email sender is somebody who you trust because you’ve done business with them in the past and you suspect that they might be sending you information about a potential new business opportunity.|You follow the instructions in the email and click the link to sign up for Microsoft Rights Management. Microsoft confirms that your organization does not have a subscription that includes Azure Rights Management, sends you an email to complete the free signup process, and you sign in with your new account. You click the second link in the email to install the Rights Management sharing app and can then open the email attachment to read about the new business opportunity.<br /><br />Step-by-step: [View and use files that have been protected by Rights Management](../Topic/View_and_use_files_that_have_been_protected_by_Rights_Management.md).|
-|**… protect company-confidential files on my laptop so they can’t be accessed by people outside my company**<br /><br />You travel a lot and use your laptop to access and update files in a folder that must be secured against unauthorized access.|You have the RMS sharing application installed on your laptop. You use File Explorer to protect the files by using a template, which quickly protects the files. If your laptop is stolen, you have peace of mind that nobody outside your company can access these documents.<br /><br />Step-by-step: [Protect a file on a device &#40;protect in-place&#41; by using the Rights Management sharing application](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
-¹ PDF Rendering Powered by Foxit. Copyright © 2003–2014 by Foxit Corporation.
+|Chci...|Jak na to|
+|-----------|-------------|
+|**… bezpečně sdílet finančních údajů s někdo důvěřovat který lze použít pro jiná organizace**<br /><br />Práce s partnera společnosti a chcete e-mailem tabulky aplikace Excel, který obsahuje projektované prodeji. Chcete, aby mohli zobrazit hodnoty, nikoli však změnit jejich.|Můžete použít **sdílet chráněné** tlačítko na pásu karet v aplikaci Excel, zadejte e-mailové adresy dvou uživatelů, které můžete pracovat s ve společnosti partnera, vyberte možnost **Viewer – zobrazení pouze**, a klikněte na tlačítko **Odeslat**.<br /><br />Pokud e-mailu dorazí partnera společnosti, pouze vybraným příjemcům e-mailu můžete zobrazit tabulky a jejich nelze uložit, upravit, vytisknout nebo předat dál.<br /><br />Podrobný: [Soubor, který můžete sdílet e-mailem pomocí Rights Management, aplikace pro sdílení chránit](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
+|**… bezpečně odeslání dokumentu e-mailem na jiný si zařízení se systémem iOS**<br /><br />Chcete e-mailem vysoce důvěrné dokumentu Word kolegy, který jste si jisti, pravidelně kontroluje e-mailu na svých zařízeních iOS.|Pomocí Průzkumníka soubor a klikněte pravým tlačítkem soubor a vyberte **sdílet chráněné** k. odešlete soubor jako přílohu vašeho kolegy.<br /><br />Příjemce obdrží e-mailu na svých zařízeních iOS, klikne na tento odkaz v e-mailu, který říká jejich stažení sdílení aplikací, nainstaluje verzi pro zařízení se systémem iOS a poté document¹ zobrazení.<br /><br />Podrobný: [Soubor, který můžete sdílet e-mailem pomocí Rights Management, aplikace pro sdílení chránit](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md).|
+|**… Zkontrolujte, kdo otevřel chráněné dokumenty a při a Odvolaná oprávnění pro přístup k v případě potřeby**<br /><br />Bezpečně sdílet důvěrné návrhu dokumentu s potenciální dodavatelů a nyní chcete zobrazit, kdo získat přístup, když a odkud. Potom Pokud jeden z dodavatelů je uděleno podnikání, budete chtít odvolání přístupu do původního dokumentu, takže ji lze číst již osoby, které sdílený s.|Při sdílení dokumentu e-mailem, přejděte na [Sledování webu dokumentů](http://go.microsoft.com/fwlink/?LinkId=529562) ke kontrole, kdo má přístup, který dokumentů a kdy. Pokud potřebujete k ukončení sdílení, je třeba vybrat možnost odvolání přístupu.<br /><br />Podrobný: [Sledování a odvolání dokumenty, pokud použijete aplikaci sdílení RMS](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).|
+|**… Číst přílohu, které jste je zobrazena v e-mailovou zprávu, který má bezpečně sdílenému souboru přílohy, ale I nelze přečíst, protože naše společnost nepoužívá službu Rights Management**<br /><br />Odesilatel e-mailu je někdo, kterému důvěřujete, protože provedení obchodní s nimi v minulosti a domníváte, že se může odesílat můžete informace o potenciálních nových obchodní příležitost.|Postupujte podle pokynů v e-mailu a klepněte na odkaz se přihlásit k Microsoft Rights Management. Společnost Microsoft potvrdí, že vaše organizace nemá odběr, který obsahuje Azure Rights Management, odešle e-mailu k dokončení procesu zápisu zdarma ale také můžete přihlásit pomocí váš nový účet. Klepněte na druhý odkaz v e-mailu k instalaci Rights Management aplikaci pro sdílení a můžete otevřít přílohy e-mailu Další informace o nové obchodní příležitost.<br /><br />Podrobný: [Zobrazení a použití souborů, které bylo chráněno Rights Management](../Topic/View_and_use_files_that_have_been_protected_by_Rights_Management.md).|
+|**… ochrana společnosti důvěrné souborů na můj přenosný počítač tak nemůže být získat přístup k uživateli mimo společnost**<br /><br />Cestovní značnou a používáte přenosný počítač k přístupu a aktualizace soubory ve složce, která musí být zabezpečeny před neoprávněným přístupem.|Máte ve svém přenosném počítači nainstalována aplikace pro sdílení obsahu RMS. File Explorer slouží k ochraně souborů pomocí šablony, která rychle chrání soubory. Pokud dojde k odcizení přenosný počítač, máte jistotu a klid, aby nikdo mimo organizaci získat přístup k tyto dokumenty.<br /><br />Podrobný: [Chránit soubor v zařízení &#40;chránit místně&#41; s použitím Rights Management, aplikace pro sdílení](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
+Používá technologii programem Foxit ¹ vykreslování PDF. Copyright © 2003 – 2014, programem Foxit Corporation.
 
-## <a name="BKMK_SharingInstructions"></a>What do you want to do?
+## <a name="BKMK_SharingInstructions"></a>Co chcete provést?
 > [!NOTE]
-> For more technical information, such as supported file types and how to install this application on an enterprise network, see the [Rights Management sharing application administrator guide](../Topic/Rights_Management_sharing_application_administrator_guide.md).
+> Další technické informace, jako jsou podporované typy souborů a instalace této aplikace v podnikové síti, naleznete v tématu [Průvodce Rights Management sdílení aplikace Správce](../Topic/Rights_Management_sharing_application_administrator_guide.md).
 
--   [Download and install the sharing application](https://technet.microsoft.com/library/dn574734.aspx)
+-   [Stáhněte si a nainstalujte aplikaci sdílení](https://technet.microsoft.com/library/dn574734.aspx)
 
--   [Protect a file on a device (protect in-place)](https://technet.microsoft.com/library/dn574733.aspx)
+-   [Chránit soubor v zařízení (chránit místně)](https://technet.microsoft.com/library/dn574733.aspx)
 
--   [Protect a file that you share by email](https://technet.microsoft.com/library/dn574735.aspx)
+-   [Chránit soubor, který sdílíte e-mailem](https://technet.microsoft.com/library/dn574735.aspx)
 
--   [Track and revoke your documents](https://technet.microsoft.com/library/dn986611.aspx)
+-   [Sledování a odvolání dokumenty](https://technet.microsoft.com/library/dn986611.aspx)
 
--   [View and use files that have been protected](https://technet.microsoft.com/library/dn574741.aspx)
+-   [Zobrazení a použití souborů, které je chráněno](https://technet.microsoft.com/library/dn574741.aspx)
 
--   [Remove protection from a file](https://technet.microsoft.com/library/dn574739.aspx)
+-   [Odebrat ochranu ze souboru](https://technet.microsoft.com/library/dn574739.aspx)
 
--   [Use keyboard shortcuts](https://technet.microsoft.com/library/dn574737.aspx)
+-   [Použití klávesových zkratek](https://technet.microsoft.com/library/dn574737.aspx)
 
--   [Specify settings in the dialog box](https://technet.microsoft.com/library/dn574738.aspx)
+-   [Zadejte nastavení v dialogovém okně](https://technet.microsoft.com/library/dn574738.aspx)
 
-## See Also
-[Protect your docs!](http://curah.microsoft.com/60308/protect-your-docs)
+## Viz také
+[Chránit vaše dokumenty!](http://curah.microsoft.com/60308/protect-your-docs)
 

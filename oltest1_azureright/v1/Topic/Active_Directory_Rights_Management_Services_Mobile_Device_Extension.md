@@ -6,34 +6,33 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: a69ead9d-7dd3-4b38-9830-4728e9757341
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Active Directory Rights Management Services Mobile Device Extension
-The Active Directory Rights Management Services (AD RMS) mobile device extension runs on top of an existing AD RMS deployment. This lets users who have mobile devices protect and consume sensitive data when their device supports the latest RMS client and uses RMS-enlightened apps. For example, users on these device can do the following:
+# Rozš&#237;řen&#237; služby AD RMS (Active Directory Rights Management Services) pro mobiln&#237; zař&#237;zen&#237;
+Rozšíření služby AD RMS (Active Directory Rights Management Services) pro mobilní zařízení běží nad stávajícím nasazením služby AD RMS. Pokud mobilní zařízení uživatele podporuje nejnovějšího klienta služby RMS a používá aplikace podporující RMS, může uživatel chránit a využívat citlivá data. Uživatelé takových zařízení například můžou:
 
--   Use the RMS sharing app to consume protected text files in different formats (including .txt, .csv, and .xml).
+-   Pomocí aplikace Sdílení RMS využívat chráněné textové soubory v různých formátech (včetně .txt, .csv a .xml).
 
--   Use the RMS sharing app to consume protected image files (including .jpg, .gif, and .tif.
+-   Pomocí aplikace Sdílení RMS využívat chráněné soubory obrázků (včetně .jpg, .gif, and .tif).
 
--   Use the RMS sharing app to open any file that have been generically protected (.pfile format).
+-   Pomocí aplikace Sdílení RMS otevřít libovolný obecně chráněný soubor (ve formátu .pfile).
 
--   Use the RMS sharing app to protect image files on the device.
+-   Pomocí aplikace Sdílení RMS chránit na zařízení soubory obrázků.
 
--   Use an RMS-enlightened PDF viewer for mobile devices to open PDF files that were protected with the RMS sharing application for Windows, or another RMS-enlightened application.
+-   Pomocí prohlížeče PDF pro mobilní zařízení podporujícího RMS otvírat soubory PDF, které jsou chráněné aplikací Sdílení RMS pro Windows nebo jinou aplikací podporující RMS.
 
--   Use other apps from software vendors who provide RMS-enlightened apps that support file types that natively support RMS.
+-   Používat jiné aplikace od dodavatelů softwaru, kteří nabízejí aplikace podporující RMS, jež podporují typy souborů nativně podporující RMS.
 
--   Use your internally developed RMS-enlightened apps that were written by using the RMS SDK.
+-   Používat interně vytvořené aplikace podporující RMS, které jsou napsané pomocí sady RMS SDK.
 
 > [!NOTE]
-> You can download the RMS sharing app from the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+> Aplikaci Sdílení RMS si můžete stáhnout ze stránky [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) na webu Microsoftu.
 > 
-> For more information about the different file types that RMS supports, see the [Supported file types and file name extensions](http://technet.microsoft.com/library/dn339003.aspx) section in the Rights Management sharing application administrator guide.
+> Další informace o různých typech souborů podporovaných službou RMS najdete v části [Podporované typy souborů a přípon názvů souborů](http://technet.microsoft.com/library/dn339003.aspx) příručky pro správce aplikace pro sdílení obsahu Rights Management.
 
-You don’t need the mobile device extension to consume or author protected email on devices if they use mail applications that support Exchange ActiveSync IRM. This native support for RMS and mobile devices was introduced with Exchange 2010 Service Pack 1.
+Pokud na zařízení používáte poštovní aplikaci podporující technologii Exchange ActiveSync IRM, nepotřebujete rozšíření pro mobilní zařízení, abyste mohli využívat nebo vytvářet chráněný e-mail. Tato nativní podpora služby RMS a mobilních zařízení se zavedla s aktualizací Exchange 2010 Service Pack 1.
 
-Use the following sections to deploy the Active Directory Rights Management Services (AD RMS) mobile device extension:
+Pokyny k nasazení rozšíření služby AD RMS (Active Directory Rights Management Services) pro mobilní zařízení najdete v následujících částech:
 
 -   [Prerequisites for the AD RMS mobile device extension](../Topic/Active_Directory_Rights_Management_Services_Mobile_Device_Extension.md#BKMK_Preqs)
 
@@ -45,24 +44,24 @@ Use the following sections to deploy the Active Directory Rights Management Serv
 
 -   [Deploying the AD RMS mobile device extension](../Topic/Active_Directory_Rights_Management_Services_Mobile_Device_Extension.md#BKMK_Deploy)
 
-## <a name="BKMK_Preqs"></a>Prerequisites for the AD RMS mobile device extension
-Before you install the AD RMS mobile device extension, make sure that these dependencies are in place.
+## <a name="BKMK_Preqs"></a>Předpoklady pro rozšíření služby AD RMS pro mobilní zařízení
+Před instalací rozšíření služby AD RMS pro mobilní zařízení musí být splněné tyto předpoklady.
 
-|Requirement|More information|
-|---------------|--------------------|
-|An existing AD RMS deployment on Windows Server 2012 R2 or Windows Server 2012. **Note:** AD RMS must be using a full Microsoft SQL Server-based database on a separate server and not the Windows Internal Database that is often used for testing on the same server.|For documentation about AD RMS, see [Active Directory Rights Management Services](http://technet.microsoft.com/library/hh831364.aspx) in the Windows Server library.|
-|AD FS deployed on Windows Server 2012 R2|For documentation about AD FS, see [Windows Server 2012 R2 AD FS Deployment Guide](http://technet.microsoft.com/library/dn486820.aspx) in the Windows Server library.<br /><br />AD FS must be configured for the mobile device extension. For instructions, see the [Configuring AD FS for the AD RMS mobile device extension](../Topic/Active_Directory_Rights_Management_Services_Mobile_Device_Extension.md#BKMK_ADFS) section in this topic.|
-|SRV records in DNS|Create one or more SRV records in your company domain or domains:<br /><br />-   One record for each email domain suffix that users will use<br />-   One record for every FQDN used by your RMS clusters to protect content<br /><br />When users supply their email address from their mobile device, the domain suffix is used to identify whether they should use an AD RMS infrastructure or Azure RMS. When the SRV record is found, clients are redirected to the AD RMS server that responds to that URL.<br /><br />When users consume protected content with a mobile device, the client application looks in DNS for a record that matches the FQDN in the URL of the cluster that protected the content. The device is then directed to the AD RMS cluster specified in the DNS record and acquires a license to open the content. In most cases, the RMS cluster will be the same RMS cluster that protected the content.<br /><br />For information about how to specify the SRV records, see the [Specifying the DNS SRV records for the AD RMS mobile device extension](../Topic/Active_Directory_Rights_Management_Services_Mobile_Device_Extension.md#BKMK_SRV) section in this topic.|
-|Currently supported clients:<br /><br />-   Android devices using the latest version of the RMS sharing app for Android|Minimum version of Android 4.0.3.<br /><br />Download the RMS sharing app for Android from the [Microsoft Connect site](https://connect.microsoft.com/site1170/Downloads) and sideload it onto the device.|
+|Požadavek|Další informace|
+|-------------|-------------------|
+|Stávající nasazení služby AD RMS na Windows Serveru 2012 R2 nebo Windows Serveru 2012. **Note:** Služba AD RMS musí používat úplnou databázi založenou na Microsoft SQL Serveru, která je na samostatném serveru, a ne interní databázi Windows, která se často používá k testování na stejném serveru.|Dokumentaci ke službě AD RMS najdete v článku [Služba AD RMS (Active Directory Rights Management Services)](http://technet.microsoft.com/library/hh831364.aspx) v knihovně k Windows Serveru.|
+|Služba AD FS nasazená na Windows Serveru 2012 R2|Dokumentaci ke službě AD FS najdete v článku [Průvodce nasazením služby AD FS v systému Windows Server 2012 R2](http://technet.microsoft.com/library/dn486820.aspx) v knihovně k Windows Serveru.<br /><br />Služba AD FS musí být nakonfigurovaná na rozšíření pro mobilní zařízení. Pokyny najdete v části [Configuring AD FS for the AD RMS mobile device extension](../Topic/Active_Directory_Rights_Management_Services_Mobile_Device_Extension.md#BKMK_ADFS) v tomto tématu.|
+|Záznamy SRV v DNS|Vytvořte jeden nebo víc záznamů SRV v doméně nebo doménách vaší společnosti:<br /><br />-   Jeden záznam pro každou příponu e-mailové domény, kterou budou uživatelé používat<br />-   Jeden záznam pro každý plně kvalifikovaný název domény používaný vašimi clustery RMS k ochraně obsahu<br /><br />Když uživatelé na mobilním zařízení zadají e-mailovou adresu, podle přípony domény se zjistí, jestli mají použít infrastrukturu služby AD RMS nebo Azure RMS. Pokud se najde záznam SRV, klienti budou přesměrovaní na server AD RMS, který odpovídá této adrese URL.<br /><br />Když uživatelé na mobilním zařízení využívají chráněný obsah, klientská aplikace vyhledá v systému DNS záznam odpovídající plně kvalifikovanému názvu domény, který obsah ochránil. Zařízení je pak přesměrované na cluster AD RMS určený v záznamu DNS a získá povolení k otevření obsahu. Tento cluster RMS je většinou stejný cluster RMS, který obsah ochránil.<br /><br />Informace o tom, jak vytvořit záznamy SRV, najdete v části [Specifying the DNS SRV Records for the AD RMS mobile device extension](../Topic/Active_Directory_Rights_Management_Services_Mobile_Device_Extension.md#BKMK_SRV) v tomto tématu.|
+|Aktuálně podporovaní klienti:<br /><br />-   Zařízení s Androidem, která používají nejnovější verzi aplikace Sdílení RMS pro Android|Minimální verze Android 4.0.3.<br /><br />Stáhněte si aplikaci Sdílení RMS pro Android z webu [Microsoft Connect](https://connect.microsoft.com/site1170/Downloads) a zkušebně si ji nainstalujte na zařízení.|
 
-### <a name="BKMK_ADFS"></a>Configuring AD FS for the AD RMS mobile device extension
-You must first configure AD FS, and then authorize the RMS sharing app for Android.
+### <a name="BKMK_ADFS"></a>Konfigurace služby AD FS pro rozšíření služby AD RMS pro mobilní zařízení
+Nejdřív musíte nakonfigurovat službu AD FS a potom budete autorizovat aplikaci Sdílení RMS pro Android.
 
-##### Step 1: To configure AD FS
+##### Krok 1: Konfigurace služby AD FS
 
--   You can either run a Windows PowerShell script to automatically configure AD FS to support the AD RMS mobile device extension, or you can manually specify the configuration options and values:
+-   Buď můžete spustit skript Windows PowerShellu, který automaticky nakonfiguruje službu AD FS na podporu rozšíření služby AD RMS pro mobilní zařízení, nebo můžete ručně zadat možnosti a hodnoty konfigurace:
 
-    -   To automatically configure AD FS, copy and paste the following into a Windows PowerShell script file, and then run it:
+    -   Pokud chcete službu AD FS nakonfigurovat automaticky, zkopírujte si následující kód do souboru skriptu Windows PowerShellu a spusťte ho:
 
         ```
         # This Script Configures the Microsoft Rights Management Mobile Device Extension and Claims used in the ADFS Server
@@ -123,54 +122,54 @@ You must first configure AD FS, and then authorize the RMS sharing app for Andro
         }
         ```
 
-    -   To manually configure AD FS, use these settings:
+    -   Pokud chcete službu AD FS nakonfigurovat ručně, použijte tato nastavení:
 
-        |Configuration|Value|
-        |-----------------|---------|
-        |**Relying Party Trust**|api.rms.rest.com|
-        |**Claim rule**|**Attribute store**:  Active Directory<br /><br />**E Mail-Addresses**:  E-Mail-Address<br /><br />**User-Principal-Name**:  UPN<br /><br />**Proxy-Address**:  https://schemas.xmlsoap.org/claims/ProxyAddresses|
+        |Konfigurace|Hodnota|
+        |---------------|-----------|
+        |**Vztah důvěryhodnosti předávající strany**|api.rms.rest.com|
+        |**Pravidlo deklarace identity**|**Úložiště atributů**:  Active Directory<br /><br />**E-mailové adresy**:  e-mailová adresa<br /><br />**Hlavní název uživatele**:  UPN<br /><br />**Adresa proxy serveru**:  https://schemas.xmlsoap.org/claims/ProxyAddresses|
 
-##### Step 2: Authorize the RMS sharing app for Android
+##### Krok 2: Autorizace aplikace Sdílení RMS pro Android
 
--   Run the following Windows PowerShell command to add support for Android devices:
+-   Podporu pro zařízení s Androidem přidáte spuštěním následujícího příkazu Windows PowerShellu:
 
     ```
     Add-AdfsClient -Name "RMSsharingAndroid" -ClientId "com.microsoft.ipviewer" -RedirectUri @("com.microsoft.ipviewer://authorize")
     ```
 
-### <a name="BKMK_SRV"></a>Specifying the DNS SRV records for the AD RMS mobile device extension
-You must create DNS SRV records for each email domain that your users use. If all your users use child domains from a single parent domain, and all users from this contiguous namespace use the same RMS cluster, you can use just one SRV record in the parent domain, and RMS will find the appropriate DNS records.
+### <a name="BKMK_SRV"></a>Vytvoření záznamů SRV služby DNS pro rozšíření služby AD RMS pro mobilní zařízení
+Pro každou e-mailovou doménu, kterou budou uživatelé používat, musíte vytvořit záznamy SRV služby DNS. Pokud všichni uživatelé používají podřízené domény z jedné nadřazené domény a všichni uživatelé z tohoto souvislého oboru názvů používají stejný cluster RMS, můžete použít jenom jeden záznam SRV v nadřazené doméně a služba RMS najde odpovídající záznamy DNS.
 
-The SRV records have the following format: _rmsdisco._http._tcp. *&lt;emailsuffix&gt;**&lt;portnumber&gt;**&lt;RMSClusterFQDN&gt;*
+Záznamy SRV mají tento formát: _rmsdisco._http._tcp. *&lt;přípona_e-mailu&gt;**&lt;číslo_portu&gt;**&lt;plně_kvalifikovaný_název_domény_clusteru_RMS&gt;*
 
-For example, if your organization has users with the following email addresses:
+Pokud například vaše organizace má uživatele s těmito e-mailovými adresami:
 
--   user@contoso.com
+-   uživatel@contoso.com
 
--   user@sales.contoso.com
+-   uživatel@sales.contoso.com
 
--   user@fabrikam.com
+-   uživatel@fabrikam.com
 
-- and there are no other child domains for contoso.com that use a different RMS cluster than the one named **rmsserver.contoso.com**, create two DNS SRV records that have these values:
+– a pro doménu contoso.com nejsou žádné další podřízené domény používající jiný cluster RMS než cluster s názvem **rmsserver.contoso.com**, vytvořte dva záznamy SRV služby DNS s těmito hodnotami:
 
 -   _rmsdisco._http._tcp.contoso.com 443 rmsserver.contoso.com
 
 -   _rmsdisco._http._tcp.fabrikam.com 443 rmsserver.contoso.com
 
-In addition to these DNS SRV records for your email domains, you must create another DNS SRV record in the user domains. This record must specify the URLs of your RMS cluster that protects content. Every file that is protected by RMS includes a URL to the cluster that protected that file. Mobile devices use the DNS SRV record and the URL FQDN specified in the record to find the corresponding RMS cluster that can support mobile devices.
+Kromě těchto záznamů SRV služby DNS pro vaše e-mailové domény musíte vytvořit další záznam SRV služby DNS v doménách uživatelů. Tento záznam musí určovat adresy URL clusteru RMS, který chrání obsah. Každý soubor, který je chráněný službou RMS, zahrnuje adresu URL clusteru, který tento soubor ochránil. Mobilní zařízení pomocí záznamu SRV služby DNS a plně kvalifikovaného názvu domény URL zadaného v záznamu najdou příslušný cluster RMS, který může podporovat mobilní zařízení.
 
-For example, if your RMS cluster is **rmsserver.contoso.com**, create a DNS SRV record that has the following values: **_rmsdisco._http._tcp.rmsserver.contoso.com 443 rmsserver.contoso.com**
+Pokud je váš cluster RMS třeba **rmsserver.contoso.com**, vytvořte záznam SRV služby DNS s těmito hodnotami: **_rmsdisco._http._tcp.rmsserver.contoso.com 443 rmsserver.contoso.com**
 
-## <a name="BKMK_Deploy"></a>Deploying the AD RMS mobile device extension
-Before you install the AD RMS mobile device extension, make sure that the prerequisites from the preceding section are first in place, and that you know the URL of your AD FS server. Then do the following:
+## <a name="BKMK_Deploy"></a>Nasazení rozšíření služby AD RMS pro mobilní zařízení
+Než budete rozšíření služby AD RMS pro mobilní zařízení instalovat, musíte splnit předpoklady z předchozí části a znát adresu URL serveru AD FS. Pak udělejte tyto kroky:
 
-1.  Download the AD RMS mobile device extension from the [Microsoft Connect site](http://go.microsoft.com/fwlink/?LinkId=397245).
+1.  Stáhněte si rozšíření služby AD RMS pro mobilní zařízení z webu [Microsoft Connect](http://go.microsoft.com/fwlink/?LinkId=397245).
 
-2.  Run Setup.exe to start the Active Directory Rights Management Services Mobile Device Extension Setup Wizard.
+2.  Spusťte Setup.exe. Tím spustíte průvodce instalací rozšíření služby AD RMS (Active Directory Rights Management Services) pro mobilní zařízení.
 
-3.  When prompted, enter the URL of the AD FS server that you configured previously.
+3.  Po zobrazení výzvy zadejte adresu URL serveru AD FS, který jste nakonfigurovali dřív.
 
-4.  Complete the wizard.
+4.  Dokončete průvodce.
 
-Run this wizard on all the nodes in your RMS cluster.
+Spusťte tohoto průvodce na všech uzlech v clusteru RMS.
 

@@ -3,85 +3,84 @@ description: na
 keywords: na
 title: Track and revoke your documents when you use the RMS sharing application
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 61f349ce-bdd2-45c1-acc5-bc83937fb187
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Track and revoke your documents when you use the RMS sharing application
-After you have protected your documents by using the RMS sharing application, if your organization is using Azure Rights Management rather than Active Directory Rights Management Services, you can track how people are using your protected documents. If necessary, you can also revoke access to these documents when you want to stop sharing them. To do this, you use the **document tracking site**, which you can access from Windows computers, Mac computers, and even from tablets and phones.
+# Sledov&#225;n&#237; a odvol&#225;n&#237; dokumenty, pokud použijete aplikaci sd&#237;len&#237; RMS
+Po zajištění ochrany dokumentů pomocí aplikace, pokud vaše organizace používá Azure Rights Management, spíše než Active Directory Rights Management Services sdílení RMS, můžete sledovat, jak uživatelé používají chráněné dokumenty. V případě potřeby můžete také odvolat přístup k těmto dokumentům, pokud chcete ukončit sdílení je. Chcete-li to provést, použijte **lokality pro sledování dokumentů**, které je přístupné z počítače se systémem Windows, počítače se systémem Mac a to i z tablety a telefony.
 
 > [!TIP]
-> Two minute video: [Azure RMS Document Tracking and Revocation](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)
+> Minutu dvě videa: [Sledování Azure RMS dokumentů a zrušení](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)
 
-When you access this site, sign in to track your documents. Providing your organization has a [subscription that supports document tracking and revocation](https://technet.microsoft.com/dn858608.aspx) and you are assigned a license for this subscription, you can then see who tried to open the files that you protected and whether they were successful (they were successfully authenticated) or not. Each time they tried to access the document, and their location at the time. In addition:
+Při přístupu k této lokalitě, přihlaste se a můžete dokumenty sledovat. Poskytnutí vaše organizace má [odběr, který podporuje sledování dokumentů a odvolání](https://technet.microsoft.com/dn858608.aspx) a jsou přiřazeny licenci pro tento odběr, pak uvidíte kdo se pokusil otevřít soubory, které budete chránit a jestli byly úspěšné (úspěšně ověřený) nebo ne. Pokaždé, když by byl proveden pokus o přístup k dokumentu a jejich umístění v době. Kromě toho:
 
--   If you need to stop sharing a document: Click **Revoke access**, note the period of time that the document will continue to be available, and decide whether to let people know that you’re revoking access to the document you previously shared, and provide a customized message.
+-   Pokud je třeba ukončit sdílení dokumentu: Klikněte na tlačítko **odvolání přístupu**, Všimněte si, dobu, kterou dokumentu bude i nadále k dispozici a rozhodnout, zda chcete-li umožnit uživatelům víte, že budete odvolání přístupu k dokumentu jste dříve sdílené a zadat vlastní zprávu.
 
--   If you want to export to Excel: Click **Open in Excel**, so that you can then modify the data, and create your own views and graphs.
+-   Pokud chcete exportovat do aplikace Excel: Klikněte na tlačítko **Otevřít v aplikaci Excel**, takže můžete poté upravovat data a vytvářet vlastní zobrazení a grafy.
 
--   If you want to configure email notifications: Click **Settings** and select how and whether to be emailed when the document is accessed.
+-   Pokud chcete nakonfigurovat e-mailová oznámení: Klikněte na tlačítko **Nastavení** a vyberte možnost jak a zda má být odeslány e-mailem, při přístupu k dokumentu.
 
--   If you have questions or want to provide feedback about the document tracking site: Click the Help icon to access the [FAQ for Document Tracking](http://go.microsoft.com/fwlink/?LinkId=523977).
+-   Pokud máte dotazy nebo poskytnout zpětnou vazbu o sledování webu dokumentů: Klikněte na ikonu Nápověda k přístupu [Nejčastější dotazy týkající se sledování dokumentů](http://go.microsoft.com/fwlink/?LinkId=523977).
 
-## Using Office to access the document tracking site
+## Pomocí sady Office pro přístup k dokumentu sledování webu
 
--   For the Office applications, Word, Excel, and PowerPoint: On the **Home** tab, in the **RMS** group, click **Share Protected**, and then click **Track Usage**.
+-   Pro Office aplikací, Word, Excel a PowerPoint: Na **Home** ve **RMS** klikněte na možnost **sdílet chráněné**, a potom klikněte na tlačítko **sledovat využití**.
 
     ![](../Image/ADRMS_MSRMSApp_OfficeToolbarTrackUsage.png)
 
--   For Outlook: On the **Home** tab, in the  **RMS** group, click **Track Usage**:
+-   Pro aplikaci Outlook: Na **Home** ve  **RMS** klikněte na možnost **sledovat využití**:
 
     ![](../Image/ADRMS_MSRMSApp_OutlookTrackUsage.png)
 
-If you do not see these options for RMS, it’s likely that either the RMS sharing application is not installed on your computer, the latest version isn’t installed, or your computer must be restarted to complete the installation. For more information about how to install the sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+Pokud tyto možnosti pro službu RMS nevidíte, je pravděpodobné, že buď není v počítači nainstalována aplikace pro sdílení obsahu RMS, není nainstalována nejnovější verze, nebo k dokončení instalace je nutné restartovat váš počítač. Další informace o tom, jak nainstalovat aplikaci sdílení naleznete v tématu [Stáhněte si a nainstalujte Rights Management, aplikace pro sdílení](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-### Other ways to track and revoke your documents
-In addition to tracking your documents on Windows computers by using Office applications, you can also use these alternatives:
+### Další možnosti, jak sledovat a odvolání dokumenty
+Kromě sledování dokumentů na počítače se systémem Windows s použitím aplikace systému Office, můžete také použít tyto možnosti:
 
--   **Using a web browser**: This method works for all supported devices.
+-   **Pomocí webového prohlížeče**: Tuto metodu lze použít pro všechna podporovaná zařízení.
 
--   **Using File Explorer**: This method works for Windows computers.
+-   **Používání nástroje Průzkumník soubor**: Tuto metodu lze použít pro počítače se systémem Windows.
 
--   **Using an Outlook email message**: This method works for Windows computers.
+-   **Pomocí e-mailovou zprávu aplikace Outlook**: Tuto metodu lze použít pro počítače se systémem Windows.
 
-##### Using a web browser to access the doc tracking site
+##### Pomocí webového prohlížeče pro přístup k webu sledování doc
 
--   Using a supported browser, go to the [document tracking site](http://go.microsoft.com/fwlink/?LinkId=529562).
+-   Pomocí podporované prohlížeče, přejděte na [Sledování webu dokumentů](http://go.microsoft.com/fwlink/?LinkId=529562).
 
-    Supported browsers: We recommend using Internet Explorer that is at least version 10, but you can use any of following browsers to use the document tracking site:
+    Podporované prohlížeče: Doporučujeme používat aplikaci Internet Explorer, která je alespoň verze 10, ale můžete použít některý z následujících prohlížečů použití dokumentu sledování webu:
 
-    -   Internet Explorer: At least version 10
+    -   Aplikace Internet Explorer: Alespoň verze 10
 
-    -   Internet Explorer 9 with at least MS12-037: Cumulative Security Update for Internet Explorer: June 12, 2012
+    -   Aplikace Internet Explorer 9 s alespoň MS12-037: Kumulativní aktualizace zabezpečení pro aplikaci Internet Explorer: 12. června 2012
 
-    -   Mozilla Firefox: At least version 12
+    -   Mozilla Firefox: Alespoň verze 12
 
-    -   Apple Safari 5: At least version 5
+    -   Apple Safari 5: Alespoň verze 5
 
-    -   Google Chrome: At least version 18
+    -   Google Chrome: Alespoň verze 18
 
-##### Using File Explorer to access the doc tracking site
+##### Pomocí Průzkumníka souboru pro přístup k dokumentu sledování webu
 
--   Right-click the file, select **Protect with RMS**, and then select **Track Usage**:
+-   Klikněte pravým tlačítkem soubor, vyberte možnost **chránit s RMS**, a potom vyberte **sledovat využití**:
 
     ![](../Image/ADRMS_MSRMSApp_ExplorerTrackUsage.png)
 
-##### Using an Outlook email message to access the doc tracking site
+##### Pomocí e-mailovou zprávu aplikace Outlook pro přístup k webu sledování doc
 
--   In an email message, in the **Message** tab, in the  **RMS** group, click **Share Protected**, and then click **Track Usage**:
+-   V e-mailovou zprávu v **zpráva** ve  **RMS** klikněte na možnost **sdílet chráněné**, a potom klikněte na tlačítko **sledovat využití**:
 
     ![](../Image/ADRMS_MSRMSApp_OutlookMessageTrackUsage.png)
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Příklady a další informace
+Příklady pro jak je možné použít Rights Management, sdílení aplikací a návody, naleznete v následujících částech v uživatelské příručce sdílení aplikace Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Příklady použití aplikace pro sdílení obsahu RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [Co chcete provést?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Viz také
+[Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md)
 

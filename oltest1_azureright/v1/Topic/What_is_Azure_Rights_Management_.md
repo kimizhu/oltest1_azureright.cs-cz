@@ -3,286 +3,284 @@ description: na
 keywords: na
 title: What is Azure Rights Management?
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aeeebcd7-6646-4405-addf-ee1cc74df5df
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# What is Azure Rights Management?
-Azure Rights Management (Azure RMS) is an information protection solution for organizations that want to protect their data in today's challenging working environment.
+# Co je Azure Rights Management?
+Azure Rights Management (Azure RMS) je řešení ochrany informací pro organizace, které chcete chránit svá data v dnešních náročné pracovním prostředí.
 
-These challenges include the need to be Internet-connected, with users bringing personal device to work, accessing company data on the road and home, and sharing sensitive information with important business partners. As part of their daily work, users share information by using email, file-sharing sites, and cloud services. In these scenarios, traditional security controls (such as access control lists and NTFS permissions) and firewalls have limited effectiveness if you want to protect your company data while still empowering your users to work efficiently.
+Tyto výzvy zahrnují muset být připojená k Internetu, s uživatelů bere osobní zařízení pro práci, přístup k datům společnosti na cestách a Domovská stránka a sdílení s důležitá obchodní partnery citlivé informace. Jako součást jejich každodenní práci uživatelé sdílejí informace pomocí e-mailu, sdílení souborů lokalit a cloudové služby. V těchto scénářích tradiční zabezpečení ovládacích prvků (například seznamy řízení přístupu a oprávnění systému souborů NTFS) a bránami firewall omezenou účinnost pokud chcete ochranu firemních dat při stále umožňují uživatelům pracovat efektivně.
 
-In comparison, Azure RMS can protect your company’s sensitive information in all these scenarios. It uses encryption, identity, and authorization policies to help secure your files and email, and it works across multiple devices—phones, tablets, and PCs. Information can be protected both within your organization and outside your organization because that protection remains with the data, even when it leaves your organization’s boundaries. As an example, employees might email a document to a partner company, or they save a document to their cloud drive. The persistent protection that Azure RMS provides not only helps to secure your company data, but might also be legally mandated for compliance, legal discovery requirements, or simply good information management practices.
+V porovnání může Azure RMS chránit vaše společnost citlivé informace v těchto scénářích. Používá šifrování, identity a zásady autorizace zabezpečit soubory a e-mailu a funguje napříč několika zařízeními – telefony, tablety a počítače. Informace se dají chránit v rámci vaší organizace i mimo vaši organizaci, protože tuto ochranu zůstává s daty, i když se dostane hranice vaší organizace. Jako příklad zaměstnanci může e-mailu dokumentu do partnerské společnosti nebo jejich uložení dokumentu na jejich jednotku cloudu. Trvalé ochrany, která poskytuje Azure RMS pouze pomáhá zabezpečit data společnosti, ale může také vyžadováno právními předpisy pro dodržování předpisů, zjišťování právní požadavky nebo postupů pro správu jednoduše správné informace.
 
-But very importantly, authorized people and services (such as search and indexing) can continue to read and inspect the data that Azure RMS protects, which is not easily accomplished with other information protection solutions that use peer-to-peer encryption. This ability is sometimes referred to as “reasoning over data” and is a crucial element in maintaining control of your organization’s data.
+Ale je velmi důležité, oprávnění lidé a služby (například vyhledávání a indexování) můžete dál číst a kontrolovat data, která chrání Azure RMS, což není snadno provést s jinými řešeními ochrany informací, které používají šifrování peer-to-peer. Tato možnost je někdy označovány jako "uvažování nad daty" a je zásadní element v zachovat kontrolu data vaší organizace.
 
-The following picture shows how Azure RMS works as a Rights Management solution for Office 365 as well as for on-premises servers and services. You'll also see that it supports the popular end user devices that run Windows, Mac OS, iOS, Android, and Windows Phone.
+Následující obrázek ukazuje, jak se Azure RMS funguje jako Rights Management řešení pro Office 365 také za účelem na místní servery a služby. Zobrazí se také, že podporuje oblíbené koncový uživatel zařízení se systémem Windows, Mac OS, iOS, Android a Windows Phone.
 
 ![](../Image/AzRMS_elements.png)
 
 > [!TIP]
-> At this point, you might find the additional resources useful:
+> V tomto okamžiku může být užitečné další prostředky:
 > 
-> -   Two minute video: [What is Microsoft Azure Rights Management](http://technet.microsoft.com/dn833005.aspx)
-> -   Five-step tutorial: [Quick Start Tutorial for Azure Rights Management](../Topic/Quick_Start_Tutorial_for_Azure_Rights_Management.md)
-> -   Azure RMS requirements, including subscription options to purchase or evaluate: [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md)
+> -   Dvě minuty video: [Co je Microsoft Azure Rights Management](http://technet.microsoft.com/dn833005.aspx)
+> -   Tutoriál krok 5: [Rychlé zahájení kurzu Azure Rights Management](../Topic/Quick_Start_Tutorial_for_Azure_Rights_Management.md)
+> -   Azure RMS požadavky, včetně možnosti odběru k nákupu nebo vyhodnocení: [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md)
 
-Use the following sections to learn more about Azure RMS:
+Další informace o Azure RMS pomocí následujících částí:
 
--   [What problems does Azure RMS solve?](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMSrequirements)
+-   [Jaké problémy Azure RMS vyřešit?](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMSrequirements)
 
-    -   [Security, compliance, and regulatory requirements](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScompliance)
+    -   [Zabezpečení, dodržování předpisů a právních požadavků](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScompliance)
 
--   [Azure RMS in action: What administrators and users see](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMSpictures)
+-   [Azure RMS v akci: Co správci a uživatelé v tématu](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMSpictures)
 
-    -   [Activating and configuring Rights Management](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_ManagementPortal)
+    -   [Aktivaci a konfiguraci Rights Management](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_ManagementPortal)
 
-    -   [Automatically protecting files on file servers running Windows Server and File Classification Infrastructure](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_FCI)
+    -   [Automaticky chrání soubory na souborových serverech se systémem Windows Server a souboru klasifikace infrastruktury](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_FCI)
 
-    -   [Automatically protecting emails with Exchange Online and data loss prevention policies](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_DLP)
+    -   [Automaticky chrání e-maily s Exchange Online a zásady předcházení ztrátě dat.](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_DLP)
 
-    -   [Automatically protecting files with SharePoint Online and protected libraries](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_SharePoint)
+    -   [Automaticky Ochrana souborů pomocí služby SharePoint Online a chráněné knihovny](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_SharePoint)
 
-    -   [Users safely share attachments with mobile users](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_SharingApp)
+    -   [Uživatelé bezpečně sdílet přílohy s mobilní uživatele](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_SharingApp)
 
--   [How does Azure RMS work? Under the hood](../Topic/What_is_Azure_Rights_Management_.md#BKMK_HowRMSworks)
+-   [Jak funguje Azure RMS? Pod pokličkou](../Topic/What_is_Azure_Rights_Management_.md#BKMK_HowRMSworks)
 
-    -   [Cryptographic controls used by Azure RMS: Algorithms and key lengths](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScrytographics)
+    -   [Ovládání kryptografie používá Azure RMS: Algoritmy a délky klíčů](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScrytographics)
 
-    -   [Walkthrough of how Azure RMS works: First use, content protection, content consumption](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Walthrough)
+    -   [Návod, jak pracuje Azure RMS: Nejprve použít, obsahu ochrany obsahu spotřeba](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Walthrough)
 
--   [Next steps](../Topic/What_is_Azure_Rights_Management_.md#BKMK_NextSteps)
+-   [Další kroky](../Topic/What_is_Azure_Rights_Management_.md#BKMK_NextSteps)
 
-## <a name="BKMK_RMSrequirements"></a>What problems does Azure RMS solve?
-Use the following table to identify business requirements or problems that your organization might have, and how Azure RMS can address these.
+## <a name="BKMK_RMSrequirements"></a>Jaké problémy Azure RMS vyřešit?
+Použijte k identifikaci podnikové požadavky nebo problémy, které vaše organizace může mít v následující tabulce a Azure RMS jak může vyřešit tyto.
 
-|Requirement or problem|Solved by Azure RMS|
-|--------------------------|-----------------------|
-|Protect all file types|√ In previous implementation of Rights Management, only Office files could be protected, using native protection. Now, [generic protection](https://technet.microsoft.com/library/dn574738%28v=ws.10%29.aspx) means that all file types are supported.|
-|Protect files anywhere|√ When a file is saved to a location ([protect in-place](https://technet.microsoft.com/library/dn574733%28v=ws.10%29.aspx)), the protection stays with the file, even if it is copied to storage that is not under the control of IT, such as a cloud storage service.|
-|Share files securely by email|√ When a file is shared by email ([share protected](https://technet.microsoft.com/library/dn574735%28v=ws.10%29.aspx)), the file is protected as an attachment to an email message, with instructions how to open the protected attachment. The email text is not encrypted, so the recipient can always read these instructions. However, because the attached document is protected, only authorized users will be able to open it, even if the email or document is forwarded to other people.|
-|Auditing and monitoring|√ You can [audit and monitor usage](https://technet.microsoft.com/library/dn529121.aspx) of your protected files, even after these files leave your organization’s boundaries.<br /><br />For example, you work for Contoso, Ltd. You are working on a joint project with 3 people from Fabrikam, Inc. You email these 3 people a document that you protect and restrict to read-only. Azure RMS auditing can provide the following information:<br /><br />Whether the people you specified in Fabrikam opened the document, and when.<br /><br />Whether other people that you didn’t specify attempted (and failed) to open the document—perhaps because it was forwarded or saved to a shared location that others could access.<br /><br />Whether any of the specified people tried (and failed) to print or change the document.|
-|Support for all commonly used devices, not just Windows computers|√ [Supported devices](https://technet.microsoft.com/library/dn655136.aspx) include:<br /><br />Windows computers and phones<br /><br />Mac computers<br /><br />iOS tablets and phones<br /><br />Android tablets and phones|
-|Support for business-to-business collaboration|√ Because Azure RMS is a cloud service, there’s no need to explicitly configure trusts with other organizations before you can share protected content with them. If they already have an Office 365 or an Azure AD directory, collaboration across organizations is automatically supported. If they do not, users can sign up for the free [RMS for individuals](https://technet.microsoft.com/library/dn592127.aspx) subscription.|
-|Support for on-premises services, as well as Office 365|√  In addition to working [seamlessly with Office 365](https://technet.microsoft.com/library/jj585004.aspx), you can also use Azure RMS with the following on-premises services when you deploy the [RMS connector](https://technet.microsoft.com/library/dn375964.aspx):<br /><br />Exchange Server<br /><br />SharePoint Server<br /><br />Windows Server running File Classification Infrastructure|
-|Easy activation|√ [Activating the Rights Management service](https://technet.microsoft.com/library/jj658941.aspx) for users requires just a couple of clicks in the Azure classic portal.|
-|Ability to scale across your organization, as needed|√ Because Azure RMS runs as a cloud service with the Azure elasticity to scale up and out, you don’t have to provision or deploy additional on-premises servers.|
-|Ability to create simple and flexible policies|√ [Customized rights policy templates](https://technet.microsoft.com/library/dn642472.aspx) provide a quick and easy solution for administrators to apply policies, and for users to apply the correct level of protection for each document and restrict access to people inside your organization.<br /><br />For example, for a company-wide strategy paper to be shared with all employees, you could apply a read-only policy to all internal employees. Then, for a more sensitive document, such as a financial report, you could restrict access to executives only.|
-|Broad application support|√ Azure RMS has tight integration with Microsoft Office applications and services, and extends support for other applications by using the RMS sharing application.<br /><br />√ The   [Microsoft Rights Management SDK](https://msdn.microsoft.com/library/hh552972%28v=vs.85%29.aspx) provides your internal developers and software vendors with APIs to write custom applications that support Azure RMS.<br /><br />For more information, see [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md).|
-|IT must maintain control of data|√ Organizations can choose to manage their own tenant key and use the “[Bring Your Own Key](https://technet.microsoft.com/library/dn440580.aspx)” (BYOK) solution and store their tenant key in Hardware Security Modules (HSMs).<br /><br />√ Support for auditing and [usage logging](https://technet.microsoft.com/library/dn529121.aspx) so that you can analyze for business insights, monitor for abuse, and (if you have an information leak) perform forensic analysis.<br /><br />√ Delegated access by using the [super user feature](https://technet.microsoft.com/library/mt147272.aspx) ensures that IT can always access protected content, even if a document was protected by an employee who then leaves the organization. In comparison, peer-to-peer encryption solutions risk losing access to company data.<br /><br />√ Synchronize [just the directory attributes that Azure RMS needs](https://azure.microsoft.com/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) to support a common identity for your on-premises Active Directory accounts, by using a [directory synchronization tool](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-tools-comparison/), such as Azure AD Connect.<br /><br />√ Enable single-sign on without replicating passwords to the cloud, by using AD FS.<br /><br />√ Organizations always have the choice to stop using Azure RMS without losing access to content that was previously protected by Azure RMS. For information about decommissioning options, see [Decommissioning and Deactivating Azure Rights Management](../Topic/Decommissioning_and_Deactivating_Azure_Rights_Management.md). In addition, organizations who have deployed Active Directory Rights Management Services (AD RMS) can [migrate to Azure RMS](https://technet.microsoft.com/library/dn858447.aspx) without losing access to data that was previously protected by AD RMS.|
+|Požadavek nebo problém|Vyřešit Azure RMS|
+|--------------------------|---------------------|
+|Chránit všechny typy souborů|√ předchozí provádění Rights Management, pouze Office soubory by mohla být chráněny, pomocí nativní ochrany. Nyní [obecnou ochranu](https://technet.microsoft.com/library/dn574738%28v=ws.10%29.aspx) znamená, že jsou podporovány všechny typy souborů.|
+|Chránit soubory kdekoli|√, když je soubor uložen do umístění ([chránit na místě](https://technet.microsoft.com/library/dn574733%28v=ws.10%29.aspx)), ochrana stále se souborem, i v případě, že je zkopírován do úložiště, které není pod kontrolou IT, jako je například úložiště cloudové služby.|
+|Bezpečné sdílení souborů e-mailem|√ Při sdílení souboru e-mailem ([sdílet chráněné](https://technet.microsoft.com/library/dn574735%28v=ws.10%29.aspx)), soubor je chráněn jako přílohu e-mailovou zprávu s pokyny, jak otevřít chráněná příloha. Text e-mailu nejsou šifrována, takže tyto pokyny můžete vždy přečíst příjemce. Nicméně protože přiložený dokument je chráněn, pouze oprávněným uživatelům bude možné otevřít, i v případě, že e-mailu nebo dokumentu se předá ostatním uživatelům.|
+|Auditování a sledování|√ můžete [audit a sledování využití](https://technet.microsoft.com/library/dn529121.aspx) chráněných souborů, i když tyto soubory ponechat hranice vaší organizace.<br /><br />Například při práci pro společnosti Contoso, Ltd. Pracujete na společný projekt s 3 uživateli od společnosti Fabrikam, Inc. E-mail tito lidé 3 dokument, který chránit a omezit jen pro čtení. Auditování Azure RMS, můžete zadat následující informace:<br /><br />-   Zda osoby, které jste zadali v Fabrikam otevřít dokument a kdy.<br />-   Zda jiných osob, které jste nezadali (se neúspěšně pokusil) Chcete-li otevřít dokument – například protože byla předána nebo uložit do sdíleného umístění, která by mohla přístup ostatním uživatelům.<br />-   Zda a kterákoli z konkrétní osoby se pokusil (se nezdařilo) chcete vytisknout nebo změna dokumentu.|
+|Podpora pro všechny běžně používané zařízení, nikoli pouze počítače se systémem Windows|√ [podporovaná zařízení](https://technet.microsoft.com/library/dn655136.aspx) zahrnují:<br /><br />-   Počítače se systémem Windows a telefony<br />-   Počítače se systémem Mac<br />-   iOS tablety a telefony<br />-   Android tablety a telefony|
+|Podpora pro podnikové obchodní spolupráci|√ je Cloudová služba, protože Azure RMS, není nutné explicitně nakonfigurovat vztahy důvěryhodnosti s dalšími organizacemi, předtím, než se chráněný obsah můžete sdílet s nimi. Pokud již máte Office 365 nebo adresáři služby Azure AD, je automaticky podporováno spolupráci mezi organizacemi. Pokud tomu tak není, uživatelé můžete zaregistrovat bezplatnou [RMS pro jednotlivce](https://technet.microsoft.com/library/dn592127.aspx) odběru.|
+|Podpora pro místní služby a také služeb Office 365|√ Kromě pracovní [bez problémů s Office 365](https://technet.microsoft.com/library/jj585004.aspx), můžete použít také Azure RMS s následujícími službami místní při nasazení [RMS konektor](https://technet.microsoft.com/library/dn375964.aspx):<br /><br />-   Exchange Server<br />-   SharePoint Server<br />-   Windows Server spuštěn soubor klasifikace infrastruktury|
+|Snadné aktivace|√ [aktivaci služby Rights Management](https://technet.microsoft.com/library/jj658941.aspx) pro uživatele, vyžaduje několika kliknutími klasické portálu Azure.|
+|Schopnost škálování v organizaci, podle potřeby|√ Protože Azure RMS spuštěn jako cloudové služby s Azure pružnost škálovat nahoru a out, nemusíte poskytovat nebo nasadit další místní servery.|
+|Schopnost vytvářet jednoduché a flexibilní zásady|√ [přizpůsobené šablony zásad práv](https://technet.microsoft.com/library/dn642472.aspx) poskytují rychlý a snadný řešení pro správce uplatnit zásady a uživatelům správnou úroveň ochrany pro každý dokument použít a omezit přístup lidé ve vaší organizaci.<br /><br />Například pro celopodnikové strategickém dokumentu sdílet s všechny zaměstnance, můžete použít jen pro čtení zásad pro všechny zaměstnance interní. Poté citlivější dokumentu, jako je například finanční sestavy můžete omezit přístup pouze vedoucím pracovníkům.|
+|Podpora široké aplikace|√ Azure RMS obsahuje těsné integrace s aplikací Microsoft Office a službami a rozšiřuje podporu jiných aplikací pomocí aplikace sdílení RMS.<br /><br />√   [Microsoft Rights Management SDK](https://msdn.microsoft.com/library/hh552972%28v=vs.85%29.aspx) interními vývojáři a dodavatelé softwaru poskytuje rozhraní API k zápisu vlastních aplikací, které podporují službu Azure RMS.<br /><br />Další informace naleznete v tématu [Jak aplikace podporují Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md).|
+|IT musí zachovat kontrolu nad daty|√ Organizace můžete zvolit ke správě svých vlastních klíč klienta a "[přineste si vlastní klíč](https://technet.microsoft.com/library/dn440580.aspx)" řešení (BYOK) a uložte svůj klíč klienta hardwarové zabezpečení moduly (moduly hardwarového zabezpečení).<br /><br />√ Podporu pro auditování a [protokolování využití](https://technet.microsoft.com/library/dn529121.aspx) tak, aby můžete analyzovat pro obchodní statistiky, sledování, urážlivý příspěvek, a (Pokud jste nevracení informace) provádět forenzní analýzy.<br /><br />√ delegovaní přístupu pomocí [funkci superuživatele](https://technet.microsoft.com/library/mt147272.aspx) zajistí, který může IT vždy přístup chráněný obsah, i v případě, že dokument byl chráněn zaměstnanci, který poté ponechá organizace. Porovnání, peer-to-peer šifrování řešení riziko neúspěšná přístupu k datům společnosti.<br /><br />√ Synchronizovat [pouze atributy adresáře, které potřebuje Azure RMS](https://azure.microsoft.com/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/) pro podporu společnou identitu pro místní účty služby Active Directory, pomocí [Nástroj pro synchronizaci adresáře](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-tools-comparison/), jako je například Azure AD Connect.<br /><br />√ Povolit single sign na bez replikace hesel v cloudu pomocí služby AD FS.<br /><br />√ Organizace vždy mají možnost zastavit, aniž byste ztratili přístup k obsahu, který byl dříve chráněné službou Azure RMS pomocí Azure RMS. Informace o vyřazování z provozu možnosti naleznete v tématu [Vyřazování z provozu a deaktivace Azure Rights Management](../Topic/Decommissioning_and_Deactivating_Azure_Rights_Management.md). Kromě toho můžete organizacemi, které jste nasadili Active Directory Rights Management Services (AD RMS) [migrovat do Azure RMS](https://technet.microsoft.com/library/dn858447.aspx) bez ztráty přístupu k datům byl dříve chráněné serverem služby AD RMS.|
 > [!TIP]
-> If you are familiar with the on-premises version of Rights Management, Active Directory Rights Management Services (AD RMS), you might be interested in the comparison table from [Comparing Azure Rights Management and AD RMS](../Topic/Comparing_Azure_Rights_Management_and_AD_RMS.md).
+> Pokud jste obeznámeni s místní verzí Rights Management, Active Directory Rights Management Services (AD RMS), může být zájem srovnávací tabulka z [Porovnání Azure Rights Management a služby AD RMS](../Topic/Comparing_Azure_Rights_Management_and_AD_RMS.md).
 
-### <a name="BKMK_RMScompliance"></a>Security, compliance, and regulatory requirements
-Azure RMS supports the following security, compliance and regulatory requirements:
+### <a name="BKMK_RMScompliance"></a>Zabezpečení, dodržování předpisů a právních požadavků
+Azure RMS podporuje následující zabezpečení, dodržování předpisů a právních požadavků:
 
-√ Use of industry-standard cryptography and supports FIPS 140-2. For more information, see the [Cryptographic controls used by Azure RMS: Algorithms and key lengths](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScrytographics) section in this topic.
+√ Použití standardní kryptografie a podporuje FIPS 140-2. Další informace naleznete v tématu [Ovládání kryptografie používá Azure RMS: Algoritmy a délky klíčů](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScrytographics) v tomto tématu.
 
-√ Support for Thales Hardware Security Modules (HSMs) to store your tenant key in Microsoft Azure data centers. Azure RMS uses separate security worlds for its data centers in North America, EMEA (Europe, Middle East and Africa), and Asia, so your keys can be used only in your region.
+√ centra podpory pro společnosti Thales hardwaru zabezpečení moduly moduly (hardwarového zabezpečení) k uložení váš uživatelský klíč pro klienta v Microsoft Azure data. Azure RMS používá samostatné zabezpečení světů pro jeho datového centra v Severní Americe, EMEA (Evropa, Střední východ a Afrika) a Asie, takže klíče lze použít pouze ve vaší oblasti.
 
-√ Certified for the following:
+√ Certifikované pro následující:
 
--   ISO/IEC 27001:2013 (includes [ISO/IEC 27018](http://azure.microsoft.com/blog/2015/02/16/azure-first-cloud-computing-platform-to-conform-to-isoiec-27018-only-international-set-of-privacy-controls-in-the-cloud/))
+-   ISO/IEC 27001:2013 (zahrnuje [ISO/IEC 27018](http://azure.microsoft.com/blog/2015/02/16/azure-first-cloud-computing-platform-to-conform-to-isoiec-27018-only-international-set-of-privacy-controls-in-the-cloud/))
 
--   SOC 2 SSAE 16/ISAE 3402 attestations
+-   Osvědčení SOC 2 SSAE 16/ISAE 3402
 
--   HIPAA BAA
+-   HIPAA BÁ
 
--   EU Model Clause
+-   Klauzule EU modelu
 
--   FedRAMP as part of Azure Active Directory in Office 365 certification, issued FedRAMP Agency Authority to Operate by HHS
+-   FedRAMP v rámci Azure Active Directory v Office 365 certifikační vydané úřadu agentury FedRAMP k provozu podle HHS
 
--   PCI DSS Level 1
+-   PCI DSS úroveň 1
 
-For more information about these external certifications, see the [Azure Trust Center](http://azure.microsoft.com/support/trust-center/compliance/).
+Další informace o těchto externí certifikace naleznete v tématu [Centrum zabezpečení Azure](http://azure.microsoft.com/support/trust-center/compliance/).
 
-## <a name="BKMK_RMSpictures"></a>Azure RMS in action: What administrators and users see
-The pictures in this section show some typical examples of how administrators and users see and can use Azure RMS to help protect sensitive or confidential information.
+## <a name="BKMK_RMSpictures"></a>Azure RMS v akci: Co správci a uživatelé v tématu
+Obrázky v této části ukazují některé typické příklady jak správci a uživatelé zobrazit a můžete chránit citlivá nebo důvěrná informace pomocí Azure RMS.
 
 > [!NOTE]
-> In all these examples where Azure RMS protects data, the content owner continues to have full access to the data (file or email), even if the applied protection grants permissions to a group that the owner wasn’t a member of, or even if the applied protection includes an expiration date.
+> Ve všech těchto příkladech kde Azure RMS chrání data vlastníka obsahu nadále úplný přístup k datům (soubor nebo e-mailu), i když použitých ochrany uděluje oprávnění ke skupině, která nebyla vlastník členem nebo i v případě použitých ochrany obsahuje datum vypršení platnosti.
 > 
-> Similarly, IT can always access the protected data without restrictions, by using the super user feature of Rights Management that grants delegated access to authorized users or services that you specify. In addition, IT can track and monitor usage for data that has been protected—for example, who is accessing the data and when.
+> Podobně IT může vždy přístup k chráněným datům bez omezení, pomocí funkci superuživatele Rights Management, který uděluje Delegovaný přístup oprávněným uživatelům nebo služby, které zadáte. Kromě toho může IT sledování a monitorování využití dat, který je chráněný – příklad, který je při přístupu k datům a kdy.
 
-For other screenshots and videos that show RMS in action, check the [Microsoft Rights Management services portal](http://www.microsoft.com/rms), the [Microsoft Rights Management (RMS) Team Blog](http://blogs.technet.com/b/rms), and [curated content for Azure RMS on the Curah! site](http://curah.microsoft.com/Search?query="Azure%20RMS").
+Pro další snímky obrazovky a videa, které ukazují RMS ve akce zkontrolujte [portálu služeb Microsoft Rights Management](http://www.microsoft.com/rms),  [Blog týmu Microsoft Rights Management (RMS)](http://blogs.technet.com/b/rms), a [spravovaných obsah pro Azure RMS na Curah! lokality](http://curah.microsoft.com/Search?query="Azure%20RMS").
 
-### <a name="BKMK_Example_ManagementPortal"></a>Activating and configuring Rights Management
-Although you can use Windows PowerShell to activate and configure Azure RMS, it’s easiest from the management portal. As soon as the service is activated, you have two default templates that administrators and users can select to quickly and easily apply information protection to files. But you can also create your own custom templates for additional options and settings.
-
-|||
-|-|-|
-|![](../Image/AzRMS_StoryboardActivate_small1.png)<br /><br />[Bigger picture](http://technet.microsoft.com/98d53a12-3b19-4622-bb1e-75ef56df5438) (by default, in same browser window)|You can use either the Office 365 admin center (first picture) or the Azure classic portal (second picture) to activate RMS.<br /><br />Just one click to activate and another click to confirm, then information protection is enabled for administrators and users in your organization.|
-|![](../Image/AzRMS_TemplatesPortal_small.png)<br /><br />[Bigger picture](http://technet.microsoft.com/596e4fec-124c-41b1-8efd-63d5179193fb) (by default, in same browser window)|After activation, two rights policy templates are automatically available for your organization. One template is for read-only (**Confidential View Only** is included in the name), the other for read and modify access (**Confidential**).<br /><br />When these templates are applied to files or emails, they restrict access to users in your organization. This is a very quick and easy way to help prevent your company data leaking to people outside your organization.<br /><br />Tip: You can easily recognize these default templates, because they are automatically prefixed by your organization name. In our example, **VanArsdel, Ltd**.<br /><br />If you do not want users to see these templates or if you want to create your own templates, you can do this from the Azure classic portal. As this picture shows, a wizard takes you through the custom template creation process.|
-|![](../Image/AzRMS_TemplatesSettings3.png)<br /><br />[Bigger picture](http://technet.microsoft.com/f5df80e5-efc9-4c0f-91be-060225977356) (by default, in same browser window)|Offline access, expiration settings, and whether to publish the template immediately (make it visible in applications that support Rights Management) are some of the configuration settings available if you decide to create your own templates.|
-|![](../Image/AzRMS_TemplatesPortal_ExplorerWord3.png)<br /><br />[Bigger picture](http://technet.microsoft.com/597a3402-fd5a-4bcf-b5e6-5c983dbde697) (by default, in same browser window)|As a result of publishing these templates, users can now select them in applications such as  File Explorer and Microsoft Word:<br /><br />A user could choose the default template, **VanArsdel, Ltd – Confidential**. Then, only employees from the VanArsdel organization can open and use this document, even if it’s later emailed to somebody outside the organization or saved to a public location.<br /><br />A user could choose the custom template that the administrator created, **Sales and Marketing – Read and Print Only**. Then, not only is the file protected from people outside the organization, but it’s also restricted to employees from the Sales and Marketing department. Further, these employees do not have full rights to the document, only read and print. For example, they cannot modify it or copy from it.|
-For more information, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md) and [Configuring Custom Templates for Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md).
-
-To help users protect important company files, see [Helping Users to Protect Files by Using Azure Rights Management](../Topic/Helping_Users_to_Protect_Files_by_Using_Azure_Rights_Management.md).
-
-Next, see some examples of how administrators can apply the templates to automatically configure information protection for files and emails.
-
-### <a name="BKMK_Example_FCI"></a>Automatically protecting files on file servers running Windows Server and File Classification Infrastructure
-This example shows how you can use Azure RMS to automatically protect files on file servers that run at least Windows Server 2012 and are configured to use File Classification Infrastructure.
-
-There are many ways to apply classification values to files. For example, you can inspect the contents of files and accordingly apply built-in classifications such as Confidentiality and Personally Identifiable Information. However, in this example, an administrator creates a custom classification of **Marketing** that is automatically applied to all user documents that are saved in the **Marketing Promotions** folder. Although this folder is protected with NTFS permissions that restricts access to members of the Marketing group, the administrator knows that these permissions can be lost if somebody from that group moves or emails the files. Then, the information in the files could be accessed by unauthorized users.
+### <a name="BKMK_Example_ManagementPortal"></a>Aktivaci a konfiguraci Rights Management
+I když používáte prostředí Windows PowerShell pro aktivaci a konfigurovat Azure RMS je nejjednodušší z portálu pro správu. Jakmile je aktivována služba, máte dvě výchozí šablony umožňující správcům a uživatelé mohou vybrat rychle a snadno použít ochrana informací do souborů. Ale můžete také vytvořit vlastní šablony pro další možnosti a nastavení.
 
 |||
 |-|-|
-|![](../Image/AzRMS_FCI_ConnectorSmall.png)<br /><br />[Bigger picture](http://technet.microsoft.com/cf18c56b-c301-4640-8d9e-9e677e494091) (by default, in same browser window)|The administrators installs and configures the Rights Management (RMS) connector, which acts as a relay between on-premises servers and Azure RMS.|
-|![](../Image/AzRMS_ExampleFCI_ConfigurationSmall.png)<br /><br />[Bigger picture](http://technet.microsoft.com/ba3e247d-ea5e-4009-8eac-74f70270ece0) (by default, in same browser window)|On the file server, the administrator configures the classification rules and tasks so that all user files in the **Marketing Promotions** folder are automatically classified as **Marketing** and protected with RMS encryption.<br /><br />She selects the custom RMS template that was created in our first example, which restricts access to members of the Sales and Marketing departments: **Sales and Marketing – Read and Print Only**.<br /><br />As a result, all documents in that folder are automatically configured with the Marketing classification and protected by the Sales and Marketing RMS template.|
-|![](../Image/AzRMS_FCI_EmailSmall.png)<br /><br />[Bigger picture](http://technet.microsoft.com/ad666594-68df-4289-835a-235b2af9bf4b) (by default, in same browser window)|How RMS helps to prevent data leaking to people who should not have access to sensitive or confidential information:<br /><br />Janet, from Marketing, emails a confidential report from the Marketing Promotions folder. This report contains new product features and advertising plans and is requested by a co-worker who is currently traveling on business. However, Janet mistakenly emails it to the wrong person—she didn’t notice that she accidentally selected a recipient with a similar name, in another company.<br /><br />The recipient cannot read the confidential report because he is not a member of the Sales and Marketing group.|
-For more information, see [Deploying the Azure Rights Management Connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
+|![](../Image/AzRMS_StoryboardActivate_small1.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/98d53a12-3b19-4622-bb1e-75ef56df5438) (ve výchozím nastavení ve stejném okně prohlížeče)|Můžete použít buď centra pro správu služeb Office 365 (první obrázek) nebo na portálu Azure klasické (druhý obrázek) k aktivaci serveru RMS.<br /><br />Jedním kliknutím aktivovat a jiné klikněte na tlačítko pro potvrzení, pak je povolena ochrana informace pro správce a uživatele ve vaší organizaci.|
+|![](../Image/AzRMS_TemplatesPortal_small.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/596e4fec-124c-41b1-8efd-63d5179193fb) (ve výchozím nastavení ve stejném okně prohlížeče)|Po aktivaci jsou automaticky dostupné pro vaši organizaci dvou šablon zásad práv. Je jedna šablona pro jen pro čtení (**pouze důvěrné zobrazení** je součástí názvu), druhý pro čtení a měnit přístup k datům (**důvěrné**).<br /><br />Tyto šablony jsou použity na soubory nebo e-mailů, omezují přístup uživatelům ve vaší organizaci. Toto je velmi rychlý a snadný způsob, jak vám mohou pomoci zabránit firemních dat vracena lidem mimo vaši organizaci. **Tip:** Snadno poznáte tyto výchozí šablony, protože jsou automaticky předchází název vaší organizace. V našem příkladu **VanArsdel, Ltd**.<br />Pokud nechcete, aby uživatelé mohli zobrazit tyto šablony, nebo pokud chcete vytvořit vlastní šablony, můžete to provést z portálu Azure klasické. Tento obrázek ukazuje, zobrazí Průvodce vás provede procesem vytvoření vlastní šablony.|
+|![](../Image/AzRMS_TemplatesSettings3.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/f5df80e5-efc9-4c0f-91be-060225977356) (ve výchozím nastavení ve stejném okně prohlížeče)|Přístup v režimu offline, nastavení vypršení platnosti a zda k publikování šablony okamžitě (zviditelnit v aplikacích, které podporují správu přístupových práv) jsou některá nastavení konfigurace dostupné, pokud se rozhodnete vytvořit vlastní šablony.|
+|![](../Image/AzRMS_TemplatesPortal_ExplorerWord3.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/597a3402-fd5a-4bcf-b5e6-5c983dbde697) (ve výchozím nastavení ve stejném okně prohlížeče)|V důsledku publikování těchto šablon, uživatelé mohou nyní vybrat je aplikace, například Průzkumníka souborů a aplikace Microsoft Word:<br /><br />-   Uživatel může zvolit výchozí šablonu, **VanArsdel, Ltd – důvěrné**. Pak pouze zaměstnanci z organizace marketingový otevírat a používat tento dokument i v případě, že později e-mailem někomu mimo organizaci nebo uložit do veřejné umístění.<br />-   Uživatel může zvolit vlastní šablonu, kterou správce vytvořili, **prodeje a marketingu – pro čtení a tisk pouze**. Nejen je soubor chráněný od osob mimo organizaci ale ji je také omezen na zaměstnanci z prodeje a marketingu oddělení. Dále tyto zaměstnanci nemají úplná práva k dokumentu, pouze ke čtení a tisku. Například nelze jej upravit nebo zkopírovat z něj.|
+Další informace naleznete v tématu [Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md) a [Konfigurace vlastních šablon pro Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md).
 
-### <a name="BKMK_Example_DLP"></a>Automatically protecting emails with Exchange Online and data loss prevention policies
-The previous example showed how you could automatically protect files that contain sensitive or confidential information, but what if the information is not in a file, but in an email message? This is where Exchange Online data loss prevention (DLP) policies comes in, either prompting users to apply information protection (by using Policy Tips) or automatically applying it for them (by using transport rules).
+Chcete-li uživatelům pomáhá chránit důležité společnosti soubory, naleznete v části [Pomáhá uživatelům k ochraně souborů pomocí Azure Rights Management](../Topic/Helping_Users_to_Protect_Files_by_Using_Azure_Rights_Management.md).
 
-In this example, the administrator configures a policy to help keep the organization in compliance with US regulations for protecting personally identifiable information data, but rules can also be configured for other compliance regulations, or custom rules that you define.
+Dále zde naleznete několik příkladů, jak mohou správci použít šablony pro automatickou konfiguraci ochrany informace pro soubory a e-mailů.
 
-|||
-|-|-|
-|![](../Image/AzRMS_DLPExample1.png)<br /><br />[Bigger picture](http://technet.microsoft.com/58461319-3981-4b7f-a195-956a1778e907) (by default, in same browser window)|The Exchange template named **U.S. Personally Identifiable Information (PII) Data** is used by the administrator to create and configure a new DLP policy. This template looks for information such as social security numbers and driver license numbers in email messages.<br /><br />The rules are configured so that email messages that contain this information and that are sent outside the organization automatically have rights protection applied by using an RMS template that restricts access to company employees only.<br /><br />Here, the rule is configured to use one of the default templates, **VanArsdel, Ltd – Confidential**, from our first example. But you can also see how the choice of templates includes any custom templates you’ve created, and a **No Do Forward** option that is specific to Exchange.|
-|![](../Image/AzRMS_DLPUnprotectedEmail_small.png)<br /><br />[Bigger picture](http://technet.microsoft.com/bfb0762d-06fb-42e4-beff-eb391f4bedf0) (by default, in same browser window)|The hiring manager writes an email message that contains the social security number of a recently hired employee. He sends this email message to Sherrie in the Human Resources department.|
-|![](../Image/AzRMS_DLPProtectedEmail_small.png)<br /><br />[Bigger picture](http://technet.microsoft.com/59e3b68e-4bed-4962-bb1e-e82d82f8000a) (by default, in same browser window)|If this email message is sent or forwarded to somebody outside the organization, the DLP rule automatically applies rights protection.<br /><br />The email is encrypted when it leaves the organization’s infrastructure, so that the social security number in the email message cannot be read while in transit, or in the recipient’s inbox. The recipient will not be able to read the message unless he or she is a VanArsdel employee.|
-For more information, see the following sections:
+### <a name="BKMK_Example_FCI"></a>Automaticky chrání soubory na souborových serverech se systémem Windows Server a souboru klasifikace infrastruktury
+Tento příklad ukazuje, jak lze pomocí Azure RMS automaticky chránit soubory na souborových serverech se systémem alespoň systém Windows Server 2012 a jsou nakonfigurovány na použití infrastruktury klasifikace souboru.
 
--   [Exchange Online and Exchange Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_ExchangeIntro) in the [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) topic.
-
--   [Exchange Online: IRM Configuration](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_ExchangeOnline) in the [Configuring Applications for Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md) topic.
-
-### <a name="BKMK_Example_SharePoint"></a>Automatically protecting files with SharePoint Online and protected libraries
-This shows how you can easily protect documents when you use SharePoint Online and protected libraries.
-
-In this example, the SharePoint administrator for Contoso has created a library for each department that they use to centrally store and check out documents for editing and version control. For example, there is a library for Sales, one for Marketing, one for Human Resources, and so on. When a new document is uploaded or created in one of these protected libraries, that document inherits the protection of the library (no need to select a rights policy template) and that document is automatically protected and remains protected, even if it’s moved outside the SharePoint library.
+Klasifikace hodnoty použít pro soubory mnoha způsoby. Můžete například zkontrolovat obsah souborů a odpovídajícím způsobem použít předdefinované klasifikace například utajení a určitelné osobní údaje. Však v tomto příkladu správce vytvoří vlastní zařazení **Marketing** je automaticky použity na všechny dokumenty uživatele, které jsou uloženy v **Marketing povýšení** složky. I když tato složka je chráněn pomocí oprávnění NTFS, která omezuje přístup k členům skupiny marketingu, správce ví, že tato oprávnění může dojít ke ztrátě někdo z dané skupiny přesune nebo e-maily soubory. Informace v souborech pak mohou mít přístup neoprávnění uživatelé.
 
 |||
 |-|-|
-|![](../Image/AzRMS_StoryboardSPO_small1.png)<br /><br />[Bigger picture](http://technet.microsoft.com/2fc90989-9289-4431-9e6a-07740b7f6e5a) (by default, in same browser window)|The administrator enables Information Rights Management for the SharePoint site.|
-|![](../Image/AzRMS_StoryboardSPO_small2.png)<br /><br />[Bigger picture](http://technet.microsoft.com/a18f2e99-5ac4-4103-a88c-527846374091) (by default, in same browser window)|Then, she enables Rights Management for a library. Although there are additional options, this simple setting is often all that’s needed.<br /><br />When documents are now downloaded from this library, they  are automatically protected by Rights Management, inheriting the protection that’s configured for the library.|
-|![](../Image/AzRMS_StoryboardSPO_small3.png)<br /><br />[Bigger picture](http://technet.microsoft.com/0ebd6806-0190-441e-84db-72ac4b97e4a2) (by default, in same browser window)|When somebody from the sales department checks out this sales report from the library, they can clearly see from the information banner at the top that it’s a protected document with restricted access.<br /><br />The document remains protected even if the user renames it, saves it to another location, or shares it by email. No matter what the file is named, where it’s stored, or whether it’s shared by email, only members of the sales department can read it.|
-For more information, see the following sections:
+|![](../Image/AzRMS_FCI_ConnectorSmall.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/cf18c56b-c301-4640-8d9e-9e677e494091) (ve výchozím nastavení ve stejném okně prohlížeče)|Správce nainstaluje a nakonfiguruje konektor Rights Management (RMS), který funguje jako přenosový mezi místními servery a Azure RMS.|
+|![](../Image/AzRMS_ExampleFCI_ConfigurationSmall.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/ba3e247d-ea5e-4009-8eac-74f70270ece0) (ve výchozím nastavení ve stejném okně prohlížeče)|Na souborovém serveru, správce nakonfiguruje pravidla klasifikace a úkoly tak, aby všechny soubory uživatele v **Marketing povýšení** složky se automaticky klasifikují jako **Marketing** a chránit pomocí šifrování služby RMS.<br /><br />Vybere vlastní šablonu služby RMS, který byl vytvořen v našem příkladu první, což omezuje přístup k členům prodeje a marketingové oddělení: **Prodeje a marketingu – čtení a vytisknout pouze**.<br /><br />V důsledku toho jsou všechny dokumenty v této složce automaticky nakonfigurován s klasifikací marketingu a chráněné prodeje a marketingu RMS šablony.|
+|![](../Image/AzRMS_FCI_EmailSmall.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/ad666594-68df-4289-835a-235b2af9bf4b) (ve výchozím nastavení ve stejném okně prohlížeče)|Jak RMS pomáhá zabránit vracena uživatelům, kteří by neměly mít přístup k informacím citlivá nebo důvěrná data:<br /><br />-   Janet, z uvedení na trh, e-maily důvěrné sestavy ze složky Marketing povýšení. Tato sestava obsahuje nové funkce produktu a plány reklamy a požádá o společné pracovník, který je aktuálně cestování na podnikání. Však Janet omylem e-maily ji nesprávné osobě – Jana nebyla Všimněte si Jana náhodnému výběru příjemce s podobným názvem v jiné společnosti.<br />    Příjemce nelze přečíst důvěrné sestavy, protože není členem prodeje a marketingu skupiny.|
+Další informace naleznete v tématu [Nasazení konektoru Azure Rights Management](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
 
--   [SharePoint Online and SharePoint Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_SharePointIntro) in the [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) topic.
+### <a name="BKMK_Example_DLP"></a>Automaticky chrání e-maily s Exchange Online a zásady předcházení ztrátě dat.
+Předchozí příklad ukázala, jak může automaticky chránit soubory obsahující citlivé nebo důvěrné informace, ale co když je informace není v souboru, ale v e-mailovou zprávu? To přichází Exchange Online zásady prevence (DLP) ke ztrátě dat, výzvy uživatelům aplikovat ochrana informací (pomocí zásad tipy) nebo automatické použití pro ně (pomocí pravidel transport).
 
--   [SharePoint Online and OneDrive for Business: IRM Configuration](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_SharePointOnline) in the [Configuring Applications for Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md) topic.
-
-### <a name="BKMK_Example_SharingApp"></a>Users safely share attachments with mobile users
-The previous examples showed how administrators can automatically apply information protection to sensitive and confidential data. But there will be some occasions when users might need to apply this protection themselves. For example, they are collaborating with partners in another organization, they need custom permissions or settings that are not defined in templates, for or ad-hoc situations that are not covered by the previous examples. In these situations, users can apply the RMS templates themselves or configure custom permissions.
-
-This example shows how users can easily share a document with somebody they’re collaborating with from another company, but still be able to protect the document and be confident that the recipient can read it, even from a popular mobile device. This scenario uses the Rights Management sharing application, which you can automatically deploy to Windows computers in your organization. Or, users can install it themselves.
-
-In this example, Alice from Contoso, emails a confidential Word document that she sends to Bob, at Fabrikam. He reads the document on his iPad, but he could just as easily read it on an iPhone, an Android tablet or phone, a Mac computer, or a Windows phone or computer.
+V tomto příkladu správce nakonfiguruje zásady k udržení organizace v souladu s definicí nám předpisy pro ochranu dat určitelné osobní údaje, ale pravidla lze také nakonfigurovat pro jiné dodržování předpisů nebo vlastní pravidla, které definujete.
 
 |||
 |-|-|
-|![](../Image/AzRMS_StoryboardEmail_small1.png)<br /><br />[Bigger picture](http://technet.microsoft.com/feeef78d-3c2e-432b-817d-d06f784be226) (by default, in same browser window)|From her Windows PC, Alice creates a standard email message and attaches a document.<br /><br />She clicks **Share Protected** on the ribbon, which loads the **share protected** dialog box from the RMS sharing application.<br /><br />Alice wants to restrict Bob to viewing and editing the document, and doesn’t want him to copy or print it, so she selects **REVIEWER – View and Edit**. She also wants to be emailed when somebody tries to open the document, and have the ability to revoke the document later if necessary and know that revocation will take effect immediately.|
-|![](../Image/AzRMS_StoryboardEmail_small2.png)<br /><br />[Bigger picture](http://technet.microsoft.com/e748fd78-8bba-4168-96cf-f96def078283) (by default, in same browser window)|Bob sees the email on his iPad.<br /><br />In addition to Alice’s message and attachment, there are instructions that he follows to sign up and install the RMS sharing app on his iPad.|
-|![](../Image/AzRMS_StoryboardEmail_small3.png)<br /><br />[Bigger picture](http://technet.microsoft.com/7dba5ff9-a61d-4a83-8adc-d6ffb0e85df6) (by default, in same browser window)|Bob can now open the attachment. He is first asked to sign in to confirm that he is the intended recipient.<br /><br />When Bob views the document, he also sees the restricted access information that tells him he can view and edit the document, but not copy or print.|
-|![](../Image/AzRMS_StoryboardEmail_small4.png)<br /><br />[Bigger picture](http://technet.microsoft.com/9f642a2e-58ad-44ab-9f81-f890d15380f9) (by default, in same browser window)|Alice receives an email message that tells her Bob successfully opened the document that she sent, and when he accessed the document.<br /><br />If Bob forwards his email with the attachment, or saves it where others can access it, or it is intercepted on the network, other people will not be able to read the document.|
-For more information, see [Protect a file that you share by email](https://technet.microsoft.com/library/dn574735.aspx) and [View and use files that have been protected](https://technet.microsoft.com/library/dn574741.aspx) from the [Rights Management sharing application user guide](https://technet.microsoft.com/library/dn339006.aspx).
+|![](../Image/AzRMS_DLPExample1.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/58461319-3981-4b7f-a195-956a1778e907) (ve výchozím nastavení ve stejném okně prohlížeče)|Šablony Exchange s názvem **USA Osobně identifikovatelné informace Odesílaném dat** slouží k vytvoření a konfiguraci nových zásad DLP správcem. Tato šablona hledá informace, jako jsou rodná čísla a čísla řidičských v e-mailové zprávy.<br /><br />Pravidla jsou nakonfigurovány tak, že e-mailové zprávy, které obsahují tyto informace a jsou odeslány mimo organizaci automaticky ochrany práv pomocí RMS šablony, která omezuje přístup k pouze zaměstnanci společnosti použít.<br /><br />Zde, je pravidlo konfigurováno pomocí jednoho z výchozí šablony **VanArsdel, Ltd – důvěrné**, z našich první příklad. Ale můžete také zobrazit jak volba šablony obsahuje všechny vlastní šablony, které jste vytvořili a **č proveďte dopředu** možnost, která jsou specifická pro Exchange.|
+|![](../Image/AzRMS_DLPUnprotectedEmail_small.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/bfb0762d-06fb-42e4-beff-eb391f4bedf0) (ve výchozím nastavení ve stejném okně prohlížeče)|Náborové správce zapíše e-mailovou zprávu, která obsahuje číslo sociálního pojištění nedávno přijaté zaměstnance. Tato e-mailové zprávy zašle Sherrie v oddělení lidských zdrojů.|
+|![](../Image/AzRMS_DLPProtectedEmail_small.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/59e3b68e-4bed-4962-bb1e-e82d82f8000a) (ve výchozím nastavení ve stejném okně prohlížeče)|Pokud tato e-mailové zprávy odeslané nebo předávají někomu mimo organizaci, pravidlo DLP automaticky aplikuje ochrany práv.<br /><br />E-mailu, je zašifrována, když se dostane organizace infrastrukturu, tak, aby číslo sociálního pojištění v e-mailové zprávy nelze číst, zatímco při přenosu nebo v doručené poště příjemce. Příjemce nebude moci tuto zprávu přečíst, pokud je marketingový zaměstnance.|
+Další informace naleznete v následujících částech:
 
-In addition, the [Quick Start Tutorial for Azure Rights Management](../Topic/Quick_Start_Tutorial_for_Azure_Rights_Management.md) includes step-by-step instructions for this scenario.
+-   [Exchange Online a Exchange Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_ExchangeIntro) v [Jak aplikace podporují Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) tématu.
 
-Now you’ve seen some examples of what Azure RMS can do, you might be interested in how it does it. For technical information about how Azure RMS works, see the next section.
+-   [Exchange Online: Konfigurace IRM](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_ExchangeOnline) v [Konfigurace aplikací pro Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md) tématu.
 
-## <a name="BKMK_HowRMSworks"></a>How does Azure RMS work? Under the hood
-One important thing to understand about how Azure RMS works is that the Rights Management service (and Microsoft) do not see or store your data as part of the information protection process. Information that you protect is never sent to or stored in Azure unless you explicitly store it in Azure or use another cloud service that stores it in Azure. Azure RMS simply makes the data in a document unreadable to anyone other than authorized users and services:
+### <a name="BKMK_Example_SharePoint"></a>Automaticky Ochrana souborů pomocí služby SharePoint Online a chráněné knihovny
+Ukazuje, jak můžete snadno chránit dokumenty při používání služby SharePoint Online a chráněné knihovny.
 
--   The data is encrypted at the application level and includes a policy that defines the authorized use for that document.
+V tomto příkladu vytvořil správce služby SharePoint pro společnosti Contoso knihovnu pro každé oddělení, které používají centrálně ukládání a podívejte se na dokumenty pro úpravy a správou verzí. Je například knihovnu pro prodej, jeden pro Marketing, jeden pro lidské zdroje a tak dále. Když nový dokument je odeslán nebo vytvořit v jednom z těchto knihoven chráněný, tento dokument dědí ochrany knihovny (není potřeba vyberte šablonu zásad práv) a tento dokument je chráněn automaticky a i nadále chráněn, i když je přesunuta mimo knihovny služby SharePoint.
 
--   When a protected document is used by a legitimate user or it is processed by an authorized service, the data in the document is decrypted and the rights that are defined in the policy are enforced.
+|||
+|-|-|
+|![](../Image/AzRMS_StoryboardSPO_small1.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/2fc90989-9289-4431-9e6a-07740b7f6e5a) (ve výchozím nastavení ve stejném okně prohlížeče)|Správce umožňuje správu přístupových práv pro web služby SharePoint.|
+|![](../Image/AzRMS_StoryboardSPO_small2.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/a18f2e99-5ac4-4103-a88c-527846374091) (ve výchozím nastavení ve stejném okně prohlížeče)|Jana poté umožňuje Rights Management pro knihovnu. I když existují další možnosti, toto nastavení jednoduché je často všechny potřebné.<br /><br />Pokud dokumenty jsou nyní stáhnou z této knihovny, jsou automaticky chránit službou Rights Management, dědění ochrany, který je nakonfigurován pro knihovnu.|
+|![](../Image/AzRMS_StoryboardSPO_small3.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/0ebd6806-0190-441e-84db-72ac4b97e4a2) (ve výchozím nastavení ve stejném okně prohlížeče)|Když někdo z oddělení prodeje rezervuje tuto prodejní sestavu z knihovny jasně uvidí z informací hlavičky v horní je chráněný dokument s omezeným přístupem.<br /><br />Dokument i nadále chráněn i v případě, že uživatel přejmenuje ho, uloží jej do jiného umístění nebo sdílí e-mailem. Bez ohledu na to, co je soubor pojmenován, kde je uložen nebo zda je sdílena e-mailem pouze členové prodejního oddělení může číst.|
+Další informace naleznete v následujících částech:
 
-At a high level, you can see how this process works in the following picture. A document containing the secret formula is protected, and then successfully opened by an authorized user or service. The document is protected by a content key (the green key in this picture). It is unique for each document and is placed in the file header where it is protected by your RMS tenant root key (the red key in this picture). Your tenant key can be generated and managed by Microsoft, or you can generate and manage your own tenant key.
+-   [SharePoint Online a SharePoint Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_SharePointIntro) v [Jak aplikace podporují Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) tématu.
 
-Throughout the protection process when Azure RMS is encrypting and decrypting, authorizing, and enforcing restrictions, the secret formula is never sent to Azure.
+-   [SharePoint Online a Onedrivem pro společnost: Konfigurace IRM](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_SharePointOnline) v [Konfigurace aplikací pro Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md) tématu.
+
+### <a name="BKMK_Example_SharingApp"></a>Uživatelé bezpečně sdílet přílohy s mobilní uživatele
+V předchozích příkladech ukázala, jak správci mohou automaticky platí ochrana informací citlivých a důvěrných dat. Ale budou některé situace, kdy mohou uživatelé muset použít tato ochrana, sami. Například jsou spolupracovat s partnery v jiné organizaci, které potřebují vlastní oprávnění nebo nastavení, které nejsou definovány v šablonách pro nebo ad-hoc situací, které nejsou zahrnuty v předchozích příkladech. Uživatelé v těchto situacích můžete použít šablony služby RMS, samotné nebo konfigurovat vlastní oprávnění.
+
+Tento příklad ukazuje, jak mohou uživatelé snadno sdílet dokument s někým spolupracujeme s od jiné společnosti, ale stále moci chránit dokumentu a být jisti, že příjemce může číst, dokonce i z oblíbených mobilních zařízení. Tento scénář využívá aplikaci sdílení obsahu Rights Management, které automaticky nasazením na počítače se systémem Windows ve vaší organizaci. Nebo mohou uživatelé instalovat ho sami.
+
+V tomto příkladu Alice od společnosti Contoso, e-maily důvěrný dokument aplikace Word, který odešle Bob na Fabrikam. ADAM přečte dokument na jeho iPad, ale mohl by mohla stejným způsobem přečíst ve zařízení typu iPhone, Android tablet nebo telefon, do počítače Mac nebo Windows phone nebo v počítači.
+
+|||
+|-|-|
+|![](../Image/AzRMS_StoryboardEmail_small1.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/feeef78d-3c2e-432b-817d-d06f784be226) (ve výchozím nastavení ve stejném okně prohlížeče)|Ze svého Windows PC Alice vytvoří standardní e-mailovou zprávu a připojí dokumentu.<br /><br />Klikne na možnost **sdílet chráněné** na pásu karet, který načte **sdílet chráněné** dialogové okno z aplikace sdílení RMS.<br /><br />Alice chce omezit Bob k prohlížení a úpravy dokumentu a nechce ho zkopírovat nebo vytisknout, takže vybere **REVIDUJÍCÍ – prohlížení a úpravy**. Chce být e-mailem, když se někdo pokusí otevřít dokument a mít možnost dokumentu odvolat později, v případě potřeby a vědět, že odvolání se projeví okamžitě.|
+|![](../Image/AzRMS_StoryboardEmail_small2.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/e748fd78-8bba-4168-96cf-f96def078283) (ve výchozím nastavení ve stejném okně prohlížeče)|Bob vidí e-mailu na jeho iPad.<br /><br />Kromě Alice zprávu a přílohy jsou pokyny, které mu následuje se můžete zaregistrovat a nainstalovat aplikaci na jeho iPad sdílení RMS.|
+|![](../Image/AzRMS_StoryboardEmail_small3.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/7dba5ff9-a61d-4a83-8adc-d6ffb0e85df6) (ve výchozím nastavení ve stejném okně prohlížeče)|Bob teď můžete otevřít přílohu. ADAM se nejprve výzva k přihlášení k potvrzení, že je zamýšlený příjemce.<br /><br />Když Bob zobrazí dokument, zjistí také informace s omezeným přístupem, které mu říká, že nelze zobrazit a upravit dokument, ale zkopírovat nebo vytisknout.|
+|![](../Image/AzRMS_StoryboardEmail_small4.png)<br /><br />[Větší obrázek](http://technet.microsoft.com/9f642a2e-58ad-44ab-9f81-f890d15380f9) (ve výchozím nastavení ve stejném okně prohlížeče)|Alice obdrží e-mailovou zprávu, která se jí říká, že Bob úspěšně otevřít dokument, který uživatel odeslal, a když mohl získat přístup k dokumentu.<br /><br />Pokud Bob předává své e-mailu s přílohou, nebo ji uloží je kde jiným uživatelům, nebo je zachycen v síti, nebudou ostatní uživatelé moci čtení dokumentu.|
+Další informace naleznete v tématu [chránit soubor, který sdílíte e-mailem](https://technet.microsoft.com/library/dn574735.aspx) a [zobrazení a používání souborů, které byly chráněny](https://technet.microsoft.com/library/dn574741.aspx) z [Příručka uživatele aplikace pro sdílení obsahu Rights Management](https://technet.microsoft.com/library/dn339006.aspx).
+
+Kromě toho [Rychlé zahájení kurzu Azure Rights Management](../Topic/Quick_Start_Tutorial_for_Azure_Rights_Management.md) obsahuje podrobné pokyny pro tento scénář.
+
+Nyní jste viděli některé příklady, co můžete dělat Azure RMS, může být zájem jak to dělá. Technické informace o fungování Azure RMS naleznete v další části.
+
+## <a name="BKMK_HowRMSworks"></a>Jak funguje Azure RMS? Pod pokličkou
+Jedna věc důležité pochopit, jak funguje Azure RMS je, že služba správy přístupových práv (a Microsoft) není v tématu nebo data jsou uložena v rámci procesu ochrany informací. Informace, který chcete chránit nikdy odeslání nebo uložených v Azure, pokud není explicitně ukládat v Azure nebo použít jiné cloudové služby, který se uloží v Azure. Azure RMS jednoduše vytvoří data v dokumentu nečitelná na nikoho jiného, než autorizovaných uživatelů a služeb:
+
+-   Data jsou šifrována na úrovni aplikace a zahrnuje zásadu, která definuje oprávněné použití tohoto dokumentu.
+
+-   Pokud je chráněný dokument používá oprávněné uživatele nebo je zpracován autorizovaný službou, dešifrovat data v dokumentu a jsou vynucována práva, které jsou definovány v zásadách.
+
+Na vysoké úrovni uvidíte, jak tento proces funguje na následujícím obrázku. Dokument obsahující tajného vzorce je chráněn a pak úspěšně otevřít oprávněný uživatel nebo služby. Dokument je chráněn pomocí obsahu klíče (zelená klíč na tomto obrázku). Je jedinečný pro každý dokument a je umístěn v záhlaví souboru, kde je chráněn váš RMS klienta kořenový klíč (červená klíč na tomto obrázku). Váš uživatelský klíč pro klienta můžete generovaného a spravovaného společností Microsoft nebo můžete generovat a spravovat vlastní klíč klienta.
+
+V celém ochrany procesu při šifrování a dešifrování, autorizace Azure RMS a vynucení omezení, tajného vzorce nikdy odeslán do Azure.
 
 ![](../Image/AzRMS_SecretColaFormula_final.png)
 
-For a detailed description of what’s happening, see the [Walkthrough of how Azure RMS works: First use, content protection, content consumption](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Walthrough) section in this topic.
+Podrobný popis co se děje naleznete v tématu [Návod, jak pracuje Azure RMS: Nejprve použít, obsahu ochrany obsahu spotřeba](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Walthrough) v tomto tématu.
 
-For technical details about the algorithms and key lengths that Azure RMS uses, see the next section.
+Technické podrobnosti o algoritmy a délky klíčů, které používá Azure RMS naleznete v další části.
 
-### <a name="BKMK_RMScrytographics"></a>Cryptographic controls used by Azure RMS: Algorithms and key lengths
-Even if you don't need to know yourself how RMS works, you might be asked about the cryptographic controls that it uses, to make sure that the security protection is industry-standard.
+### <a name="BKMK_RMScrytographics"></a>Ovládání kryptografie používá Azure RMS: Algoritmy a délky klíčů
+I v případě, že nepotřebujete sami vědět, jak funguje RMS, můžete být požádáni o ovládání kryptografie tak používá, abyste se ujistili, že ochrana zabezpečení je standardní.
 
 |||
 |-|-|
-|Documentation protection method:|Algorithm: AES<br /><br />Key length: 128 bits and 256 bits [footnote 1]|
-|Key protection method:|Algorithm: RSA<br /><br />Key length: 2048 bits|
-|Certificate signing:|Algorithm: SHA-256|
-Footnote 1:
-             256 bits is used by the Rights Management sharing application for generic protection and native protection when the file has a .ppdf file name extension or is a protected text or image file (such as .ptxt or .pjpg).
+|Metoda ochrany dokumentaci:|Algoritmus: AES<br /><br />Délka klíče: 128 bitů a 256 bitů <sup>1</sup>|
+|Metoda ochrany klíče:|Algoritmus: RSA.<br /><br />Délka klíče: 2 048 bitů|
+|Podepisování certifikátu:|Algoritmus: ALGORITMUS SHA-256|
+<sup>1</sup> 256 bitů je používán pro obecnou ochranou a nativní ochranu, pokud má soubor .ppdf příponu názvu souboru nebo je chráněný soubor text nebo obrázek (například .ptxt nebo .pjpg) aplikace sdílení obsahu Rights Management.
 
-### <a name="BKMK_Walthrough"></a>Walkthrough of how Azure RMS works: First use, content protection, content consumption
-To understand in more detail how Azure RMS works, let's walk through a typical flow after the [Azure RMS service is activated](https://technet.microsoft.com/library/jj658941.aspx) and when a user first uses RMS on their Windows computer (a process sometimes known as **initializing the user environment** or bootstrapping), **protects content** (a document or email), and then **consumes**  (opens and uses) content that has been protected by somebody else.
+### <a name="BKMK_Walthrough"></a>Návod, jak pracuje Azure RMS: Nejprve použít, obsahu ochrany obsahu spotřeba
+Podrobněji pochopit, jak funguje Azure RMS, podívejme Typický tok po [Aktivovat službu Azure RMS](https://technet.microsoft.com/library/jj658941.aspx) a když uživatel nejprve používá RMS na jejich počítač se systémem Windows (Tento proces se někdy označuje jako **Inicializace uživatelské prostředí** nebo zavádění), **chrání obsah** (dokumentu nebo e-mailu) a potom **spotřebovává**  (otevírá a používá) obsah, který je chráněný jiný uživatel.
 
-After the user environment is initialized, that user can then protect documents or consume protected documents on that computer.
+Po inicializaci uživatelské prostředí tohoto uživatele můžete chránit dokumenty nebo využívat chráněné dokumenty v daném počítači.
 
 > [!NOTE]
-> If this user moves to another Windows computer, or another user uses this same Windows computer, the initialization process is repeated.
+> Pokud tento uživatel přesune do jiného počítače systému Windows nebo používá jiný uživatel tento stejný počítač se systémem Windows, inicializace proces se opakuje.
 
-#### Initializing the user environment
-Before a user can protect content or consume protected content on a Windows computer, the user environment must be prepared on the device. This is a one-time process and happens automatically without user intervention when a user tries to protect or consume protected content:
-
-|||
-|-|-|
-|![](../Image/AzRMS.png)|The RMS client on the computer first connects to Azure RMS, and authenticates the user by using their Azure Active Directory account.<br /><br />When the user’s account is federated with Azure Active Directory, this authentication is automatic and the user is not prompted for credentials.|
+#### Inicializace uživatelského prostředí
+Předtím, než uživatel může chránit obsah nebo využívají chráněný obsah na počítač se systémem Windows, musí být připraveny uživatelské prostředí v zařízení. To je jednorázový proces a se automaticky stane bez zásahu uživatele, když se uživatel pokusí chránit nebo využívají chráněný obsah:
 
 |||
 |-|-|
-|![](../Image/AzRMS_useractivation2.png)|After the user is authenticated, the connection is automatically redirected to the organization’s RMS tenant, which issues certificates that let the user authenticate to Azure RMS in order to consume protected content and to protect content offline.<br /><br />A copy of the user’s certificate is stored in Azure RMS so that if the user moves to another device, the certificates are created by using the same keys.|
-
-#### Content protection
-When a user protects a document, the RMS client takes the following actions on an unprotected document:
+|![](../Image/AzRMS.png)|Klient služby RMS na počítači nejprve připojí k Azure RMS a ověřuje uživatele pomocí jejich účtu Azure Active Directory.<br /><br />Když uživatelský účet je federované pomocí služby Azure Active Directory, toto ověření je automaticky a nebude uživatel vyzván k zadání přihlašovacích údajů.|
 
 |||
 |-|-|
-|![](../Image/AzRMS_documentprotection1.png)|The RMS client creates a random key (the content key) and encrypts the document using this key with the AES symmetric encryption algorithm.|
+|![](../Image/AzRMS_useractivation2.png)|Po ověření uživatele připojení automaticky přesměrováni na klienta služby RMS organizace, který vystavuje certifikáty, umožňující uživatelům ověřit Azure RMS k využívají chráněný obsah a k ochraně obsahu v režimu offline.<br /><br />Kopie uživatelský certifikát je uložen v Azure RMS, tak, že pokud se uživatel přesune do jiného zařízení, certifikáty jsou vytvořeny pomocí stejné klíče.|
+
+#### Ochranu obsahu
+Když uživatel chrání dokumentu, klient služby RMS provede následující akce u nechráněných dokumentu:
 
 |||
 |-|-|
-|![](../Image/AzRMS_documentprotection2.png)|The RMS client then creates a certificate that includes a policy for the document, either based on a template or by specifying specific rights for the document. This policy includes the rights for different users or groups and other restrictions, such as an expiration date.<br /><br />The RMS client then uses the organization’s key that was obtained when the user environment was initialized and uses this key to encrypt the policy and the symmetric content key. The RMS client also signs the policy with the user’s certificate that was obtained when the user environment was initialized.|
+|![](../Image/AzRMS_documentprotection1.png)|Klient služby RMS vytvoří náhodný klíč (klíč obsahu) a zašifruje dokumentu pomocí algoritmu symetrického šifrování AES tento klíč.|
 
 |||
 |-|-|
-|![](../Image/AzRMS_documentprotection3.png)|Finally, the RMs client embeds the policy into a file with the body of the document encrypted previously, which together comprise a protected document.<br /><br />This document can be stored anywhere or shared by using any method, and the policy always stays with the encrypted document.|
-
-#### Content consumption
-When a user wants to consume a protected document, the RMS client starts by requesting access to the Azure RMS service:
+|![](../Image/AzRMS_documentprotection2.png)|Klient služby RMS poté vytvoří certifikát, který obsahuje zásady pro dokument, buď v závislosti na šabloně, nebo zadáním konkrétní práva pro dokument. Tato zásada obsahuje práva pro různé uživatele nebo skupiny a další omezení, jako je například datum vypršení platnosti.<br /><br />Klient služby RMS použije klíč organizace, který byl získán při uživatelské prostředí byl inicializován a používá tento klíč k šifrování zásady a symetrický klíč obsahu. Klient služby RMS také podepíše zásady s certifikátu uživatele, který byl získán, pokud byla inicializována uživatelské prostředí.|
 
 |||
 |-|-|
-|![](../Image/AzRMS_documentconsumption1.png)|The authenticated user sends the document policy and the user’s certificates to Azure RMS. The service decrypts and evaluates the policy, and builds a list of rights (if any) the user has for the document.|
+|![](../Image/AzRMS_documentprotection3.png)|Nakonec klient služby RMs vloží zásady do souboru s textu dokumentu šifrované dříve, které dohromady tvoří chráněný dokument.<br /><br />Tento dokument mohou být uložena kdekoli nebo sdílet pomocí libovolné metody a zásady zůstává vždy s zašifrovaný dokument.|
+
+#### Obsahu spotřeba
+Pokud uživatel chce využívat chráněný dokument, začne klienta služby RMS požadující přístup ke službě Azure RMS:
 
 |||
 |-|-|
-|![](../Image/AzRMS_documentconsumption2.png)|The service then extracts the AES content key from the decrypted policy. This key is then encrypted with the user’s public RSA key that was obtained with the request.<br /><br />The re-encrypted content key is then embedded into an encrypted use license with the list of user rights, which is then returned to the RMS client.|
+|![](../Image/AzRMS_documentconsumption1.png)|Ověřený uživatel odešle dokument zásad a certifikátů uživatele Azure RMS. Služba dešifruje vyhodnotí zásadu a vytvoří seznam práva (pokud existuje) má uživatel pro dokument.|
 
 |||
 |-|-|
-|![](../Image/AzRMS_documentconsumption3.png)|Finally, the RMS client takes the encrypted use license and decrypts it with its own user private key. This lets the RMS client decrypt the document’s body as it is needed and render it on the screen.<br /><br />The client also decrypts the rights list and passes them to the application, which enforces those rights in the application’s user interface.|
+|![](../Image/AzRMS_documentconsumption2.png)|Služba poté extrahuje obsahu klíč standardu AES z dešifrovaný zásad. Tento klíč je poté šifrován uživatele veřejný klíč RSA získaný v požadavku.<br /><br />Znovu šifrovaného klíče obsahu pak vloženy do licenci pro šifrované použití s seznam uživatelských práv, který je pak vrácen do klienta služby RMS.|
 
-#### Variations
-The preceding walkthroughs cover the standard scenarios but there are some variations:
+|||
+|-|-|
+|![](../Image/AzRMS_documentconsumption3.png)|Nakonec klient služby RMS trvá licence šifrovaná použití a dešifruje pomocí vlastního privátního klíče uživatele. To umožňuje klientům služby RMS dešifrování textu dokumentu, když je potřeba a vykreslení na obrazovce.<br /><br />Klient také dešifruje seznam práv a předá aplikaci, které vynucuje tato práva v uživatelském rozhraní aplikace.|
 
--   **Mobile devices**: When mobile devices protect or consume files with Azure RMS, the process flows are much simpler. Mobile devices don’t first go through the user initialization process because instead, each transaction (to protect or consume content) is independent. As with Windows computers, mobile devices connect to the Azure RMS service and authenticate. To protect content, mobile devices submit a policy and Azure RMS sends them a publishing license and symmetric key to protect the document. To consume content, when mobile devices connect to the Azure RMS service and authenticate, they send the document policy to Azure RMS and request a use license to consume the document. In response, Azure RMS sends the necessary keys and restrictions to the mobile devices. Both processes use TLS to protect the key exchange and other communications.
+#### Variant
+Předchozí návody týkají standardní scénářů, ale existují některé varianty:
 
--   **RMS connector**: When Azure RMS is used with the RMS connector, the process flows remain the same. The only difference is that the connector acts as a relay between the on-premises services (such as Exchange Server and SharePoint Server) and Azure RMS. The connector itself does not perform any operations, such as the initialization of the user environment, or encryption or decryption. It simply relays the communication that would usually go to an AD RMS server, handling the translation between the protocols that are used on each side. This scenario lets you use Azure RMS with on-premises services.
+-   **Mobilní zařízení**: Když mobilní zařízení chránit nebo využívat soubory službou Azure RMS, proces toky jsou mnohem jednodušší. Mobilní zařízení není nejprve projít procesu inicializace uživatele, protože místo toho je nezávislý každé transakci (při ochraně nebo využívat obsah). Jako s počítače se systémem Windows, mobilní zařízení připojit ke službě Azure RMS a ověřovat. K ochraně obsahu, odešlete mobilních zařízení zásady a Azure RMS odešle licence pro publikování a symetrický klíč k ochraně dokumentu. Využívat obsah, když mobilní zařízení připojit ke službě Azure RMS a ověření, se odeslat zásadu dokumentu Azure RMS a žádost o licenci k používání využívat dokumentu. V odpovědi odešle Azure RMS omezení a klíče potřebné pro mobilní zařízení. Oba tyto procesy chránit výměny klíčů a ostatní komunikace pomocí protokolu TLS.
 
--   **Generic protection (.pfile)**: When Azure RMS generically protects a file, the flow is basically the same for content protection except that the RMS client creates a policy that grants all rights. When the file is consumed, it is decrypted before it is passed to the target application. This scenario lets you protect all files, even if they don’t natively support RMS.
+-   **RMS konektor**: Při použití Azure RMS pomocí konektoru služby RMS toky procesu zůstávají stejné. Jediným rozdílem je, že konektor funguje jako přenosový mezi místními službami (například Exchange Server a SharePoint Server) a Azure RMS. Konektor sám neprovádí žádné operace, jako je například inicializace uživatelské prostředí, šifrování nebo dešifrování. Jednoduše předává komunikaci, která by obvykle přejít k serveru služby AD RMS zpracování překladu mezi protokoly, které se používají na každé straně. Tento scénář vám umožní používat Azure RMS pomocí místní služby.
 
--   **Protected PDF (.ppdf)**: When Azure RMS natively protects an Office file, it also creates a copy of that file and protects it in the same way. The only difference is that the file copy is in PPDF file format, which the RMS sharing application knows how to open for viewing only. This scenario lets you send protected attachments via email, knowing that the recipient on a mobile device will always be able to read them even if the mobile device doesn’t have an app that natively supports protected Office files.
+-   **Obecné ochrany (.pfile)**: Když Azure RMS chrání obecně souboru, tok je stejný pro ochranu obsahu s tím rozdílem, že klient služby RMS vytvoří zásadu, která uděluje všechna práva. Když soubor je zpracován, dešifrována předtím, než je předán do cílové aplikace. Tento scénář umožňuje chránit všechny soubory i v případě, že nepodporují nativně RMS.
 
-## <a name="BKMK_NextSteps"></a>Next steps
-To learn more about Azure RMS, use the other topics in the [Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md) section, such as [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) to learn how your existing applications can integrate with Azure RMS to provide an information protection solution. Review [Terminology for Azure Rights Management](../Topic/Terminology_for_Azure_Rights_Management.md) so that you’re familiar with the terms that you might come across as you’re configuring and using Azure RMS, and be sure to also check [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) before you start your deployment. If you want to dive right in and try it out for yourself, use the [Quick Start Tutorial for Azure Rights Management](../Topic/Quick_Start_Tutorial_for_Azure_Rights_Management.md).
+-   **Chráněný PDF (.ppdf)**: Když Azure RMS nativně chrání soubor sady Office, také vytvoří kopii tohoto souboru a chrání stejným způsobem. Jediným rozdílem je, že kopírování souborů je ve formátu souboru PPDF, který aplikace sdílení RMS umí otevřít pouze pro účely zobrazení. Tento scénář umožňuje odeslat chráněné přílohy e-mailem, vědět, že příjemce v mobilním zařízení, bude vždy schopen načíst je i v případě, že mobilní zařízení nemá aplikaci, která nativně podporuje chráněné soubory sady Office.
 
-If you’re ready to start deploying Azure RMS for your organization, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) for your deployment steps and links for how-to instructions.
+## <a name="BKMK_NextSteps"></a>Další kroky
+Další informace o Azure RMS, použít v dalších tématech v [Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md) oddílu, jako je například [Jak aplikace podporují Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) se dozvíte, jak integrovat existující aplikace pomocí Azure RMS poskytnout řešení ochrany informací. Zkontrolujte [Terminologie Azure Rights Management](../Topic/Terminology_for_Azure_Rights_Management.md) tak, aby se seznámíte s podmínkami, které mohou pocházet, jako jste konfigurace a používání Azure RMS a ujistěte se také kontrola [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) před zahájením nasazení. Pokud chcete začít doprava a vyzkoušejte si sami, použijte [Rychlé zahájení kurzu Azure Rights Management](../Topic/Quick_Start_Tutorial_for_Azure_Rights_Management.md).
+
+Pokud jste připraveni začít nasazovat Azure RMS pro vaši organizaci, použijte [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) kroky nasazení a odkazy na postupy.
 
 > [!TIP]
-> For additional information and help, use the resources and links in [Information and Support for Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
+> Další informace a pomoc použít zdroje a odkazy v [Informace a podpora nástroje Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
 
-## See Also
-[Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
+## Viz také
+[Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
 

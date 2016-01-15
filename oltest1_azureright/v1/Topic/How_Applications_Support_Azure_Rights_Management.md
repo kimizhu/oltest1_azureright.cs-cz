@@ -3,130 +3,123 @@ description: na
 keywords: na
 title: How Applications Support Azure Rights Management
 search: na
-ms.date: 2016-01-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2cdc7bde-4044-4021-b887-11476f99afd9
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# How Applications Support Azure Rights Management
-Use the following information to help you understand how your end-user applications (such as the Office applications, Word, Excel, PowerPoint, and Outlook) and services (such as Exchange and SharePoint) can use Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] to help protect your organization’s data:
+# Jak aplikace podporuj&#237; Azure Rights Management
+Pomocí následujících informací, který vám pomůže pochopit, jak vašich aplikací s koncovým uživatelem (například Office aplikací, Word, Excel, PowerPoint a aplikace Outlook) a služeb (například Exchange a služby SharePoint) můžete v aplikaci [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] k ochraně dat vaší organizace:
 
--   [RMS sharing application for Windows and mobile platforms](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_SharingAppIntro)
+-   [Aplikace pro systém Windows a mobilní platformy pro sdílení obsahu RMS](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_SharingAppIntro)
 
--   [Office applications: Word, Excel, PowerPoint, Outlook](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_OfficeAppsIntro)
+-   [Aplikace systému Office: Word, Excel, PowerPoint, Outlook](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_OfficeAppsIntro)
 
-    -   [Exchange Online and Exchange Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_ExchangeIntro)
+    -   [Exchange Online a Exchange Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_ExchangeIntro)
 
-    -   [SharePoint Online and SharePoint Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_SharePointIntro)
+    -   [SharePoint Online a SharePoint Server](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_SharePointIntro)
 
--   [File servers that run Windows Server and use File Classification Infrastructure (FCI)](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_FCIIntro)
+-   [Souborové servery, které se systémem Windows Server a používat soubor klasifikace infrastruktury (FCI)](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_FCIIntro)
 
--   [Other applications that support the RMS APIs](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_APIAppsIntro)
+-   [Jiné aplikace, které podporují rozhraní API služby RMS](../Topic/How_Applications_Support_Azure_Rights_Management.md#BKMK_APIAppsIntro)
 
 > [!NOTE]
-> To verify the applications and versions that [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS) supports, see [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md).
+> Chcete-li ověřit aplikace a verze, [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] podporuje (Azure RMS) naleznete v tématu [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md).
 
-In some cases, information protection is automatically applied, according to policies that you configure. For example, this is the case with SharePoint libraries, classified files, and Exchange transport rules. In other cases, users must apply information protection themselves from their applications, either by selecting a template or by selecting specific options. For example, this is the case when users share a file by email, or protect a file in-place by restricting access or usage to selected users or to users outside the organization.
+V některých případech je ochrana údajů automaticky použity, podle zásady, které je nakonfigurovat. Toto je například v případě knihovny služby SharePoint, klasifikovaný soubory a pravidla výměny přenosu. V ostatních případech uživatelé musí použít ochrana údajů sama sebe ze svých aplikací tak, že vyberete šablonu nebo výběrem konkrétních možností. Například to je případ, kdy uživatelé sdílet soubor e-mailem nebo chránit souboru na místě omezení přístupu nebo využití vybraným uživatelům nebo uživatelům mimo organizaci.
 
-Templates make it easier for users (and administrators who configure policies) to apply the correct level of protection and restrict access to people inside your organization. Although [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] comes with two default templates, you will probably want to create custom templates to reduce the times when they have to specify individual options. For more information, see [Configuring Custom Templates for Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md).
+Šablony vám usnadní pro uživatele (a správcům, kteří nakonfigurovat zásady) chcete použít správnou úroveň ochrany a omezit tak přístup uživatelům ve vaší organizaci. I když [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] pochází s dvěma výchozích šablon, bude pravděpodobně chcete vytvořit vlastní šablony ke snížení v době, kdy budou muset provést vlastní nastavení. Další informace naleznete v tématu [Konfigurace vlastních šablon pro Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md).
 
-For the cases where users must apply information protection themselves, be sure to provide them with instructions and guidance how and when to do this. The instructions should be specific for the application and versions that they use and how they use them, and the guidance for when and how to apply information protection should be appropriate for your business. For more information, see [Helping Users to Protect Files by Using Azure Rights Management](../Topic/Helping_Users_to_Protect_Files_by_Using_Azure_Rights_Management.md).
+Pro případy, kdy uživatelé musí použít informace o ochraně sami, ujistěte se, jak poskytnout s pokyny a pokyny a je-li to provést. Pokynů, které by měl být specifické pro aplikace a verze, které používají a jak používají a pokyny pro kdy a jak použít informace ochrana by měla být vhodné pro vaši společnost. Další informace naleznete v tématu [Pomáhá uživatelům k ochraně souborů pomocí Azure Rights Management](../Topic/Helping_Users_to_Protect_Files_by_Using_Azure_Rights_Management.md).
 
-For information about how to configure these applications for Azure RMS, see [Configuring Applications for Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md).
+Informace o tom, jak konfigurovat tyto aplikace pro službu RMS Azure naleznete v tématu [Konfigurace aplikací pro Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md).
 
 > [!TIP]
-> For examples and screenshots of applications using Azure RMS, see the [Azure RMS in action: What administrators and users see](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMSpictures) section from the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) topic.
+> Příklady a snímky obrazovky aplikací pomocí Azure RMS naleznete v tématu [Azure RMS v akci: Co správci a uživatelé v tématu](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMSpictures) oddíl z [Co je Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) tématu.
 
-## <a name="BKMK_SharingAppIntro"></a>RMS sharing application for Windows and mobile platforms
-The RMS sharing application is a free, downloadable application that is required to support Office 2010, but also recommended for Windows computers, Mac computers, and mobile devices. One of its benefits is that it can apply generic protection for applications and files that do not natively support [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], which means that all files can be protected. For more information about the different protection levels, see the [Level of protection – native and generic](http://technet.microsoft.com/library/dn339003.aspx) section from the [Rights Management sharing application administrator guide](http://technet.microsoft.com/library/dn339003.aspx).
+## <a name="BKMK_SharingAppIntro"></a>Aplikace pro systém Windows a mobilní platformy pro sdílení obsahu RMS
+Aplikace sdílení RMS je zdarma ke stažení aplikace, která je vyžadována pro podporu systému Office 2010, ale také vhodné pro počítače se systémem Windows, Mac počítačů a mobilních zařízení. Jedna z jeho výhod je, že jej lze použít obecný ochrany pro aplikace a soubory, které nepodporují nativně [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], což znamená, že všechny soubory může být chráněn. Další informace o různých úrovní, naleznete v části [úroveň ochrany – nativní a obecný](http://technet.microsoft.com/library/dn339003.aspx) oddíl z [Rights Management sdílení aplikace Správce průvodce](http://technet.microsoft.com/library/dn339003.aspx).
 
-When users protect their files by using the RMS sharing application, they can also track the documents that they protected, and if necessary, revoke access to them. They do this by using the [document tracking site](http://go.microsoft.com/fwlink/?LinkId=529562).
+Když uživatelé chránit jejich soubory s použitím RMS sdílení aplikací, mohou také sledování dokumentů, které jsou chráněny a v případě potřeby odvolat přístup k nim. Je to s využitím [Sledování webu dokumentů](http://go.microsoft.com/fwlink/?LinkId=529562).
 
-For Windows computers, the RMS sharing application unobtrusively integrates with and enhances the  applications that users already use:
+Pro počítače se systémem Windows unobtrusively aplikace pro sdílení obsahu RMS integrována se službou a zvyšuje aplikací, které již uživatelé:
 
--   An Office add-in for Word, Excel, PowerPoint, and Outlook is installed. This provides users with a **Share Protected** button on the ribbon, which invokes an easy-to-use dialog box of settings that are most commonly used to protect files to be emailed. This button also provides a quick way to access the document tracking site.
+-   Doplněk Office pro Word, Excel, PowerPoint a aplikace Outlook je nainstalován. To poskytuje uživatelům **sdílet chráněné** tlačítko na pásu karet, který vyvolá dialogové snadným ovládáním nastavení, které jsou nejčastěji používají k ochraně souborů, chcete-li být odeslány e-mailem. Klepnutím na toto tlačítko také poskytuje rychlý způsob, jak získat přístup k dokumentu sledování webu.
 
--   A new right-click option for File Explorer. This provides users with a **Protect in-place** option, which invokes an easy-to-use dialog box of settings that are most commonly used to protect files stored on a disk.
+-   Nový klikněte pravým tlačítkem na možnost pro soubor Explorer. To poskytuje uživatelům **chránit místně** možnost, která se vyvolá dialogové snadným ovládáním nastavení, které jsou nejčastěji používaný k ochraně soubory uložené na disku.
 
--   A viewer to open files that have been protected by [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)]. This viewer is automatically invoked when there is no other application installed that could open the protected file.
+-   Prohlížeč k otevření souborů, které bylo chráněno [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)]. Tento prohlížeč je automaticky volána, když neexistuje žádná jiná aplikace nainstalována, může otevřít chráněný soubor.
 
--   Backend configuration for Office 2010 that lets Word, Excel, PowerPoint, and Outlook from this suite work seamlessly with [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+-   Konfigurace back-end pro systém Office 2010, který umožňuje aplikaci Word, Excel, PowerPoint a aplikace Outlook z této sady bezproblémovou práci s [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
 
-Although the RMS sharing application for Windows can be downloaded and installed for a single computer by using the [Microsoft Rights Management page](http://go.microsoft.com/fwlink/?LinkId=303970), it also supports an enterprise deployment for silent installation and custom configuration. For more information, see the following resources:
+Ačkoli může být aplikace pro systém Windows pro sdílení obsahu RMS stažen a nainstalován do jednoho počítače s použitím [stránky Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970), ale také podporuje nasazení v podnikovém prostředí pro tichou instalaci a vlastní konfigurace. Další informace naleznete na následujících odkazech:
 
--   [Rights Management sharing application administrator guide](http://technet.microsoft.com/library/dn339003.aspx)
+-   [Průvodce Rights Management sdílení aplikace Správce](http://technet.microsoft.com/library/dn339003.aspx)
 
--   [Rights Management sharing application user guide](http://technet.microsoft.com/library/dn339006.aspx)
+-   [Průvodce Rights Management sdílení aplikace uživatele](http://technet.microsoft.com/library/dn339006.aspx)
 
-The RMS sharing application for mobile devices supports the most commonly used mobile devices, such as iPad and iPhone, Android, Windows Phone, and Windows RT. Users can download this app from the relevant store, and there are links to these from the [Microsoft Rights Management page](http://go.microsoft.com/fwlink/?LinkId=303970).
+Aplikace pro mobilní zařízení pro sdílení obsahu RMS podporuje nejčastěji používané mobilní zařízení, například iPad a zařízení iPhone, Android, Windows Phone a Windows pr. Uživatelé mohou stahovat této aplikace z obchodu relevantní a existuje propojení z [Microsoft Rights Management stránky](http://go.microsoft.com/fwlink/?LinkId=303970).
 
-**If you have Microsoft Intune**: Because the RMS sharing app includes the Microsoft Intune App Software Development Kit, you can use  the following options:
+## <a name="BKMK_OfficeAppsIntro"></a>Aplikace systému Office: Word, Excel, PowerPoint, Outlook
+Tyto aplikace nativní podporu Rights Management s použitím Správa práv k informacím (IRM) a umožnit uživatelům použijí ochranu uložený dokument nebo e-mailovou zprávu k odeslání. Uživatelé mohou použít šablony nebo zvolte možnost velmi vlastního nastavení pro omezení přístupu, práva a používání. Můžete například uživatelé soubor můžete nakonfigurovat tak, aby jej mohou přistupovat pouze uživatelé ve vaší organizaci nebo ovládací prvek zda souboru lze upravit, nebo omezit na jen pro čtení nebo zabránit vytištěny. Pro soubory citlivé na čas lze nakonfigurovat čas vypršení platnosti (přímo uživateli nebo použitím šablony) pro Pokud soubor již nebude zpřístupněn. Pro aplikaci Outlook, uživatelé mohou také **dál** možnost vám mohou pomoci zabránit úniku data.
 
--   Deploy and manage the app for iOS and Android devices that are enrolled by Intune.
+### <a name="BKMK_ExchangeIntro"></a>Exchange Online a Exchange Server
+Při použití systému Exchange Online nebo serveru Exchange Server, můžete použít informace rights management (IRM) integrace, který obsahuje další informace o řešení ochrany:
 
--   Manage the app for Android devices that are not enrolled by Intune.
+-   **Exchange ActiveSync IRM** aby mohli chránit a využívat mobilní zařízení chráněné e-mailové zprávy.
 
-## <a name="BKMK_OfficeAppsIntro"></a>Office applications: Word, Excel, PowerPoint, Outlook
-These applications natively support Rights Management by using information rights management (IRM) and let users apply protection to a saved document or to an email message to be sent. Users can apply templates or choose very customized settings for access, rights, and usage restrictions. For example, users can configure a file so that it can be accessed only by people in your organization, or control whether the file can be edited, or restricted to read-only, or prevent it from being printed. For time-sensitive files, an expiration time can be configured (directly by users or by applying a template) for when the file can no longer be accessed. For Outlook, users can also choose the **Do Not Forward** option to help prevent data leakage.
+-   Podpora služby RMS **aplikace Outlook Web**, podobně implementována tak, aby klient aplikace Outlook, tak, aby uživatelé lze chránit e-mailové zprávy, šablony nebo zadáním jednotlivé možnosti a uživatelé mohou číst a používat chráněné e-mailové zprávy, které jsou odeslány na ně.
 
-### <a name="BKMK_ExchangeIntro"></a>Exchange Online and Exchange Server
-When you use Exchange Online or Exchange Server, you can use information rights management (IRM) integration, which provides additional information protection solutions:
+-   **Pravidla ochrany** pro klienty Outlook, aby správce konfiguruje automaticky aplikujete RMS šablony e-mailové zprávy pro zadaný příjemce. Například když interní e-maily jsou odeslány do oddělení právní, jejich lze je číst pouze členy právní oddělení a nemůže být předán. Uživatelé vidí ochrany před odesláním použité e-mailové zprávě a ve výchozím nastavení, že jej odebrat Pokud se rozhodnete, že není nutné. E-mailů jsou šifrovány před odesláním. Další informace naleznete v tématu [pravidla pro ochranu aplikace Outlook](http://technet.microsoft.com/library/dd638178%28v=exchg.150%29.aspx) a [Vytvoření pravidla pro ochranu aplikace Outlook](http://technet.microsoft.com/library/dd638196%28v=exchg.150%29.aspx) v knihovně Exchange.
 
--   **Exchange ActiveSync IRM** so that mobile devices can protect and consume protected email messages.
+-   **Přenosu pravidla** může správce konfigurovat, mají být automaticky použity RMS šablony e-mailové zprávy na základě vlastnosti, například odesílatele, příjemce, předmět zprávy a obsahu. Tyto jsou v principu podobná pravidla ochrany, ale není uživatelům odebrat ochranu, lze použít k aplikaci Outlook Web Access a e-mailech odesílají mobilní zařízení a nelze zašifrovat e-mailové zprávy před odesláním z klienta. Další informace naleznete v tématu [vytvořit pravidlo přenosu ochrany](http://technet.microsoft.com/library/dd302432.aspx) v knihovně Exchange.
 
--   RMS support for the **Outlook Web App**, implemented similarly to the Outlook client, so that users can protect email messages by templates or by specifying individual options, and users can read and use protected email messages that are sent to them.
+-   **Zásady prevence (DLP) ztrátě dat** obsahují sady podmínky pro filtrování e-mailové zprávy a provést akce, které vám mohou pomoci zabránit ztrátě dat pro obsah důvěrné nebo malá a velká písmena (například osobní údaje nebo informace o platební kartě). Zásady tipy lze použít, když je zjištěno citlivá data výstrah uživatelům, kteří potřebují může použít informace ochrany, na základě informací v e-mailové zprávě. Další informace naleznete v tématu [Zabránění ztrátě dat](http://technet.microsoft.com/library/jj150527%28v=exchg.150%29.aspx) v knihovně Exchange.
 
--   **Protection rules** for Outlook clients that an administrator configures to automatically apply RMS templates to email messages for specified recipients. For example, when internal emails are sent to your legal department, they can only be read by members of the legal department and cannot be forwarded. Users see the protection applied to the email message before sending it, and by default, they can remove it if they decide it is not necessary. Emails are encrypted before they are sent. For more information, see [Outlook Protection Rules](http://technet.microsoft.com/library/dd638178%28v=exchg.150%29.aspx) and [Create an Outlook Protection Rule](http://technet.microsoft.com/library/dd638196%28v=exchg.150%29.aspx) in the Exchange library.
+-   **Šifrování zpráv office 365** používá přenosu pravidla pro odeslání šifrované e-mailů osobám mimo vaši společnost a e-mailu je pro čtení, v prohlížeči s rozhraním podobný webovou aplikaci Outlook. Můžete přizpůsobit zřeknutí se text a text záhlaví šifrované e-mailů vaší společnosti a to i přidat logo společnosti. Další informace naleznete v tématu [šifrování zpráv Office 365](http://office.microsoft.com/o365-message-encryption-FX104179182.aspx) z webu Office.
 
--   **Transport rules** that an administrator configures to automatically apply RMS templates to email messages based on properties such as sender, recipient, message subject, and content. These are similar in concept to protection rules but do not let users remove the protection, can be applied to Outlook Web Access and emails sent by mobile devices, and do not encrypt email messages before they are sent from the client. For more information, see [Create a Transport Protection Rule](http://technet.microsoft.com/library/dd302432.aspx) in the Exchange library.
+Pokud používáte Exchange Server, můžete použít funkce ochrany informace s [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] nasazením služby RMS konektor, který funguje jako přenosový mezi na místní servery a cloudové služby RMS. Další informace naleznete v tématu [Nasazení konektoru Azure Rights Management](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
 
--   **Data loss prevention (DLP) policies** that contain sets of conditions to filter email messages, and take actions to help prevent data loss for confidential or sensitive content (for example, personal information or credit card information). Policy Tips can be used when sensitive data is detected, to alert users that they might need to apply information protection, based on the information in the email message. For more information, see [Data Loss Prevention](http://technet.microsoft.com/library/jj150527%28v=exchg.150%29.aspx) in the Exchange library.
+### <a name="BKMK_SharePointIntro"></a>SharePoint Online a SharePoint Server
+Při použití služby SharePoint Online nebo serveru SharePoint Server, můžete informace o integraci práva IRM (Správa), který umožňuje správcům chránit seznamy nebo knihovny tak, že pokud se uživatel kontroly out dokumentu, soubor je chráněn tak, aby pouze autorizovaní uživatelé mohou zobrazit a používat soubor podle zásady ochrany informací, které zadáte. Soubor může být například jen pro čtení, zakázání kopírování textu, nelze uložit místní kopii a zabránit tisku souboru.
 
--   **Office 365 Message Encryption** that uses transport rules to send encrypted emails to people outside your company, and the email is read in a browser with an interface similar to the Outlook Web App. You can customize the disclaimer text and header text in your company’s encrypted emails, and even add your company logo. For more information, see [Office 365 Message Encryption](http://office.microsoft.com/o365-message-encryption-FX104179182.aspx) from the Office website.
+Pro seznamy a knihovny ochrana údajů platí vždy správce, nikdy koncovému uživateli. A je použit na úrovni seznamu nebo knihovny pro všechny dokumenty v tomto kontejneru, a nikoli na jednotlivé soubory.  Pokud používáte služby SharePoint Online, uživatelé také mohou zvolit IRM s jejich Onedrivem pro obchodní knihovnu.
 
-If you use Exchange Server, you can use the information protection features with [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] by deploying the RMS connector, which acts as a relay between your on-premises servers and the RMS cloud service. For more information, see [Deploying the Azure Rights Management Connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
+Služba IRM musí být nejprve povolena pro službu SharePoint. Poté zadejte informace o Rights Management pro knihovnu. Zadejte informace o Rights Management pro jejich Onedrivem pro knihovnu obchodní také v případě služby SharePoint Online a Onedrivem pro společnost. Server SharePoint nepoužívá šablony zásad práv, i když jsou nastavení konfigurace služby SharePoint, které můžete vybrat a které nejpřesněji odpovídají nastavení, které můžete určit v šablonách.
 
-### <a name="BKMK_SharePointIntro"></a>SharePoint Online and SharePoint Server
-When you use SharePoint Online or SharePoint Server, you can use information rights management (IRM) integration, which lets administrators protect lists or libraries so that when a user checks-out a document, the file is protected so that only authorized people can view and use the file according to the information protection policies that you specify. For example, the file might be read-only, disable the copying of text, prevent saving a local copy, and prevent printing the file.
-
-For lists and libraries,  information protection is always applied by an administrator, never an end user. And it is applied at the list or library level for all documents in that container, rather than on individual files.  If you use SharePoint Online, users can also apply IRM to their OneDrive for Business library.
-
-The IRM service must first be enabled for SharePoint. Then, you specify Information Rights Management for a library. In the case of SharePoint Online and OneDrive for Business, users can also specify Information Rights Management for their OneDrive for Business library. SharePoint does not use rights policy templates, although there are SharePoint configuration settings that you can select that closely match the settings that you can specify in templates.
-
-If you use SharePoint Server, you can use the information protection features with [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] by deploying the RMS connector, which acts as a relay between your on-premises servers and the RMS cloud service. For more information, see [Deploying the Azure Rights Management Connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
+Pokud používáte SharePoint Server, můžete použít funkce ochrany informace s [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] nasazením služby RMS konektor, který funguje jako přenosový mezi na místní servery a cloudové služby RMS. Další informace naleznete v tématu [Nasazení konektoru Azure Rights Management](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
 
 > [!NOTE]
-> Currently, there are some limitations when you use IRM with SharePoint:
+> V současné době má některá omezení, pokud použijete IRM se službou SharePoint:
 > 
-> -   You cannot use the default or custom templates that you manage in the Azure classic portal.
-> -   Files that have a .PPDF file name extension for protected PDF files are not supported. Files that have .PDF file name extension and that have been natively protected by RMS are supported when you use a PDF reader that natively supports RMS.
-> -   Because Office on mobile devices does not yet support RMS, these devices must use a browser to view files that have been protected with RMS, and the files are read-only.
+> -   Nelze použít výchozí nebo vlastní šablony, které můžete spravovat na portálu Azure.
+> -   Soubory, které mají. Přípona názvu souboru PPDF pro chráněné soubory PDF nejsou podporovány. Soubory, které mají. Příponu názvu souboru PDF a že bylo nativně chráněno RMS jsou podporovány, pokud použijete čtení souborů PDF, který nativně podporuje RMS.
+> -   Vzhledem k tomu, že Office na mobilních zařízeních dosud nepodporuje RMS, tato zařízení musí používat prohlížeč, chcete-li zobrazit soubory, které je chráněno s RMS a soubory jsou jen pro čtení.
 
-Azure RMS applies usage restrictions and data encryption for documents when they are downloaded from SharePoint, and not when the document is first created in SharePoint or uploaded to the library. For information about how documents are protected before they are downloaded, see [Data Encryption in OneDrive for Business and SharePoint Online](https://technet.microsoft.com/library/dn905447.aspx) from the SharePoint documentation.
+Azure RMS použije omezení použití a šifrování dat pro dokumenty při jejich stažení z webu služby SharePoint a nikoli při prvním dokumentu vytvořen ve službě SharePoint nebo odeslat do knihovny. Informace o tom, jak jsou chráněny dokumenty, stažení, naleznete v části [šifrování dat v Onedrivem pro podnikové a služby SharePoint Online](https://technet.microsoft.com/library/dn905447.aspx) z dokumentace rozhraní služby SharePoint.
 
-For more information about using Azure RMS with SharePoint, see the following  post from the Office blog: [What’s New with Information Rights Management in SharePoint and SharePoint Online](http://blogs.office.com/2012/11/09/whats-new-with-information-rights-management-in-sharepoint-and-sharepoint-online/)
+Další informace o použití Azure RMS pomocí služby SharePoint naleznete v následujících příspěvek z blogu Office: [Co je nového v Správa informačních práv v SharePoint a služby SharePoint Online](http://blogs.office.com/2012/11/09/whats-new-with-information-rights-management-in-sharepoint-and-sharepoint-online/)
 
-## <a name="BKMK_FCIIntro"></a>File servers that run Windows Server and use File Classification Infrastructure (FCI)
-When you configure Windows Server to use File Classification Infrastructure, this File Server Resource Manager feature can scan local files and determine whether they contain sensitive data. For files that meet this criteria, they are tagged with classification properties that an administrator defines. The File Classification Infrastructure can then take automatic action, according to the classification. One of these actions include applying information protection by using [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] and the deployment of the Rights Management connector (also known as the RMS connector). Office files are then automatically protected by Azure RMS.
+## <a name="BKMK_FCIIntro"></a>Souborové servery, které se systémem Windows Server a používat soubor klasifikace infrastruktury (FCI)
+Při konfiguraci systému Windows Server používat infrastrukturu klasifikace souboru, můžete tuto funkci správce prostředků souborového serveru scan lokálních souborů a zjišťuje, zda neobsahují citlivá data. Pro soubory, které splňují tato kritéria jsou označeny klasifikace vlastnosti, které definuje správce. Infrastruktura klasifikace souboru poté můžete začít automatické akce podle klasifikace. Jednu z následujících akcí zahrnout použitím ochrana informací pomocí [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] a nasazení konektoru Rights Management (také označované jako konektor služby RMS). Soubory sady Office jsou pak automaticky chráněné službou Azure RMS.
 
-To protect all file types, you would not use the RMS connector, but instead, run a Windows PowerShell script, using cmdlets from the [RMS Protection tool](https://www.microsoft.com/en-us/download/details.aspx?id=47256).
+Pokud chcete chránit všechny typy souborů, by není použijete konektoru služby RMS, ale místo toho spustit skript prostředí Windows PowerShell pomocí rutin z [Nástroj pro ochranu RMS](https://www.microsoft.com/en-us/download/details.aspx?id=47256).
 
-The classification policies are fully configurable and highly extensible so that you can prevent potential data leakage from unauthorized and authorized users. It can even help to reduce the risk of data leakage by network administrators because you can configure policies that don’t require these administrators to have access to the files.
+Klasifikace zásady jsou plně konfigurovatelná a velmi dobře rozšiřitelná, takže můžete zabránit potenciální únik data z neověřených a autorizované uživatele. I může pomoci snížit riziko úniku dat správci sítě vzhledem k tomu, že je možné nakonfigurovat zásady, které nevyžadují těmto správcům chcete-li mít přístup k souborům.
 
-For instructions to deploy and configure the RMS connector for Office files, see [Deploying the Azure Rights Management Connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
+Pokyny k nasazení a konfigurace služby RMS připojovací souborů sady Office naleznete v tématu [Nasazení konektoru Azure Rights Management](../Topic/Deploying_the_Azure_Rights_Management_Connector.md).
 
-For instructions to use the Windows PowerShell script for all file types, see [RMS Protection with Windows Server File Classification Infrastructure &#40;FCI&#41;](../Topic/RMS_Protection_with_Windows_Server_File_Classification_Infrastructure__FCI_.md).
+Chcete-li použít skript prostředí Windows PowerShell pro všechny typy souborů, naleznete v tématu [Ochrana RMS pomocí systému Windows Server soubor klasifikace infrastruktury &#40;FCI&#41;](../Topic/RMS_Protection_with_Windows_Server_File_Classification_Infrastructure__FCI_.md).
 
-## <a name="BKMK_APIAppsIntro"></a>Other applications that support the RMS APIs
-By using the RMS SDK, your internal developers can write line-of-business applications to natively support [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)]. How information protection is integrated with these applications depends on how they are written. For example, the integration might be automatically applied with minimal user interaction required, or for a more customized experience, users might be prompted to configure settings to apply information protection to files. For more information about the SDK, see the [Microsoft Rights Management SDK](http://msdn.microsoft.com/library/hh552972%28v=vs.85%29.aspx).
+## <a name="BKMK_APIAppsIntro"></a>Jiné aplikace, které podporují rozhraní API služby RMS
+Pomocí sady SDK služby RMS vaší interní vývojáři může zapisovat-podnikových aplikací tak, aby podporovaly [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)]. Jak je ochrana údajů integrována s těmito aplikacemi závisí na tom, jak jsou zapsány. Můžete například integrace může být automaticky použita s minimální uživatelskou interakcí požadované nebo více přizpůsobené prostředí, mohou uživatelé vyzváni ke konfiguraci nastavení, které mají být použity informace o ochraně souborů. Další informace o sadě SDK naleznete [Microsoft Rights Management SDK](http://msdn.microsoft.com/library/hh552972%28v=vs.85%29.aspx).
 
-Similarly, many software vendors provide applications to provide  information protection solutions, also known as enterprise rights management (ERM) products. A popular example is a PDF reader that supports [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] for specific platforms. You can use the table in the [Client device capabilities](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_ClientCapabilities) section of the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic to identify applications that support RMS (RMS-enlightened applications), and then use a web search to purchase or download the application.
+Podobně mnoho dodavatelé softwaru poskytovat aplikacím a informace o řešení ochrany, také označován jako enterprise rights management (ERM) produkty. Oblíbené příklad je čtení souborů PDF, který podporuje [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] pro konkrétní platformy. Můžete použít v tabulce v [Možnosti zařízení klienta](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_ClientCapabilities) část [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tématu, které chcete určit aplikace podporující RMS (RMS enlightened aplikace) a potom pomocí vyhledávání na webu zakoupit nebo stáhnout aplikaci.
 
 > [!TIP]
-> For newly released applications, check the RMS community channels, listed in [Information and Support for Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
+> Pro nově vydané aplikace, zkontrolujte kanálů RMS komunity, uvedené v [Informace a podpora nástroje Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
 
-## See Also
-[Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
+## Viz také
+[Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
 

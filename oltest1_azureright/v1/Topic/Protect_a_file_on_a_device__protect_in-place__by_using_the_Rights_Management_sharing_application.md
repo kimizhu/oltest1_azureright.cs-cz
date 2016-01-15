@@ -3,51 +3,50 @@ description: na
 keywords: na
 title: Protect a file on a device (protect in-place) by using the Rights Management sharing application
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 33920329-5247-4f6c-8651-6227afb4a1fa
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Protect a file on a device (protect in-place) by using the Rights Management sharing application
-When you protect a file in-place, it replaces the original, unprotected file. You can then leave the file where it is, copy it to another folder or device, or share the folder that it is in and the file will remain protected. You could also attach the protected file to an email message, although the recommended way to share a protected file by email is directly from File Explorer or an Office application (see [Protect a file that you share by email by using the Rights Management sharing application](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md)).
+# Chr&#225;nit soubor v zař&#237;zen&#237; (chr&#225;nit m&#237;stně) s použit&#237;m Rights Management, aplikace pro sd&#237;len&#237;
+Pokud zadáte ochranu souboru na místě, nahradí soubor původní, již nejsou chráněna. Nechejte na soubor, kde je, zkopírujte do jiné složky nebo zařízení nebo sdílet složku, že je v a soubor bude i nadále chráněn. Můžete také připojit chráněný soubor k e-mailovou zprávu, i když je doporučeným způsobem, jak sdílet chráněný soubor e-mailem přímo z Průzkumníka souboru nebo aplikace systému Office (viz [Soubor, který můžete sdílet e-mailem pomocí Rights Management, aplikace pro sdílení chránit](../Topic/Protect_a_file_that_you_share_by_email_by_using_the_Rights_Management_sharing_application.md)).
 
 > [!TIP]
-> If you see any errors when you try to protect files, refer to [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+> Pokud se zobrazí všechny chyby, když se pokusíte k ochraně souborů, odkazovat na [Nejčastější dotazy týkající se společnost Microsoft Rights Management sdílení aplikací pro systém Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## To protect a file on a device (protect in-place)
+## K ochraně souboru na zařízení (chránit místně)
 
-1.  In File Explorer, select a file to protect. Right-click, select **Protect with RMS**, and then select **Protect in-place**. For example:
+1.  V Průzkumníku souboru vyberte soubor k ochraně. Klepněte pravým tlačítkem myši, vyberte možnost **chránit s RMS**, a potom vyberte **chránit místně**. Příklad:
 
     ![](../Image/ADRMS_MSRMSApp_SP_CompanyDefined.png)
 
     > [!NOTE]
-    > If you do not see the **Protect with RMS** option, it’s likely that either the RMS sharing application is not installed on your computer, or your computer must be restarted to complete the installation. For more information about how to install the RMS sharing application, see [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
+    > Pokud se nezobrazí **chránit s RMS** možnost, je pravděpodobné, že buď není v počítači nainstalována aplikace pro sdílení obsahu RMS, nebo k dokončení instalace je nutné restartovat váš počítač. Další informace o tom, jak nainstalovat aplikaci sdílení RMS naleznete v tématu [Stáhněte si a nainstalujte Rights Management, aplikace pro sdílení](../Topic/Download_and_install_the_Rights_Management_sharing_application.md).
 
-2.  Do one of the following:
+2.  Proveďte jednu z následujících akcí:
 
-    -   Select a policy template: These are predefined permissions that typically restrict access and usage to people in your organization. For example, if your organization name is "Contoso, Ltd", you might see **Contoso, Ltd - Confidential View Only**. If this is the first time you have protected a file on this computer, you will first need to select **Company-defined Protection** to download the templates.
+    -   Vyberte šablonu zásad: Jedná se o předdefinované oprávnění, která obvykle omezení přístupu a používání uživatelům ve vaší organizaci. Například, pokud je název vaší organizace "Contoso, Ltd", se mohou zobrazit **společnosti Contoso, Ltd - pouze důvěrné zobrazení**. Pokud je to poprvé mít chráněný soubor v tomto počítači, je nejprve nutné k výběru **Ochrana definovaná společností** Chcete-li stáhnout šablony.
 
-        The next time you click the **Protect in-place** option, you will see up to 10 templates to choose from. If there are more than 10 templates available and the one you want isn’t displayed, click **Company-defined Protection** to download and see all the templates.
+        Při příštím kliknutí **chránit na místě** možnost, zobrazí se až 10 šablony lze vybírat. Pokud existuje více než 10 šablony, které jsou k dispozici a ten, který chcete, aby se nezobrazí, klikněte na tlačítko **Ochrana definovaná společností** ke stažení a podívat na šablony.
 
-        When you select a policy template, you can also protect multiple files and a folder. When you select a folder, all the files in that folder are automatically selected for protection but new files that you create in that folder will not be automatically protected.
+        Když vyberete šablonu zásad, můžete také chránit více soubory a složky. Když vyberete složku, všechny soubory v této složce jsou vybrány automaticky pro ochranu, ale nové soubory, které vytvoříte v této složce nebude chráněn automaticky.
 
-    -   Select **Custom Permissions**: Choose this option if the templates don’t provide the level of protection that you need  or you want to explicitly set the protection options yourself. Specify the options that you want for this file in the [add protection dialog box](http://technet.microsoft.com/library/dn574738.aspx), and then click **Apply**.
+    -   Vyberte **vlastní oprávnění**: Tuto možnost zvolte, pokud šablony, které neposkytují úroveň ochrany, které potřebujete, nebo chcete explicitně nastavení možností ochrany sami. Zadejte možnosti, které chcete použít pro tento soubor v [ochrany dialogové okno Přidat](http://technet.microsoft.com/library/dn574738.aspx), a potom klikněte na tlačítko **použít**.
 
-3.  You might quickly see a dialog box to tell you that the file is being protected, and the focus then returns to File Explorer. The selected file or files are now protected. In some cases (when adding protection changes the file name extension), the original file in File Explorer is replaced with a new file that has the Rights Management protection lock icon. For example:
+3.  Může se rychle zobrazit dialogové okno o tom, že soubor je chráněn a fokus vrátí do souboru Průzkumníka. Vybraný soubor nebo soubory jsou nyní chráněna. V některých případech (při přidání ochrany změní příponu názvu souboru) původní soubor v Průzkumníku soubor je nahrazen nový soubor, který má ikonu zámku ochrany Rights Management. Příklad:
 
     ![](../Image/ADRMS_MSRMSApp_Pfile.png)
 
-If you later need to remove protection from a file, see [Remove protection from a file by using the Rights Management sharing application](../Topic/Remove_protection_from_a_file_by_using_the_Rights_Management_sharing_application.md).
+Pokud potřebujete později odebrat ochranu ze souboru, naleznete v části [Odebrat ochranu ze souboru s použitím Rights Management, aplikace pro sdílení](../Topic/Remove_protection_from_a_file_by_using_the_Rights_Management_sharing_application.md).
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Příklady a další informace
+Příklady pro jak je možné použít Rights Management, sdílení aplikací a návody, naleznete v následujících částech v uživatelské příručce sdílení aplikace Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Příklady použití aplikace pro sdílení obsahu RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [Co chcete provést?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Viz také
+[Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md)
 

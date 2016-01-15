@@ -3,93 +3,46 @@ description: na
 keywords: na
 title: Rights Management sharing application: Version release history
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6751bd90-959f-4eba-91ed-6588ac983762
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Rights Management sharing application: Version release history
-The Rights Management team regularly updates the Rights Management sharing application for fixes and new functionality. Use the following information to see what’s new or changed in a release. The most current release is listed first.
+# Služba Rights Management, aplikace pro sd&#237;len&#237;: Historie vyd&#225;n&#237; verze
+Služba Rights Management týmu pravidelně aktualizuje Rights Management, aplikace pro opravy a nové funkce pro sdílení. Pomocí následujících informací a zjistěte, co je nové nebo změněné v verzi. Nejprve je uvedena nejnovější verze.
 
-Versions before January 1, 2015 are not listed.
+Verze před 1. ledna 2015 nejsou uvedeny.
 
 > [!NOTE]
-> If you have feedback or a question about the RMS sharing application, send an email message to [AskIPTeam](mailto:AskIPTeam@microsoft.com?subject=RMS%20sharing%20app:%20Feedback%20or%20question).
+> Pokud máte svůj názor nebo dotaz týkající se aplikace pro sdílení obsahu RMS, odesílat e-mailovou zprávu na [AskIPTeam](mailto:AskIPTeam@microsoft.com?subject=RMS%20sharing%20app:%20Feedback%20or%20question).
 
-## Version 1.0.2004.0
-**Released**: 12/11/2015
+## Verze 1.0.1908.0
 
-**Fixes**:
+|||
+|-|-|
+|Uvolnění|9/16/2015|
+|Opravy|-   Podpora pro Vícefaktorového ověřování Multi-Factor pro Azure RMS, tím se také odstraní závislost na Microsoft Pomocníka pro přihlášení pro aplikace, které používají moderní ověřování.<br />    Další informace naleznete [Vícefaktorového ověřování (MFA) a Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_MFA)   v oddílu  [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md).|
 
--   Only the file owner and people with **Co-Owner** permissions levels can unprotect files. Previously, the owner and people with **Co-Author** and **Co-owner** permissions levels could unprotect files.
+## Verze 1.0.1784.0
 
--   Native protection for **.tif** files (in addition to .tiff files), to produce an RMS-protected, read-only **.ptif** file.
+|||
+|-|-|
+|Uvolnění|7/30/2015|
+|Opravy|-   Výchozí interval aktualizace pro práva šablony zásad se snižuje z 7 dnů na 1 den.<br />-   Malý počet regrese a menší chyby.|
 
--   Improvements for error messages (accuracy and clarity).
+## Verze 1.0.1770.0
 
--   Performance improvements for encrypting and decrypting content.
+|||
+|-|-|
+|Uvolnění|4/25/2015|
+|Opravy|-   Nyní si pouze vlastník a vedlejšího vlastníci může odebrat ochranu. Nelze provést vedlejšího autoři.<br />-   Chránit lze nyní soubory, které jsou v síťové sdílené složce.|
+|Nové funkce|<ul><li>Podpora pro sledování dokumentů a zrušení. Další informace naleznete v tématu [Sledování a odvolání dokumenty, pokud použijete aplikaci sdílení RMS](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md)</li><li>Šablona podpory, pokud se rozhodnete **sdílet chráněné**:<br /><br /><ul><li>Nyní můžete vybrat šablony.</li><li>Namísto jezdce zobrazí se seznam, který obsahuje šablony a vlastní oprávnění.</li><li>Již zobrazit možnosti pro **Povolit používání na všech zařízeních** a **Vynutit omezení použití**. Namísto toho **Obecný ochrany** je automaticky vybrán, v závislosti na typu souborů.</li></ul>    Další informace naleznete v tématu [Možnosti dialogového okna pro službu Rights Management, aplikace pro sdílení](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md).</li></ul>|
 
-**New features**:
+## Verze 1.0.1667.0
 
--   Support for non-administrator installation, so that standard users can install the RMS sharing application.
-
-    There are some restrictions for standard users who run Office 2010. For more information, see the  [If you are not a local administrator and use Office 2010](../Topic/Download_and_install_the_Rights_Management_sharing_application.md#BKMK_SetupOffice2010) section in the [Download and install the Rights Management sharing application](../Topic/Download_and_install_the_Rights_Management_sharing_application.md)  user instructions.
-
-## Version 1.0.1908.0
-**Released**: 9/16/2015
-
-**Fixes**:
-
--   Support for multi-factor authentication (MFA) for Azure RMS, which also removes the dependency on the Microsoft Sign-in Assistant for applications that use modern authentication.
-
-    For more information, see the [Multi-factor authentication (MFA) and Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_MFA)   section in  [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md).
-
-## Version 1.0.1784.0
-**Released**: 7/30/2015
-
-**Fixes**:
-
--   The default refresh interval for rights policy templates is reduced from 7 days to 1 day.
-
--   Small number of regressions and minor bugs.
-
-## Version 1.0.1770.0
-**Released**: 4/25/2015
-
-**Fixes**:
-
--   Now, only owner and co-owners can remove protection. Co-authors cannot remove protection.
-
--   Files that are on a network share can now be protected.
-
-**New features**:
-
--   Support for document tracking and revocation. For more information, see [Track and revoke your documents when you use the RMS sharing application](../Topic/Track_and_revoke_your_documents_when_you_use_the_RMS_sharing_application.md).
-
--   Template support when you choose **Share Protected**:
-
-    -   You can now select templates.
-
-    -   Instead of the slider, you will see a list box that includes templates and custom permissions.
-
-    -   You no longer see options for **Allow consumption on all devices** and **Enforce usage restrictions**. Instead, **Generic Protection** is automatically selected, depending on the file type.
-
-    For more information, see [Dialog box options for the Rights Management sharing application](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md).
-
-## Version 1.0.1667.0
-**Released**: 1/19/2015
-
-**Fixes**:
-
--   Support for Chinese language fonts in the RMS sharing app PPDF viewer.
-
--   Improved error handling and messaging.
-
--   Fix to an issue with the automatic update notification when a newer version of the app is available for download.
-
-**New features**:
-
--   **Support for multiple email domains within your organization**: If you use AD RMS and users in your organization have multiple email domains, this update lets your users consume content that has been protected by users in your organization in other domains. For more information, see the [AD RMS only: Support for multiple email domains within your organization](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_FederatedDomains) section in the [Rights Management sharing application administrator guide](../Topic/Rights_Management_sharing_application_administrator_guide.md).
-
+|||
+|-|-|
+|Uvolnění|1/19/2015|
+|Opravy|-   Podpora pro čínštinu písma v prohlížeči PPDF aplikace pro sdílení obsahu RMS.<br />-   Vylepšení zpracování chyb a zasílání zpráv.<br />-   Opravte k problému s oznámení služby Automatické aktualizace, pokud je k dispozici ke stažení novější verze aplikace.|
+|Nové funkce|-   **Podporu pro více domén e-mailu ve vaší organizaci**: Pokud používáte službu AD RMS a mají uživatelé ve vaší organizaci více domén e-mailu, tato aktualizace umožňuje uživatelům spotřebovávat obsah, který je chráněn uživatele ve vaší organizaci v jiných doménách. Další informace naleznete [Služby AD RMS pouze: Podpora pro více domén e-mailu v rámci vaší organizace](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_FederatedDomains) v oddílu [Průvodce Rights Management sdílení aplikace Správce](../Topic/Rights_Management_sharing_application_administrator_guide.md).|

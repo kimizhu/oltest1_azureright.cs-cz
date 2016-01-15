@@ -3,29 +3,28 @@ description: na
 keywords: na
 title: Planning and Implementing Your Azure Rights Management Tenant Key
 search: na
-ms.date: 2015-10-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f0d33c5f-a6a6-44a1-bdec-5be1bc8e1e14
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Planning and Implementing Your Azure Rights Management Tenant Key
-Use the information in this topic to help you plan for and manage your Rights Management service (RMS) tenant key for Azure RMS. For example, instead of Microsoft managing your tenant key (the default), you might want to manage your own tenant key to comply with specific regulations that apply to your organization.  Managing your own tenant key is also referred to as bring your own key, or BYOK.
+# Pl&#225;nov&#225;n&#237; a implementaci v&#225;š Azure Rights Management klienta kl&#237;č
+Pomocí informací v tomto tématu, které vám pomohou plánovat a spravovat své Rights Management service (RMS) klienta klíč pro Azure RMS. Můžete například namísto Microsoft Správa váš klíč klienta (výchozí), můžete spravovat své vlastní klíč klienta dodržovat zvláštních předpisů, které se vztahují k vaší organizace.  Správa vlastní klíč klienta je také označované jako přenést vlastní klíč nebo BYOK.
 
 > [!NOTE]
-> The RMS tenant key is also known as the Server Licensor Certificate (SLC) key. Azure RMS maintains one or more keys for each organization that subscribes to Azure RMS. Whenever a key is used for RMS within an organization (such as user keys, computer keys, document encryption keys), they cryptographically chain to your RMS tenant key.
+> Klíč klienta služby RMS je také označována jako klíč pro certifikát serveru poskytovatel licence (vystavování). Azure RMS udržuje jeden nebo více klíčů pro každou organizaci, která se přihlásí k Azure RMS. Vždy, když klíč se používá pro službu RMS v rámci organizace (například uživatelské klíče, klíče počítače, dokumentu šifrovací klíče), jejich kryptograficky řetězce klíč klienta služby RMS.
 
-**At a glance:** Use the following table as a quick guide to your recommended tenant key topology. Then, use the additional sections for more information.
+**Na první pohled:** V následující tabulce slouží jako Stručná příručka k topologii klíče doporučené klienta. Poté pomocí v dalších částech Další informace.
 
-If you deploy Azure RMS by using a tenant key that is managed by Microsoft, you can change to BYOK later. However, you cannot currently change your Azure RMS tenant key from BYOK to managed by Microsoft.
+Pokud implementujete Azure RMS pomocí klienta klíč, který je spravováno společností Microsoft, můžete k BYOK později změnit. Však nelze změnit aktuálně váš klíč klienta Azure RMS z BYOK na spravovaných společností Microsoft.
 
-|Business requirement|Recommended tenant key topology|
-|------------------------|-----------------------------------|
-|Deploy Azure RMS quickly and without requiring special hardware|Managed by Microsoft|
-|Need full IRM functionality in Exchange Online with Azure RMS|Managed by Microsoft|
-|Your keys are created by you and protected in a hardware security module (HSM)|BYOK<br /><br />Currently, this configuration will result in reduced IRM functionality in Exchange Online. For more information, see the [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) section.|
-Use the following sections to help you choose which tenant key topology to use, understand the tenant key lifecycle, how to implement bring your own key (BYOK), and what steps to take next:
+|Z pracovních důvodů|Klíče topologie doporučené klienta|
+|-----------------------|--------------------------------------|
+|Nasazení Azure RMS rychle a bez nutnosti speciální hardware|Spravováno společností Microsoft|
+|Využívat všech funkcí služby IRM v systému Exchange Online s Azure RMS|Spravováno společností Microsoft|
+|Vaše klíče jsou vytvořené vámi a chráněna v modulu hardwarového zabezpečení (hardwarového zabezpečení)|BYOK<br /><br />V současné době této konfigurace povede k nižšími funkcí služby IRM v systému Exchange Online. Další informace naleznete [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) oddílu.|
+Pomocí následujících částí, které vám pomohou zvolit který klíč klienta topologie chcete použít, pochopit cyklus klíče klienta, jak implementovat přenést vlastní klíče (BYOK) a jaké má provést následující kroky:
 
 -   [Choose your tenant key topology: Managed by Microsoft (the default) or managed by you (BYOK)](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_ChooseTenantKey)
 
@@ -35,76 +34,76 @@ Use the following sections to help you choose which tenant key topology to use, 
 
 -   [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps)
 
-## <a name="BKMK_ChooseTenantKey"></a>Choose your tenant key topology: Managed by Microsoft (the default) or managed by you (BYOK)
-Decide which tenant key topology is best for your organization. By default, Azure RMS generates your tenant key and manages most aspects of the tenant key lifecycle. This is the simplest option with the lowest administrative overheads. In most cases, you do not even need to know that you have a tenant key. You just sign up for Azure RMS and the rest of the key management process is handled by Microsoft.
+## <a name="BKMK_ChooseTenantKey"></a>Zvolte vašem klientovi klíče topologie: Spravováno společností Microsoft (výchozí) nebo spravuje můžete (BYOK)
+Rozhodněte, které klíče topologie klienta je nejvhodnější pro vaši organizaci. Ve výchozím nastavení Azure RMS generuje váš klíč klienta a spravuje většinu aspektů klíče životnost klienta. Toto je nejjednodušší možnost s nejnižší režie pro správu. Ve většině případů i nepotřebujete vědět, abyste měli klíč klienta. Stačí přihlášení k Azure RMS a celého procesu správy klíčů je vyřeší společností Microsoft.
 
-Alternatively, you might want complete control over your tenant key, which involves creating your tenant key and keeping the master copy on your premises. This scenario is often referred to as bring your own key (BYOK). With this option, the following happens:
+Alternativně můžete chtít plnou kontrolu nad vašeho klienta klíče, který zahrnuje vytvoření váš klíč klienta a udržování hlavní kopií na vaše místní. Tento scénář je často označována jako přenést vlastní klíč (BYOK). Když vyberete tuto možnost dojde k následujícímu:
 
-1.  You generate your tenant key on your premises, in line with your IT policies.
+1.  Můžete generovat klíč klienta na vaše místní v souladu se zásadami IT.
 
-2.  You securely transfer the tenant key from a Hardware Security Module (HSM) in your possession to HSMs that are owned and managed by Microsoft. Throughout this process, your tenant key never leaves the hardware protection boundary.
+2.  Můžete zabezpečenou klíč klienta z modulu hardwarového (hardwarové zabezpečení zabezpečení) vašeho držitelem předá moduly hardwarového zabezpečení, které jsou majetkem a spravováno společností Microsoft. Během tohoto procesu váš klíč klienta nikdy ponechá hranici ochrany hardwaru.
 
-3.  When you transfer your tenant key to Microsoft, it stays protected by Thales HSMs. Microsoft has worked with Thales to ensure that your tenant key cannot be extracted from Microsoft’s HSMs.
+3.  Při přenosu váš klíč klienta do společnosti Microsoft, zůstane chráněné podle společnosti Thales moduly hardwarového zabezpečení. Společnost Microsoft spolupracuje s společnosti Thales zajistit, že váš klíč klienta nemůže být získán z moduly hardwarového zabezpečení společnosti Microsoft.
 
-Although it’s optional, you will also probably want to use the near real-time usage logs from Azure RMS to see exactly how and when your tenant key is being used.
+Přestože je volitelné, budou také pravděpodobně chcete použít blízké používání v reálném čase protokoly Azure RMS, abyste viděli, přesně jak a kdy je používán klíč klienta.
 
 > [!NOTE]
-> As an additional protection measure, Azure RMS uses separate security worlds for its data centers in North America, EMEA (Europe, Middle East and Africa), and Asia. When you manage your own tenant key, it is tied to the security world of the region in which your RMS tenant is registered. For example, a tenant key from a European customer cannot be used in data centers in North America or Asia.
+> Jako dodatečnou ochranu opatření používá Azure RMS světů samostatné zabezpečení pro jeho datových center v USA a Kanady, EMEA (Evropa, Blízký východ a Afrika) a Asie. Při správě vlastní klíč klienta je přidruženo k ve světě zabezpečení oblast, ve kterém je váš RMS klient zaregistrován. Můžete například klíč klienta z Evropského zákazníka nelze použít v datacentrech v USA a Kanady nebo Asie.
 
-## <a name="BKMK_OverviewLifecycle"></a>The tenant key lifecycle
-If you decide that Microsoft should manage your tenant key, Microsoft handles most of the key lifecycle operations. However, if you decide to manage your tenant key, you are responsible for many of the key lifecycle operations and some additional procedures.
+## <a name="BKMK_OverviewLifecycle"></a>Klíče životnost klienta
+Pokud se rozhodnete, že společnosti Microsoft by měla spravovat váš klíč klienta, Microsoft zpracovává většinu operací klíče životního cyklu. Nicméně pokud se rozhodnete spravovat váš klíč klienta, zodpovídáte za několik operací klíče životního cyklu a některé další postupy.
 
-The following diagrams show and compares these two options. The first diagram shows how little administrator overheads there are for you in the default configuration when Microsoft manages the tenant key.
+Následující diagramy zobrazit a porovnává tyto dvě možnosti. První diagram ukazuje, jak malé režie správce nejsou pro vás ve výchozím nastavení při Microsoft spravuje klíč klienta.
 
 ![](../Image/RMS_BYOK_cloud.png)
 
-The second diagram shows the additional steps required when you manage your own tenant key.
+Druhý diagram zobrazuje další kroky potřebné při správě vlastní klíč klienta.
 
 ![](../Image/RMS_BYOK_onprem.png)
 
-If you decide to let Microsoft manage your tenant key, no further action is required for you to generate the key and you can skip the following sections and go straight to [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
+Pokud se rozhodnete odeslat do společnosti Microsoft spravovat váš klíč klienta, není nutné ke generování klíče žádná další akce a můžete přeskočit následující oddíly a přejděte přímo ke [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
 
-If you decide to manage your tenant key yourself, read the following sections for more information.
+Pokud se rozhodnete spravovat váš klíč klienta sami, přečtěte si níže uvedených částech najdete další informace.
 
-### More information about Thales HSMs and Microsoft additions
-Azure RMS uses Thales HSMs to protect your keys.
+### Další informace o přidání společnosti Thales moduly hardwarového zabezpečení a společnosti Microsoft
+Azure RMS společnosti Thales moduly hardwarového zabezpečení používá k ochraně vašich klíčů.
 
-Thales e-Security is a leading global provider of data encryption and cyber security solutions to the financial services, high technology, manufacturing, government, and technology sectors. With a 40-year track record of protecting corporate and government information, Thales solutions are used by four of the five largest energy and aerospace companies, 22 NATO countries, and secure more than 80 per cent of worldwide payment transactions.
+Společnosti Thales e zabezpečení je přední globálního zprostředkovatele šifrování dat a řešení zabezpečení internetoví na finanční služby, špičkových technologií, výrobu, státní správa a technologie sektory. S 40 rok track záznam ochrany podnikové a informací vládou řešení společnosti Thales jsou používány čtyři z pěti největší energie a aerospace společností, 22 NATO zemí a zabezpečit více než 80 % po celém světě platební transakce.
 
-Microsoft has collaborated with Thales to enhance the state of art for HSMs. These enhancements enable you to get the typical benefits of hosted services without relinquishing control over your keys. Specifically, these enhancements let Microsoft manage the HSMs so that you do not have to. As a cloud service, Azure RMS scales up at short notice to meet your organization’s usage spikes. At the same time, your key is protected inside Microsoft’s HSMs: You retain control over the key lifecycle because you generate the key and transfer it to Microsoft’s HSMs.
+Společnost Microsoft spolupracuje s společnosti Thales k vylepšení stav techniky pro moduly hardwarového zabezpečení. Tato vylepšení umožňují získat typické výhody hostované služby bez vzdát kontrolu nad své klíče. Konkrétně tato vylepšení umožňují spravovat moduly hardwarového zabezpečení tak, aby nemáte do společnosti Microsoft. Jako cloudové služby Azure RMS škálování v krátké lhůtě ke splnění špičky využití vaší organizace. Současně je chráněn váš klíč uvnitř moduly hardwarového zabezpečení společnosti Microsoft: Je zachovat kontrolu nad klíče životního cyklu, protože generování klíče a převést jej do moduly hardwarového zabezpečení společnosti Microsoft.
 
-For more information, see [Thales HSMs and Azure RMS](http://www.thales-esecurity.com/msrms/cloud) on the Thales web site.
+Další informace naleznete v tématu [společnosti Thales moduly hardwarového zabezpečení a Azure RMS](http://www.thales-esecurity.com/msrms/cloud) na webové stránce společnosti Thales.
 
-## <a name="BKMK_Pricing"></a>BYOK pricing and restrictions
-Organization that have an IT-managed Azure subscription can use BYOK and log its usage at no extra charge. Organizations that use RMS for individuals cannot use BYOK and logging because they do not have a tenant administrator to configure these features.
+## <a name="BKMK_Pricing"></a>Ceny BYOK a omezení
+Organizace, která mají IT spravovat předplatné Azure můžete použít BYOK a protokolovat jeho používání bez dalších poplatků. Organizace, které používají služby RMS pro uživatele, nelze použít BYOK a protokolování, protože nemají správce klienta ke konfiguraci těchto funkcí.
 
 > [!NOTE]
-> For more information about RMS for individuals, see [RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md).
+> Další informace o RMS pro osoby, naleznete v tématu [RMS pro jednotlivce i Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md).
 
 ![](../Image/RMS_BYOK_noExchange.png)
 
-BYOK and logging work seamlessly with every application that integrates with Azure RMS. This includes cloud services such as SharePoint Online, on-premises servers that run Exchange and SharePoint that work with Azure RMS by using the RMS connector, and client applications such as Office 2013. You will get key usage logs regardless of which application makes requests of Azure RMS.
+Protokolování a BYOK bezproblémovou práci s každou aplikaci, která umožňuje integraci s Azure RMS. To zahrnuje cloudové služby, například služby SharePoint Online, místní servery se systémem Exchange a SharePoint, které pracují s Azure RMS pomocí konektoru služby RMS a klientských aplikací, jako je například Office 2013. Zobrazí se bez ohledu na to, které aplikace zadá požadavky Azure RMS protokoly použití klíče.
 
-There is one exception: Currently, **Azure RMS BYOK is not compatible with Exchange Online**.  If you want to use Exchange Online, we recommend that you deploy Azure RMS in the default key management mode now, where Microsoft generates and manages your key. You have the option to move to BYOK later, for example, when Exchange Online does support Azure RMS BYOK. However, if you cannot wait, another option is to deploy Azure RMS with BYOK now, with reduced RMS functionality for Exchange Online (unprotected emails and unprotected attachments remain fully functional):
+Existuje jedna výjimka: V současné době **Azure RMS BYOK není kompatibilní s systému Exchange Online**.  Pokud chcete použít systému Exchange Online, doporučujeme při zavádění Azure RMS ve výchozím režimu správy klíčů nyní, kde společnost Microsoft generuje a spravuje váš klíč. Máte možnost přesunout do BYOK později, například pokud podporuje Azure RMS BYOK systému Exchange Online. Pokud však nelze počkat, Další možností je nyní nasazení Azure RMS pomocí BYOK s nižšími RMS funkce pro systému Exchange Online (nechráněné e-mailů a nechráněné přílohy zůstat plně funkční):
 
--   Protected emails or protected attachments in Outlook Web Access cannot be displayed.
+-   Chráněné e-mailů nebo chráněné přílohy v aplikaci Outlook Web Access nelze zobrazit.
 
--   Protected emails on mobile devices that use Exchange ActiveSync IRM cannot be displayed.
+-   Chráněné e-mailů na mobilních zařízeních, které používají Exchange ActiveSync IRM nelze zobrazit.
 
--   Transport decryption (for example, to scan for malware) and journal  decryption is not possible, so protected emails and protected attachments will be skipped.
+-   Přenosu dešifrování (například k vyhledávání malwaru) a deník dešifrování není možné, takže chráněný e-mailů a chráněné přílohy budou přeskočeny.
 
--   Transport protection rules and data loss prevention (DLP) that enforce IRM policies is not possible, so RMS protection cannot be applied by using these methods.
+-   Přenos ochrany pravidel a dat Zabránění ztrátě (DLP), vynutit zásady IRM není možné, takže ochrany RMS nelze použít pomocí těchto metod.
 
--   Server-based search for protected emails, so protected emails will be skipped.
+-   Na serveru hledání chráněné e-mailů, takže chráněný e-mailů budou přeskočeny.
 
-When you use Azure RMS BYOK with reduced RMS functionality for Exchange Online, RMS will work with email clients in Outlook on Windows and Mac, and on other email clients that don't use Exchange ActiveSync IRM.
+Použijete-li Azure RMS BYOK s nižšími RMS funkcí pro systému Exchange Online, RMS bude fungovat se e-mailových klientů v aplikaci Outlook v systému Windows a Mac a v dalších e-mailu klientech, které nepoužívají Exchange ActiveSync IRM.
 
-If you are migrating to Azure RMS from AD RMS, you might have imported your key as a trusted publishing domain (TPD) to Exchange Online (also called BYOK in Exchange terminology, which is separate from Azure RMS BYOK). In this scenario, you must remove the TPD from Exchange Online to avoid conflicting templates and policies. For more information, see [Remove-RMSTrustedPublishingDomain](https://technet.microsoft.com/library/jj200720%28v=exchg.150%29.aspx) from the Exchange Online cmdlets library.
+Při migraci na Azure RMS ze služby AD RMS, jste mohli importovat váš klíč jako důvěryhodné domény publikování (důvěryhodné domény publikování) na serveru Exchange Online (nazývané také BYOK v systému Exchange terminologie, který je oddělen od Azure RMS BYOK). V tomto případě je nutné odebrat důvěryhodné domény publikování ze systému Exchange Online, aby se zabránilo konfliktní šablony a zásady. Další informace naleznete v tématu [Odebrat RMSTrustedPublishingDomain](https://technet.microsoft.com/library/jj200720%28v=exchg.150%29.aspx) v knihovně rutiny systému Exchange Online.
 
-Sometimes, the Azure RMS BYOK  exception for Exchange Online is not a problem in practice. For example, organizations that need BYOK and logging run their data applications (Exchange, SharePoint, Office) on-premises, and use Azure RMS for functionality that is not easily available with on-premises AD RMS (for example, collaboration with other companies and access from mobile clients). Both BYOK and logging work well in this scenario and allow the organization to have full control over their Azure RMS subscription.
+V některých případech v Azure RMS BYOK výjimky systému Exchange Online není ve praxe došlo k potížím. Můžete například spustit organizace, které potřebují protokolování a BYOK jejich data aplikací (Exchange, SharePoint, systému Office) místně a používání Azure RMS pro funkci, která není snadno k dispozici s místním AD RMS (například spolupráci s jinými společnostmi a přístup z mobilních klientů). BYOK a protokolování pracovní i v tomto případě a povolit organizace mít plnou kontrolu nad předplatnému Azure RMS.
 
-## <a name="BKMK_ImplementBYOK"></a>Implementing bring your own key (BYOK)
-Use the information and procedures in this section if you have decided to generate and manage your tenant key; the bring your own key (BYOK) scenario:
+## <a name="BKMK_ImplementBYOK"></a>Implementace přenést vlastní klíč (BYOK)
+Pokud jste se rozhodli vytvářet a spravovat své klienty klíčem, použijte informace a postupy v této části přenést danému klíči (BYOK):
 
 -   [Prerequisites for BYOK](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Preqs)
 
@@ -113,43 +112,43 @@ Use the information and procedures in this section if you have decided to genera
 -   [Generate and transfer your tenant key – in person](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_BYOK_InPerson)
 
 > [!IMPORTANT]
-> If you have already started to use [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (the service is activated) and you have users who run Office 2010, contact Microsoft Customer Support Services (CSS) before you run these procedures. Depending on your scenario and requirements, you can still use BYOK but with some limitations or additional steps.
+> Pokud jste už začali používat [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (služba je aktivován) a mají uživatelé, kteří spuštění systému Office 2010, obraťte se na služby podpory zákazníků společnosti Microsoft (CSS) před spuštěním tyto postupy. V závislosti na tom, scénáře a požadavky, můžete použít BYOK, ale s některá omezení nebo další kroky.
 > 
-> Also contact CSS if your organization has specific policies for handling keys.
+> Pokud má vaše organizace určité zásady pro zpracování klíče také kontaktujte šablon stylů CSS.
 
-### <a name="BKMK_Preqs"></a>Prerequisites for BYOK
-See the following table for a list of prerequisites for bring your own key (BYOK).
+### <a name="BKMK_Preqs"></a>Předpoklady pro BYOK
+Podívejte se na téma v následující tabulce seznam nezbytně nutné pro přenesení vlastní klíč (BYOK).
 
-|Requirement|More information|
-|---------------|--------------------|
-|A subscription that supports Azure RMS.|For more information about the available subscriptions, see the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.|
-|You do not use RMS for individuals or Exchange Online. Or, if you use Exchange Online, you understand and accept the limitations of using BYOK with this configuration.|For more information about the restrictions and current limitations for BYOK, see the [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) section in this topic.<br /><br />**Important**: Currently, BYOK is not compatible with Exchange Online.|
-|Thales HSM, smartcards, and support software.<br /><br />**Note**: If you are migrating from AD RMS to Azure RMS by using software key to hardware key, you must have a minimum version of 11.62 for the Thales drivers.|You must have access to a Thales Hardware Security Module and basic operational knowledge of Thales HSMs. See [Thales Hardware Security Module](http://www.thales-esecurity.com/msrms/buy) for the list of compatible models, or to purchase an HSM if you do not have one.|
-|If you want to transfer your tenant key over the Internet rather than physically be present in Redmond, USA. there are 3 requirements:<br /><br />Requirement 1: An offline x64 workstation with a minimum Windows operation system of Windows 7 and Thales nShield software that is at least version 11.62.<br /><br />If this workstation runs Windows 7, you must [install Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkId=225702).<br /><br />Requirement 2: A workstation that is connected to the Internet and has a minimum Windows operation system of Windows 7.<br /><br />Requirement 2: A USB drive or other portable storage device that has at least 16 MB free space.|These prerequisites are not required if you travel to Redmond and transfer your tenant key in person.<br /><br />For security reasons, we recommend that the first workstation is not connected to a network. However, this is not programmatically enforced.<br /><br />Note: In the instructions that follow, this first workstation is referred to as the **disconnected workstation**.<br /><br />In addition, if your tenant key is for a production network, we recommend that you use a second, separate workstation to download the toolset and upload the tenant key. But for testing purposes, you can use the same workstation as the first one.<br /><br />Note: In the instructions that follow, this second workstation is referred to as the **Internet-connected workstation**.|
-|Optional: Azure subscription.|If you want to log your tenant key usage (and Rights Management usage), you must have a subscription to Azure and sufficient storage on Azure to store your logs.|
-The procedures to generate and use your own tenant key depend on whether you want to do this over the Internet or in person:
+|Požadavek|Další informace|
+|-------------|-------------------|
+|Odběr, který podporuje Azure RMS|Další informace o dostupných odběry, naleznete v části [Cloud odběry, které podporují službu Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) v oddílu [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tématu.|
+|RMS se nepoužívá pro jednotlivé uživatele nebo systému Exchange Online. Nebo pokud používáte systému Exchange Online, pochopit a přijmout omezení týkající se použití BYOK s této konfigurace.|Další informace o omezení a aktuální omezení pro BYOK naleznete [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) v tomto tématu. **Important:** V současné době BYOK není kompatibilní s systému Exchange Online.|
+|Společnosti Thales hardwarového zabezpečení, karty SmartCard a podporu softwaru<br /><br />Při migraci ze služby AD RMS k Azure RMS pomocí softwaru klíče na klíč hardwaru, musí mít minimální verze 11.62 pro ovladače společnosti Thales.|Musí mít přístup k modulu hardwarového zabezpečení společnosti Thales a základní znalosti provozní společnosti Thales moduly hardwarového zabezpečení. Podívejte se na téma [modulu hardwarového zabezpečení společnosti Thales](http://www.thales-esecurity.com/msrms/buy) pro seznam kompatibilní modelů nebo zakoupit modul hardwarového zabezpečení, pokud nemáte jednu.|
+|Pokud chcete převést váš klíč klienta přes Internet, nikoli fyzicky existovat v Redmond, USA:<br /><br />1.  V režimu offline x 64 pracovní stanici s minimální operační systém Windows Windows 7 a společnosti Thales nShield softwaru, který je alespoň verze 11.62.<br />    Je-li této pracovní stanici běží systém Windows 7, je nutné [nainstalujte rozhraní Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkId=225702).<br />2.  Pracovní stanice, který je připojen k Internetu a má minimální operační systém Windows Windows 7.<br />3.  Jednotku USB nebo jiné přenosné úložné zařízení, která má alespoň 16 MB volného místa.|Tyto požadavky nejsou povinná, je-li přenášeny do Redmond a přenosu klienta klíč osobně.<br /><br />Z důvodu zabezpečení doporučujeme, aby první pracovní stanice není připojen k síti. Nicméně to není vynucována programově. **Note:** V části pokyny, které následují této pracovní stanici se nazývá odpojeného pracovní stanice.<br />Kromě toho je-li váš klíč klienta pro produkční sítě, doporučujeme, které umožňují pracovní stanici druhou, samostatnou stáhněte si sadu nástrojů a uložit klíč klienta. Ale pro účely testování, můžete použít stejnou pracovní stanici jako první. **Note:** V části pokyny, které následují druhý pracovní stanice uvedené jako pracovní stanice připojeného k Internetu.|
+|Volitelné: Předplatné Azure|Pokud chcete do protokolu vašeho klienta použití klíče (a využití Rights Management), musí mít předplatné Azure a dostatečné úložiště na Azure k ukládání protokolů.|
+Postupy, které generují a používat vlastní klíč klienta v závislosti na tom, zda chcete provést prostřednictvím Internetu nebo v osoby:
 
--   **Over the Internet:** This requires some extra configuration steps, such as downloading and using a toolset and Windows PowerShell cmdlets. However, you do not have to physically be in a Microsoft facility to transfer your tenant key. Security is maintained by the following methods:
+-   **Prostřednictvím Internetu:** To vyžaduje, aby některé kroky navíc konfigurace, například stažením a použitím sadu nástrojů a rutin prostředí Windows PowerShell. Však není třeba fyzicky být v zařízení společnosti Microsoft pro přenos váš klíč klienta. Zabezpečení je spravován následujících metod:
 
-    -   You generate the tenant key from an offline workstation, which reduces the attack surface.
+    -   Je-li z offline pracovní stanici, která omezuje možnost napadení Generovat klíč klienta.
 
-    -   The tenant key is encrypted with a Key Exchange Key (KEK), which stays encrypted until it is transferred to the Azure RMS HSMs. Only the encrypted version of your tenant key leaves the original workstation.
+    -   Klíč klienta je šifrovány s klíč Exchange klíč (KEK), která zůstává šifrované, dokud se přenese do služby RMS Azure, moduly hardwarového zabezpečení. Pouze zašifrované verzi klienta klíče ponechá původní pracovní stanice.
 
-    -   A tool sets properties on your tenant key that binds your tenant key to the Azure RMS security world. So after the Azure RMS HSMs receive and decrypt your tenant key, only these HSMs can use it. Your tenant key cannot be exported. This binding is enforced by the Thales HSMs.
+    -   Nástroj nastaví vlastnosti ve své klienty klíč, který váže váš klíč klienta do světa zabezpečení Azure RMS. Proto po RMS Azure, moduly hardwarového zabezpečení přijímat a dešifrovat klíč klienta, pouze tyto moduly hardwarového zabezpečení můžete použít. Není možné exportovat klíč klienta. Touto vazbou jsou vynuceny moduly hardwarového zabezpečení společnosti Thales.
 
-    -   The Key Exchange Key (KEK) that is used to encrypt your tenant key is generated inside the Azure RMS HSMs and is not exportable. The HSMs enforce that there can be no clear version of the KEK outside the HSMs. In addition, the toolset includes attestation from Thales that the KEK is not exportable and was generated inside a genuine HSM that was manufactured by Thales.
+    -   Klíč Exchange klíč (KEK) používaný k šifrování váš klíč klienta v rámci služby RMS Azure, moduly hardwarového zabezpečení, je vygenerována a není možné exportovat. Moduly hardwarového zabezpečení vynutit, že může být žádná zrušte verze KEK mimo moduly hardwarového zabezpečení. Kromě toho sada nástrojů zahrnuje rovněž potvrzení od společnosti Thales, KEK není možné exportovat a byl vytvořen v rámci genuine hardwarového zabezpečení, která byla společnost společnosti Thales.
 
-    -   The toolset includes attestation from Thales that the Azure RMS security world was also generated on a genuine HSM manufactured by Thales. This proves to you that Microsoft is using genuine hardware.
+    -   Sadu nástrojů zahrnuje rovněž potvrzení od společnosti Thales, aby na světě Azure RMS zabezpečení byl vygenerován také genuine hardwarového zabezpečení, který je společnosti Thales. To ukáže vám, že společnost Microsoft používá genuine hardwaru.
 
-    -   Microsoft uses separate KEKs as well as separate Security Worlds in each geographical region, which ensures that your tenant key can be used only in data centers in the region in which you encrypted it. For example, a tenant key from a European customer cannot be used in data centers in North American or Asia.
+    -   Společnost Microsoft používá samostatné KEKs stejně jako samostatné světů zabezpečení v každé zeměpisné oblasti, která zajistí, že váš klíč klienta lze použít pouze v datacentrech v oblasti, ve kterém je šifrovány. Můžete například klíč klienta z Evropského zákazníka nelze použít v datových center, nebo Americká Severní Asie.
 
     > [!NOTE]
-    > Your tenant key can safely move through untrusted computers and networks because it is encrypted and secured with access control level permissions, which makes it usable only within your HSMs and Microsoft’s HSMs for Azure RMS. You can use the scripts that are provided in the toolset to verify the security measures and read more information about how this works from Thales: [Hardware Key management in the RMS Cloud](https://www.thales-esecurity.com/knowledge-base/white-papers/hardware-key-management-in-the-rms-cloud).
+    > Váš klíč klienta můžete bezpečně procházet nedůvěryhodným počítačů a sítí vzhledem k tomu, že je šifrovány a zabezpečen s úrovní oprávnění řízení přístupu, díky čemuž je použít pouze v rámci vašeho moduly hardwarového zabezpečení a moduly hardwarového zabezpečení společnosti Microsoft pro Azure RMS. Můžete použít skripty, které jsou obsaženy v sadu nástrojů ověřit bezpečnostní opatření a přečtěte si další informace o tom, jak to funguje ze společnosti Thales: [Správy hardwaru klíčů v cloudu RMS](https://www.thales-esecurity.com/knowledge-base/white-papers/hardware-key-management-in-the-rms-cloud).
 
--   **In person:** This requires that you contact Microsoft Customer Support Services (CSS) to schedule a key transfer appointment for Azure RMS. You must travel to a Microsoft office in Redmond, Washington, United States of America to transfer your tenant key to the Azure RMS security world.
+-   **Osobně:** To vyžaduje, abyste se obrátili Microsoft služby podpory zákazníkům (CSS) můžete naplánovat přenosu klíče události pro Azure RMS. Microsoft Office musí projít v Redmond, Washington, USA pro přenos klienta klíč ve světě zabezpečení Azure RMS.
 
-### <a name="BKMK_BYOK_Internet"></a>Generate and transfer your tenant key – over the Internet
-Use the following procedures if you want to transfer your tenant key over the Internet rather than travel to a Microsoft facility to transfer the tenant key in person:
+### <a name="BKMK_BYOK_Internet"></a>Generovat a přenosu klienta klíč – přes Internet
+Pokud chcete převést váš klíč klienta přes Internet, nikoli přenášeny do zařízení společnosti Microsoft pro přenos klienta klíč osobně pomocí následujících postupů:
 
 -   [Prepare your Internet-connected workstation](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetPrepareWorkstation)
 
@@ -161,8 +160,8 @@ Use the following procedures if you want to transfer your tenant key over the In
 
 -   [Transfer your tenant key to Azure RMS](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetTransfer)
 
-#### <a name="BKMK_InternetPrepareWorkstation"></a>Prepare your Internet-connected workstation
-To prepare your workstation that is connected to the Internet, follow these 3 steps:
+#### <a name="BKMK_InternetPrepareWorkstation"></a>Připravit pracovní stanici připojeného k Internetu
+Chcete-li připravit pracovní stanici, který je připojen k Internetu, postupujte podle kroků 3:
 
 -   [Step 1: Install Windows PowerShell for Azure Rights Management](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation1)
 
@@ -170,89 +169,89 @@ To prepare your workstation that is connected to the Internet, follow these 3 st
 
 -   [Step 3: Download the BYOK toolset](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation3)
 
-##### <a name="BKMK_PrepareInternetConnectedWorkstation1"></a>Step 1: Install Windows PowerShell for Azure Rights Management
-From the Internet-connected workstation, download and install the Windows PowerShell module for Azure Rights Management.
+##### <a name="BKMK_PrepareInternetConnectedWorkstation1"></a>Krok 1: Instalace prostředí Windows PowerShell pro Azure Rights Management
+Z pracovní stanice připojeného k Internetu stáhněte a nainstalujte modul prostředí Windows PowerShell pro službu Rights Management Azure.
 
 > [!NOTE]
-> If you have previously downloaded this Windows PowerShell module, run the following command to check that your version number is at least 2.1.0.0: `(Get-Module aadrm -ListAvailable).Version`
+> Pokud jste dříve stáhli tento modul prostředí Windows PowerShell, spusťte následující příkaz ke kontrole, že vaše číslo verze je alespoň 2.1.0.0: `(Get-Module aadrm -ListAvailable).Version`
 
-For installation instructions, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+Pokyny k instalaci, naleznete v tématu [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-##### <a name="BKMK_PrepareInternetConnectedWorkstation2"></a>Step 2: Get your Azure Active Directory tenant ID
-Start Windows PowerShell with the **Run as administrator** option, and then run the following commands:
+##### <a name="BKMK_PrepareInternetConnectedWorkstation2"></a>Krok 2: Získejte ID klienta služby Azure Active Directory
+Spuštění prostředí Windows PowerShell s **Spustit jako správce** možnost a potom spusťte následující příkazy:
 
--   Use the [Connect-AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629415.aspx) cmdlet to connect to the Azure RMS service:
+-   Použití [Připojit AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629415.aspx) se připojit ke službě Azure RMS:
 
     ```
     Connect-AadrmService
     ```
-    When prompted, enter your [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] tenant administrator credentials (typically, you will use an account that is a global administrator for Azure Active Directory or Office 365).
+    Po zobrazení výzvy zadejte své [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] klienta přihlašovací údaje správce (obvykle použijete účet, který je globálního správce služby Azure Active Directory nebo Office 365).
 
--   Use the [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet to display the configuration of your tenant:
+-   Použití [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) rutina zobrazíte konfiguraci klienta:
 
     ```
     Get-AadrmConfiguration
     ```
-    From the output, save the GUID from the first line (BPOSId). This is your Azure Active Directory tenant ID, which you will need later when you prepare your tenant key for upload.
+    Z výstupu uložte identifikátor GUID z prvního řádku (BPOSId). Toto je vaše ID klienta služby Azure Active Directory, které budete potřebovat později při přípravě váš klíč klienta pro nahrávání.
 
--   Use the [Disconnect-AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629416.aspx) cmdlet to disconnect from the Azure RMS service until you are ready to upload your key:
+-   Použití [odpojení AadrmService](http://msdn.microsoft.com/library/windowsazure/dn629416.aspx) rutina odpojení od službou Azure RMS, dokud nebudete připraveni odeslat váš klíč:
 
     ```
     Disconnect-AadrmService
     ```
 
-Do not close the Windows PowerShell window.
+Nezavírejte okno prostředí Windows PowerShell.
 
-##### <a name="BKMK_PrepareInternetConnectedWorkstation3"></a>Step 3: Download the BYOK toolset
-Go to the Microsoft Download Center and [download the BYOK toolset](http://go.microsoft.com/fwlink/?LinkId=335781) for your region:
+##### <a name="BKMK_PrepareInternetConnectedWorkstation3"></a>Krok 3: Stáhněte si sadu nástrojů BYOK
+Přejděte na Microsoft Download Center a [Stáhněte si sadu nástrojů BYOK](http://go.microsoft.com/fwlink/?LinkId=335781) pro danou oblast:
 
-|Region|Package name|
-|----------|----------------|
-|North America|AzureRMS-BYOK-tools-UnitedStates.zip|
-|Europe|AzureRMS-BYOK-tools-Europe.zip|
-|Asia|AzureRMS-BYOK-tools-AsiaPacific.zip|
-The toolset includes the following :
+|Oblast|Název balíčku|
+|----------|-----------------|
+|Severní Amerika|AzureRMS-BYOK-nástroje spojené States.zip|
+|Evropa|AzureRMS BYOK nástroje Europe.zip|
+|Asie|AzureRMS BYOK nástroje AsiaPacific.zip|
+Sadu nástrojů obsahuje následující položky:
 
--   A Key Exchange Key (KEK) package that has a name beginning with **BYOK-KEK-pkg-**.
+-   Balíček klíč Exchange klíč (KEK), který obsahuje název začíná **BYOK-KEK-pkg -**.
 
--   A Security World package that has a name beginning with **BYOK-SecurityWorld-pkg-**.
+-   Zabezpečení světě balíček, který obsahuje název začíná **BYOK-SecurityWorld-pkg -**.
 
--   A python script named **verifykeypackage.py**.
+-   Skript v jazyce python s názvem **verifykeypackage.py**.
 
--   A command-line executable file named **KeyTransferRemote.exe**, a metadata file named **KeyTransferRemote.exe.config**, and associated DLLs.
+-   Do příkazového řádku spustitelného souboru s názvem **KeyTransferRemote.exe**, soubor metadat s názvem **KeyTransferRemote.exe.config**, a přidružené knihovny DLL.
 
--   A Visual C++ Redistributable Package, named **vcredist_x64.exe**.
+-   Visual C++ Distribuovatelný balíček, s názvem **vcredist_x64.exe**.
 
-Copy the package to a USB drive or other portable storage.
+Zkopírujte balíček na jednotku USB nebo jiných přenosných úložiště.
 
-#### <a name="BKMK_DisconnectedPrepareWorkstation"></a>Prepare your disconnected workstation
-To prepare your workstation that is not connected to a network (either the Internet or your internal network), follow these 2 steps:
+#### <a name="BKMK_DisconnectedPrepareWorkstation"></a>Připravit odpojeného pracovní stanice
+Chcete-li připravit pracovní stanici, který není připojen k síti (Internet nebo interní sítě), postupujte takto 2:
 
 -   [Step 1: Prepare the disconnected workstation with Thales HSM](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareDisconnectedWorkstation1)
 
 -   [Step 2: Install the BYOK toolset on the disconnected workstation](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareDisconnectedWorkstation2)
 
-##### <a name="BKMK_PrepareDisconnectedWorkstation1"></a>Step 1: Prepare the disconnected workstation with Thales HSM
-On the disconnected workstation, install the nCipher (Thales) support software on a Windows computer, and then attach a Thales HSM to that computer.
+##### <a name="BKMK_PrepareDisconnectedWorkstation1"></a>Krok 1: Připravit odpojeného pracovní stanici s hardwarového společnosti Thales zabezpečení
+Na odpojeného pracovní stanici nainstalovat software podpory nCipher (společnosti Thales) do počítače se systémem Windows a poté hardwarového zabezpečení společnosti Thales připojit k tomuto počítači.
 
-Ensure that the Thales tools are in your path **(%nfast_home%\bin** and **%nfast_home%\python\bin**). For example, type the following:
+Ujistěte se, že společnosti Thales nástroje jsou v zadané cestě **(%nfast_home%\bin** a **%nfast_home%\python\bin**). Například zadejte následující příkaz:
 
 ```
 set PATH=%PATH%;”%nfast_home%\bin”;”%nfast_home%\python\bin”
 ```
-For more information, see the user guide included with the Thales HSM, or visit the Thales website for Azure RMS at [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
+Další informace naleznete v uživatelské příručce součástí hardwarového zabezpečení společnosti Thales nebo navštivte webovou stránku společnosti Thales pro Azure RMS na [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
 
-##### <a name="BKMK_PrepareDisconnectedWorkstation2"></a>Step 2: Install the BYOK toolset on the disconnected workstation
-Copy the BYOK toolset package from the USB drive or other portable storage, and then do the following:
+##### <a name="BKMK_PrepareDisconnectedWorkstation2"></a>Krok 2: Nainstalujte sadu nástrojů BYOK na odpojeného pracovní stanice
+Zkopírovat balíček sadu nástrojů BYOK z jednotky USB nebo jiných přenosných úložiště a pak proveďte následující kroky:
 
-1.  Extract the files from the downloaded package into any folder.
+1.  Extrahujte soubory z balíčku stažené do libovolné složky.
 
-2.  From that folder, run vcredist_x64.exe.
+2.  V této složce spouštěny vcredist_x64.exe.
 
-3.  Follow the instructions to the install the Visual C++ runtime components for Visual Studio 2012.
+3.  Postupujte podle pokynů na instalaci komponenty modulu runtime Visual C++ pro sadu Visual Studio 2012.
 
-#### <a name="BKMK_InternetGenerate"></a>Generate your tenant key
-On the disconnected workstation, following these 3 steps to generate your own tenant key:
+#### <a name="BKMK_InternetGenerate"></a>Generovat klíč klienta
+Na odpojeného pracovní stanici, následujících kroků 3 ke generování vlastních klienta klíče:
 
 -   [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1)
 
@@ -260,107 +259,107 @@ On the disconnected workstation, following these 3 steps to generate your own te
 
 -   [Step 3: Create a new key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate3)
 
-##### <a name="BKMK_InternetGenerate1"></a>Step 1: Create a security world
-Start a command prompt and run the Thales new-world program.
+##### <a name="BKMK_InternetGenerate1"></a>Krok 1: Vytvořit bezpečnostní světa
+Spusťte příkazový řádek a potom spusťte program společnosti Thales nový světa.
 
 ```
 new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 ```
-This program creates a **Security World** file at %NFAST_KMDATA%\local\world, which corresponds to the C:\ProgramData\nCipher\Key Management Data\local folder. You can use different values for the quorum but in our example, you’re prompted to enter three blank cards and pins for each one. Then, any two cards will be required to have administrative access to the security world (your specified quorum).  These cards become the **Administrator Card Set** for the new security world. At this stage, you can specify the password or PIN for each ACS card, or add it later with a command.
+Tento program vytvoří **zabezpečení světě** souboru na % NFAST_KMDATA%\local\world, který odpovídá složce aplikací\Místní C:\ProgramData\nCipher\Key správy. Můžete použít různé hodnoty pro kvora, ale v našem příkladu, budete vyzváni k zadání tři prázdné karty a kódy PIN pro každý z nich. Pak bude nutné mít přístup pro správu ve světě zabezpečení (zadaný kvora) jakékoli dvě karty.  Staňte se tyto karty **Správce karta nastavit** pro nový svět zabezpečení. V tomto okamžiku můžete zadat heslo nebo PIN kód pro každé kartě ACS nebo přidat později pomocí příkazu.
 
 > [!TIP]
-> You can verify the current configuration status of your HSM by using the `nkminfo` command.
+> Aktuální stav konfigurace vašeho hardwarového zabezpečení můžete ověřit pomocí `nkminfo` příkazu.
 
-Then do the following:
+Proveďte následující kroky:
 
-1.  Install the Thales CNG provider as described in the Thales documentation, and configure it to use the new security world.
+1.  Instalace zprostředkovatele CNG společnosti Thales, jak je popsáno v dokumentaci společnosti Thales a nakonfigurovat tak, aby používat nový světa zabezpečení.
 
-2.  Back up the world file in **%nfast_kmdata%\local**. Secure and protect the world file, the Administrator Cards, and their pins, and make sure that no single person has access to more than one card.
+2.  Zpět nahoru na světě soubor v **%nfast_kmdata%\local**. Zabezpečení a ochraně soubor světě, karty správce a kódy PIN prostřednictvím a ujistěte se, že nikdo jedné nemá přístup k více než jednu kartu.
 
-##### <a name="BKMK_InternetGenerate2"></a>Step 2: Validate the downloaded package
-This step is optional but recommended so that you can validate the following:
+##### <a name="BKMK_InternetGenerate2"></a>Krok 2: Ověření staženého balíčku
+Tento krok je nepovinný, ale doporučuje tak, že je možné ověřit následující:
 
--   The Key Exchange Key that is included in the toolset has been generated from a genuine Thales HSM.
+-   Klíče pro výměnu klíč, který je součástí sadu nástrojů byl vygenerován z genuine hardwarového zabezpečení společnosti Thales.
 
--   The hash of the Azure RMS Security World that is included in the toolset has been generated in a genuine Thales HSM.
+-   Hodnota hash světa Azure RMS zabezpečení, která je součástí sadu nástrojů byl vytvořen v genuine hardwarového zabezpečení společnosti Thales.
 
--   The Key Exchange Key is non-exportable.
+-   Klíče pro výměnu klíče je není možné exportovat.
 
 > [!NOTE]
-> To validate the downloaded package, the HSM must be connected, powered on, and must have a security world on it (such as the one you’ve just created).
+> K ověření staženého balíčku, modul hardwarového zabezpečení musí být připojen, zapnuto a musí mít světě zabezpečení v něm (například ten, který jste právě vytvořili).
 
-###### To validate the downloaded package
+###### Chcete-li ověřit staženého balíčku
 
-1.  Run the verifykeypackage.py script by tying one of the following, depending on your region:
+1.  Spusťte skript verifykeypackage.py ovládání jednu z následujících akcí, v závislosti na vaší oblasti:
 
-    -   For North America:
+    -   Pro Severní Amerika:
 
         ```
         python verifykeypackage.py -k BYOK-KEK-pkg-NA-1 -w BYOK-SecurityWorld-pkg-NA-1
         ```
 
-    -   For Europe:
+    -   Pro Evropa:
 
         ```
         python verifykeypackage.py -k BYOK-KEK-pkg-EU-1 -w BYOK-SecurityWorld-pkg-EU-1
         ```
 
-    -   For Asia:
+    -   Pro Asie:
 
         ```
         python verifykeypackage.py -k BYOK-KEK-pkg-AP-1 -w BYOK-SecurityWorld-pkg-AP-1
         ```
 
     > [!TIP]
-    > The Thales software includes a Python interpreter at %NFAST_HOME%\python\bin
+    > Software společnosti Thales zahrnuje Python překladač na adrese %NFAST_HOME%\python\bin
 
-2.  Confirm that you see the following, which indicates successful validation: **Result:  SUCCESS**
+2.  Přesvědčte se, že zobrazí následující příkaz, který udává úspěšné ověření: **Výsledek:  ÚSPĚCH**
 
-This script validates the signer chain up to the Thales root key. The hash of this root key is embedded in the script and its value should be **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. You can also confirm this value separately by visiting the [Thales website](http://www.thalesesec.com/).
+Tento skript ověří řetězu podepisující osoba až do společnosti Thales kořenový klíč. Hash pro tento kořenový klíč je vložen do skriptu a jeho hodnota by měla být **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. Můžete také zkontrolovat, tato hodnota samostatně přechodem [web společnosti Thales](http://www.thalesesec.com/).
 
-You’re now ready to create a new key that will be your RMS tenant key.
+Nyní jste připraveni vytvořit nový klíč, který bude váš klíč klienta služby RMS.
 
-##### <a name="BKMK_InternetGenerate3"></a>Step 3: Create a new key
-Generate a CNG key by using the Thales **generatekey** and **cngimport** programs.
+##### <a name="BKMK_InternetGenerate3"></a>Krok 3: Vytvořit nový klíč
+Generovat klíč CNG pomocí společnosti Thales **generatekey** a **cngimport** programy.
 
-Run the following command to generate the key:
+Spusťte následující příkaz ke generování klíče:
 
 ```
 generatekey --generate simple type=RSA size=2048 protect=module ident=contosokey plainname=contosokey nvram=no pubexp=
 ```
-When you run this command, use these instructions:
+Při spuštění tohoto příkazu pomocí následujících pokynů:
 
--   For the key size, we recommend 2048 but also support 1024-bit RSA keys for existing AD RMS customers who have such keys and are migrating to Azure RMS.
+-   Délka klíče jsme doporučujeme 2048 však také podporují 1024 bitů klíče RSA pro stávající zákazníky služby AD RMS, kteří mají tyto klíče a migraci do Azure RMS.
 
--   Replace the value of *contosokey* for the **ident** and **plainname** with any string value. To minimize administrative overheads and reduce the risk of errors, we recommend that you use the same value for both, and use all lower case characters.
+-   Nahraďte hodnotu *contosokey* pro **ident** a **plainname** s libovolnou hodnotu řetězce. Minimalizovat režie pro správu a snížení rizika chyb, doporučujeme použít stejnou hodnotu pro obě a používat všechny znaky malými písmeny.
 
--   The pubexp is left blank (default) in this example, but you can specify specific values. For more information, see the Thales documentation.
+-   Pubexp je ponecháno prázdné pole (výchozí) v tomto příkladu, ale můžete zadat konkrétní hodnoty. Další informace naleznete v dokumentaci společnosti Thales.
 
-Then run the following command to import the key to CNG:
+Potom spusťte následující příkaz pro import klíč CNG:
 
 ```
 cngimport --import -M --key=contosokey --appname=simple contosokey
 ```
-When you run this command, use these instructions:
+Při spuštění tohoto příkazu pomocí následujících pokynů:
 
--   Replace *contosokey* with the same value that you specified in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+-   Nahradit *contosokey* se stejnou hodnotou, kterou jste zadali v [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) z *Generovat klíč klienta* oddílu.
 
--   Use the **-M** option so that the key is suitable for this scenario. Without this, the resultant key will be a user-specific key for the current user.
+-   Použití **- M** tak, že klíč je vhodný pro tento scénář. Bez toho budou výsledné klíč klíč specifické pro uživatele pro aktuálního uživatele.
 
-This command creates a Tokenized Key file in your %NFAST_KMDATA%\local folder with a name starting with **key_caping_** followed by a SID. For example: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. This file contains an encrypted key.
+Tento příkaz vytvoří soubor Tokenizovaná klíč ve složce %NFAST_KMDATA%\local, jejichž název začíná s **key_caping_** za nímž následuje identifikátor SID. Příklad: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. Tento soubor obsahuje zašifrovaného klíče.
 
 > [!TIP]
-> You can see the current configuration status of your keys by using the `nkminfo –k` command.
+> Aktuální stav konfigurace klíčů lze zobrazit pomocí `nkminfo –k` příkazu.
 
-Back up this Tokenized Key File in a safe location.
+Tento soubor klíče Tokenizovaná na bezpečné místo zálohujte.
 
 > [!IMPORTANT]
-> When you later transfer your key to Azure RMS, Microsoft cannot export this key back to you so it becomes extremely important that you back up your key and security world safely. Contact Thales for guidance and best practices for backing up your key.
+> Při přenosu později váš klíč do Azure RMS, Microsoft nelze exportovat tento klíč zpět tak, že je stále velmi důležité zálohovat svůj klíč a zabezpečení svět bezpečně. Obraťte se na společnosti Thales pokyny a doporučené postupy pro zálohování váš klíč.
 
-You are now ready to transfer your tenant key to Azure RMS.
+Nyní jste připraveni k přenosu váš klíč klienta do Azure RMS.
 
-#### <a name="BKMK_InternetPrepareTransfer"></a>Prepare your tenant key for transfer
-On the disconnected workstation, following these 4 steps to prepare your own tenant key:
+#### <a name="BKMK_InternetPrepareTransfer"></a>Připravit váš klíč klienta pro přenos
+Na odpojeného pracovní stanici, následujících kroků 4 připravit vlastní klíč klienta:
 
 -   [Step 1: Create a copy of your key with reduced permissions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetPrepareTransfer1)
 
@@ -370,39 +369,39 @@ On the disconnected workstation, following these 4 steps to prepare your own ten
 
 -   [Step 4: Copy your key transfer package to the Internet-connected workstation](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetPrepareTransfer4)
 
-##### <a name="BKMK_InternetPrepareTransfer1"></a>Step 1: Create a copy of your key with reduced permissions
-To reduce the permissions on your tenant key, do the following:
+##### <a name="BKMK_InternetPrepareTransfer1"></a>Krok 1: Vytvořit kopii klíče s nižšími oprávnění
+Chcete-li snížit oprávnění na váš klíč klienta, postupujte takto:
 
--   From a command prompt, run one of the following, depending on your region:
+-   Z příkazového řádku spusťte jednu z následujících akcí, v závislosti na vaší oblasti:
 
-    -   For North America:
+    -   Pro Severní Amerika:
 
         ```
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-NA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-NA-1
         ```
 
-    -   For Europe:
+    -   Pro Evropa:
 
         ```
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-EU-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-EU-1
         ```
 
-    -   For Asia:
+    -   Pro Asie:
 
         ```
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AP-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AP-1
         ```
 
-When you run this command, replace *contosokey* with the same value you specified in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+Při spuštění tohoto příkazu nahradit *contosokey* se stejnou hodnotu jste zadali v [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) z *Generovat klíč klienta* oddílu.
 
-You will be asked to plug in your security world ACS cards, and if specified, their password or PIN..
+Budete požádáni o zařadit vaše karty ACS světě zabezpečení a je-li zadána, své heslo nebo PIN kód.
 
-When the command completes, you will see **Result: SUCCESS** and the copy of your tenant key with reduced permissions will be in the file named key_xferacId_*&lt;contosokey&gt;*.
+Po dokončení příkazu, zobrazí se **výsledek: Úspěch** a kopii klíče klienta s nižšími oprávněními bude v souboru s názvem key_xferacId_*&lt; contosokey &gt;*.
 
-##### <a name="BKMK_InternetPrepareTransfer2"></a>Step 2: Inspect the new copy of the key
-Optionally, run the Thales utilities to confirm the minimal permissions on the new tenant key:
+##### <a name="BKMK_InternetPrepareTransfer2"></a>Krok 2: Zkontrolovat novou kopii klíč
+Můžete také spouštět společnosti Thales nástroje pro potvrzení minimální oprávnění na nový klíč klienta:
 
--   aclprint.py:
+-   aclprint.PY:
 
     ```
     "%nfast_home%\bin\preload.exe" -m 1 -A xferacld -K contosokey "%nfast_home%\python\bin\python" "%nfast_home%\python\examples\aclprint.py"
@@ -414,47 +413,47 @@ Optionally, run the Thales utilities to confirm the minimal permissions on the n
     "%nfast_home%\bin\kmfile-dump.exe" "%NFAST_KMDATA%\local\key_xferacld_contosokey"
     ```
 
-When you run these command, replace *contosokey* with the same value you specified in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+Při spuštění tyto příkazu nahradit *contosokey* se stejnou hodnotu jste zadali v [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) z *Generovat klíč klienta* oddílu.
 
-##### <a name="BKMK_InternetPrepareTransfer3"></a>Step 3: Encrypt your key by using Microsoft’s Key Exchange Key
-Run one of the following commands, depending on your region:
+##### <a name="BKMK_InternetPrepareTransfer3"></a>Krok 3: Šifrování své klíče pomocí klíče pro výměnu klíč společnosti Microsoft
+V závislosti na vaší oblasti spustíte jednu z následujících příkazů:
 
--   For North America:
+-   Pro Severní Amerika:
 
     ```
     KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-NA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-NA-1 -TenantBposId GUID -KeyFriendlyName ContosoFirstkey
     ```
 
--   For Europe:
+-   Pro Evropa:
 
     ```
     KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-EU-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-EU-1 -TenantBposId GUID -KeyFriendlyName ContosoFirstkey
     ```
 
--   For Asia:
+-   Pro Asie:
 
     ```
     KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AP-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AP-1 -TenantBposId GUID -KeyFriendlyName ContosoFirstkey
     ```
 
-When you run this command, use these instructions:
+Při spuštění tohoto příkazu pomocí následujících pokynů:
 
--   Replace *contosokey* with the identifier that you used to generate the key in [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) from the *Generate your tenant key* section.
+-   Nahradit *contosokey* s identifikátorem, který používá ke generování klíče v [Step 1: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetGenerate1) z *Generovat klíč klienta* oddílu.
 
--   Replace *GUID* with your Azure Active Directory tenant ID that you retrieved in [Step 2: Get your Azure Active Directory tenant ID](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation2) from the *Prepare your Internet-connected workstation* section.
+-   Nahradit *identifikátor GUID* s Azure Active Directory klienta ID, který je načten v [Step 2: Get your Azure Active Directory tenant ID](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_PrepareInternetConnectedWorkstation2) z *připravit pracovní stanici připojeného k Internetu* oddílu.
 
--   Replace *ContosoFirstKey* with a label that will be used for your output file name.
+-   Nahradit *ContosoFirstKey* s popiskem, který se bude používat pro své jméno výstupní soubor.
 
-When this completes successfully it displays **Result: SUCCESS** and there will be a new file in the current folder that has the following name: TransferPackage-*ContosoFirstkey*.byok
+Pokud to úspěšném dokončení se zobrazí **výsledek: Úspěch** a bude nový soubor v aktuální složce, která má následující název: TransferPackage -*ContosoFirstkey*.byok
 
-##### <a name="BKMK_InternetPrepareTransfer4"></a>Step 4: Copy your key transfer package to the Internet-connected workstation
-Use a USB drive or other portable storage to copy the output file from the previous step (KeyTransferPackage-*ContosoFirstkey*.byok) to your Internet-connected workstation.
+##### <a name="BKMK_InternetPrepareTransfer4"></a>Krok 4: Zkopírovat klíče přenosu balíčku do pracovní stanice připojeného k Internetu
+Použít jednotku USB nebo jiné přenosné úložné ke zkopírování výstupní soubor z předchozího kroku (KeyTransferPackage -*ContosoFirstkey*.byok) pracovní stanici připojeného k Internetu.
 
 > [!NOTE]
-> Use security practices to protect the file because it includes your private key.
+> Použijte bezpečnostní postupy k ochraně souboru, protože obsahuje svým privátním klíčem.
 
-#### <a name="BKMK_InternetTransfer"></a>Transfer your tenant key to Azure RMS
-On the Internet-connected workstation,  follow these 3 steps To transfer your new tenant key to Azure RMS, :
+#### <a name="BKMK_InternetTransfer"></a>Převést váš klíč klienta do Azure RMS
+V pracovní stanici připojeného k Internetu postupujte takto 3 k přenosu nový klíč klienta do Azure RMS:
 
 -   [Step 1: Connect to Azure RMS](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetTransfer1)
 
@@ -462,53 +461,53 @@ On the Internet-connected workstation,  follow these 3 steps To transfer your ne
 
 -   [Step 3: Enumerate your tenant keys – as needed](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_InternetTransfer3)
 
-##### <a name="BKMK_InternetTransfer1"></a>Step 1: Connect to Azure RMS
-Return to the Windows PowerShell window and type the following:
+##### <a name="BKMK_InternetTransfer1"></a>Krok 1: Připojit k Azure RMS
+Zpět na okno prostředí Windows PowerShell a zadejte následující příkaz:
 
-1.  Reconnect to the [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] service:
+1.  Znovu se připojte k [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] služby:
 
     ```
     Connect-AadrmService
     ```
 
-2.  Use the [Get-AadrmKeys](http://msdn.microsoft.com/library/windowsazure/dn629420.aspx) cmdlet to see your current tenant key configuration:
+2.  Použití [Get-AadrmKeys](http://msdn.microsoft.com/library/windowsazure/dn629420.aspx) rutina zobrazíte aktuální konfiguraci klienta klíče:
 
     ```
     Get-AadrmKeys
     ```
 
-##### <a name="BKMK_InternetTransfer2"></a>Step 2: Upload the key package
-Use the [Add-AadrmKey](http://msdn.microsoft.com/library/windowsazure/dn629418.aspx) cmdlet to upload the key transfer package that you copied from the disconnected workstation:
+##### <a name="BKMK_InternetTransfer2"></a>Krok 2: Uložit balíček klíče
+Použití [Přidat AadrmKey](http://msdn.microsoft.com/library/windowsazure/dn629418.aspx) rutina chcete uložit balíček klíče přenosu, který jste zkopírovali z odpojeného pracovní stanice:
 
 ```
 Add-AadrmKey –KeyFile <PathToPackageFile> -Verbose
 ```
 > [!WARNING]
-> You are prompted to confirm this action. It’s important to understand that this action cannot be undone. When you upload a tenant key, it automatically becomes your organization’s primary tenant key and users will start to use this tenant key when they protect documents and files.
+> Zobrazí se výzva k potvrzení této akce. Je důležité porozumět, že tuto akci nelze vrátit zpět. Při odesílání klíč klienta automaticky se změní primární klienta klíč vaší organizace a uživatelé budou začít používat tento klíč klienta, když chrání dokumenty a soubory.
 
-If the upload is successful, you will see the following message: **The Rights management service successfully added the key.**
+Je-li nahrávání úspěšné, zobrazí se následující zpráva: **Služba Rights management úspěšně přidán klíč.**
 
-Expect a replication delay for the change to propagate to all [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] data centers.
+Očekávané zpoždění replikace pro změnu šířit všem [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] datových center.
 
-##### <a name="BKMK_InternetTransfer3"></a>Step 3: Enumerate your tenant keys – as needed
-Use the Get-AadrmKeys cmdlet again to see the change in your tenant key, and whenever you want to see a list of your tenant keys. The tenant keys displayed include the initial tenant key that Microsoft generated for you, and any tenant keys that you added:
+##### <a name="BKMK_InternetTransfer3"></a>Krok 3: Vytvořit výčet klíčů své klienty –, podle potřeby
+Rutina Get-AadrmKeys znovu použít, a zkontrolujte změny v klíči vašeho klienta a vždy, když chcete zobrazit seznam klíčů klienta. Zobrazí klíče klienta patří klíč klienta počáteční generovaný společnosti Microsoft a žádné klíče klienta, které jste přidali:
 
 ```
 Get-AadrmKeys
 ```
-The tenant key that is marked **Active** is the one that your organization is currently using to protect documents and files.
+Klíč klienta, která je označena **Active** je ten, který vaše organizace používá v současnosti k ochraně dokumenty a soubory.
 
-You have now completed all the steps required for bring your own key over the Internet and can go to [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
+Nyní jste dokončili všechny kroky potřebné pro přenesení vlastní klíč prostřednictvím Internetu a můžete přejít na [Next steps](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_NextSteps).
 
-### <a name="BKMK_BYOK_InPerson"></a>Generate and transfer your tenant key – in person
-Use the following procedures if you do not want to transfer your tenant key over the Internet, but instead, transfer your tenant key in person.
+### <a name="BKMK_BYOK_InPerson"></a>Generovat a přenosu klienta klíč – osobně
+Pokud nebudete chtít převést váš klíč klienta přes Internet, ale namísto toho přenést své klíč klienta osobně, použijte následující postupy.
 
 -   [Generate your tenant key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateKey)
 
 -   [Transfer your tenant key to Azure RMS](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Transfer)
 
-#### <a name="BKMK_GenerateKey"></a>Generate your tenant key
-To generate your own tenant key, follow these 3 steps:
+#### <a name="BKMK_GenerateKey"></a>Generovat klíč klienta
+Chcete-li generovat vlastní klíč klienta, postupujte takto 3:
 
 -   [Step 1: Prepare a workstation with Thales HSM](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey1)
 
@@ -516,63 +515,63 @@ To generate your own tenant key, follow these 3 steps:
 
 -   [Step 3: Create a new key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey3)
 
-##### <a name="BKMK_GenerateYourKey1"></a>Step 1: Prepare a workstation with Thales HSM
-Install the nCipher (Thales) support software on a Windows computer. Attach a Thales HSM to that computer. Ensure the Thales tools are in your path. For more information, see the user guide included with the Thales HSM, or visit the Thales website for Azure RMS at [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
+##### <a name="BKMK_GenerateYourKey1"></a>Krok 1: Připravit pracovní stanici s hardwarového společnosti Thales zabezpečení
+Nainstalujte software podpory nCipher (společnosti Thales) do počítače se systémem Windows. Připojte hardwarového zabezpečení společnosti Thales k tomuto počítači. Ujistěte se, že společnosti Thales nástroje jsou v zadané cestě. Další informace naleznete v uživatelské příručce součástí hardwarového zabezpečení společnosti Thales nebo navštivte webovou stránku společnosti Thales pro Azure RMS na [http://www.thales-esecurity.com/msrms/cloud](http://www.thales-esecurity.com/msrms/cloud).
 
-##### <a name="BKMK_GenerateYourKey2"></a>Step 2: Create a security world
-Start a command prompt and run the Thales new-world program.
+##### <a name="BKMK_GenerateYourKey2"></a>Krok 2: Vytvořit bezpečnostní světa
+Spusťte příkazový řádek a potom spusťte program společnosti Thales nový světa.
 
 ```
 new-world.exe --initialize --cipher-suite=DLf1024s160mRijndael --module=1 --acs-quorum=2/3
 ```
-This program creates a **Security World** file at %NFAST_KMDATA%\local\world, which corresponds to the C:\ProgramData\nCipher\Key Management Data\local folder. You can use different values for the quorum but in our example, you’re prompted to enter three blank cards and pins for each one. Then, any two cards will give full access to the security world.  These cards become the **Administrator Card Set** for the new security world.
+Tento program vytvoří **zabezpečení světě** souboru na % NFAST_KMDATA%\local\world, který odpovídá složce aplikací\Místní C:\ProgramData\nCipher\Key správy. Můžete použít různé hodnoty pro kvora, ale v našem příkladu, budete vyzváni k zadání tři prázdné karty a kódy PIN pro každý z nich. Žádné dvě karty pak bude udělí úplný přístup do světa zabezpečení.  Staňte se tyto karty **Správce karta nastavit** pro nový svět zabezpečení.
 
-Then do the following:
+Proveďte následující kroky:
 
-1.  Install the Thales CNG provider as described in the Thales documentation, and configure it to use the new security world.
+1.  Instalace zprostředkovatele CNG společnosti Thales, jak je popsáno v dokumentaci společnosti Thales a nakonfigurovat tak, aby používat nový světa zabezpečení.
 
-2.  Back up the world file. Secure and protect the world file, the Administrator Cards, and their pins, and make sure that no single person has access to more than one card.
+2.  Zálohujte soubor světa. Zabezpečení a ochraně soubor světě, karty správce a kódy PIN prostřednictvím a ujistěte se, že nikdo jedné nemá přístup k více než jednu kartu.
 
-You’re now ready to create a new key that will be your RMS tenant key.
+Nyní jste připraveni vytvořit nový klíč, který bude váš klíč klienta služby RMS.
 
-##### <a name="BKMK_GenerateYourKey3"></a>Step 3: Create a new key
-Generate a CNG key by using the Thales **generatekey** and **cngimport** programs.
+##### <a name="BKMK_GenerateYourKey3"></a>Krok 3: Vytvořit nový klíč
+Generovat klíč CNG pomocí společnosti Thales **generatekey** a **cngimport** programy.
 
-Run the following command to generate the key:
+Spusťte následující příkaz ke generování klíče:
 
 ```
 generatekey --generate simple type=RSA size=2048 protect=module ident=contosokey plainname=contosokey nvram=no pubexp=
 ```
-When you run this command, use these instructions:
+Při spuštění tohoto příkazu pomocí následujících pokynů:
 
--   For the key size, we recommend 2048 but also support 1024-bit RSA keys for existing AD RMS customers who have such keys and are migrating to Azure RMS.
+-   Délka klíče jsme doporučujeme 2048 však také podporují 1024 bitů klíče RSA pro stávající zákazníky služby AD RMS, kteří mají tyto klíče a migraci do Azure RMS.
 
--   Replace the value of *contosokey* for the **ident** and **plainname** with any string value. To minimize administrative overheads and reduce the risk of errors, we recommend that you use the same value for both, and use all lower case characters.
+-   Nahraďte hodnotu *contosokey* pro **ident** a **plainname** s libovolnou hodnotu řetězce. Minimalizovat režie pro správu a snížení rizika chyb, doporučujeme použít stejnou hodnotu pro obě a používat všechny znaky malými písmeny.
 
--   The pubexp is left blank (default) in this example, but you can specify specific values. For more information, see the Thales documentation.
+-   Pubexp je ponecháno prázdné pole (výchozí) v tomto příkladu, ale můžete zadat konkrétní hodnoty. Další informace naleznete v dokumentaci společnosti Thales.
 
-Then run the following command to import the key to CNG:
+Potom spusťte následující příkaz pro import klíč CNG:
 
 ```
 cngimport --import –M --key=contosokey --appname=simple contosokey
 ```
-When you run this command, use these instructions:
+Při spuštění tohoto příkazu pomocí následujících pokynů:
 
--   Replace *contosokey* with the same value that you specified in Step 1.
+-   Nahradit *contosokey* se stejnou hodnotou, kterou jste zadali v kroku 1.
 
--   Use the **-M** option so that the key is suitable for this scenario. Without this, the resultant key will be a user-specific key for the current user.
+-   Použití **- M** tak, že klíč je vhodný pro tento scénář. Bez toho budou výsledné klíč klíč specifické pro uživatele pro aktuálního uživatele.
 
-This command creates a Tokenized Key file in your %NFAST_KMDATA%\local folder with a name starting with **key_caping_** followed by a SID. For example: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. This file contains an encrypted key.
+Tento příkaz vytvoří soubor Tokenizovaná klíč ve složce %NFAST_KMDATA%\local, jejichž název začíná s **key_caping_** za nímž následuje identifikátor SID. Příklad: **key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**. Tento soubor obsahuje zašifrovaného klíče.
 
-Back up this Tokenized Key File in a safe location.
+Tento soubor klíče Tokenizovaná na bezpečné místo zálohujte.
 
 > [!IMPORTANT]
-> When you later transfer your key to Azure RMS, Microsoft will have a non-recoverable copy of your key. This means that nobody can retrieve your key from the HSMs at Microsoft. This allows you to retain exclusive control over your tenant key. Therefore it becomes extremely important that you back up your key and security world safely. Contact Thales for guidance and best practices for backing up your key.
+> Při přenosu později váš klíč do Azure RMS, společnost Microsoft bude mít neobnovitelná kopii klíče. To znamená, že nikdo lze načíst kód Product key z moduly hardwarového zabezpečení společnosti Microsoft. Umožňuje ponechat exkluzivní kontrolu nad váš klíč klienta. Proto je stále velmi důležité zálohovat svůj klíč a zabezpečení svět bezpečně. Obraťte se na společnosti Thales pokyny a doporučené postupy pro zálohování váš klíč.
 
-You are now ready to transfer your tenant key to Azure RMS.
+Nyní jste připraveni k přenosu váš klíč klienta do Azure RMS.
 
-#### <a name="BKMK_Transfer"></a>Transfer your tenant key to Azure RMS
-After you have generated your own key, you must transfer it to Azure RMS before you use it. For the highest level of security, this transfer is a manual process that requires you to fly to the Microsoft office in Redmond, Washington, United States of America. To complete this process, follow these 3 steps:
+#### <a name="BKMK_Transfer"></a>Převést váš klíč klienta do Azure RMS
+Po vygenerování můžete vlastní klíč, musíte přenést na Azure RMS jej před použitím. Pro nejvyšší úroveň zabezpečení je tento převod ruční proces, který vyžaduje, abyste plout k systému Microsoft office v Redmond, Washington, USA. K dokončení tohoto procesu, postupujte podle kroků 3:
 
 -   [Step 1: Bring your key to Microsoft](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_TransferYourKey1)
 
@@ -580,70 +579,70 @@ After you have generated your own key, you must transfer it to Azure RMS before 
 
 -   [Step 3: Closing procedures](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_TransferYourKey3)
 
-###### Step 1: Bring your key to Microsoft
+###### Krok 1: Přenést klíč společnosti Microsoft
 
--   Contact Microsoft Customer Support Services (CSS) to schedule a key transfer appointment for Azure RMS. Bring the following to Microsoft in Redmond:
+-   Obraťte se na Microsoft služby podpory zákazníkům (CSS) můžete naplánovat přenosu klíče události pro Azure RMS. Převeďte následující společnosti Microsoft – Redmond:
 
-    -   A quorum of your Administrative Cards. If you followed the previous instructions in [Step 2: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey2), these are any two of your three cards.
+    -   Kvora vaše pro správu karty. Pokud jste provedli předchozí pokynů uvedených v [Step 2: Create a security world](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_GenerateYourKey2), jsou dvě vaše tři karty.
 
-    -   Personnel authorized to carry your Administrative Cards and pins, typically two (one for each card).
+    -   Pracovníky oprávnění k provedení pro správu karty a kódy PIN, obvykle dvě (jeden pro každé kartě).
 
-    -   Your Security World file (%NFAST_KMDATA%\local\world) on a USB drive.
+    -   Světové zabezpečení souboru (% NFAST_KMDATA%\local\world) na jednotce USB.
 
-    -   Your Tokenized Key File on a USB drive.
+    -   Tokenizovaná klíč souboru na jednotce USB.
 
-###### Step 2: Transfer your key to the Window Azure RMS security world
+###### Krok 2: Přenos váš klíč ve světě zabezpečení okna Azure RMS
 
-1.  When you arrive at Microsoft to transfer your key, the following happens:
+1.  Po přijetí ve společnosti Microsoft pro přenos váš klíč k následujícímu:
 
-    -   Microsoft provides you with an offline workstation that has a Thales HSM attached, Thales software installed, and a Azure RMS Security World file pre-loaded into the folder C:\Temp\Destination.
+    -   Společnost Microsoft poskytuje v režimu offline pracovní stanici, který má hardwarového zabezpečení společnosti Thales, který je připojen, společnosti Thales software nainstalovaný a předinstalovaná Azure RMS zabezpečení světě soubor do složky C:\Temp\Destination.
 
-    -   On this workstation, you load your Security World file and Tokenized Key File from your USB drive into the C:\Temp\Source folder.
+    -   V této pracovní stanici načíst soubor zabezpečení světě a Tokenizovaná klíč souboru z jednotky USB do složky C:\Temp\Source.
 
-    -   Azure RMS operators securely transfer your key to the Azure RMS security world by using Thales utilities.
+    -   Azure RMS operátory váš klíč zabezpečenou ve světě zabezpečení Azure RMS pomocí nástrojů společnosti Thales.
 
-    This process will look similar to the following, where the last parameter of key-xfer-im in this example is replaced by your Tokenized Key File name:
+    Tento proces bude vypadat podobně jako následující, kde se poslední parametr xfer im klíč v tomto příkladu nahrazuje své jméno Tokenizovaná klíč souboru:
 
-    **C:\&gt; mk-reprogram.exe --owner c:\Temp\Destination add c:\Temp\Source**
+    **C:\ &gt; mk-reprogram.exe--vlastníka c:\Temp\Destination přidat c:\Temp\Source**
 
-    **C:\&gt; key-xfer-im.exe c:\Temp\Source c:\Temp\Destination --module c:\Temp\Source\key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb**
+    **C:\ &gt; klíč. xfer im.exe c:\Temp\Source c:\Temp\Destination--c:\Temp\Source\key_caping_machine--801c1a878c925fd9df4d62ba001b94701c039e2fb modulu**
 
-2.  Mk-reprogram will ask you and the Azure RMS operators to plug in their respective Administrator cards and pins. These commands output a Tokenized Key File in C:\Temp\Destination that contains your key protected by Azure RMS security world.
+2.  MK přeprogramovat vyzve vám a Azure RMS operátory zařadit svého příslušného správce karty a kódy PIN. Tyto příkazy výstupní klíč souboru Tokenizovaná v C:\Temp\Destination obsahující klíč chráněné službou Azure RMS zabezpečení světa.
 
-###### Step 3: Closing procedures
+###### Krok 3: Zavření postupy
 
--   In your presence, Azure RMS operators do the following:
+-   Ve vaší přítomnosti Azure RMS operátory postupujte takto:
 
-    -   Run a tool that Microsoft developed in collaboration with Thales that removes two permissions: The permission to recover the key, and the permission to change permissions. After this is done, this copy of your key is locked to the Azure RMS security world. Thales HSMs will not allow Azure RMs operators with their Administrator cards to recover the plaintext copy of your key.
+    -   Spusťte nástroj, který společnost Microsoft vyvinula ve spolupráci s společnosti Thales, která odstraňuje dvou oprávnění: Oprávnění k obnovení klíče a oprávnění ke změnám oprávnění. Po dokončení se tato kopii klíče je uzamčen ve světě zabezpečení Azure RMS. Moduly hardwarového zabezpečení společnosti Thales nedovolí operátory Azure RMs s jejich karty Správce obnovení ve formátu prostého textu kopii klíče.
 
-    -   Copy the resulting key file to a USB drive to later upload to the Azure RMS service.
+    -   Zkopírujte výsledný soubor klíče na jednotku USB později odeslat ke službě Azure RMS.
 
-    -   Factory-reset the HSM, and wipe the workstation clean.
+    -   Objekt pro vytváření reset modul hardwarového zabezpečení a mazat čistého pracovní stanice.
 
-You have now completed all the steps required for bring your own key in person and can return to your organization for the next steps.
+Nyní jste dokončili všechny kroky potřebné pro přenesení vlastní klíč osobně a může vrátit pro vaši organizaci pro další kroky.
 
-## <a name="BKMK_NextSteps"></a>Next steps
+## <a name="BKMK_NextSteps"></a>Další kroky
 
-1.  Start to use your tenant key:
+1.  Začněte používat váš klíč klienta:
 
-    -   If you haven’t already done so, you must now activate Rights Management so that your organization can start to use RMS. Users immediately start to use your tenant key (managed by Microsoft or managed by you).
+    -   Pokud jste tak ještě neučinili, je nutné nyní aktivovat službu Rights Management, tak, aby vaše organizace může začít používat RMS. Uživatelé okamžitě začít používat váš klíč klienta (spravováno společností Microsoft nebo spravuje můžete).
 
-        For more information about activation, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
+        Další informace o funkci aktivace naleznete v tématu [Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
 
-    -   If you had already activated Rights Management and then decided to manage your own tenant key, users gradually transition from the old tenant key to the new tenant key, and this staggered transition can take a few weeks to complete. Documents and files that were protected with the old tenant key remains accessible to authorized users.
+    -   Pokud jste již aktivován Rights Management a poté se rozhodl spravovat vlastní klíč klienta, uživatelé se postupně přechod z původní klíč klienta do nový klíč klienta a rozložit celá tato migrace může trvat několik týdnů k dokončení. Dokumenty a soubory, které nebyly chráněny s starý klíč klienta zůstane dostupný na autorizované uživatele.
 
-2.  Consider enabling usage logging, which logs every transaction that RMS performs.
+2.  Zvažte povolení protokolování využití, které protokoly každé transakce, který provede RMS.
 
-    If you decided to manage your own tenant key, logging includes information about using your tenant key. See the following example of a log file displayed in Excel where the **Decrypt** and **SignDigest** Request Types show that the tenant key is being used.
+    Pokud jste se rozhodli spravovat vlastní klíč klienta, protokolování obsahuje informace o použití váš klíč klienta. Naleznete v následujícím příkladu souboru protokolu, které se zobrazí v aplikaci Excel kde **dešifrování** a **SignDigest** typy požadavků zobrazit, je používán klíč klienta.
 
     ![](../Image/RMS_Logging.gif)
 
-    For more information about usage logging, see [Logging and Analyzing Azure Rights Management Usage](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md).
+    Další informace o protokolování využití naleznete v tématu [Protokolování a analýza využití Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md).
 
-3.  Maintain your tenant key.
+3.  Udržujte váš klíč klienta.
 
-    For more information, see [Operations for Your Azure Rights Management Tenant Key](../Topic/Operations_for_Your_Azure_Rights_Management_Tenant_Key.md).
+    Další informace naleznete v tématu [Operace pro klíč klienta Azure Rights Management](../Topic/Operations_for_Your_Azure_Rights_Management_Tenant_Key.md).
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Viz také
+[Konfigurace Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
 
