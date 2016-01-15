@@ -3,240 +3,233 @@ description: na
 keywords: na
 title: Configuring Custom Templates for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1775d8d0-9a59-42c8-914f-ce285b71ac1c
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Configuring Custom Templates for Azure Rights Management
-After you have activated Azure Rights Management (Azure RMS), users are automatically able to use two default templates that make it easy for them to apply policies to sensitive files that restrict access to authorized users in your organization. These two templates have the following rights policy restrictions:
+# Konfigurace vlastn&#237;ch šablon pro Azure Rights Management
+Po aktivaci Azure Rights Management (Azure RMS), uživatelé mohou automaticky použít dvě výchozí šablony, které usnadňují jejich k uplatnění zásad pro citlivé soubory, které omezují přístup oprávněným uživatelům ve vaší organizaci. Tyto dvě šablony mají následující zásady omezení práva:
 
--   Read-only viewing for the protected content
+-   Zobrazení jen pro čtení pro chráněný obsah
 
-    -   Display name: **&lt;organization name&gt; - Confidential View Only**
+    -   Zobrazovaný název: **&lt; název organizace &gt; - pouze důvěrné zobrazení**
 
-    -   Specific permission: View Content
+    -   Konkrétní oprávnění: Zobrazení obsahu
 
--   Read or Modify permissions for the protected content
+-   Číst nebo upravovat oprávnění pro chráněný obsah
 
-    -   Display name: **&lt;organization name&gt; - Confidential**
+    -   Zobrazovaný název: **&lt; název organizace &gt; - důvěrné**
 
-    -   Specific permissions: View Content, Save File, Edit Content, View Assigned Rights, Allow Macros, Forward, Reply, Reply All
+    -   Specifická oprávnění: Zobrazit obsah, soubor uložit, upravit obsah, zobrazit přiřazené práva, povolit makra, vpřed, odpověď, odpovědět všem
 
-In addition, the [RMS sharing application](http://technet.microsoft.com/library/dn339006.aspx) lets users define their own set of permissions. And, for the Outlook client and Outlook Web Access, users can select the **Do Not Forward** option for email messages.
+Kromě toho [aplikace sdílení RMS](http://technet.microsoft.com/library/dn339006.aspx) umožňuje uživatelům definovat svá vlastní sadu oprávnění. A klient aplikace Outlook a Outlook Web Access, mohou uživatelé vybrat **Nepředávat** možnost pro e-mailové zprávy.
 
-For many organizations, the default templates might be sufficient. But if you want to create your own custom rights policy templates, you can do so. Reasons for creating a custom template include the following:
+Pro mnoho organizací může být výchozí šablony dostatečná. Ale pokud chcete vytvořit vlastní práva šablony zásad, můžete tak učinit. Důvody pro vytvoření vlastní šablony zahrnují následující:
 
--   You want a template to grant rights to a subset of users in the organization rather than all users.
+-   Chcete šablonu, kterou chcete udělit práva na určitou podmnožinu uživatelům v organizaci, nikoli všichni uživatelé.
 
--   You want only a subset of users to be able to see and select a template (departmental template) from applications, rather than all users in the organization see and can select the template.
+-   Chcete pouze podmnožinu uživatelé byli schopni zobrazit a vybrat šablonu (založená na odděleních šablona) z aplikací, nikoli všichni uživatelé v organizaci viz a můžete vybrat šablonu.
 
--   You want to define a custom right for a template, such as View and Edit, but not Copy and Print.
+-   Chcete definovat vlastní vpravo pro šablonu, například zobrazení a úpravy, ale není kopírování a tisk.
 
--   You want to configure additional options in a template that include an expiration date and whether the content can be accessed without an Internet connection.
+-   Chcete-li nakonfigurovat další možnosti v šabloně, které zahrnují datum vypršení platnosti a zda je obsah přístupný bez připojení k Internetu.
 
-For users to be able to select a custom template that contains settings such as these, you must first create a custom template, configure it, and then publish it.
+Uživatelé nebudou moci vybrat vlastní šablonu, která obsahuje nastavení, například ty musí nejprve vytvořit vlastní šablonu, nakonfigurujte ji a potom ho publikovat.
 
-Use the following sections to help you configure and use custom templates:
+Použijte následující části vám pomohou nakonfigurovat a používat vlastní šablony:
 
--   [How to create, configure, and publish a custom template](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToConfigureCustomTemplates)
+-   [Jak vytvořit, konfigurovat a publikovat vlastní šablonu](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToConfigureCustomTemplates)
 
--   [How to copy a template](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates)
+-   [Postup kopírování šablony](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates)
 
--   [How to remove (archive) templates](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToArchiveTemplates)
+-   [Postup odebrání šablony (archiv)](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToArchiveTemplates)
 
--   [Refreshing templates for users](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates)
+-   [Aktualizace šablony pro uživatele](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates)
 
--   [Windows PowerShell reference](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_PowerShellTemplates)
+-   [Odkaz na prostředí Windows PowerShell](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_PowerShellTemplates)
 
-## <a name="BKMK_HowToConfigureCustomTemplates"></a>How to create, configure, and publish a custom template
-You create and manage custom templates in the Azure classic portal. You can do this directly from the Azure classic portal, or you can sign in to the Office 365 admin center, and choose the **advanced features** for Rights Management, which then redirects you to the Azure classic portal.
+## <a name="BKMK_HowToConfigureCustomTemplates"></a>Jak vytvořit, konfigurovat a publikovat vlastní šablonu
+Vytvářet a spravovat vlastní šablony v portálu správy Azure. Můžete to provést přímo z portálu pro správu Azure, nebo můžete přihlásit k Centru správy Office 365 a zvolit **Rozšířené funkce** Rights Management, který pak vás přesměruje na portálu pro správu Azure.
 
-Use the following procedures to create, configure, and publish custom templates for Rights Management.
+Pomocí následujících postupů vytvářet, konfigurovat a publikovat vlastní šablony Rights Management.
 
-#### To create a custom template
+#### Chcete-li vytvořit vlastní šablonu
 
-1.  Depending on whether you sign in to the Office 365 admin center, or the Azure classic portal, do one of the following:
+1.  V závislosti na tom, zda přihlášení k Centru správy Office 365 nebo portálu Azure proveďte jednu z následujících akcí:
 
-    -   From the [Office 365 admin center](https://portal.office.com/):
+    -   Z [centra pro správu služeb Office 365](https://portal.office.com/):
 
-        1.  In the left pane, click **service settings**.
+        1.  V levém podokně klikněte na tlačítko **Nastavení služby**.
 
-        2.  From the **service settings** page, click **rights management**.
+        2.  Z **Nastavení služby** klikněte na tlačítko **služby rights management**.
 
-        3.  In the **Protect your information** section, click **Manage**.
+        3.  V **chránit vaše informace** klepněte na **Spravovat**.
 
-        4.  In the **rights management** section, click **advanced features**.
+        4.  V **služby rights management** klepněte na **Rozšířené funkce**.
 
             > [!NOTE]
-            > If you haven’t activated Rights Management, first click **activate** and confirm your action. For more information, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
+            > Pokud jste neaktivovali Rights Management, nejprve klikněte na **Aktivovat** a potvrzení této akce. Další informace naleznete v tématu [Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
             > 
-            > If you haven’t clicked **advanced features** before, after Rights Management is activated, follow the on-screen instructions to get a free Azure subscription that’s required to access the Azure classic portal.
+            > Pokud jste ještě klikli **Pokročilé funkce** před, po Rights Management je aktivována, postupujte na obrazovce pokyny pro získání bezplatné předplatné Azure, který je požadovaný pro přístup k portálu Azure.
 
-            Clicking **advanced features** loads the Azure classic portal, where you can manage **RIGHTS MANAGEMENT** for your organization's Azure Active Directory.
+            Klepnutím na **Rozšířené funkce** načte portálu Azure, kde můžete spravovat **RIGHTS MANAGEMENT** pro Azure Active Directory vaší organizace.
 
-    -   From the [Azure classic portal](http://go.microsoft.com/fwlink/p/?LinkID=275081):
+    -   Z [portálu Azure](http://go.microsoft.com/fwlink/p/?LinkID=275081):
 
-        1.  In the left pane, click **ACTIVE DIRECTORY**.
+        1.  V levém podokně klikněte na tlačítko **služby ACTIVE DIRECTORY**.
 
-        2.  From the **active directory** page, click **RIGHTS MANAGEMENT**.
+        2.  Z **služby active directory** klikněte na tlačítko **RIGHTS MANAGEMENT**.
 
-        3.  Select the directory to manage for Rights Management.
+        3.  Vyberte adresář pro správu pro Rights Management.
 
-        4.  If you have not already activated Rights Management, click **ACTIVATE** and confirm your action.
+        4.  Pokud jste ještě neaktivovali Rights Management, klikněte na tlačítko **Aktivovat** a potvrzení této akce.
 
             > [!NOTE]
-            > For more information, see [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
+            > Další informace naleznete v tématu [Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md).
 
-2.  Create a new template:
+2.  Vytvořte novou šablonu:
 
-    -   In the Azure classic portal, from the **Get started with Rights Management** quick start page, click **Create a new rights policy template**.
+    -   Na portálu Azure z **Začínáme s Rights Management** rychle začít stránku, klikněte na tlačítko **vytvořit nové šablony zásad práv**.
 
-        If you do not immediately see this page after following the instructions for Office 365, use the navigation instructions, above,  for the Azure classic portal.
+        Pokud se nezobrazí okamžitě tuto stránku po provedení kroků pro Office 365, použijte navigační pokynů výše, pro portál Azure.
 
-3.  On the **Add a new rights policy template** page, choose a language in which you will type the template name and description that users will see (you can add more languages later). Then type a unique name and a description, and click the Complete button.
+3.  Na **Přidat nové šablony zásad práv** vyberte jazyk, ve kterém bude zadejte název šablony a popis, který se zobrazí uživatelům (můžete přidat další jazyky později). Poté zadejte jedinečný název a popis a klikněte na tlačítko dokončení.
 
-From the **Get started with Rights Management** quick start page, now click **Manage your rights policy templates**. You will see your newly created template added to the list of templates, with a status of **Archived**. At this stage, the template is created but not configured, and is not visible to users.
+Z **Začínáme s Rights Management** rychle úvodní stránka, klepněte na tlačítko **správu vašich šablon zásad práv**. Zobrazí se nově vytvořená šablona přidán do seznamu šablon se stavem **archivované**. V této fázi je šablona vytvořen, ale není nakonfigurována a není viditelné pro uživatele.
 
-#### To configure and publish a custom template
+#### Ke konfiguraci a publikovat vlastní šablonu
 
-1.  Select your newly created template from the **TEMPLATES** page in the Azure classic portal.
+1.  Vyberte šablonu nově vytvořený z **šablony** stránku v portálu správy Azure.
 
-2.  From the **Your template has been added** quick start page, click **Get started** from step 1, **Configure rights for users and groups,** then click **GET STARTED NOW** or **ADD**, and then select the users and groups who will have rights to use the content that is protected by the new template.
-
-    > [!NOTE]
-    > The users or groups that you select must have an email address. In a production environment, this will nearly always be the case but in a simple testing environment, you might need to add email addresses to user accounts or groups.
-
-    As a best practice, use groups rather than users, which simplifies management of the templates. If you have Active Directory on-premises and are synchronizing to Azure AD, you can use mail-enabled groups that are either security groups or distribution groups. However, if you want to grant rights to all users in the organization, it will be more efficient to copy one of the default templates rather than specify multiple groups. For more information, see the [How to copy a template](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates) section in this topic.
-
-    > [!TIP]
-    > You can later add users from outside your organization to the template by using the [Windows PowerShell module for Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx) and using one of the following methods:
-    > 
-    > -   **Use a rights definition object to update a template**:    Specify the external email addresses and their rights in a rights definition object, which you then use to update your template. You specify the rights definition object by using the [New-AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx) cmdlet to create a variable and then supply this variable to the  -RightsDefinition parameter with the [Set-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx) cmdlet to modify an existing template. However, if you're adding these users to an existing template, you will also need to define rights definition objects for the existing groups in the templates and not just the new, external users.
-    > -   **Export, edit, and import the updated template**:Use the [Export-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx) cmdlet to export the template to a file that you can edit to add the external email addresses of these users and their rights to the existing groups and rights. Then use the [Import-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx) cmdlet to import this change back into Azure RMS.
-
-3.  Click the Next button, and then assign one of the listed rights to your selected users and groups.
-
-    Use the displayed description for more information about each right (and for custom rights). More detailed  information is also available in [Configuring Usage Rights for Azure Rights Management](../Topic/Configuring_Usage_Rights_for_Azure_Rights_Management.md). However, applications that support RMS might vary in how they implement these rights. Consult their documentation and do your own testing with the applications that users use to check the behavior before you deploy the template for users. To make this template visible to only administrators for this testing, make this template a departmental template (step 6).
-
-4.  If you selected **Custom**, click the Next button, and then select those custom rights.
-
-    Although you can use any combination of the individual rights available, in some applications, some rights might have dependencies on other individual rights. When this is the case, the dependent rights are automatically selected for you.
-
-    > [!TIP]
-    > Consider adding the **Copy and Extract Content** right and grant this to selected administrators or personnel in other roles that have responsibilities for information recovery. Granting this right lets them remove protection if needed, from files and emails that will be protected by using this template. This ability to remove protection at the template level provides more fine-grained control than using the super user feature.
-
-5.  Click the Complete button.
-
-6.  If you want the template to be visible to only a subset of users when they see a list of templates in applications: Click **SCOPE** to configure this as a departmental template, and click **GET STARTED NOW**. Otherwise, go to step 9.
-
-    More information about departmental templates: By default, all users in your Azure directory see all the published templates and they can then select them from applications when they want to protect content. If you want specific users only to see some of the published templates, you must scope the templates to these users. Then, only these users will be able to select these templates. Other users that you do not specify will not see the templates and therefore, cannot select them. This technique can make choosing the correct template easier for users, especially when you create templates that are designed to be used by specific groups or departments. Users then see only the templates that are designed for them.
-
-    For example, you’ve created a template for the Human Resources department that applies the Read-only permission to members of the Finance department. So that only members of the Human Resources department can apply this template when they use the Rights Management sharing application, you scope the template to the email-enabled group named HumanResources. Then, only members of this group see and can apply this template.
-
-7.  On the **TEMPLATE VISIBILITY** page, select the users and groups who will be able to see and select the template from the RMS-enlightened applications. As before, as a best practice, use groups rather than users, and the groups or users you select must have an email address.
-
-8.  Click the Next button, and decide whether you need to configure application compatibility for your departmental template. If you do, click **APPLICATION COMPATIBILITY**, select the check box, and click **Complete**.
-
-    Why might you need to configure application compatibility? Not all applications can support departmental templates. To do so, the application must first authenticate with the RMS service before downloading the templates. If the authentication process does not occur, by default, none of the departmental templates are downloaded. You can override this behavior by specifying that all the departmental templates should download, by configuring application compatibility and selecting the **Show this template to all users when the applications do not support user identity** check box.
-
-    For example, if you do not configure application compatibility for the departmental template in our Human Resources example, only users in the Human Resources department see the departmental template when they use the RMS sharing application, but no users see the departmental template when they use Outlook Web Access (OWA) from Exchange Server 2013 because Exchange OWA and Exchange ActiveSync do not currently support departmental templates. If you override this default behavior by configuring application compatibility, only users in the Human Resources department see the departmental template when they use the RMS sharing application, but all users see the departmental template when they use Outlook Web Access (OWA). If users use OWA or Exchange ActiveSync from Exchange Online, either all users will see the departmental templates or no users will see the department templates, based on the template status (archival or published) in Exchange Online.
-
-    Office 2016 natively supports departmental templates, and so does Office 2013 with the latest  Office updates ([KB 3054853](https://support.microsoft.com/kb/3054853)).
+2.  Z **byla přidána do šablony** rychle začít stránku, klikněte na tlačítko **začít** z kroku 1, **nakonfigurovat oprávnění pro uživatele a skupiny,** klikněte na tlačítko **Začít nyní** nebo **Přidat**, a pak vyberte uživatele a skupiny, kteří budou mít práva k používání obsah, který je chráněn novou šablonu.
 
     > [!NOTE]
-    > If you have applications that don’t yet natively support departmental templates, you can use a custom RMS template download script or other tools to deploy these templates to the local RMS client folder. Then, these applications will correctly display the departmental templates to only the users and groups that you selected for the template scope:
+    > Uživatele nebo skupiny, které jste vybrali, musí mít e-mailovou adresu. V provozním prostředí téměř vždy to bude v případě, ale v jednoduché testovacím prostředí, může být nutné přidat e-mailové adresy na uživatelské účty nebo skupiny.
+
+    Jako nejlepší postup použijte skupinám než uživatelům, které zjednodušuje správu šablon. Pokud máte služby Active Directory místně a synchronizují do Azure AD, můžete poštovní skupiny, které jsou skupiny zabezpečení nebo distribuční skupiny. Nicméně pokud chcete udělit práva pro všechny uživatele v organizaci, je efektivnější zkopírovat jeden výchozí šablony, spíše než určit více skupin. Další informace naleznete v tématu [Postup kopírování šablony](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_HowToCopyTemplates) v tomto tématu.
+
+    > [!TIP]
+    > Později můžete přidat uživatele z mimo vaši organizaci do šablony pomocí [modul Windows PowerShell pro Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx) a pomocí jedné z následujících metod:
     > 
-    > -   For Office 2010, the client folder is **%localappdata%\Microsoft\DRM\Templates**.
-    > -   From a client computer that has downloaded all the templates, you can copy and then paste the template files to other computers.
+    > -   **Exportu, úpravy a importu aktualizované šablony**:  Toto je nejjednodušší způsob přidání externích uživatelů do stávající šablony, která obsahuje jiné skupiny. Použití [Export AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx) rutiny exportovat šablonu, kterou chcete. Soubor CSV, který lze upravovat přidat externí e-mailové adresy tito uživatelé a jejich práva na stávajících skupin a oprávnění. Potom pomocí [Import AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx) rutiny Import této změny zpět do Azure RMS.
+    > -   **Použití definice objektu práva aktualizace šablony**:    Zadejte externí e-mailové adresy a jejich práva v objektu definice práv, který pak použijete k aktualizaci šablony. Zadejte definici objektu práva pomocí [Nový AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx) rutiny vytvořit proměnnou a poté poskytnout tuto proměnnou na parametr - RightsDefinition s [Set AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx) rutiny Úprava stávající šablony. Nicméně pokud přidáváte tito uživatelé do stávající šablony, bude také potřebujete definovat práva definice objektů pro existující skupiny v šablonách a nikoli pouze nové, externí uživatelé.
+
+3.  Klepněte na tlačítko Další a pak přiřadit jeden z uvedených práva k vybrané uživatele a skupiny.
+
+    Další informace o jednotlivých vpravo (a pro vlastní práva), použijte zobrazené popis. Další podrobné informace jsou také k dispozici v [Konfigurace užívací práva pro Azure Rights Management](../Topic/Configuring_Usage_Rights_for_Azure_Rights_Management.md). Aplikace, které podporují RMS však může lišit, jak implementují tato práva. V dokumentaci k jejich a provést vlastní testování s aplikacemi, které uživatelé použít ke kontrole chování před nasazením šablony pro uživatele. Chcete-li tuto šablonu viditelné pouze správce pro tento testování, proveďte tuto šablonu založená na odděleních šablony (krok 6).
+
+4.  Pokud jste vybrali **Vlastní**, klepněte na tlačítko Další a poté vyberte těchto vlastní oprávnění.
+
+    I když můžete použít libovolnou kombinaci jednotlivých práv k dispozici v některých aplikacích, může některá práva jsou závislé na jiné individuální práva. Je to tento případ, jsou pro vás automaticky vybrána závislá práva.
+
+    > [!TIP]
+    > Zvažte přidání **Kopírovat a extrahování obsahu** doprava a to udělit vybrané skupině administrators nebo pracovníci v jiných rolí, které mají odpovědnosti pro informace o obnovení. Udělení toto právo umožňuje jejich odebrání ochrany v případě potřeby ze souborů a e-mailů, které budou chráněny pomocí této šablony. Tato schopnost odebrání ochrany na úrovni šablona poskytuje jemněji odstupňovanou kontrolu než používá funkci superuživatele.
+
+5.  Klikněte na tlačítko dokončení.
+
+6.  Pokud chcete, aby šablony, která má být viditelná pouze podmnožinu uživatelé vidí seznam šablon v aplikacích: Klikněte na tlačítko **oboru** to nakonfigurovat jako šablonu založená na odděleních, a klikněte na **Začít nyní**. V opačném případě přejděte ke kroku 9.
+
+    Další informace o založená na odděleních šablony: Ve výchozím nastavení všechny uživatele v adresáři Azure najdete v části publikované šablony a mohou si vybrat, je z aplikací, když chtějí ochranu obsahu. Pokud chcete konkrétním uživatelům pouze některé z publikovaných šablony, musíte určit rozsah šablony pro tyto uživatele. Pak pouze tito uživatelé budou moci vybrat tyto šablony. Ostatním uživatelům, kteří nezadáte neuvidí šablony a proto nelze je vybrat. Tento postup můžete provést výběr správnou šablonu snazší pro uživatele, zejména v případě, že vytvoříte šablony, které jsou určeny k použít pro konkrétní skupiny nebo oddělení. Potom se uživatelům zobrazí pouze šablony, které jsou určeny pro ně.
+
+    Jste například vytvořili šablonu pro oddělení lidských zdrojů, které platí pro členy finančním oddělení oprávnění jen pro čtení. Tak, aby pouze členové oddělení lidských zdrojů, můžete tuto šablonu použít při používání aplikace pro sdílení obsahu Rights Management, oboru šablony do skupiny povoleno e-mailu s názvem lidských zdrojů. Pouze členové této skupiny viz a můžete pak, použijte tuto šablonu.
+
+7.  Na **šablony viditelnost** vyberte uživatele a skupiny, kteří budou moci zobrazit a vyberte šablonu z aplikace podporující RMS. Jako dříve, jako nejlepší postup použití skupin spíše než uživatele nebo skupiny nebo uživatele, které jste vybrali musí mít e-mailovou adresu.
+
+8.  Klepněte na tlačítko Další a rozhodněte se, zda je nutné nakonfigurovat kompatibilitu aplikace založená na odděleních šablony. Je-li provést, klikněte na tlačítko **Kompatibilita aplikací**, zaškrtněte políčko a klikněte na tlačítko **Dokončeno**.
+
+    Proč možná budete muset nakonfigurovat kompatibilita aplikací? Ne všechny aplikace může podporovat založená na odděleních šablony. Provedete to tak, aplikace musí nejprve provést ověření pomocí služby RMS před stažením šablony. Pokud proces ověřování nedojde, bude ve výchozím nastavení, budou staženy žádná z oddělení šablon. Toto chování můžete přepsat zadáním, že by měla stáhnout založená na odděleních šablony, konfigurace pro kompatibilitu aplikací a výběrem **Zobrazit tuto šablonu pro všechny uživatele, když aplikace nepodporují identita uživatele** zaškrtávací políčko.
+
+    Například pokud nenakonfigurujete kompatibilita aplikací založená na odděleních šablony v našem příkladu lidské zdroje, pouze v oddělení lidských zdrojů uvidí založená na odděleních šablony používají aplikace sdílení RMS, ale žádní uživatelé vidět založená na odděleních šablonu při používání aplikace Outlook Web Access (OWA) ze serveru Exchange Server 2013 vzhledem k tomu, že aplikace OWA serveru Exchange a Exchange ActiveSync aktuálně nepodporují založená na odděleních šablony. Je-li toto výchozí chování můžete přepsat nakonfigurováním kompatibilitu aplikací, pouze v oddělení lidských zdrojů uvidí založená na odděleních šablony používají aplikaci sdílení RMS, ale všichni uživatelé vidět založená na odděleních šablonu při používání aplikace Outlook Web Access (OWA). Pokud uživatelé používají aplikaci OWA nebo Exchange ActiveSync ze služby Exchange Online, všichni uživatelé uvidí založená na odděleních šablony nebo žádní uživatelé uvidí oddělení šablony, na základě stavu šablony (archivace nebo publikovaných) v systému Exchange Online.
+
+    > [!NOTE]
+    > Pokud máte aplikace, které zatím nepodporují nativně založená na odděleních šablony, můžete použít [vlastní skript stažení šablony RMS](http://go.microsoft.com/fwlink/?LinkId=524506) nebo jiné nástroje pro nasazení tyto šablony k místní složce klienta služby RMS. Potom tyto aplikace správně zobrazí založená na odděleních šablony pro uživatele a skupiny, které jste vybrali pro obor šablony:
     > 
-    > You can [download the custom RMS template script from the Microsoft Connect site](http://go.microsoft.com/fwlink/?LinkId=524506). If you see an error when you click this link, you probably haven't registered on Microsoft Connect.   To register:
+    > -   Pro systém Office 2010 složky klienta je **%localappdata%\Microsoft\DRM\Templates**.
+    > -   Z klientského počítače, který byl stažen všechny šablony můžete zkopírujte a vložte soubory šablon do jiných počítačů.
     > 
-    > 1.  Go to the [Microsoft Connect site](http://www.connect.microsoft.com) and sign in with your Microsoft Account.
-    > 2.  Click **Directory**, and select the **View Connect products currently not accepting feedback** category.
-    > 3.  Search for **Rights Management Services**, and for the **Microsoft RMS Enterprise Features** program, click **Join**.
+    > Office 2016 nativně podporuje založená na odděleních šablony, a proto Office 2013 s nejnovější aktualizací sady Office ([KB 3054853](https://support.microsoft.com/kb/3054853)).
 
-9. Click **CONFIGURE** and add additional languages that users use, together with the name and description of this template in that language. When you have multi-language users, it’s important to add each language that they use, and supply a name and description in that language. Users will then see the name and description of the template in the same language as their client operating system, which ensures they understand the policy applied to a document or email message. If there is no match with their client operating system, the name and description that they see falls back to the language and description that you defined when you first created the template.
+9. Klikněte na tlačítko **KONFIGUROVAT** a přidejte další jazyky, které uživatelé používat společně s název a popis této šablony v daném jazyce. Pokud máte více jazyků uživatelů, je třeba přidat jednotlivé jazyky, které používají a zadejte název a popis v daném jazyce. Uživatelům se potom zobrazí název a popis šablony ve stejném jazyce jako jejich klientský operační systém, který zajistí, že vědí zásada použitá k dokumentu nebo e-mailové zprávy. Pokud je nalezena shoda s jejich klientský operační systém, název a popis, který se uživatelům zobrazí přejde do jazyka a popis, který jste definovali při prvním vytvoření šablony.
 
-    Then check whether you want to make any changes to the following settings:
+    Zkontrolujte, zda chcete provést jakékoli změny následující nastavení:
 
-    |Setting|More information|
-    |-----------|--------------------|
-    |**content expiration**|Define a date or number of days for this template when files that are protected by the template should not open. You can specify a date or specify a number of days starting from the time that the protection is applied to the file.<br /><br />When you specify a date, it is effective midnight, in your current time zone.|
-    |**offline access**|Use this setting to balance any security requirements that you have against the requirement that users must be able to open protected files when they don’t have an Internet connection.<br /><br />If you specify that content is not available without an Internet connection or that content is only available for a specified number of days, when that threshold is reached, users must be re-authenticated and their access is logged. When this happens, if their credentials are not cached, users are prompted to sign in before they can open the file.<br /><br />In addition to re-authentication, the policy and the user group membership is re-evaluated. This means that users could experience different access results for the same file if there are changes in the policy or group membership from when they last accessed the file.|
+    |Nastavení|Další informace|
+    |-------------|-------------------|
+    |**vypršení platnosti obsahu**|Definujete datum nebo počet dní pro tuto šablonu neměli otevírat soubory, které jsou chráněny pomocí šablony. Můžete určit datum nebo zadejte počet dnů od doby, použitý ochranu na soubor.<br /><br />Když zadáte datum, je účinné půlnoci v aktuální časové pásmo.|
+    |**přístup v režimu offline**|Toto nastavení použijte k vyrovnávání nějaké požadavky na zabezpečení, budete mít proti požadavek, který uživatelé musí být schopen otevřít chráněné soubory při nemají připojení k Internetu.<br /><br />Pokud určíte, že obsah není k dispozici bez připojení k Internetu, nebo tento obsah je k dispozici pouze pro zadaný počet dnů, kdy je dosaženo této prahové hodnoty, uživatelé musí být znovu ověřený a je protokolováno jejich přístup. Pokud k tomu dojde, pokud nejsou jejich přihlašovací údaje uložené v mezipaměti, uživatelé vyzváni k přihlášení, než mohou otevřít soubor.<br /><br />Kromě toho opětovné ověření je opět hodnotit zásady a členství ve skupině uživatelů. To znamená, že uživatelé různý přístup výsledky pro stejný soubor pokud existují změny ve členství zásad nebo skupiny z při posledního použití souboru.|
 
-10. When you are confident that the template is configured appropriately for your users, click **PUBLISH** to make the template visible for users, and then click **SAVE**.
+10. Pokud jste si jisti, že je šablona správně konfigurována pro uživatele, klikněte na tlačítko **Publikovat** zviditelnit šablony pro uživatele a potom klikněte na tlačítko **Uložit**.
 
-11. Click the Back button in the classic portal to return to the **TEMPLATES** page, where your template now has an updated status of **Published**.
+11. Klepněte na tlačítko Zpět se vraťte do portálu pro správu **šablony** stránku, kde šablony má nyní aktualizovaný stav **Publikováno**.
 
-To make any changes to your template, select it, and then use the quick start steps again. Or, select one of the following options:
+Žádné změny do šablony, vyberte ji a pak znovu použijte kroky rychlý start. Nebo vyberte některou z následujících možností:
 
--   To add more users and groups, and define the rights for those users and groups: Click **RIGHTS**, then click **ADD**.
+-   Chcete-li přidat další uživatelé a skupiny a definovat oprávnění pro uživatele a skupiny: Klikněte na tlačítko **práva**, klikněte na tlačítko **Přidat**.
 
--   To remove users or groups that you previously selected: Click **RIGHTS**, select the user or group from the list, and then click **DELETE**.
+-   Odebrání uživatele nebo skupiny, které jste dříve vybrali: Klikněte na tlačítko **práva**, vyberte uživatele nebo skupinu ze seznamu a poté klikněte na tlačítko **Odstranit**.
 
--   To change which users can see the templates to select them from applications: Click **SCOPE**, then click **ADD** or **DELETE**, or **APPLICATION COMPATIBILITY**.
+-   Chcete-li změnit, které uživatelé mohou vidět šablony výběr z aplikace: Klikněte na tlačítko **oboru**, klikněte na tlačítko **Přidat** nebo **Odstranit**, nebo **Kompatibilita aplikací**.
 
--   To make the template no longer visible to all users: Click **CONFIGURE**, click **ARCHIVE**, and then click **SAVE**.
+-   Chcete-li šablonu již nebudou viditelné pro všechny uživatele: Klikněte na tlačítko **KONFIGUROVAT**, klikněte na tlačítko **ARCHIVU**, a potom klikněte na tlačítko **Uložit**.
 
--   To make other configuration changes: Click **CONFIGURE**, make your changes, and then click **SAVE**.
+-   Chcete-li provést další změny konfigurace: Klikněte na tlačítko **KONFIGUROVAT**, proveďte požadované změny a potom klikněte na tlačítko **Uložit**.
 
 > [!WARNING]
-> When you make changes to a template that was previously saved, clients will not see those changes to the template until templates are refreshed on their computers. For more information, see the [Refreshing templates for users](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates) section in this topic.
+> Pokud provedete změny do šablony, který byl dříve uložen, klienti neuvidí tyto změny do šablony, dokud šablony jsou aktualizovány na svých počítačích. Další informace naleznete v tématu [Aktualizace šablony pro uživatele](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_RefreshingTemplates) v tomto tématu.
 
-## <a name="BKMK_HowToCopyTemplates"></a>How to copy a template
-If you want to create a new template that has very similar settings to an existing template, select the original template on the **TEMPLATES** page, click **COPY**, specify a unique name, and make the changes that you need.
+## <a name="BKMK_HowToCopyTemplates"></a>Postup kopírování šablony
+Pokud chcete vytvořit novou šablonu, kterou má velmi podobné nastavení pro existující šablonu, vyberte na původní šablony **šablony** klikněte na tlačítko **kopie**, zadejte jedinečný název a provést změny, které potřebujete.
 
 > [!IMPORTANT]
-> When you copy a template, the **Published** or **Archived** status is also copied. So if you copy a published template, its immediate status will be published, unless you change it.
+> Při kopírování šablony, **Publikováno** nebo **archivované** stav je také zkopírován. Tak, že při kopírování publikované šablony, jeho okamžité stav bude publikována, pokud jej nezměníte.
 
-You can copy custom templates and the default templates. As a best practice, copy one of the default templates instead of creating a new custom template if you want the template to grant rights to all users in your organization. This method means that you don’t have to create or select multiple groups to specify all users. In this scenario however, be sure to specify a new name and description for the copied template for additional languages.
+Můžete zkopírovat vlastní šablony a výchozích šablonách. Jako nejlepší postup zkopírujte jeden výchozí šablony namísto vytvoření nové vlastní šablony, pokud chcete šablonu, kterou chcete udělit práva pro všechny uživatele ve vaší organizaci. Tato metoda znamená, že nemáte vytvořte nebo vyberte více skupin můžete určit všechny uživatele. V tomto scénáři je však nutné zadat nový název a popis pro kopírované šablonu pro další jazyky.
 
-## <a name="BKMK_HowToArchiveTemplates"></a>How to remove (archive) templates
-The default templates cannot be deleted, but they can be archived so that users do not see them.
+## <a name="BKMK_HowToArchiveTemplates"></a>Postup odebrání šablony (archiv)
+Výchozí šablony nelze odstranit, ale mohou být archivovány tak, aby je uživatelé neuvidí.
 
-Similarly, if you have published a custom template and no longer want users to be able to see it, you can edit the template and choose **ARCHIVE** and **SAVE** from the **CONFIGURE** page. Or, you can select it from the **TEMPLATES** page and select **ARCHIVE**.
+Podobně, pokud jste publikovali vlastní šablony a již nechcete, aby uživatelé mohli zobrazit, můžete upravit šablonu a zvolte **ARCHIVU** a **Uložit** z **KONFIGUROVAT** stránky. Nebo můžete vybrat z **šablony** stránku a vyberte **ARCHIVU**.
 
-Because you cannot edit the default templates, to archive these templates, you must use the **ARCHIVE** option from the **TEMPLATES** page. You cannot archive the Outlook **Do Not Forward** option.
+Protože nelze upravit výchozí šablony pro archivaci těchto šablon, je nutné použít **ARCHIVU** možnost z **šablony** stránky. Nelze archivovat aplikace Outlook **Nepředávat** možnost.
 
-#### To remove a default template
+#### Chcete-li odebrat výchozí šablony
 
--   From the **TEMPLATES** page, select the default template, and click **ARCHIVE**.
+-   Z **šablony** vyberte výchozí šablonu a klikněte na tlačítko **ARCHIVU**.
 
-The status changes from **Published** to **Archived**. If you change your mind, select the template and click **PUBLISH**.
+Stav se změní z **Publikováno** k **archivované**. Pokud změníte své rozhodnutí, vyberte šablonu a klikněte na tlačítko **Publikovat**.
 
-## <a name="BKMK_RefreshingTemplates"></a>Refreshing templates for users
-When you use Azure RMS, templates are automatically downloaded to client computers so that users can select them from their applications. However, you might need to take additional steps if you make changes to the templates:
+## <a name="BKMK_RefreshingTemplates"></a>Aktualizace šablony pro uživatele
+Pokud používáte službu Azure RMS, šablony jsou automaticky staženy do klientských počítačů, tak, aby uživatelé mohou vybrat z jejich aplikací. Však může být zapotřebí provést další kroky, pokud provedete změny šablony:
 
-|Application or service|How templates are refreshed after changes|
-|--------------------------|---------------------------------------------|
-|Exchange Online|Manual configuration required to refresh templates.<br /><br />For the configuration steps, expand the following section, [Exchange Online only: How to configure Exchange to download changed custom templates](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_ExchangeOnlineTemplatesUpdate).|
-|Office 365|Automatically refreshed  – no additional steps required.|
-|Office 2016 and Office 2013<br /><br />RMS sharing application for Windows|Automatically refreshed – on a schedule:<br /><br />For these later versions of Office: The default refresh interval  is every 7 days.<br /><br />For the RMS sharing application for Windows: Starting with version 1.0.1784.0, the default refresh interval is every 1 day. Prior versions have a default refresh interval of every 7 days.<br /><br />To force a refresh sooner than this schedule, expand the following section, [Office 2016, Office 2013, and RMS sharing application for Windows: How to force a refresh for a changed custom template](#BKMK_Office2013ForceUpdate).|
-|Office 2010|Refreshed when users log on.<br /><br />To force a refresh, ask or force users to log off and log back on again. Or, see the following section, [Office 2010 only: How to force a refresh for a changed custom template](#BKMK_Office2010ForceUpdate).|
-For mobile devices that use the RMS sharing application, templates are automatically downloaded (and refreshed if necessary) without additional configuration required.
+|Aplikace nebo služby|Jak jsou aktualizovány šablony po provedení změn|
+|------------------------|----------------------------------------------------|
+|Exchange Online|Ruční konfigurace požadované aktualizace šablony.<br /><br />Kroky konfigurace, rozbalte položku v následující části [Exchange Online pouze: Postup konfigurace serveru Exchange, chcete-li stáhnout změnit vlastní šablony](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md#BKMK_ExchangeOnlineTemplatesUpdate).|
+|Office 365|Automaticky aktualizovat – žádné další kroky.|
+|Office 2016 a Office 2013<br /><br />Aplikace sdílení RMS pro Windows|Automaticky aktualizovat – podle plánu:<br /><br />-   Pro tyto novější verze Office: Výchozí interval aktualizace je každých 7 dní.<br />-   Pro aplikace pro Windows Sdílení RMS: Počínaje verzí 1.0.1784.0, je výchozí interval aktualizace je každý 1 den. Předchozí verze mají výchozí interval každých 7 dní aktualizace.<br /><br />Chcete-li vynutit aktualizaci dříve než tento plán, rozbalte v následující části [Office 2016, Office 2013 a aplikace sdílení RMS pro Windows: Jak můžete vynutit aktualizaci změněné vlastní šablony](#BKMK_Office2013ForceUpdate).|
+|Office 2010|Aktualizovat při přihlášení uživatelů.<br /><br />Můžete vynutit aktualizaci, požádejte nebo přinutit uživatele se odhlásit a znovu přihlaste. Nebo, naleznete v následující části [Pouze v systému Office 2010: Jak můžete vynutit aktualizaci změněné vlastní šablony](#BKMK_Office2010ForceUpdate).|
+Pro mobilní zařízení, které používají aplikace sdílení RMS, šablony jsou automaticky staženy (a aktualizovat v případě potřeby) bez další nezbytné konfigurace.
 
-### <a name="BKMK_ExchangeOnlineTemplatesUpdate"></a>Exchange Online only: How to configure Exchange to download changed custom templates
-If you have already configured Information Rights Management (IRM) for Exchange Online, custom templates will not download for users until you make the following changes by using Windows PowerShell in Exchange Online.
+### <a name="BKMK_ExchangeOnlineTemplatesUpdate"></a>Exchange Online pouze: Postup konfigurace serveru Exchange, chcete-li stáhnout změnit vlastní šablony
+Pokud jste již nakonfigurovali Správa informačních práv (IRM) pro Exchange Online, nebudou pro uživatele stáhnout vlastní šablony, dokud provést následující změny pomocí prostředí Windows PowerShell v systému Exchange Online.
 
 > [!NOTE]
-> For more information about how to use Windows PowerShell in Exchange Online, see [Using PowerShell with Exchange Online](https://technet.microsoft.com/library/jj200677%28v=exchg.160%29.aspx).
+> Další informace o tom, jak pomocí prostředí Windows PowerShell v systému Exchange Online v tématu [pomocí prostředí PowerShell s Exchange Online](https://technet.microsoft.com/library/jj200677%28v=exchg.160%29.aspx).
 
-You must do this procedure each time you change a template.
+Tento postup je nutné provést při každé změně šablony.
 
-##### To update templates for Exchange Online
+##### Chcete-li aktualizovat šablony pro Exchange Online
 
-1.  Using Windows PowerShell in Exchange Online, connect to the service:
+1.  Použití příkazu Windows PowerShell v systému Exchange Online, připojte ke službě:
 
-    1.  Supply your Office 365 user name and password:
+    1.  Zadejte Office 365 uživatelské jméno a heslo:
 
         ```
         $Cred = Get-Credential
         ```
 
-    2.  Connect to the Exchange Online service by running the following two commands:
+    2.  Připojte ke službě Exchange Online spuštěním následujících příkazů:
 
         ```
         $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://ps.outlook.com/powershell/ -Credential $Cred -Authentication Basic –AllowRedirection
@@ -246,148 +239,148 @@ You must do this procedure each time you change a template.
         Import-PSSession $Session
         ```
 
-2.  Use the [Import-RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200724%28v=exchg.160%29.aspx) cmdlet to re-import your trusted publishing domain (TPD) from Azure RMS:
+2.  Použití [Import RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200724%28v=exchg.160%29.aspx) rutiny znovu importujte vaší důvěryhodné domény publikování (důvěryhodné domény publikování) ze služby Azure RMS:
 
     ```
     Import-RMSTrustedPublishingDomain -Name "<TPD name>" -RefreshTemplates -RMSOnline
     ```
-    For example, if your TPD name is **RMS Online - 1** (a typical name for many organizations), enter: **Import-RMSTrustedPublishingDomain -Name "RMS Online - 1" -RefreshTemplates -RMSOnline**
+    Například, pokud je název vaší důvěryhodné domény publikování **RMS Online - 1** (typický název pro mnoho organizací), zadejte: **Import-RMSTrustedPublishingDomain -Name "RMS Online - 1" -RefreshTemplates -RMSOnline**
 
     > [!NOTE]
-    > To verify your TPD name, you can use the [Get-RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200707%28v=exchg.160%29.aspx) cmdlet.
+    > Chcete-li ověřit název vaší důvěryhodné domény publikování, můžete použít [Get-RMSTrustedPublishingDomain](http://technet.microsoft.com/library/jj200707%28v=exchg.160%29.aspx) rutiny.
 
-3.  To confirm that the templates have imported successfully, wait a few minutes and then run the [Get-RMSTemplate](http://technet.microsoft.com/library/dd297960%28v=exchg.160%29.aspx) cmdlet and set the Type to All. For example:
+3.  Chcete-li potvrdit, že šablony úspěšně importovali, počkejte několik minut a poté spusťte [Get-RMSTemplate](http://technet.microsoft.com/library/dd297960%28v=exchg.160%29.aspx) rutiny a nastavte typ pro všechny. Příklad:
 
     ```
     Get-RMSTemplate -TrustedPublishingDomain "RMS Online - 1" -Type All
     ```
     > [!TIP]
-    > It's useful to keep a copy of the output so that you can easily copy the template names or GUIDs if you later archive a template.
+    > Je vhodné ponechat kopii výstupu, takže můžete snadno zkopírovat názvy šablon nebo identifikátory GUID Pokud později archivace šablony.
 
-4.  For each imported template that you want to be available in the Outlook Web App, you must use the [Set-RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) cmdlet and set the Type to Distributed:
+4.  Pro každou importovanou šablonu, kterou chcete být k dispozici v aplikaci Outlook Web App, je nutné použít [Set RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) rutiny a nastavte typ distribuované:
 
     ```
     Set-RMSTemplate -Identity "<name  or GUID of the template>" -Type Distributed
     ```
-    Because Outlook Web Access caches the UI for 24 hours, users might not see the new template for up to a day.
+    Protože aplikace Outlook Web Access ukládá do mezipaměti uživatelského rozhraní pro 24 hodin, nemusí se uživatelům zobrazí nové šablony pro až denně.
 
-In addition, if you archive a template (custom or default) and use Exchange Online with Office 365, users will continue to see the archived templates if they use the Outlook Web App or mobile devices that use the Exchange ActiveSync Protocol.
+Kromě toho, pokud archivace šablony (vlastní nebo výchozí) a používání systému Exchange Online s Office 365, budou uživatelé nadále najdete archivované šablony, pokud používají Outlook Web App nebo mobilní zařízení, která používají protokol Exchange ActiveSync.
 
-So that users no longer see these templates, connect to the service by using Windows PowerShell in Exchange Online, and then use the [Set-RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) cmdlet by running the following command:
+Tak, aby uživatelé již nebudou tyto šablony zobrazíte připojit ke službě pomocí prostředí Windows PowerShell v systému Exchange Online a pak použít [Set RMSTemplate](http://technet.microsoft.com/library/hh529923%28v=exchg.160%29.aspx) rutiny spuštěním následujícího příkazu:
 
 ```
 Set-RMSTemplate -Identity "<name or GUID of the template>" -Type Archived
 ```
 
-### <a name="BKMK_Office2013ForceUpdate"></a>Office 2016,  Office 2013, and RMS sharing application for Windows: How to force a refresh for a changed custom template
-By editing the registry on the computers running Office 2016, Office 2013, or the Rights Management (RMS) sharing application for Windows, you can change the automatic schedule so that changed templates are refreshed on computers more frequently than their default value. You can also force an immediate refresh by deleting the existing data in a registry value.
+### <a name="BKMK_Office2013ForceUpdate"></a>Office 2016, Office 2013 a aplikace sdílení RMS pro Windows: Jak můžete vynutit aktualizaci změněné vlastní šablony
+Automatické plán můžete úpravou registru v počítačích se systémem Office 2016, Office 2013 nebo sdílení Rights Management (RMS) aplikace pro Windows změnit tak, aby změněné šablony jsou aktualizovány na počítačích častěji, než jejich výchozí hodnotu. Můžete také vynutit okamžitou aktualizaci odstranění existujících dat v hodnotě registru.
 
 > [!WARNING]
-> If you use the Registry Editor incorrectly, you might cause serious problems that might require you to reinstall the operating system. Microsoft cannot guarantee that you can solve problems that result from using the Registry Editor incorrectly. Use the Registry Editor at your own risk.
+> Nesprávné použití Editoru registru může způsobit vážné problémy, které mohou vyžadovat přeinstalaci operačního systému. Společnost Microsoft nemůže zaručit, že budete schopni vyřešit problémy vzniklé z nesprávného použití Editoru registru. Pomocí Editoru registru na vlastní nebezpečí.
 
-##### To change the automatic schedule
+##### Chcete-li změnit automatické plán
 
-1.  Using a registry editor, create and set one of the following registry values:
+1.  Pomocí Editoru registru, vytvoření a nastavení jedné z následujících hodnot registru:
 
-    -   To set an update frequency in days (minimum of 1 day):  Create a new registry value named **TemplateUpdateFrequency** and define an integer value for the data, which specifies the frequency in days to download any changes to a downloaded template. Use the following table to locate the registry path to create this new registry value.
+    -   Chcete-li nastavit četnost aktualizace ve dnech (minimálně 1 den):  Vytvořte novou hodnotu registru s názvem **TemplateUpdateFrequency** a definovat celočíselnou hodnotu pro data, která určuje četnost, se ve dnech, chcete-li stáhnout všechny změny do stažené šablony. Vyhledejte cestu registru pro vytvoření této nové hodnoty registru pomocí následující tabulky.
 
-        |Registry path|Type|Value|
-        |-----------------|--------|---------|
+        |Cesta v registru|Typ|Hodnota|
+        |--------------------|-------|-----------|
         |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC|REG_DWORD|TemplateUpdateFrequency|
 
-    -   To set an update frequency in seconds (minimum of 1 second):  Create a new registry value named **TemplateUpdateFrequencyInSeconds** and define an integer value for the data, which specifies the frequency in seconds to download any changes to a downloaded template. Use the following table to locate the registry path to create this new registry value.
+    -   Chcete-li nastavit četnost aktualizace v sekundách (nejméně 1 sekundu):  Vytvořte novou hodnotu registru s názvem **TemplateUpdateFrequencyInSeconds** a definovat celočíselnou hodnotu pro data, která určuje interval v sekundách stáhnout všechny změny do stažené šablony. Vyhledejte cestu registru pro vytvoření této nové hodnoty registru pomocí následující tabulky.
 
-        |Registry path|Type|Value|
-        |-----------------|--------|---------|
+        |Cesta v registru|Typ|Hodnota|
+        |--------------------|-------|-----------|
         |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC|REG_DWORD|TemplateUpdateFrequencyInSeconds|
 
-    Make sure that you create and set one of these registry values, not both. If both are present, **TemplateUpdateFrequency** is ignored.
+    Ujistěte se, vytvořit a nastavit jednu z těchto hodnot registru, ne obojí. Pokud jsou přítomny, oba **TemplateUpdateFrequency** je ignorován.
 
-2.  If you want to force an immediate refresh of the templates, go to the next procedure. Otherwise, restart your Office applications and instances of File Explorer now.
+2.  Pokud chcete vynutit okamžitou aktualizaci šablon, přejděte pomocí následujícího postupu. V opačném restartujte aplikace Office a instance v Průzkumníku souborů.
 
-##### To force an immediate refresh
+##### Chcete-li vynutit okamžitou aktualizaci
 
-1.  Using a registry editor, delete the data for the **LastUpdatedTime** value. For example, the data might display **2015-04-20T15:52**; delete 2015-04-20T15:52 so that no data is displayed. Use the following table to locate the registry path to delete this registry value data.
+1.  Pomocí Editoru registru, odstranit data **LastUpdatedTime** hodnotu. Například může zobrazit data **2015-04-20T15:52**; odstranit 2015-04-20T15:52, aby mohli zobrazit žádná data. Následující tabulku použijte k vyhledejte cestu registru Chcete-li odstranit tento údaj hodnoty registru.
 
-    |Registry path|Type|Value|
-    |-----------------|--------|---------|
-    |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\&lt;MicrosoftRMS_FQDN&gt;\Template|REG_SZ|LastUpdatedTime|
+    |Cesta v registru|Typ|Hodnota|
+    |--------------------|-------|-----------|
+    |HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\ &lt; MicrosoftRMS_FQDN &gt; \Template|REG_SZ|LastUpdatedTime|
     > [!TIP]
-    > In the registry path, *&lt;MicrosoftRMS_FQDN&gt;* refers to your Microsoft RMS service FQDN. If you want to verify this value:
+    > V cestě registru *&lt; MicrosoftRMS_FQDN &gt;* odkazuje na službě Microsoft RMS plně kvalifikovaný název domény. Pokud chcete ověřit tuto hodnotu:
     > 
-    > 1.  Run the [Get-AadrmConfiguration](https://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet for Azure RMS. If you haven’t already installed the Windows PowerShell module for Azure RMS, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
-    > 2.  From the output, identify the **LicensingIntranetDistributionPointUrl** value.
+    > 1.  Spuštění [Get-AadrmConfiguration](https://msdn.microsoft.com/library/windowsazure/dn629410.aspx) rutiny pro Azure RMS. Pokud jste ještě nenainstalovali modul prostředí Windows PowerShell pro službu Azure RMS, naleznete v části [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+    > 2.  Z výstupu, určete **LicensingIntranetDistributionPointUrl** hodnotu.
     > 
-    >     For example: **LicensingIntranetDistributionPointUrl   : https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
-    > 3.  From the value, remove **https://** and **/_wmcs/licensing** from this string. The remaining value is your Microsoft RMS service FQDN. In our example, the Microsoft RMS service FQDN would be the following value:
+    >     Příklad: **LicensingIntranetDistributionPointUrl: https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
+    > 3.  Od hodnoty, odeberte **https://** a **/_wmcs/licensing** z tohoto řetězce. Zbývající hodnota je plně kvalifikovaný název domény služby Microsoft RMS. V našem příkladu službu Microsoft RMS plně kvalifikovaný název domény by byl následující hodnotu:
     > 
     >     **5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com**
 
-2.  Delete the following folder and all files it contains: **%localappdata%\Microsoft\MSIPC\Templates**
+2.  Odstraňte následující složku a všechny soubory, které obsahuje: **%localappdata%\Microsoft\MSIPC\Templates**
 
-3.  Restart your Office applications and instances of File Explorer.
+3.  Restartujte aplikace Office a instance v Průzkumníku souborů.
 
-### <a name="BKMK_Office2010ForceUpdate"></a>Office 2010 only: How to force a refresh for a changed custom template
-By editing the registry on the computers running Office 2010, you can set a value so that changed templates are refreshed on computers without waiting for users to log off and back on. You can also force an immediate refresh by deleting the existing data in a registry value.
+### <a name="BKMK_Office2010ForceUpdate"></a>Pouze v systému Office 2010: Jak můžete vynutit aktualizaci změněné vlastní šablony
+Úpravou registru v počítačích se systémem Office 2010 můžete nastavit hodnotu, aby změněné šablony jsou aktualizována v počítačích bez čekání na uživatele se odhlásit a znovu zapnout. Můžete také vynutit okamžitou aktualizaci odstranění existujících dat v hodnotě registru.
 
 > [!WARNING]
-> If you use the Registry Editor incorrectly, you might cause serious problems that might require you to reinstall the operating system. Microsoft cannot guarantee that you can solve problems that result from using the Registry Editor incorrectly. Use the Registry Editor at your own risk.
+> Nesprávné použití Editoru registru může způsobit vážné problémy, které mohou vyžadovat přeinstalaci operačního systému. Společnost Microsoft nemůže zaručit, že budete schopni vyřešit problémy vzniklé z nesprávného použití Editoru registru. Pomocí Editoru registru na vlastní nebezpečí.
 
-##### To change the update frequency
+##### Chcete-li změnit četnost aktualizace
 
-1.  Using a registry editor, create a new registry value named **UpdateFrequency** and define an integer value for the data, which specifies the frequency in days to download any changes to a downloaded template. Use the following table to locate the registry path to create this new registry value.
+1.  Pomocí Editoru registru, vytvořte novou hodnotu registru s názvem **UpdateFrequency** a definovat celočíselnou hodnotu pro data, která určuje četnost, se ve dnech, chcete-li stáhnout všechny změny do stažené šablony. Vyhledejte cestu registru pro vytvoření této nové hodnoty registru pomocí následující tabulky.
 
-    |Registry path|Type|Value|
-    |-----------------|--------|---------|
+    |Cesta v registru|Typ|Hodnota|
+    |--------------------|-------|-----------|
     |HKEY_CURRENT_USER\Software\Microsoft\MSDRM\TemplateManagement|REG_DWORD|UpdateFrequency|
 
-2.  If you want to force an immediate refresh of the templates, go to the next procedure. Otherwise, restart your Office applications now.
+2.  Pokud chcete vynutit okamžitou aktualizaci šablon, přejděte pomocí následujícího postupu. V opačném restartujte nyní aplikací sady Office.
 
-##### To force an immediate refresh
+##### Chcete-li vynutit okamžitou aktualizaci
 
-1.  Using a registry editor, delete the data for the **LastUpdatedTime** value. For example, the data might display **2015-04-20T15:52**; delete 2015-04-20T15:52 so that no data is displayed. Use the following table to locate the registry path to delete this registry value data.
+1.  Pomocí Editoru registru, odstranit data **LastUpdatedTime** hodnotu. Například může zobrazit data **2015-04-20T15:52**; odstranit 2015-04-20T15:52, aby mohli zobrazit žádná data. Následující tabulku použijte k vyhledejte cestu registru Chcete-li odstranit tento údaj hodnoty registru.
 
-    |Registry path|Type|Value|
-    |-----------------|--------|---------|
+    |Cesta v registru|Typ|Hodnota|
+    |--------------------|-------|-----------|
     |HKEY_CURRENT_USER\Software\Microsoft\MSDRM\TemplateManagement|REG_SZ|lastUpdatedTime|
 
-2.  Delete the following folder and all files it contains: **%localappdata%\Microsoft\MSIPC\Templates**
+2.  Odstraňte následující složku a všechny soubory, které obsahuje: **%localappdata%\Microsoft\MSIPC\Templates**
 
-3.  Restart your Office applications.
+3.  Restartování aplikací sady Office.
 
-## <a name="BKMK_PowerShellTemplates"></a>Windows PowerShell reference
-Everything that you can do in the Azure classic portal to create and manage templates, you can do from the command line, by using Windows PowerShell. In addition, you can export and import templates, so that you can copy templates between tenants or perform bulk edits of complex properties in templates, such as multilingual names and descriptions.
+## <a name="BKMK_PowerShellTemplates"></a>Odkaz na prostředí Windows PowerShell
+Vše, co můžete provést v portálu správy Azure vytvářet a spravovat šablony můžete provést z příkazového řádku pomocí prostředí Windows PowerShell. Kromě toho můžete exportovat a importovat šablony, takže můžete kopírovat šablony mezi klienty nebo provést hromadné úpravy komplexní vlastnosti v šablonách, jako je například vícejazyčné názvy a popisy.
 
-You can also use export and import to back up and restore your custom templates, As a best practice, regularly back up your custom templates, so that if you make a change that was not intended, you can easily revert to a previous version.
+Můžete také použít exportu a importu zálohovat a obnovit vlastní šablony, jako nejlepší postup, pravidelně zálohovat vlastní šablony, takže pokud provedete změny, která nebyla určena, můžete snadno vrátit k předchozí verzi.
 
 > [!IMPORTANT]
-> To use Windows PowerShell to create and manage Azure RMS rights policy templates, you must have at least version 2.0.0.0 of the [Windows PowerShell module for Azure RMS](http://go.microsoft.com/fwlink/?LinkId=257721).
+> Pomocí prostředí Windows PowerShell vytvořit a spravovat šablony zásad práv Azure RMS, pokud nemáte alespoň verze 2.0.0.0 [modul Windows PowerShell pro službu Azure RMS](http://go.microsoft.com/fwlink/?LinkId=257721).
 > 
-> If you have previously installed this Windows PowerShell module, run the following command in a PowerShell window to check the version number: `(Get-Module aadrm -ListAvailable).Version`
+> Pokud jste již dříve nainstalovali tento modul prostředí Windows PowerShell, spusťte následující příkaz v okně prostředí PowerShell zkontrolujte číslo verze: `(Get-Module aadrm -ListAvailable).Version`
 
-For installation instructions, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+Instalační pokyny naleznete v tématu [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-The cmdlets that support creating and managing templates:
+Rutiny, které podporují vytváření a Správa šablon:
 
--   [Add-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727075.aspx)
+-   [Přidat AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727075.aspx)
 
--   [Export-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx)
+-   [Export AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx)
 
 -   [Get-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727079.aspx)
 
 -   [Get-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727081.aspx)
 
--   [Import-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx)
+-   [Import AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx)
 
--   [New-AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx)
+-   [Nové AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx)
 
--   [Remove-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727082.aspx)
+-   [Odebrat AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727082.aspx)
 
--   [Set-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx)
+-   [Sada AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx)
 
-## Next steps
-After you’ve configured custom templates for Azure Rights Management, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) to check whether there are other configuration steps that you might want to do before you roll out [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] to users and administrators. If there are no other configuration steps that you need to do, see [Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) for operational guidance to support a successful deployment for your organization.
+## Další kroky
+Po nakonfigurování vlastní šablony pro Azure Rights Management pomocí [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) Zkontrolovat, zda jsou ostatní kroky konfigurace, které chcete provést předtím, než můžete přejít na [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] uživatelům a správcům. Pokud neexistují žádné další kroky konfigurace, které je třeba provést, naleznete v části [Použití služby Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) provozní pokyny pro podporu úspěšné nasazení pro vaši organizaci.
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Viz také
+[Konfigurace Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
 

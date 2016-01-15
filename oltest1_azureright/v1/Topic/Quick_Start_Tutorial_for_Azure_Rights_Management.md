@@ -3,237 +3,235 @@ description: na
 keywords: na
 title: Quick Start Tutorial for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1db923bf-7d19-4fdd-a413-bfeb58af5e03
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Quick Start Tutorial for Azure Rights Management
-Use this tutorial to quickly try out Microsoft Azure Rights Management (also known as Azure RMS) for your organization with just 5 steps that should take you less than 15 minutes. You’ll activate the service, securely send a confidential document by email to somebody in another organization, and then be able to track when that document is opened. When the confidential document is emailed, it is encrypted while in transit and can be read only by the person it is sent to, using the permissions that are set by the sender.
+# Rychl&#233; zah&#225;jen&#237; kurzu Azure Rights Management
+Použijte tento kurz rychle vyzkoušet Microsoft Azure Rights Management (také označované jako Azure RMS) pro vaši organizaci s právě 5 kroky, které by měla trvat méně než 15 minut. Budete aktivovat službu, zabezpečeně odesílat důvěrný dokument e-mailem někomu v jiné organizaci a pak budou moci sledovat při otevření tohoto dokumentu. Když důvěrný dokument je e-mailem, je zašifrován při přenosu a lze je číst pouze osoba, že jsou odeslána do, pomocí oprávnění, které jsou nastaveny odesílatelem.
 
 ![](../Image/AzRMS_QuickStartStepsAll.PNG)
 
-This tutorial is aimed at IT administrators and consultants, to help them evaluate Azure Rights Management as an information protection solution for an organization. In a production environment, the instructions to activate the service would be done by an administrator and the instructions to send the document would be done by end users. Both sets of instructions are included in this tutorial, to demonstrate the end-to-end scenario of securely sending a confidential document to somebody in another organization. If you have any problems completing this tutorial, send an email message to [AskIPTeam](mailto:askipteam@microsoft.com?subject=Having%20problems%20with%20the%20Quick%20Start%20tutorial) and we will help you out.
+V tomto kurzu je zaměřena na správci IT a konzultanty, aby mohl snadněji vyhodnotit Azure Rights Management jako řešení ochrany informací v organizaci. V provozním prostředí pokyny k aktivaci služby by provádí správce a pokyny k odeslání dokumentu by provedeným koncovým uživatelům. Obě sady pokyny jsou zahrnuty v tomto kurzu k předvedení scénář začátku do konce bezpečně odesílání důvěrný dokument někomu v jiné organizaci. Pokud máte potíže dokončení tohoto kurzu, odesílat e-mailovou zprávu na [AskIPTeam](mailto:askipteam@microsoft.com?subject=Having%20problems%20with%20the%20Quick%20Start%20tutorial) a pomůžeme vám.
 
-To complete this tutorial, you will need the following:
+Tento kurz budete potřebovat následující:
 
--   A subscription that supports Azure Rights Management . This can be a paid subscription or a trial subscription. If you want to use document tracking, which is required for step 5 in this tutorial, your subscription must support document tracking. For more information about the subscription options and links to free trials, see the [Cloud subscriptions that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.
+-   Odběr, který podporuje Azure Rights Management. To může být na placené předplatné nebo zkušební verzi předplatného. Pokud chcete použít pro sledování, dokumentů, který je vyžadován v kroku 5 v tomto kurzu, vaše předplatné musí podporovat sledování dokumentů. Další informace o možnosti odběru a odkazy na bezplatné zkušební verze, najdete v části [Cloud odběry, které podporují službu Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedSubscriptions) v oddílu [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tématu.
 
-    Tip: If you need to get a subscription, do this in advance because this process can sometimes take a while to complete.
+    Tip: Pokud potřebujete získat předplatné, proveďte předem vzhledem k tomu, že tento proces může někdy trvat nějakou dobu pro dokončení.
 
--   An administrator account to sign in to the Office 365 admin center or the Azure classic portal, so that you can activate the Rights Management service. This account must also have an email address and a working email service (for example, Exchange Online or Exchange Server).
+-   Účet správce pro přihlášení k Centru správy Office 365 nebo na portálu Azure, takže můžete aktivovat službu Rights Management. Tento účet musí mít také e-mailovou adresu a pracovní e-mailové služby (například Exchange Online nebo serveru Exchange Server).
 
--   A computer running Windows (minimum of Windows 7 SP1), and which has installed either Office 2016, Office 2013, or Office 2010.
+-   Počítač se systémem Windows (minimum Windows 7 SP1) a má nainstalovanou Office 2016, Office 2013 nebo Office 2010.
 
-Let’s get started.
+Začněme.
 
-## Step 1: Activate the Rights Management service
+## Krok 1: Aktivovat službu Rights Management
 ![](../Image/AzRMS_QuickStartSteps1.PNG)
 
-Even though you might have a subscription that supports Azure Rights Management, the service is disabled by default. To activate it, you can use either the Office 365 admin center, or the Azure classic portal:
+I když můžete mít odběr, který podporuje Azure Rights Management, služba je ve výchozím nastavení vypnuta. Aktivovat, můžete použít buď Centru správy Office 365, nebo na portálu Azure:
 
--   If you have an Office 365 subscription that includes Azure Rights Management, or an Office 365 subscription that excludes Azure Rights Management but you have a subscription for Azure RMS Premium: **Use the Office 365 admin center**.
+-   Pokud máte předplatné Office 365, které zahrnuje Azure Rights Management nebo předplatné služeb Office 365, který vyloučí Azure Rights Management ale máte předplatné pro samostatnou službu Azure RMS: **Pomocí centra pro správu služeb Office 365**.
 
--   If you do not have an Office 365 subscription: **Use the Azure classic portal**.
+-   Pokud nemáte předplatné Office 365: **Použití portálu Azure**.
 
 ![](../Image/AzRMS_Tutorial_1_Screenshots.png)
 
-#### To activate Rights Management from the Office 365 admin center
+#### Chcete-li aktivovat službu Rights Management v Centru správy Office 365
 
-1.  Go to the [Office 365 portal](https://portal.office.com/) and sign in with your work or school account.
+1.  Přejděte na stránku [portálu Office 365](https://portal.office.com/) a přihlaste se pomocí pracovního nebo školního účtu.
 
-2.  If the Office 365 admin center does not automatically display, select the app launcher icon in the upper-left and choose **Admin**. The **Admin** tile appears only to Office 365 administrators.
+2.  Pokud nejsou Centru správy Office 365 automaticky zobrazeny, vyberte ikonu Spouštěč aplikace v levém horním a zvolte **Admin**.**Správce** dlaždice se zobrazí pouze správcům služeb Office 365.
 
     > [!TIP]
-    > For admin center help, see [About the Office 365 admin center - Admin Help](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
+    > Centrum nápovědu správce naleznete v tématu [Centrum správy the Office 365 – Nápověda správce](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
 
-3.  In the left pane, expand **SERVICE SETTINGS**.
+3.  V levém podokně rozbalte **Nastavení služby**.
 
-4.  Click **Rights Management**.
+4.  Klikněte na tlačítko **Rights Management**.
 
-5.  On the **RIGHTS MANAGEMENT** page, click **Manage**.
+5.  Na **RIGHTS MANAGEMENT** klikněte na tlačítko **Spravovat**.
 
-6.  On the **rights management** page, click **activate**.
+6.  Na **rights management** klikněte na tlačítko **Aktivovat**.
 
-7.  When prompted **Do you want to activate Rights Management?**, click **activate**.
+7.  Po zobrazení výzvy **Chcete aktivovat službu Rights Management?**, klikněte na tlačítko **Aktivovat**.
 
-You should now see **Rights management is activated** and the option to deactivate (you might need to manually refresh the page)
+Nyní byste měli vidět **Rights management je aktivována** a deaktivovat (je nutné ručně aktualizovat stránku)
 
-At this time, do not click **advanced features**. This takes you to the Azure classic portal where you can configure templates, which are not needed for this tutorial. Instead, you can close the Office 365 admin center.
+V tomto okamžiku neklikejte na **Rozšířené funkce**. Tím přejdete na portál Azure kde lze konfigurovat šablon, které nejsou potřeba pro tento kurz. Místo toho můžete zavřít Centru správy Office 365.
 
-#### To activate Rights Management from the Azure portal
+#### Chcete-li aktivovat službu Rights Management z portálu Azure
 
-1.  Go to the [Azure classic portal](http://go.microsoft.com/fwlink/p/?LinkID=275081) and sign in.
+1.  Přejděte na stránku [portálu Azure](http://go.microsoft.com/fwlink/p/?LinkID=275081) a přihlaste se.
 
-2.  In the left pane, click **ACTIVE DIRECTORY**.
+2.  V levém podokně klikněte na tlačítko **služby ACTIVE DIRECTORY**.
 
-3.  From the **active directory** page, click **RIGHTS MANAGEMENT**.
+3.  Z **služby active directory** klikněte na tlačítko **RIGHTS MANAGEMENT**.
 
-4.  Select the directory to manage for [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], click **ACTIVATE**, and then confirm your action.
+4.  Vybrat adresář pro správu pro [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], klikněte na tlačítko **Aktivovat**, a potom potvrďte vaše akce.
 
-The **RIGHTS MANAGEMENT STATUS** should now display **Active** and the **ACTIVATE** option is replaced with **DEACTIVATE**.
+**RIGHTS MANAGEMENT stav** by nyní měl zobrazovat **Active** a **Aktivovat** je nahrazen možnost **DEAKTIVOVAT**.
 
-Although you can configure other options for Rights Management in the portal, these are not needed for this tutorial, so you can close the Azure classic portal.
+Přestože můžete nakonfigurovat další možnosti pro Rights Management na portálu, tyto nejsou potřeba pro tento kurz tak můžete zavřít na portálu Azure.
 
-That’s all you need to do for this first step. The service is activated so all users in your organization can now start to protect important and sensitive documents. In a production environment, you might want to restrict who can do this initially, for a phased rollout. But it’s not necessary for this tutorial.
+To je vše, které je třeba provést pro tento první krok. Služba je aktivována, aby všichni uživatelé ve vaší organizaci teď můžete začít chránit důležité a citlivých dokumentů. V provozním prostředí můžete omezit, kdo tuto operaci provést zpočátku pro postupné zavedení. Ale to není nezbytné, aby v tomto kurzu.
 
-Although not included here, for a production deployment, you probably will also probably want to configure custom templates. Templates make it easier for users to quickly apply the right settings when they need to protect files. When you activate Rights Management, you automatically get 2 default templates and it’s likely you will want to supplement these with your own custom templates in a production environment. But templates are not needed for this tutorial, so you’re ready to go to the next step.
+I když nejsou zahrnuty v tomto provozním nasazení, pravděpodobně bude také pravděpodobně chcete konfigurovat vlastní šablony. Šablony usnadňují uživatelům rychle použít správné nastavení, když potřebují chránit soubory. Při aktivaci Rights Management, automaticky získat 2 výchozí šablony a je pravděpodobné, můžete doplnit vlastní šablony v provozním prostředí. Ale šablony nejsou potřebné pro účely tohoto návodu, takže si budete chtít přejít na další krok.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|About activating Rights Management and controlling who can protect files and email when the service is activated   →|[Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)|
-|About the default templates and how to create new, custom templates   →|[Configuring Custom Templates for Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md)|
+|Pokud chcete získat další informace|Další informace|
+|---------------------------------------|-------------------|
+|O aktivaci služby Rights Management a řízení, kdo může chránit soubory a e-mailové služby je aktivován →|[Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)|
+|O výchozí šablony a jak vytvořit nové vlastní šablony →|[Konfigurace vlastních šablon pro Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md)|
 
-## Step 2: Install the Rights Management sharing application
+## Krok 2: Instalace aplikace pro sdílení obsahu Rights Management
 ![](../Image/AzRMS_QuickStartSteps2.PNG)
 
-The Rights Management sharing application (also known as the “RMS sharing app”) isn’t a requirement for Azure Rights Management, but we recommend it for all computers and mobile devices that support Azure Rights Management. The RMS sharing application integrates with Office applications by installing an Office add-in so that users can easily protect files directly from the ribbon. It also makes it possible to protect all files types by applying generic protection for files that are not natively supported by Azure Rights Management, and a document tracking site for users to track and revoke files that they have protected. We’ll be using the document tracking site later in this tutorial.
+Aplikace (také označované jako "aplikace sdílení RMS") pro sdílení obsahu Rights Management není požadavek pro Azure Rights Management, ale doporučujeme pro všechny počítače a mobilní zařízení, které podporují Azure Rights Management. Aplikace sdílení RMS integruje s Office aplikace nainstalováním Office doplněk tak, aby uživatelé mohli snadno chránit soubory přímo z pásu karet. Je také umožňuje chránit všechny typy souborů použitím obecnou ochranu pro soubory, které nejsou podporovány nativně Azure Rights Management a dokumentu sledování webu pro uživatele k sledování a odvolávání souborů, které mají chráněné. Budeme používat sledování lokality později v tomto kurzu dokumentů.
 
-This application is free to download and offers a scripted install for production environments. But for this tutorial, we’ll install it locally.
+Tato aplikace je zdarma ke stažení a nabízí skriptované instalace pro provozní prostředí. Ale pro účely tohoto návodu jsme budete jej nainstalovat místně.
 
 ![](../Image/AzRMS_Tutorial_2_Screenshots.png)
 
-#### To download and install the Rights Management sharing application
+#### Ke stažení a instalaci Rights Management, aplikace pro sdílení
 
-1.  Go to the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+1.  Přejděte [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) stránku na webu společnosti Microsoft.
 
-2.  In the **Computers** section, click the icon for the **RMS app for Windows** and save the **Setup.exe** file to install the Microsoft Rights Management sharing application.
+2.  V **počítače** oddíl, klikněte na ikonu **aplikace RMS pro systém Windows** a uložit **Setup.exe** souboru k instalaci aplikace pro sdílení obsahu Microsoft Rights Management.
 
-3.  For a local install, you must use an administrator account to run the Setup.exe file that was downloaded. If you are prompted to continue, click **Yes**.
+3.  Pro místní instalaci musí ke spuštění souboru Setup.exe, který byl stažen používat účet správce. Pokud se zobrazí výzva, aby bylo možné pokračovat, klikněte na tlačítko **Ano**.
 
-4.  On the **Setup Microsoft RMS** page, click **Next**, and wait for the installation to finish.
+4.  Na **Instalační program aplikace Microsoft RMS** klikněte na tlačítko **Další**, a počkejte na dokončení instalace.
 
-5.  When the installation finishes, click **Restart** if prompted to restart your computer, or click  **Close** to complete the installation.
+5.  Po dokončení instalace, klikněte na tlačítko **Restartujte** Pokud budete vyzváni k restartování počítače, nebo klikněte na tlačítko  **Zavřít** k dokončení instalace.
 
-You’re now ready to start protecting files that contain information that you want to share but only with the people that you specify.
+Nyní jste připraveni začít s ochranou soubory, které obsahují informace, které chcete sdílet, ale pouze s uživateli, který určíte.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|About a local installation of the Rights Management sharing application for Windows and user instructions   →|[Rights Management sharing application user guide](http://technet.microsoft.com/library/dn339006.aspx)|
-|About the scripted installation of the Rights Management sharing application for Windows and more technical information   →|[Rights Management sharing application administrator guide](http://technet.microsoft.com/library/dn339003.aspx)|
-|To understand the difference between native protection and generic protection   →|[What’s the difference between generic protection and built-in (native) protection?](https://technet.microsoft.com/library/dn574738.aspx)|
+|Pokud chcete získat další informace|Další informace|
+|---------------------------------------|-------------------|
+|O místní instalace aplikace pro Windows a uživatel → pokyny pro sdílení obsahu Rights Management|[Průvodce Rights Management sdílení aplikace uživatele](http://technet.microsoft.com/library/dn339006.aspx)|
+|O skriptované instalace aplikace pro Windows a další technické informace → pro sdílení obsahu Rights Management|[Průvodce Rights Management sdílení aplikace Správce](http://technet.microsoft.com/library/dn339003.aspx)|
+|Chcete-li porozumět rozdílu mezi nativní ochranou a obecnou ochranou →|[Jaký je rozdíl mezi obecnou ochranou a integrovanou (nativní) ochranou?](https://technet.microsoft.com/library/dn574738.aspx)|
 
-## Step 3: Email your document that you want to protect
+## Krok 3: E-mailu dokumentu, který chcete chránit
 ![](../Image/AzRMS_QuickStartSteps3.PNG)
 
-For this step, first create and save a document using Word that will represent your document that you want to protect, and name it **Confidential.docx**. For this tutorial, it doesn’t matter what text it actually contains, but you will want it to contain some text so you can more easily confirm that the authorized recipient could read it. For example, you might type: **If you can read this from your email attachment, the sender has successfully shared a file that was protected with Azure RMS.**
+V tomto kroku nejprve vytvořit a uložit dokument aplikace Word, který bude představovat váš dokument, který chcete chránit a pojmenujte ji pomocí **Confidential.docx**. Pro tento kurz nezávisle na tom, jaký text ve skutečnosti obsahuje, ale můžete jej obsahují text, takže můžete snadněji potvrdit, že autorizovanému příjemci by mohl číst. Může například zadejte: **Pokud jste to čtení z vaší e-mailových příloh, odesílatel úspěšně sdílí soubor, který byl chráněn pomocí Azure RMS.**
 
-You’re then ready to safely share this document by email.
+Poté můžete začít bezpečně sdílet tento dokument e-mailem.
 
 ![](../Image/AzRMS_Tutorial_3_Screenshots.png)
 
-#### To safely share your document by email
+#### Bezpečné sdílení dokumentu e-mailem
 
-1.  Using Outlook, create a new message and attach the file that you just created.
+1.  Pomocí aplikace Outlook, vytvořte novou zprávu a připojte soubor, který jste právě vytvořili.
 
-2.  In the **To** box, type one or more business email addresses. Make sure you specify a business email address, such as **janetm@contoso.com** or **p.dover@fabrikam.com** because currently, Azure Rights Management doesn’t support personal email addresses that you might use at home from your Internet provider. Don’t worry about whether the person you’re sending it to also has Azure Rights Management or not.
+2.  V **k** zadejte jednu nebo více e-mailová adresa adresy. Ujistěte se, jako je například zadejte e-mailovou adresu do zaměstnání **janetm@contoso.com** nebo **p.dover@fabrikam.com** vzhledem k tomu, že v současné době Azure Rights Management nepodporuje osobní e-mailové adresy, které můžete použít doma od poskytovatele sítě Internet. Nedělejte si starosti o tom, jestli osoba, kterou chcete odeslat jej do také má Azure Rights Management, nebo ne.
 
-3.  Type a subject, such as  **Confidential document** and then type a short message for the email, such as **Please read this confidential document and do not share it with others.**
+3.  Zadejte předmět, jako je například  **důvěrný dokument** a zadejte krátký zpráv pro e-mailu, jako je například **Přečtěte si tento důvěrný dokument a nelze jej sdílet s ostatními.**
 
-4.  Then, on the **Message** tab, in the **RMS** group, click **Share Protected** and then click **Share Protected** again:
+4.  Poté na **zpráva** ve **RMS** klikněte na možnost **sdílet chráněné** a potom klikněte na tlačítko **sdílet chráněné** znovu:
 
-5.  In the **share protected** dialog box:
+5.  V **sdílet chráněné** dialogové okno:
 
-    1.  Select **Viewer – View Only**.
+    1.  Vyberte **Viewer – zobrazení pouze**.
 
-        This means our recipients will be able to view the document but not edit or print it.
+        To znamená, že naše příjemců budou moci dokument zobrazit, nikoli však upravit nebo vytisknout.
 
-    2.  Select **Email me when somebody tries to open these documents**.
+    2.  Vyberte **e-mailu mě, když někdo pokusí otevřít tyto dokumenty**.
 
-        You’ll get an email notification each time the recipients try to open the attachment, and also if somebody else tries to open it—for example, your recipient forwards the email to co-worker. In this last scenario, you’ll see that access was denied and from the user details, you can decide whether to send that person a copy of the document that they can open.
+        Dostanete e-mailového oznámení pokaždé, když příjemce pokusí otevřít přílohu a také pokud někdo jiný pokusí jej otevřít – například příjemce předá e-mailu s kolegy. V tomto scénáři poslední uvidíte, že byl odepřen přístup a z podrobností o uživateli můžete rozhodnout, zda odeslat tomuto uživateli kopii dokumentu, který lze otevřít.
 
-    3.  Select **Allow me to instantly revoke access to these documents**.
+    3.  Vyberte **Povolit mi okamžité zrušení přístupu k těmto dokumentům**.
 
-        This option requires the recipients to have an Internet connection each time they open the attachment but with the benefit that if you later revoke the document, the next time they try to open it, they will not be able to. If you do not select this option, the recipients might be able to open it even without an Internet connection but with the disadvantage that if you later revoke the document, there might be a delay for when that takes effect.
+        Tato možnost vyžaduje příjemce, které chcete mít připojení k Internetu pokaždé, když jsou otevřete přílohu, ale s využitím, pokud později odvolat dokumentu, při dalším pokusu o otevření, že není budou moci. Pokud tuto možnost nevyberete, může být příjemce nemůže otevřít, a to i bez připojení k Internetu, ale s nevýhodou, že pokud později odvolat dokumentu, může dojít k prodlevám při při které se projeví.
 
-    4.  Click **Send Now**.
+    4.  Klikněte na tlačítko **nyní odeslat**.
 
-        The email with attachment is sent to the email addresses that you specified. In addition to your email message, they will see instructions how to read the attached document that is protected by Azure Rights Management.
+        E-mailu s přílohou, je odeslána na e-mailové adresy, které jste zadali. Kromě e-mailové zprávy uvidí pokyny jak číst přiložený dokument, který je chráněn Azure Rights Management.
 
-Now you’ve sent your protected document, you’re ready to ask your recipients to wait for it to arrive and then open it. But don’t close Outlook, because we’ll use it again in our final step to track the attachment.
+Nyní jste poslali chráněný dokument, jste připraveni požádejte příjemce, aby čekat na doručení a otevřete jej. Ale nezavírejte aplikace Outlook, protože použijeme ji znovu v našich posledním krokem ke sledování přílohu.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|Full instructions and alternative methods for protecting files that you share by email   →|[Protect a file that you share by email by using the Rights Management sharing application](https://technet.microsoft.com/library/dn574735.aspx)|
-|About the options in the **share protected** dialog box   →|[Dialog box options for the Rights Management sharing application](https://technet.microsoft.com/library/dn574738.aspx)|
+|Pokud chcete získat další informace|Další informace|
+|---------------------------------------|-------------------|
+|Úplné pokyny a alternativní metody pro ochranu souborů, které sdílejí → e-mailem|[Soubor, který můžete sdílet e-mailem pomocí Rights Management, aplikace pro sdílení chránit](https://technet.microsoft.com/library/dn574735.aspx)|
+|O možnostech v **sdílet chráněné** → dialogové okno|[Možnosti dialogového okna pro službu Rights Management, aplikace pro sdílení](https://technet.microsoft.com/library/dn574738.aspx)|
 
-## Step 4: Ask your recipients to open the emailed document
+## Krok 4: Požádejte příjemce, aby-mailem dokument otevřít
 ![](../Image/AzRMS_QuickStartSteps4.PNG)
 
-Your recipients can use many devices to read the protected document that you sent as an email attachment. The devices include iPads, iPhones, Android tablets and phones, Mac computers, as well as Windows computers.
+Příjemci použít mnoho zařízení ke čtení chráněný dokument, který se odesílají jako přílohy e-mailu. Zařízení zahrnují Ipady, Iphony, Android tablety a telefony, počítače se systémem Mac, jakož i počítače se systémem Windows.
 
-Ask them to read the email message that you sent. They will see your email message and before that, the following text:
+Zeptejte se ke čtení e-mailové zprávy, které jste odeslali. Uvidí vaši e-mailovou zprávu a před tímto následující text:
 
-**The sender has protected the attachments with Microsoft RMS. You must** [sign in](http://aka.ms/rms)
-      **to open them.**
+**Odesílatel je chráněný pomocí Microsoft RMS přílohy. Musíte** [přihlásit](http://aka.ms/rms) **abyste je mohli otevřít.**
 
-When they click the link, it takes them to instructions to install the RMS sharing app and if necessary, sign up for a free account. The free account grants them a subscription for RMS for individuals, which ensures that authorized users can always read a protected document, even if their organization does not have Azure RMS. They are then ready to read the protected attachment by using the following instructions.
+Po kliknutí na odkaz, je trvá pokyny k instalaci aplikace sdílení RMS a v případě potřeby přihlášení ke službám bezplatný účet. Bezplatný účet uděluje je předplatné pro službu RMS pro jednotlivce, který zajistí, že oprávněným uživatelům mohou vždy číst chráněný dokument i v případě, že jejich organizace nemá Azure RMS. Poté jsou připravené ke čtení chráněná příloha pomocí následujících pokynů.
 
 ![](../Image/AzRMS_Tutorial_4_Screenshots.png)
 
-#### To view the protected document attachment
+#### Chcete-li zobrazit přílohy chráněný dokument
 
-1.  Because Azure Rights Management protected a Word document, there are two attachments for the email message. These are actually two versions of the same file but with different file name extensions. Open the version that has the **.ppdf** file name extension (**Confidential.ppdf**).
+1.  Protože Azure Rights Management chráněný dokument aplikace Word, existují dva přílohy e-mailové zprávy. Toto jsou ve skutečnosti dvě verze stejného souboru, ale s různé přípony souborů. Otevřít verzi, která má **.ppdf** příponu názvu souboru (**Confidential.ppdf**).
 
-    If you have a version of [Office on your device that supports Rights Management](https://technet.microsoft.com/library/dn655136.aspx), you can open the other version of the file (**Confidential.docx**), so that it opens in Word.
+    Pokud máte verzi [Office na zařízení, který podporuje Rights Management](https://technet.microsoft.com/library/dn655136.aspx), můžete otevřít verzi souboru (**Confidential.docx**) tak, aby se otevře v aplikaci Word.
 
-2.  If you are prompted for your user name and password, enter your user name in the same format as the email address that was used to send you the email and attachment. For example, **janetm@contoso.com** or **p.dover@fabrikam.com**. For your password, type the password that you supplied when you signed up for RMS for individuals. Or, if your organization has Azure RMS, enter your usual work password.
+2.  Pokud se zobrazí výzva k zadání uživatelského jména a hesla, zadejte uživatelské jméno v stejný formát jako e-mailovou adresu, která byla použita k odesílání e-mailu a příloh. Například **janetm@contoso.com** nebo **p.dover@fabrikam.com**. Vaše heslo zadejte heslo, které jste zadali při registraci pro službu RMS pro jednotlivce. Nebo, pokud vaše organizace používá Azure RMS, zadejte heslo obvyklé práce.
 
-The document opens and you can now read the contents. For example, it might say **If you can read this from your email attachment, the sender has successfully shared a file that was protected with Azure RMS.** Because it’s read-only, you cannot change the contents.
+Dokument se otevře a nyní může načíst obsah. Řekněme například, ji může **Pokud to můžete číst z přílohy e-mailu, odesílatel úspěšně sdílí soubor, který byl chráněn pomocí Azure RMS.** Protože je jen pro čtení, nelze změnit obsah.
 
-As an optional step, you could ask your recipient to forward the email to other people that you didn’t include in your original email. Even if those other people work for an organization that has Azure Rights Management or they apply for their own RMS for individuals subscription, they won’t be able to open the attachment. When they are promoted for their user name, access to the document will be denied.
+Jako volitelný krok může požádat příjemce e-mailu předat jiných osob, které jste nezahrnuli původní e-mailu. I v případě, že tyto ostatní uživatelé pracovat v organizaci, která má Azure Rights Management nebo se vztahují pro své vlastní RMS pro jednotlivce předplatné, nebudou moci otevřete přílohu. Pokud jsou jejich vyzval k jejich uživatelské jméno, bude odepřen přístup k dokumentu.
 
-Now that the recipient has opened the attachment and optionally, forwarded it to somebody else, expect to get an email notification that reports this activity. But email messages are easy to lose over time, so a better way to track who accessed your document is to use the document tracking site, which is covered in the final step.
+Teď, když příjemce otevřel přílohu a volitelně předávat někomu dalšímu, očekávají, že e-mailového oznámení, která generuje sestavy této aktivity. Ale e-mailové zprávy jsou snadno ztratíte v čase, tak lepší způsob ke sledování, který se připojil dokumentu je použití webu, což je popsáno v posledním kroku pro sledování dokumentů.
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|Full instructions for viewing files that are protected by Azure Rights Management   →|[View and use files that have been protected by Rights Management](https://technet.microsoft.com/library/dn574741.aspx)|
-|About the free subscription, RMS for individuals   →|[RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md)|
-|About the two versions of the file that you see attached to the email message   →|[What’s the .ppdf file that’s automatically created?](https://technet.microsoft.com/library/dn574738.aspx)|
+|Pokud chcete získat další informace|Další informace|
+|---------------------------------------|-------------------|
+|Úplné pokyny pro zobrazení souborů, které jsou chráněny → Azure Rights Management|[Zobrazení a použití souborů, které bylo chráněno Rights Management](https://technet.microsoft.com/library/dn574741.aspx)|
+|O bezplatné předplatné služby RMS pro jednotlivce →|[RMS pro jednotlivce i Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md)|
+|O dvě verze souboru se zobrazí připojených k e-mailové zprávy →|[Co je .ppdf soubor, který se automaticky vytvoří?](https://technet.microsoft.com/library/dn574738.aspx)|
 
-## Step 5: Track your protected document
+## Krok 5: Sledovat chráněný dokument
 ![](../Image/AzRMS_QuickStartSteps5.PNG)
 
 > [!NOTE]
-> For this step, you must have a subscription that supports document tracking. To check whether your subscription includes document tracking, see [Comparison of Rights Management Services (RMS) Offerings](https://technet.microsoft.com/dn858608.aspx).
+> Pro tento krok musí mít odběr, který podporuje sledování dokumentů. Chcete-li zkontrolovat, zda vaše předplatné zahrnuje sledování dokumentů, naleznete v části [Rights Management Services (RMS)-porovnání nabídek](https://technet.microsoft.com/dn858608.aspx).
 
-This step is optional, but most people like to know if the attachment they sent to people has been opened, when, and even from where. For example:
+Tento krok je nepovinný, ale většina uživatelů, například vědět, pokud příloha odeslání lidem byl otevřen, když a dokonce i z umístění, kde. Příklad:
 
--   You’re expecting a response from somebody by a specified time and you can see from the document tracking site that she hasn’t opened the document even though the deadline is approaching. You send her a follow-up email or telephone her as a timely reminder.
+-   Odpověď od osob se očekává podle zadaného časového a můžete zobrazit z webu sledování dokumentu dokumentu Jana nebyl otevřen, i když se blíží konečného termínu. Odeslat jí zpracování e-mailu nebo telefonicky jí Připomínáme včas.
 
--   After seeing that somebody has opened the document, you follow up to ask her if she has any questions or requires additional information.
+-   Po sledování toho, že někomu otevře dokument, zpracování požádat svého if Jana žádný dotaz nebo vyžaduje další informace.
 
 ![](../Image/AzRMS_Tutorial_5_Screenshots.png)
 
-#### To track your protected document
+#### Chcete-li sledovat chráněný dokument
 
-1.  Using Outlook, on the **Home** tab, in the **RMS** group, click **Track Usage**.
+1.  Pomocí aplikace Outlook, na **Domů** na kartě **RMS** seskupit, klikněte na **sledovat využití**.
 
-2.  If you see the **Protect and share on your terms** page, click **Sign in** and supply your user name and password again.
+2.  Pokud se zobrazí **chránit a sdílené složky na vaše podmínky** klikněte na tlačítko **přihlásit** a zadat uživatelské jméno a heslo znovu.
 
-3.  On the **Your shared documents** page, you’ll see the document that you attached to the email, **Confidential.docx**. At this point, it’s the only file displayed but as you share additional protected documents, the list will grow.
+3.  Na **Sdílené dokumenty** stránky, zobrazí se dokumentu, který je připojen k e-mailu, **Confidential.docx**. V tomto okamžiku je soubor pouze zobrazeny, ale jako další chráněné dokumenty sdílíte, v seznamu se zvýší.
 
-    From this page, you’ll see when you shared the document (when you sent the email with the protected attachment), the date of the last activity, and the name of the recipient you sent the email to. Click the document name for additional details.
+    Z této stránky zobrazí se při sdílené dokumentu (při odeslání e-mailu pomocí chráněné přílohy), datum poslední aktivity a název příjemce, které jste poslali e-mailu k. Klikněte na název dokumentu další podrobnosti.
 
-4.  On the new page, which has the name of the file that you clicked, you’ll see summary details for that document only, and a list of other options that are available for the document (**List**, **Timeline**, **Map**, **Settings**).
+4.  Na novou stránku, která má název souboru, který jste klikli, uvidíte souhrnných detailů pouze dokumentu, a seznam dalších možností, které jsou k dispozici pro dokument (**seznamu**, **Časová osa**, **mapy**, **Nastavení**).
 
-    Click each option to explore different ways to track your protected document. Or, still on the **Summary** page, click **Open in Excel** to export the information to a spreadsheet, or click **Revoke access** to stop sharing the document.
+    Každý možnost prozkoumat různé způsoby, jak sledovat chráněný dokument. Nebo stále na **Souhrn** klikněte na tlačítko **Otevřít v aplikaci Excel** export informací do tabulkového procesoru, nebo klikněte na **odvolat přístup** ukončení sdílení dokumentu.
 
-You can return to this site to track further activity for your protected document, or revoke access if necessary. You can even access the site from your mobile device or tablet, by using a browser with this link: [document tracking](http://go.microsoft.com/fwlink/?LinkId=529562)
+Můžete vrátit k tomuto webu sledovat další aktivitu chráněný dokument nebo odvolat přístup, pokud je to nezbytné. Lokality můžete dokonce přístup z mobilního zařízení nebo tabletu, pomocí prohlížeče s tímto odkazem: [pro sledování dokumentů](http://go.microsoft.com/fwlink/?LinkId=529562)
 
-|If you want more information|Additional information|
-|--------------------------------|--------------------------|
-|Full instructions for tracking your documents   →|[Track and revoke your documents when you use the RMS sharing application](https://technet.microsoft.com/library/dn986611.aspx)|
-|Two minute video that explains and shows document tracking   →|[Azure RMS Document Tracking and Revocation](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)|
-|For troubleshooting and customer questions   →|[FAQ for Document Tracking](https://technet.microsoft.com/dn947488)|
+|Pokud chcete získat další informace|Další informace|
+|---------------------------------------|-------------------|
+|Úplné pokyny pro sledování vaší → dokumenty|[Sledování a odvolání dokumenty, pokud použijete aplikaci sdílení RMS](https://technet.microsoft.com/library/dn986611.aspx)|
+|Dvě minuty videa, vysvětluje a zobrazuje → pro sledování dokumentů|[Sledování dokumentů Azure RMS a odvolaných certifikátů.](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)|
+|Pro řešení problémů a zákazníka → dotazy|[Nejčastější dotazy týkající se sledování dokumentů](https://technet.microsoft.com/dn947488)|
 
-## Next Steps
-This tutorial stepped you through just one scenario for how Azure RMS can help protect your data. To see other common uses, see the [Azure RMS in action](https://technet.microsoft.com/library/jj585026.aspx) section from the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) article. There are other sections in this article that you might also find useful, such as how Azure RMS works and what business problems it can solve.
+## Další kroky
+V tomto kurzu prošli pouze jeden scénář pro jak Azure RMS chránit vaše data. Ostatní běžné použití naleznete v tématu [Azure RMS v akci](https://technet.microsoft.com/library/jj585026.aspx) část [Co je Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) článku. V tomto článku, které mohou být také užitečné jsou ostatní části, například jak Azure RMS funguje a jaký obchodních problémů lze vyřešit.
 
-If you’re ready to start deploying Azure RMS, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) for your deployment steps and links for how-to instructions.
+Pokud jste připraveni začít nasazovat Azure RMS, použijte [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) kroky nasazení a odkazy na postupy.
 
-## See Also
-[Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
+## Viz také
+[Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
 

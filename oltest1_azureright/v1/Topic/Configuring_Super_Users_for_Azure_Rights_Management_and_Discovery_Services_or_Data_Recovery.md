@@ -3,59 +3,58 @@ description: na
 keywords: na
 title: Configuring Super Users for Azure Rights Management and Discovery Services or Data Recovery
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: acb4c00b-d3a9-4d74-94fe-91eeb481f7e3
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Configuring Super Users for Azure Rights Management and Discovery Services or Data Recovery
-The super user feature of Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS) ensures that authorized people and services can always read and inspect the data that Azure RMS protects for your organization. And if necessary, remove the protection or change the protection that was previously applied. A super user always has full owner rights for all use licenses that was granted by the organization’s RMS tenant. This ability is sometimes referred to as “reasoning over data” and is a crucial element in maintaining control of your organization’s data. For example, you would use this feature for any of the following scenarios:
+# Konfigurace tito uživatel&#233; pro Azure Rights Management a zjišťov&#225;n&#237; služeb nebo obnoven&#237; dat
+Funkci superuživatel společnosti Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS) zajišťuje, že autorizované osoby a služby mohou vždy číst a zkontrolovat data, která chrání Azure RMS pro vaši organizaci. A v případě potřeby odebrat ochranu nebo změnit na ochranu, která již byla použita. Superuživatel má vždy úplná vlastnická práva na všechny licence udělená klienta služby RMS organizace. Tato možnost se někdy nazývá "důvody nad daty" a je zásadním prvkem zachovat kontrolu dat vaší organizace. Můžete například použijete tuto funkci pro žádné z následujících situacích:
 
--   An employee leaves the organization and you need to read the files that they protected.
+-   Zaměstnanec opustí organizace a je třeba číst soubory, které jsou chráněny.
 
--   An IT administrator needs to remove the current protection policy that was configured for files and apply a new protection policy.
+-   Odeberte aktuální zásady ochrany, který byl nakonfigurován pro soubory a použijte nové zásady ochrany musí správce IT.
 
--   Exchange Server needs to index mailboxes for search operations.
+-   Exchange Server je třeba index poštovní schránky pro operace hledání.
 
--   You have existing IT services for data loss prevention (DLP) solutions, content encryption gateways (CEG), and anti-malware products that need to inspect files that are already protected.
+-   Máte existující IT služby řešení prevence (DLP) ztrátu dat, šifrování obsahu brány (CEG) a ochrany proti malwaru produkty, které je nutné zkontrolovat soubory, které jsou již chráněny.
 
--   You need to bulk decrypt files for auditing, legal, or other compliance reasons.
+-   Je třeba hromadně dešifrovat soubory pro auditování, právní nebo jiné důvody kompatibility.
 
-By default, the super user feature is not enabled, and no users are assigned this role. It is enabled for you automatically if you configure the Rights Management connector for Exchange, and it is not required for standard services that run Exchange Online, SharePoint Online, or SharePoint Server.
+Ve výchozím nastavení není povolena funkce superuživatel a žádní uživatelé jsou přiřazeny této role. Pokud nakonfigurujete konektor Rights Management for Exchange, a to není vyžadováno pro standardní služby se systémem Exchange Online, SharePoint Online nebo serveru SharePoint Server je pro vás povolen automaticky.
 
-If you need to manually enable the super user feature, use the Windows PowerShell cmdlet [Enable-AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629400.aspx), and then assign users (or service accounts) as needed by using the [Add-AadrmSuperUser](https://msdn.microsoft.com/library/azure/dn629411.aspx) cmdlet. You can have one or multiple super users for your organization, but you must add individual users; groups are not supported.
+Pokud je nutné ručně povolit funkci superuživatel, použijte rutinu prostředí Windows PowerShell [Povolení AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629400.aspx), a potom přiřadit uživatelé (nebo účty služby), podle potřeby s použitím [Přidat AadrmSuperUser](https://msdn.microsoft.com/library/azure/dn629411.aspx) rutiny. Jeden nebo více tito uživatelé mohou mít pro vaši organizaci, ale je nutné přidat jednotlivé uživatele; skupiny nejsou podporovány.
 
 > [!NOTE]
-> If you have not yet installed the Windows PowerShell module for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+> Pokud jste ještě nenainstalovali modul prostředí Windows PowerShell pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], naleznete v části [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-Security best practices for the super user feature:
+Doporučené postupy zabezpečení pro funkci superuživatel:
 
--   Restrict and monitor the administrators who are assigned a global administrator for your Office 365 or Azure RMS tenant, or who are  assigned the GlobalAdministrator role by using the [Add-AadrmRoleBasedAdministrator](https://msdn.microsoft.com/library/azure/dn629417.aspx) cmdlet. These users can enable the super user feature and assign users (and themselves) as super users, and potentially decrypt all files that your organization protects.
+-   Omezení a sledování správci, komu jsou přiřazeny globálního správce vašeho klienta služeb Office 365 ani Azure RMS nebo komu jsou přiřazeny GlobalAdministrator role pomocí [Přidat AadrmRoleBasedAdministrator](https://msdn.microsoft.com/library/azure/dn629417.aspx) rutiny. Tito uživatelé mohou povolit funkci superuživatel a přiřadit uživatele (a sami) jako tito uživatelé a potenciálně dešifrovat všechny soubory, které chrání vaše organizace.
 
--   To see which users and service accounts are assigned as super users, use the [Get-AadrmSuperUser cmdlet](https://msdn.microsoft.com/library/azure/dn629408.aspx).  Like all administration actions, enabling or disabling the super feature, and adding or removing super users are logged and can be audited by using the [Get-AadrmAdminLog](https://msdn.microsoft.com/library/azure/dn629430.aspx) command. When super users decrypt files, this action is logged and can be audited with [usage logging](https://technet.microsoft.com/library/dn529121.aspx).
+-   Chcete-li zjistit, kteří uživatelé a účty služby jsou přiřazeny jako tito uživatelé, použijte [Rutina Get-AadrmSuperUser](https://msdn.microsoft.com/library/azure/dn629408.aspx).  Všechny akce správy, jako je povolení nebo zakázání funkce super a přidávání ani odebírání tito uživatelé jsou zaznamenána a ověřovány pomocí [Get-AadrmAdminLog](https://msdn.microsoft.com/library/azure/dn629430.aspx) příkazu. Když tito uživatelé dešifrovat soubory, tato akce zaznamenána do protokolu a lze audit s [protokolování využití](https://technet.microsoft.com/library/dn529121.aspx).
 
--   If you do not need the super user feature for everyday services, enable the feature only when you need it, and disable it again by using the [Disable-AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629428.aspx) cmdlet.
+-   Pokud není nutné provést funkci superuživatel pro každodenní služby, povolit funkci pouze v případě, že je třeba jej a znovu ji vypnout pomocí [Disable-AadrmSuperUserFeature](https://msdn.microsoft.com/library/azure/dn629428.aspx) rutiny.
 
-The following log extract shows some example entries from using the Get-AadrmAdminLog cmdlet . In this example, the administrator for Contoso Ltd confirms that the super user feature is disabled, adds Richard Simone as a super user, checks that Richard is the only super user configured for Azure RMS, and then enables the super user feature so that Richard can now decrypt some files that were protected by an employee who has now left the company.
+Následující extrakce protokolu ukazuje některé položky příklad z pomocí rutiny Get-AadrmAdminLog. V tomto příkladu správce pro Contoso Ltd potvrdí, že funkci superuživatel je zakázána, přidá Richard Simone jako superuživatel, ověří, zda pouze superuživatel nakonfigurované pro Azure RMS Richard a pak povolí tuto funkci superuživatel tak, aby Richard lze nyní dešifrování některé soubory, které nebyly chráněny zaměstnanci, který nyní opustil společnost.
 
 `2015-08-01T18:58:20	admin@contoso.com	GetSuperUserFeatureState	Passed	Disabled`
 `2015-08-01T18:59:44	admin@contoso.com	AddSuperUser -id rsimone@contoso.com	Passed	True`
 `2015-08-01T19:00:51	admin@contoso.com	GetSuperUser	Passed	rsimone@contoso.com`
 `2015-08-01T19:01:45	admin@contoso.com	SetSuperUserFeatureState -state Enabled	Passed	True`
 
-## <a name="BKMK_RMSProtectionModule"></a>Scripting options for super users
-Often, somebody who is assigned a super user for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] will need to remove protection from multiple files, in multiple locations. While it’s possible to do this manually, it’s more efficient (and often more reliable) to script this. To do so, [download the RMS Protection Tool](http://www.microsoft.com/en-us/download/details.aspx?id=47256). Then, use the  [Unprotect-RMSFile](https://msdn.microsoft.com/library/azure/mt433200.aspx) cmdlet, and [Protect-RMSFile](https://msdn.microsoft.com/library/azure/mt433201.aspx)   cmdlet as required.
+## <a name="BKMK_RMSProtectionModule"></a>Možnosti skriptování pro tito uživatelé
+Často, někdo, kterému je přiřazena superuživatel pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] bude nutné odebrat ochranu z více souborů, na více místech. I když je možné provést ručně, je efektivnější (a často vyšší spolehlivost) pro tento skript. Chcete-li to provést, [Stažení nástroje ochrany RMS](http://www.microsoft.com/en-us/download/details.aspx?id=47256). Poté pomocí  [Odemknout RMSFile](https://msdn.microsoft.com/library/azure/mt433200.aspx) rutiny, a [chránit RMSFile](https://msdn.microsoft.com/library/azure/mt433201.aspx)   rutina podle potřeby.
 
 > [!IMPORTANT]
-> Although the RMS Protection tool is designed for super users to bulk unprotect files for recovery purposes, the current version of the tool does not support user authentication for Azure RMS. Until this limitation is resolved, you must use a service principal account to authenticate with Azure RMS before you can remove protection from files.  For more information and instructions, see [about_RMSProtection_AzureRMS](https://msdn.microsoft.com/library/azure/mt433202.aspx).
+> Ačkoli nástroj RMS ochrany je určen pro tito uživatelé hromadné odemknout soubory pro účely obnovení, aktuální verzi nástroje pro Azure RMS nepodporuje ověřování uživatelů. Dokud toto omezení nebude vyřešen, musíte použít hlavní účet služby ověření s Azure RMS předtím, než je možné odebrat ochranu ze souborů.  Další informace a pokyny naleznete v tématu [about_RMSProtection_AzureRMS](https://msdn.microsoft.com/library/azure/mt433202.aspx).
 
-For more information about these cmdlets, see [RMS Protection Cmdlets](https://msdn.microsoft.com/library/azure/mt433195.aspx).
+Další informace o tyto rutiny, naleznete v části [RMS ochrany rutiny](https://msdn.microsoft.com/library/azure/mt433195.aspx).
 
 > [!NOTE]
-> The RMSProtection Windows PowerShell module that ships with the RMS Protection Tool is different from and supplements the main [Windows PowerShell module for Azure Rights Management](https://technet.microsoft.com/library/jj585027.aspx). It supports both Azure RMS and AD RMS.
+> V modulu RMSProtection prostředí Windows PowerShell, která je dodávána s nástrojem pro ochranu RMS se liší od a doplňuje hlavní [modul prostředí Windows PowerShell pro službu Rights Management Azure](https://technet.microsoft.com/library/jj585027.aspx). Podporuje Azure RMS a služby AD RMS.
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Viz také
+[Konfigurace Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
 

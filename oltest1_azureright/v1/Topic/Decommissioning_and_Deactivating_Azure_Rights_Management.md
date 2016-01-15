@@ -3,78 +3,77 @@ description: na
 keywords: na
 title: Decommissioning and Deactivating Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0b1c2064-0d01-45ae-a541-cebd7fd762ad
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Decommissioning and Deactivating Azure Rights Management
-You are always in control of whether your organization protects content by using [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS), and if you decide you no longer want to use this information protection solution, you have the assurance that you won’t be locked out of content that was previously protected. If you don’t need continued access to previously protected content, you simply deactivate the service and you can let your subscription for Azure Rights Management expire. For example, this would be appropriate for when you have completed testing [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] before you deploy it in a production environment.
+# Vyřazov&#225;n&#237; z provozu a deaktivace Azure Rights Management
+Jsou vždy v ovládacím prvku o tom, zda vaše organizace chrání obsah pomocí [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS), a pokud se rozhodnete, že již, které chcete použít toto řešení ochrany informací, máte ujištění, že nebude uzamčena mimo obsah, který byl dříve chráněn. Pokud nepotřebujete nepřetržitý přístup k dříve chráněný obsah, můžete jednoduše deaktivovat a necháte platnost vašeho předplatného Azure Rights Management. To by být například vhodné pro při dokončení testování [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] před nasazením v provozním prostředí.
 
-However, if you have deployed [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] in production, make sure that you have a copy of your Azure Rights Management tenant key before you deactivate the service and do this before your subscription expires, because this will ensure that you can retain access to content that was protected by Azure Rights Management after the service is deactivated. If you used the bring your own key solution (BYOK) where you generate and manage your own key in an HSM, you will already have your Azure Rights Management tenant key. But if it was managed by Microsoft (the default), see the instructions for exporting your tenant key in [Operations for Your Azure Rights Management Tenant Key](../Topic/Operations_for_Your_Azure_Rights_Management_Tenant_Key.md) topic.
-
-> [!TIP]
-> Even after your subscription expires, your Azure Rights Management tenant remains available for consuming content for an extended period. However, you will no longer be able to export your tenant key.
-
-When you have your Azure Rights Management tenant key, you can deploy Rights Management on premises (AD RMS) and import your tenant key as a trusted publishing domain (TPD). You then have the following options for decommissioning your Azure Rights Management deployment:
-
-|If this applies to you …|… do this:|
-|----------------------------|--------------|
-|You want all users to continue using Rights Management, but use an on-premises solution rather than using Azure RMS    →|Use the [Set-AadrmMigrationUrl](https://msdn.microsoft.com/library/azure/dn629429.aspx) cmdlet to direct existing users to your on-premises deployment when they consume content protected after this change. Users will automatically use the AD RMS installation to consume the protected content.<br /><br />For users to consume content that was protected before this change, redirect your clients to the on-premises deployment by using the **LicensingRedirection** registry key for Office 2016 or Office 2013, as described in the [service discovery section](https://technet.microsoft.com/library/jj159267%28v=ws.10%29.aspx) in the RMS client deployment notes, and the **LicenseServerRedirection** registry key for Office 2010, as described in [Office Registry Settings](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).|
-|You want to stop using Rights Management technologies completely    →|Grant a designated administrator [super user rights](https://technet.microsoft.com/library/mt147272.aspx) and give this person the [RMS Protection Tool](http://www.microsoft.com/en-us/download/details.aspx?id=47256).<br /><br />This administrator can then use the tool to bulk-decrypt files in folders that were protected by Azure Rights Management so that the files revert to being unprotected and can therefore be read without a Rights Management technology such as Azure RMS or AD RMS. This tool can be used with both Azure RMS and AD RMS, so you have the choice of decrypting files before or after you deactivate Azure RMS, or a combination.|
-|You are not able to identify all the files that were protected by Azure RMS, or you want all users to be able to automatically read any protected files that were missed    →|Deploy a registry setting on all client computers by using the **LicensingRedirection** registry key for Office 2016 and Office 2013, as described in the [service discovery section](https://technet.microsoft.com/library/jj159267%28v=ws.10%29.aspx) in the RMS client deployment notes, and the **LicenseServerRedirection** registry key for Office 2010, as described in [Office Registry Settings](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).<br /><br />Also deploy another registry setting to prevent users from protecting new files by setting **DisableCreation** to **1**, as described in [Office Registry Settings](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).|
-|You want a controlled, manual recovery service for any files that were missed    →|Grant designated users in a data recovery group [super user rights](https://technet.microsoft.com/library/mt147272.aspx) and give them the [RMS Protection Tool](http://www.microsoft.com/en-us/download/details.aspx?id=47256) so that they can unprotect files when requested by standard users.<br /><br />On all computers, deploy the registry setting to prevent users from protecting new files by setting **DisableCreation** to **1**, as described in [Office Registry Settings](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).|
-For more information about the procedures in this table, see the following resources:
-
--   For information about AD RMS and deployment references, see [Active Directory Rights Management Services Overview](https://technet.microsoft.com/library/hh831364.aspx).
-
--   For instructions to import your Azure RMS tenant key as a TPD file, see [Add a Trusted Publishing Domain](https://technet.microsoft.com/library/cc771460.aspx).
-
--   To install the Windows PowerShell module for Azure RMS, to set the migration URL, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
-
-When you are ready to deactivate the Azure RMS service for your organization, use the following instructions.
-
-## Deactivating Rights Management
-Use one of the following procedures to deactivate [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+Nicméně pokud jste nasadili [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] v produkčním prostředí, ujistěte se, že máte kopii klíče klienta Azure Rights Management před deaktivovat službu a to provést, než vyprší platnost vašeho předplatného, protože tím bude zajištěno, že můžete zachovat přístup k obsahu, který byl chráněn Azure Rights Management po služba je deaktivována. Pokud jste použili přenést vlastní klíče řešení (BYOK) kde generovat a spravovat vlastní klíče v modul hardwarového zabezpečení, budou již klíč klienta Azure Rights Management. Ale pokud byla spravováno společností Microsoft (výchozí), postupujte podle pokynů pro export klíč klienta v [Operace pro klíč klienta Azure Rights Management](../Topic/Operations_for_Your_Azure_Rights_Management_Tenant_Key.md) tématu.
 
 > [!TIP]
-> You can also use the Windows PowerShell cmdlet, [Disable-Aadrm](http://msdn.microsoft.com/library/windowsazure/dn629422.aspx), to deactivate [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
+> I když vyprší platnost vašeho předplatného, váš klient Azure Rights Management zůstává k dispozici pro využívání obsahu po delší dobu. Můžete je však již moci exportovat klíč klienta.
 
-#### To deactivate Rights Management from the Office 365 admin center
+Když máte klíč klienta Azure Rights Management, můžete nasadit Rights Management na místní (služby AD RMS) a importujte klíč klienta jako důvěryhodné domény publikování (důvěryhodné domény publikování). Pak máte následující možnosti pro vyřazení z provozu Azure Rights Management nasazení:
 
-1.  [Sign in to Office 365 with your work or school account](https://portal.office.com/) that is an administrator for your Office 365 deployment.
+|Pokud to platí pro vás...|… postupujte takto:|
+|-----------------------------|-----------------------|
+|Aby všichni uživatelé pokračovat v používání Rights Management, ale použít místní řešení spíše než pomocí → Azure RMS|Použití [Set AadrmMigrationUrl](https://msdn.microsoft.com/library/azure/dn629429.aspx) rutiny přímé stávajících uživatelů pro místní nasazení při spotřebování obsahu chráněného po této změně. Instalace služby AD RMS budou uživatelé používat automaticky využívají chráněný obsah.<br /><br />Uživatelé využívat obsah, který byl chráněn před provedením této změny, vaše klienti přesměrovat na místní nasazení pomocí **LicensingRedirection** klíč registru pro Office 2016 nebo Office 2013, jak je popsáno v [služby zjišťování části](https://technet.microsoft.com/library/jj159267%28v=ws.10%29.aspx) v poznámkách k nasazení klienta služby RMS a **LicenseServerRedirection** klíč registru pro systém Office 2010, jak je popsáno v [nastavení registru Office](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).|
+|Chcete zastavit pomocí technologií Rights Management zcela →|Udělit oprávnění správce k určené [super uživatelská práva](https://technet.microsoft.com/library/mt147272.aspx) a poskytněte tato osoba [nástroj ochranu RMS](http://www.microsoft.com/en-us/download/details.aspx?id=47256).<br /><br />Tohoto správce pak můžete použít nástroj k hromadné dešifrování souborů ve složkách, které byly chráněné službou Azure Rights Management, tak, aby soubory vrátit k nezůstaly a lze je číst proto bez technologie Rights Management, jako je například Azure RMS nebo AD RMS. Tento nástroj lze použít s Azure RMS a AD RMS, takže budete mít možnost, dešifrování souborů před nebo po deaktivovat Azure RMS nebo jejich kombinaci.|
+|Nejste schopni identifikovat všechny soubory, které byly chráněné službou Azure RMS, nebo chcete, aby všichni uživatelé mohli automaticky číst všechny chráněné soubory, které byly neprovedených →|Nasadit nastavení registru na všech klientských počítačů pomocí **LicensingRedirection** klíče registru pro Office 2016 a Office 2013, jak je popsáno v [služby zjišťování části](https://technet.microsoft.com/library/jj159267%28v=ws.10%29.aspx) v poznámkách k nasazení klienta služby RMS a **LicenseServerRedirection** klíč registru pro systém Office 2010, jak je popsáno v [nastavení registru Office](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).<br /><br />Také nasadit další nastavení registru uživatelům zabránit v ochraně nové soubory nastavením **DisableCreation** k **1**, jak je popsáno v [nastavení registru Office](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).|
+|Chcete, aby služba řízené, ruční obnovení pro všechny soubory, které byly zmeškaných →|Udělení označené uživatele ve skupině pro obnovení dat [super uživatelská práva](https://technet.microsoft.com/library/mt147272.aspx) a přiřaďte jim [nástroj ochranu RMS](http://www.microsoft.com/en-us/download/details.aspx?id=47256) tak, aby se odemknout soubory na žádost uživatele se standardním oprávněním.<br /><br />Na všech počítačích, nasadit nastavení uživatelům zabránit v ochraně nové soubory nastavením registru **DisableCreation** na **1**, jak je popsáno v [nastavení registru Office](https://technet.microsoft.com/library/dd772637%28v=ws.10%29.aspx).|
+Další informace o procedurách v této tabulce najdete následující prostředky:
 
-2.  If the Office 365 admin center does not automatically display, select the app launcher icon in the upper-left and choose **Admin**. The **Admin** tile appears only to Office 365 administrators.
+-   Informace o AD RMS a odkazy na nasazení naleznete v tématu [Přehled Active Directory Rights Management Services](https://technet.microsoft.com/library/hh831364.aspx).
+
+-   Pokyny k importu klíč klienta Azure RMS jako soubor důvěryhodné domény publikování naleznete v tématu [Přidat důvěryhodné domény publikování](https://technet.microsoft.com/library/cc771460.aspx).
+
+-   Instalace modulu prostředí Windows PowerShell pro službu Azure RMS, chcete-li nastavit adresu URL migrace naleznete v části [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+
+Jakmile budete připraveni deaktivovat službu Azure RMS pro vaši organizaci, použijte následující pokyny.
+
+## Deaktivaci služby Rights Management
+Použijte jednu z následujících postupů deaktivovat [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+
+> [!TIP]
+> Můžete také použít rutiny prostředí Windows PowerShell, [Zakázat službou Aadrm](http://msdn.microsoft.com/library/windowsazure/dn629422.aspx), chcete-li deaktivovat [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)].
+
+#### Chcete-li deaktivovat službu Rights Management z centra pro správu služeb Office 365
+
+1.  [Přihlásit k odběru Office 365 pomocí pracovní nebo školní účet](https://portal.office.com/) který je správcem nasazení služeb Office 365.
+
+2.  Pokud nejsou Centru správy Office 365 automaticky zobrazeny, vyberte ikonu Spouštěč aplikace v levém horním a zvolte **Admin**.**Admin** dlaždice se zobrazí pouze pro správce služeb Office 365.
 
     > [!TIP]
-    > For admin center help, see [About the Office 365 admin center - Admin Help](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
+    > Nápovědu admin center najdete v tématu [centra pro správu Office 365 - správce nápovědy](https://support.office.com/article/About-the-Office-365-admin-center-Admin-Help-58537702-d421-4d02-8141-e128e3703547).
 
-3.  In the left pane, expand **SERVICE SETTINGS**.
+3.  V levém podokně rozbalte položku **Nastavení služby**.
 
-4.  Click **Rights Management**.
+4.  Klikněte na tlačítko **Rights Management**.
 
-5.  On the **RIGHTS MANAGEMENT** page, click **Manage**.
+5.  Na **RIGHTS MANAGEMENT** klikněte na tlačítko **Spravovat**.
 
-6.  On the **rights management** page, click **deactivate**.
+6.  Na **služby rights management** klikněte na tlačítko **deaktivovat**.
 
-7.  When prompted **Do you want to deactivate Rights Management?**, click **deactivate**.
+7.  Po zobrazení výzvy **Chcete deaktivovat službu Rights Management?**, klikněte na tlačítko **deaktivovat**.
 
-You should now see **Rights Management is not activated** and the option to activate.
+Nyní byste měli vidět **Rights Management není aktivována** a možnost aktivovat.
 
-#### To deactivate Rights Management from the Azure portal
+#### Chcete-li deaktivovat z portálu Azure Rights Management
 
-1.  Sign in to the [Azure classic portal](http://go.microsoft.com/fwlink/p/?LinkID=275081).
+1.  Přihlaste se k [portálu Azure klasické](http://go.microsoft.com/fwlink/p/?LinkID=275081).
 
-2.  In the left pane, click **ACTIVE DIRECTORY**.
+2.  V levém podokně klikněte na tlačítko **služby ACTIVE DIRECTORY**.
 
-3.  From the **active directory** page, click **RIGHTS MANAGEMENT**.
+3.  Z **služby active directory** klikněte na tlačítko **RIGHTS MANAGEMENT**.
 
-4.  Select the directory to manage for [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], click **DEACTIVATE**, and then confirm your action.
+4.  Vyberte adresář pro správu pro [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], klikněte na tlačítko **DEAKTIVUJTE**, a pak akci potvrďte.
 
-The **RIGHTS MANAGEMENT STATUS** should now display **Inactive** and the **DEACTIVATE** option is replaced with **ACTIVATE**.
+**Stav správy práv** by nyní měl zobrazovat **neaktivní** a **DEAKTIVUJTE** je nahrazena možnost **Aktivovat**.
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Viz také
+[Konfigurace Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
 

@@ -3,14 +3,13 @@ description: na
 keywords: na
 title: Full screen picture: Installing and Configuring the RMS connector for FCI
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cf18c56b-c301-4640-8d9e-9e677e494091
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Full screen picture: Installing and Configuring the RMS connector for FCI
+# Cel&#225; obrazovka obr&#225;zku: Instalace a konfigurace služby RMS konektor pro FCI
 ![](../Image/AzRMS_FCI_Connector.png)
 
-Back to [Azure RMS in action: Automatically protecting files on file servers running Windows Server and File Classification Infrastructure](http://technet.microsoft.com/library/jj585026.aspx).
+Zpět na [RMS Azure v akci: Automaticky chrání tento počet souborů na souborových serverech se systémem Windows Server a soubor klasifikace infrastruktury](http://technet.microsoft.com/library/jj585026.aspx).
 

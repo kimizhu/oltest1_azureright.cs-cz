@@ -3,62 +3,61 @@ description: na
 keywords: na
 title: View and use files that have been protected by Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e5fa4666-6906-405a-9e0c-2c52d4cd27c8
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# View and use files that have been protected by Rights Management
-When the [Rights Management (RMS) sharing application is installed on your computer](https://technet.microsoft.com/library/dn574734%28v=ws.10%29.aspx), you view a protected file by simply double-clicking it. The file might be an attachment in an email message, or you might see it when you use File Explorer.
+# Zobrazen&#237; a použit&#237; souborů, kter&#233; bylo chr&#225;něno Rights Management
+Pokud [RMS (Rights Management) aplikace pro sdílení je nainstalován ve vašem počítači](https://technet.microsoft.com/library/dn574734%28v=ws.10%29.aspx), jednoduše dvojitým kliknutím zobrazíte chráněný soubor. Soubor může být přílohy v e-mailové zprávě, nebo může zobrazit, při použití Průzkumníka souboru.
 
 > [!NOTE]
-> Before you can view the protected file, RMS must first confirm that you are authorized to view the file, which it does by checking your user name and password. In some cases, this might be cached and you will not see a prompt that asks for your credentials. In other cases, you will be prompted to supply your credentials.
+> Aby bylo možné zobrazit chráněný soubor, musíte RMS nejprve potvrdit, že jste oprávněni zobrazit soubor, který ji nemá kontrolou své uživatelské jméno a heslo. V některých případech to může být uložena do mezipaměti a nebude zobrazen dotaz, k zadání pověření. V ostatních případech budou vyzváni k zadání pověření.
 > 
-> If your organization does not use either Azure Rights Management (Azure RMS) or AD RMS, you can apply for a free account that will accept your credentials so that you can open files that are protected by using RMS:
+> Pokud vaše organizace nepoužívá Azure Rights Management (Azure RMS) nebo služby AD RMS, můžete použít k bezplatnému účtu, který bude přijímat pověření, aby mohli otevřít soubory, které jsou chráněny pomocí služby RMS:
 > 
-> -   To apply for this account, click the link to apply for [RMS for individuals](http://go.microsoft.com/fwlink/?LinkId=309469).
+> -   Chcete-li použít pro tento účet, klepněte na odkaz požádat o [RMS pro osoby,](http://go.microsoft.com/fwlink/?LinkId=309469).
 > 
->     When you sign up, use your company email address rather than a personal email address. If you are signing up because you were emailed a protected attachment, use the same email address that was used to send you the email message.
-> -   For more information, see [RMS for Individuals and Windows Azure Rights Management](http://technet.microsoft.com/library/dn592127.aspx).
+>     Při registraci, použijte e-mailovou adresu společnosti, nikoli osobní e-mailovou adresu. Pokud jsou přihlášení vzhledem k tomu, že vám byly odeslány e-mailem chráněný přílohy, použijte stejný e-mailovou adresu, která byla použita k odesílání e-mailové zprávy.
+> -   Další informace naleznete v tématu [RMS pro jednotlivce i systému Windows Azure Rights Management](http://technet.microsoft.com/library/dn592127.aspx).
 
-## <a name="BKMK_ViewPFILE"></a>To view a protected file
-By using File Explorer or the email message that contains the attachment, double-click the protected file, and enter your credentials if prompted to do so.
+## <a name="BKMK_ViewPFILE"></a>Chcete-li zobrazit chráněný soubor.
+Pomocí Průzkumníka souboru nebo e-mailovou zprávu, která obsahuje přílohu, poklepejte na chráněný soubor a zadejte svá pověření, pokud se zobrazí výzva k tomu.
 
-If you see two versions of the file but with different file name extensions, open the file that has a .ppdf file extension only if the other file does not open. If you cannot open the .ppdf version either, first install the [RMS sharing application](http://technet.microsoft.com/library/dn574734.aspx), which knows how to open files that have a .ppdf file name extension.
+Pokud se zobrazí dvě verze souboru, ale s různé přípony souborů, otevřete soubor, který má příponu souboru .ppdf pouze v případě, že je druhý soubor nebude otevřen. Pokud je verze .ppdf nelze otevřít buď, nainstalujte nejprve [aplikaci sdílení RMS](http://technet.microsoft.com/library/dn574734.aspx), který zná otevření souborů, které mají příponu názvu souboru .ppdf.
 
 > [!NOTE]
-> For more information, see “[What’s the .ppdf file that’s automatically created?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)”.
+> Další informace naleznete v tématu "[Co je .ppdf soubor, který se automaticky vytvoří?](../Topic/Dialog_box_options_for_the_Rights_Management_sharing_application.md#BKMK_PPDF)".
 
-How the file opens depends on how it was protected, which you can tell by looking at the file name extension. In each case, opening the file might be audited and remains audited as long as it is protected. In addition, if the file was sent as an email attachment, the sender might be notified by email each time you open the file.
+Jak soubor se otevře závisí na jak je chráněn, které poznáte podle vidí příponu názvu souboru. V každém případě otevírání souboru může být zaznamenávány a zůstává auditovaných, jako je chráněn. Kromě toho pokud soubor byl odeslán jako e-mailu, se odesílatel může být upozorněni e-mailem pokaždé, když se otevřít soubor.
 
-|File name extension and protection|More information|
-|--------------------------------------|--------------------|
-|The file has a **.pfile** file name extension.<br /><br />The file was generically protected.|When you open the file, you see a **protected file** dialog box from the sharing application that tells you who protected the file and that you are expected to honor the co-owner permissions. Click **Open** to read the file.<br /><br />![](../Image/ADRMS_MSRMSApp_PfilePermission.png)|
-|The file has a **.ppdf** file name extension or is a protected text or image file (such as **.ptxt** or **.pjpg**).<br /><br />The file has been natively protected as a read-only copy.|The file opens by using the viewer that installs with the RMS sharing application. This file is read-only, even if you save it to another location or rename it.|
-|Other file name extensions.<br /><br />The file has been natively protected.|The file opens by using the application that is associated with the original file name extension, and a restriction banner is displayed at the top of the file. The banner might display the permissions that are applied to the file, or it might provide a link to display them. For example, you might see the following where you must click **Permission is currently restricted** to see the actual permissions that are applied to the file and the people that can access it:<br /><br />![](../Image/ADRMS_MSRMSApp_RestrictedAccess.png)|
-For a complete list of file name extensions that Rights Management supports, see the [Supported file types and file name extensions](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes) sections in the  [Rights Management sharing application administrator guide](../Topic/Rights_Management_sharing_application_administrator_guide.md). If your file name extension is not listed, use a web search to see if it is a file name extension that is supported by another application.
+|Příponu názvu souboru a ochrany|Další informace|
+|-----------------------------------|-------------------|
+|Soubor má **.pfile** přípony názvu souboru.<br /><br />Soubor byl chráněn ke generické chybě.|Při otevření souboru, naleznete **chráněný soubor** dialogového okna z sdílení aplikace, která určí, kdo chráněný soubor a očekávaného přijmout vedlejšího vlastníka oprávnění. Klikněte na tlačítko **Open** ke čtení souboru.<br /><br />![](../Image/ADRMS_MSRMSApp_PfilePermission.png)|
+|Soubor má **.ppdf** přípony názvu souboru nebo je chráněný soubor text či obrázek (například **.ptxt** nebo **.pjpg**).<br /><br />Soubor je chráněn nativně jako kopii jen pro čtení.|Soubor se otevře v prohlížeči, který nainstaluje aplikaci sdílení RMS. Tento soubor je jen pro čtení, i když uložit jej do jiného umístění nebo ji přejmenovat.|
+|Jiné přípony názvů souborů.<br /><br />Soubor byl nativně chránit.|Otevře se soubor s použitím aplikace, která je přidružena k původní příponu názvu souboru a omezení banner se zobrazí v horní části souboru. Hlavičky může zobrazit oprávnění, které jsou použity k souboru, nebo ji zadat odkaz na jejich zobrazení. Například, mohou se zobrazit následující kde musíte klepnout na **oprávnění je momentálně omezené** Chcete-li zobrazit skutečná oprávnění, které jsou použity k souboru a osoby, které k němu přístup:<br /><br />![](../Image/ADRMS_MSRMSApp_RestrictedAccess.png)|
+Úplný seznam přípon názvů souborů, které podporuje Rights Management, naleznete [Podporované typy souborů a přípon souborů](../Topic/Rights_Management_sharing_application_administrator_guide.md#BKMK_SupportFileTypes) oddíly v  [Průvodce Rights Management sdílení aplikace Správce](../Topic/Rights_Management_sharing_application_administrator_guide.md). Pokud vaše příponu názvu souboru není uveden, použijte vyhledávání na webu a zjistěte, zda je příponu názvu souboru je podporován jiná aplikace.
 
 > [!NOTE]
-> If, after confirming that the file is protected by Rights Management, and the file does not open, download and use the [RMS Analyzer tool](https://www.microsoft.com/en-us/download/details.aspx?id=46437). Follow the instructions in the tool to check for problems on your computer that might prevent a protected document from opening.
+> IF, po potvrzení, že soubor je chráněn systémem Rights Management a nelze otevřít soubor, stáhněte si a používat [Security Analyzer RMS](https://www.microsoft.com/en-us/download/details.aspx?id=46437). Postupujte podle pokynů v nástroji zjišťovat problémy ve vašem počítači, které mohou zabránit otevírání chráněný dokument.
 
-## <a name="BKMK_UserDefined"></a>To use files that have been protected (for example, edit and print the file)
-If, after opening the protected file,  you want to do more than just read it (for example, edit, copy, and print it):
+## <a name="BKMK_UserDefined"></a>Chcete-li používat soubory, které je chráněno (pro příklad, úpravy a tisk souboru)
+Pokud po otevření chráněný soubor, kterou chcete více než jen číst (například upravit, kopírovat a vytisknout):
 
-|File name extension|Instructions|
-|-----------------------|----------------|
-|The file has a **.pfile** file name extension.|Save the opened file and give it a new file name extension that is associated with the application that you want to use.<br /><br />For example, if a file was protected by using the file name document.vsdx.pfile, view the file and in File Explorer, save the file as document.vsdx.<br /><br />The new file is no longer protected. If you want to protect it, you must do this manually. For instructions, see [Protect a file on a device &#40;protect in-place&#41; by using the Rights Management sharing application](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
-|The file has a **.ppdf** file name extension or is a protected text or image file (such as **.ptxt** or **.pjpg**).|You can only view the file and if you rename or move it, the protection remains with the file.|
-|Other file name extensions.|Your device must have an application that understands Rights Management to use these files. These applications are called RMS-enlightened applications. Applications from Office 2016, Office 2013,  and Office 2010 (such as Word, Excel, PowerPoint, and Outlook) are examples of applications that are enlightened for Rights Management. But applications that do not come from Microsoft, such as other software companies and your own line-of-business applications, might also be enlightened for Rights Management.<br /><br />Applications that are enlightened for Rights Management know how to open files that have been protected by other Rights Management enlightened applications. They also persist the protection that is applied to them, even if you edit the file or save it to another file name or another location. These applications let you use the file according to the permissions that are currently applied to the file, so that if you have permissions to use the file, you can do so. For example, you might be able to edit the file but not print it.|
+|Příponu názvu souboru|Pokyny|
+|-------------------------|----------|
+|Soubor má **.pfile** přípony názvu souboru.|Otevřít soubor uložit a přiřaďte jí novou příponu názvu souboru, který je přidružen k aplikaci, kterou chcete použít.<br /><br />Pokud soubor byl chráněný pomocí document.vsdx.pfile název souboru, zobrazte soubor a v Průzkumníku soubor uložte soubor jako document.vsdx.<br /><br />Nový soubor je již chráněna. Pokud chcete chránit, je nutné provést ručně. Pokyny naleznete v tématu [Chránit soubor v zařízení &#40;chránit místně&#41; s použitím Rights Management, aplikace pro sdílení](../Topic/Protect_a_file_on_a_device__protect_in-place__by_using_the_Rights_Management_sharing_application.md).|
+|Soubor má **.ppdf** přípony názvu souboru nebo je chráněný soubor text či obrázek (například **.ptxt** nebo **.pjpg**).|Můžete zobrazit pouze v souboru a Pokud přejmenujete nebo přesunete jej, ochrany spočívá v souboru.|
+|Jiné přípony názvů souborů.|Zařízení musí mít aplikace, která jste srozuměni s tím Rights Management používat tyto soubory. Tyto aplikace se nazývají RMS enlightened aplikací. Aplikace z Office 2016, Office 2013 a Office 2010 (například Word, Excel, PowerPoint a aplikace Outlook) jsou příklady aplikací, které jsou enlightened pro službu Rights Management. Ale aplikace, které nejsou převedeny do společnosti Microsoft, například dalších softwarových společností a vlastní-firemní aplikace, může být také enlightened pro službu Rights Management.<br /><br />Aplikace, které jsou enlightened pro službu Rights Management vědět, jak otevřít soubory, které bylo chráněno jiných Rights Management enlightened aplikací. Také přetrvávají ochranu, která se použije k nim, i v případě úpravy souboru nebo uložit na jiný název souboru nebo jiné umístění. Tyto aplikace umožňují použít soubor podle oprávnění, která jsou aktuálně aplikované na soubor, tak, že pokud máte oprávnění pro použití v souboru, lze provést. Například může být možné upravit soubor, ale ne vytisknout.|
 
-## Examples and other instructions
-For examples for how you might use the Rights Management sharing application, and how-to instructions, see the following sections from the Rights Management sharing application user guide:
+## Příklady a další informace
+Příklady pro jak je možné použít Rights Management, sdílení aplikací a návody, naleznete v následujících částech v uživatelské příručce sdílení aplikace Rights Management:
 
--   [Examples for using the RMS sharing application](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
+-   [Příklady použití aplikace pro sdílení obsahu RMS](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingExamples)
 
--   [What do you want to do?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
+-   [Co chcete provést?](../Topic/Rights_Management_sharing_application_user_guide.md#BKMK_SharingInstructions)
 
-## See Also
-[Rights Management sharing application user guide](../Topic/Rights_Management_sharing_application_user_guide.md)
+## Viz také
+[Průvodce Rights Management sdílení aplikace uživatele](../Topic/Rights_Management_sharing_application_user_guide.md)
 

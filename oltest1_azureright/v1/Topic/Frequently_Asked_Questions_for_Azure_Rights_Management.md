@@ -3,155 +3,156 @@ description: na
 keywords: na
 title: Frequently Asked Questions for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 71ce491f-41c1-4d15-9646-455a6eaa157d
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Frequently Asked Questions for Azure Rights Management
-Some frequently asked questions for Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], also known as Azure RMS:
+# Nejčastějš&#237; dotazy pro Azure Rights Management
+Některé nejčastější dotazy pro Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], označovaný také jako Azure RMS:
 
-## What do I need to deploy Azure RMS and how do I get going?
-First, check [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md), which has information about the cloud subscription options, how you can use your on-premises servers with Azure RMS, which deployment scenarios are not currently supported, which devices and applications support Azure RMS, and a link if you need a list of IP addresses and domain names for firewalls or proxy servers. You might also want to check the other topics in the [Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md) section, to get a basic understanding of how [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] can help protect your organization’s data, how it works with applications, how it compares with the on-premises version of Active Directory Rights Management, and understand the terms and abbreviations that are specific to [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+## Co je třeba nasadit Azure RMS a jak I začít?
+Nejprve, zkontrolujte [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md), který má informace o možnosti odběru cloudu, použití serverů místní službou Azure RMS, které scénáře nasazení není aktuálně podporována, zařízení, která a podpora aplikace Azure RMS a odkaz Pokud potřebujete seznam IP adres a názvů domén pro brány firewall nebo proxy servery. Můžete také vrátit se změnami v ostatních tématech [Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md) části, chcete-li získat základní znalosti o tom, jak [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] může pomoci chránit data vaší organizace, jak funguje s aplikacemi, jak porovnává s místní verzí služby Active Directory Rights Management a pochopit podmínky a zkratky, které jsou specifické pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
 
-Then when you’re ready to test Azure RMS for yourself, or deploy it for your organization, use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) for a list of steps with links for more information and how-to instructions.
+Pak když budete chtít test Azure RMS pro sebe, nebo ho nasadit pro vaši organizaci, použít [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) seznam kroky s odkazy na další informace a postupy pokyny.
 
-If you need additional information, resources, and support options, see [Information and Support for Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
+Pokud potřebujete další informace, materiály a možnosti podpory, najdete v části [Informace a podpora nástroje Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
 
-## Can I integrate Azure RMS with my on-premises servers?
-Yes. Azure RMS can be integrated with your on-premises servers, such as Exchange Server, SharePoint, and Windows file servers. To do this, you use the [Rights Management connector](https://technet.microsoft.com/library/dn375964.aspx). Or, if you're just interested in using File Classification Infrastructure (FC) with Windows Server, you can use the [RMS Protection cmdlets](https://technet.microsoft.com/library/mt601315%28v=ws.10%29.aspx). You can also synchronize and federate your Active Directory domain controllers with Azure AD for a more seamless authentication experience for users, for example, by using [Azure AD Connect](http://azure.microsoft.com/documentation/articles/active-directory-aadconnect/).
+## Můžete integrovat Azure RMS se mé na místní servery?
+(Ano). Azure RMS lze integrovat s vaší místní serverů, například souborové servery Exchange Server, SharePoint a systému Windows. Chcete-li to provést, použijte [konektor Rights Management](https://technet.microsoft.com/library/dn375964.aspx). Nebo, pokud vás zajímá pouze pomocí souboru klasifikace infrastruktury (FC) v systému Windows Server, můžete použít [ochranu RMS rutin](https://technet.microsoft.com/library/mt601315%28v=ws.10%29.aspx). Můžete synchronizovat a vytvořit federaci řadičích domény služby Active Directory s Azure AD pro lepší zkušenosti ověřování pro uživatele, například pomocí [Azure AD Connect](http://azure.microsoft.com/documentation/articles/active-directory-aadconnect/).
 
-Azure RMS automatically generates and manages XrML certificates as required, so it doesn’t use an on-premises PKI. For more information about how Azure RMS uses certificates, see the [Walkthrough of how Azure RMS works: First use, content protection, content consumption](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Walthrough) section in the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) topic.
+Azure RMS automaticky generuje a spravuje certifikáty XrML podle potřeby, takže nepoužívá k místní PKI. Další informace o tom, jak Azure RMS používá certifikáty naleznete v tématu [Návod, jak pracuje Azure RMS: Nejprve použít, obsahu ochrany obsahu spotřeba](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Walthrough) v oddílu [Co je Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) tématu.
 
-## I have a hybrid deployment of Exchange with some users on Exchange Online and others on Exchange Server—is this supported by Azure RMS?
-Absolutely, and the nice thing is, users will be able to seamlessly protect and consume protected emails and attachments across the two Exchange deployments. For this configuration, [activate Azure RMS](https://technet.microsoft.com/library/jj658941.aspx) and [enable IRM for Exchange Online](https://technet.microsoft.com/library/dn151475%28v=exchg.150%29.aspx), then [deploy and configure the RMS connector](https://technet.microsoft.com/library/dn375964.aspx) for Exchange Server.
+## Hybridní nasazení systému Exchange je nutné s některým uživatelům na Exchange Online a ostatním uživatelům na serveru Exchange Server – je to podporován službou Azure RMS?
+Absolutně a dobrý věc je, že uživatelé budou moci bez problémů chránit a využívat chráněné e-maily a přílohy přes dvě nasazení systému Exchange. Pro tuto konfiguraci [Aktivovat Azure RMS](https://technet.microsoft.com/library/jj658941.aspx) a [Povolit IRM pro Exchange Online](https://technet.microsoft.com/library/dn151475%28v=exchg.150%29.aspx), pak [nasazení a konfigurace konektoru služby RMS](https://technet.microsoft.com/library/dn375964.aspx) for Exchange Server.
 
-## If I deploy Azure RMS in production, is my company then locked into the solution or risk losing access to content that we protected with Azure RMS?
-No, you always remain in control of your data and can continue to access it, even if you decide to no longer use Azure RMS. For more information, see [Decommissioning and Deactivating Azure Rights Management](../Topic/Decommissioning_and_Deactivating_Azure_Rights_Management.md).
+## Je-li nasadit službu Azure RMS v produkčním prostředí, je naše společnost pak uzamčen do řešení nebo riziko ztráty přístupu k obsahu, který jsme chráněné službou Azure RMS?
+Ne, je vždy zůstávají v ovládacím prvku dat a můžete nadále přistupovat, i když se rozhodnete již nebudete používat Azure RMS. Další informace naleznete v tématu [Vyřazování z provozu a deaktivace Azure Rights Management](../Topic/Decommissioning_and_Deactivating_Azure_Rights_Management.md).
 
-However, before you decommission your Azure RMS deployment, we would like to hear from you and understand why you made this decision. If Azure RMS does not fulfil your business requirements, check with us in case new functionality is planned for the near-future or if there are alternatives. Send an email message to [AskIPTeam@Microsoft.com](mailto:askipteam@microsoft.com?subject=Planning%20to%20decommission%20Azure%20RMS) and we’ll be happy to discuss your technical and business requirements.
+Nicméně před vyřazení z provozu Azure RMS nasazení rádi bychom znát váš názor a pochopit, proč jste provedli toto rozhodnutí. Pokud Azure RMS nesplňuje požadavky vaší organizace, kontaktujte nás v případě, že je plánováno nové funkce pro téměř budoucnost, nebo pokud existují alternativy. Odeslat e-mailovou zprávu na [AskIPTeam@Microsoft.com](mailto:askipteam@microsoft.com?subject=Planning%20to%20decommission%20Azure%20RMS) a jsme bude potěšením prodiskutovat vašim technickou a podnikovým požadavkům.
 
-## Can I control which of my users can use Azure RMS to protect content?
-Yes, Azure RMS has user onboarding controls for this scenario. For more information, see the [Configuring onboarding controls for a phased deployment](../Topic/Activating_Azure_Rights_Management.md#BKMK_OnboardingControls) section in the [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md) topic.
+## Můžete ovládat, který vlastní uživatelé používají Azure RMS k ochraně obsahu?
+Ano, Azure RMS má uživatelské ovládací prvky registrace pro tento scénář. Další informace naleznete v tématu [Registrace ovládacích prvků pro dvoufázové nasazení konfigurace](../Topic/Activating_Azure_Rights_Management.md#BKMK_OnboardingControls) v oddílu [Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md) tématu.
 
-## Can I prevent users from sharing protected documents with specific organizations?
-One of the biggest benefits of Azure RMS is that it supports business-to-business collaboration without you having to configure explicit trusts for each partner organization, because Azure AD takes care of the authentication for you.
+## Můžete zabránit uživatelům v sdílení chráněné dokumenty s konkrétní organizace?
+Jednou z největších výhod Azure RMS je, aniž by bylo nutné konfigurovat explicitní vztahy důvěryhodnosti pro každou organizaci partnera, protože Azure AD postará ověřování pro vás podpora obchodní obchodní spolupráci.
 
-There is no administration option to prevent users from securely sharing documents with specific organizations. For example, you want to block an organization that you don’t trust or that has a competing business. Preventing Azure RMS from sending protected documents to users in these organizations wouldn’t make sense because your users would then share their documents unprotected, which is probably the last thing you want to happen in this scenario! For example, you wouldn’t be able to identify who is sharing company-confidential documents with which users in these organizations, which you can do when the document (or email) is protected by Azure RMS.
+Neexistuje žádná možnost správy uživatelům zabránit v bezpečně sdílení dokumentů s konkrétní organizace. Například chcete zablokovat organizace, která nedůvěřujete nebo má konkurenčních business. Brání odeslání chráněné dokumenty uživatelům v těchto Azure RMS organizace by smysl vzhledem k tomu, že uživatelé by pak sdílet své dokumenty nechráněné, což je pravděpodobně poslední věcí, kterou se má stát v tomto scénáři! Například nebude moci zjistit, kdo je sdílení společnosti důvěrné dokumenty s kteří uživatelé v těchto organizací, které můžete dělat při dokumentu (nebo e-mailu) je chráněné službou Azure RMS.
 
-## When I share a protected document with somebody outside my company, how does that user get authenticated?
-Azure RMS always uses an Azure Active Directory account and an associated email address for user authentication, which makes business-to-business collaboration seamless for administrators. If the other organization uses Azure services, users will already have accounts in Azure Active Directory, even if these accounts are created and managed on-premises and then synchronized to Azure.  If the organization has Office 365, under the covers, this service also uses Azure Active Directory for the user accounts.  If the user’s organization doesn’t have managed accounts in Azure, users can sign up for [RMS for individuals](https://technet.microsoft.com/library/dn592127.aspx), which creates an unmanaged Azure tenant and directory for the organization with an account for the user, so that this user can then be authenticated for Azure RMS.
+## Při sdílení chráněný dokument s někým nepracují ve firmě, jak tento uživatel získat ověřený?
+Azure RMS vždy používá účet Azure Active Directory a přidružené e-mailovou adresu pro ověření uživatele, díky bezproblémové spolupráci business business pro správce. Pokud organizace používá služby Azure, uživatelé již mají účty v Azure Active Directory, i když tyto účty jsou vytvořeny a spravovaný na místní a potom synchronizovat do Azure.  Pokud je v organizaci služeb Office 365 pod kapotou architektury, tato služba také používá Azure Active Directory pro uživatelské účty.  Pokud organizace uživatele nemá spravované účty v Azure, uživatelé si zaregistrovat [RMS pro jednotlivce](https://technet.microsoft.com/library/dn592127.aspx), což vytvoří adresář pro organizaci a technologie nespravované klientovi Azure pomocí účtu pro uživatele, tak, aby tohoto uživatele mohou být ověřeny pak pro Azure RMS.
 
-The authentication method for these accounts can vary, depending on how the administrator in the other organization has configured the Azure Active Directory accounts. For example, they could use passwords that were created for these accounts, multi-factor authentication (MFA), federation, or passwords that were created in Active Directory Domain Services and then synchronized to Azure Active Directory.
+Metoda ověřování u těchto účtů se může lišit v závislosti na konfiguraci správce v jiné organizaci účty Azure Active Directory. Například může používají hesla, které byly vytvořeny pro tyto účty, vícefaktorového ověřování (MFA), federace nebo hesla, které byly vytvořeny ve službě Active Directory Domain Services a potom synchronizovat do Azure Active Directory.
 
-## Can I add users from outside my company to custom templates?
-Yes.  Creating custom templates that end users (and administrators) can select from applications makes it quick and easily for them to apply information protection, using predefined policies that you specify. One of the settings in the template is who is able to access the content, and you can specify users and groups from within your organization, and users from outside your organization.
+## Můžete přidat uživatele z nepracují ve firmě na vlastní šablony?
+(Ano).  Vytváření vlastních šablon, které můžete vybrat koncoví uživatelé (a správci) z aplikací, které umožňuje rychlý a snadno používat ochrana informací pomocí předdefinovaných zásad, které zadáte. Jedním z nastavení v šabloně je, kdo má přístup k obsahu a můžete určit uživatele a skupiny z v rámci vaší organizace a uživatele z mimo vaši organizaci.
 
-To specify users from outside your organization, use [Windows PowerShell module for Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx):
+Chcete-li určit uživatele z mimo vaši organizaci, použijte [modul Windows PowerShell pro Azure Rights Management](https://technet.microsoft.com/library/jj585012.aspx). Můžete použít jednu z těchto možností:
 
--   **Use a rights definition object to create or update a template**.    Specify the external email addresses and their rights in a rights definition object, which you then use to create or update a template. You specify the rights definition object by using the [New-AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx) cmdlet to create a variable and then supply this variable to the  -RightsDefinition parameter with the [Add-AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727075.aspx) cmdlet (for a new template) or [Set-AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx) cmdlet (if you're modifying an existing template). However, if you're adding these users to an existing template, you will need to define rights definition objects for the existing groups in the templates and not just the external users.
+-   **Exportu, úpravy a importu aktualizované šablony**:  Toto je nejjednodušší způsob, pokud chcete přidat do existující šablonu, která zahrnuje další skupiny tyto externí uživatelé. Použití [Export AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727078.aspx) rutiny exportovat šablonu, kterou chcete. Soubor CSV, který lze upravovat přidat externí e-mailové adresy tito uživatelé a jejich práva na stávajících skupin a oprávnění. Potom pomocí [Import AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727077.aspx) rutiny Import této změny zpět do Azure RMS.
 
-For more information about custom templates, see [Configuring Custom Templates for Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md).
+-   **Použití definice objektu práva k vytvoření nebo aktualizace šablony**:    Zadejte externí e-mailové adresy a jejich práva v definici objektu práva, které poté můžete vytvořit nebo aktualizovat šablonu. Zadejte definici objektu práva pomocí [Nový AadrmRightsDefinition](https://msdn.microsoft.com/library/azure/dn727080.aspx) rutiny vytvořit proměnnou a poté poskytnout tuto proměnnou na parametr - RightsDefinition s [Přidat AadrmTemplate](https://msdn.microsoft.com/library/azure/dn727075.aspx) rutiny (pro novou šablonu) nebo [Set AadrmTemplateProperty](https://msdn.microsoft.com/library/azure/dn727076.aspx) rutiny (Pokud modifikujete existující šablony). Nicméně pokud přidáváte tito uživatelé do stávající šablony, budete muset definice práva definice objektů pro stávajících skupin v šablonách a nikoli pouze externí uživatelé.
 
-## What devices and which file types are supported by Azure RMS?
-For a list of supported devices, see the [Client devices that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedDevices) section in the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic. Because not all supported devices can currently support all RMS capabilities, be sure to also check the [Client device capabilities](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_ClientCapabilities) table in the same topic.
+Další informace o vlastních šablon naleznete v tématu [Konfigurace vlastních šablon pro Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md).
 
-Azure RMS can support all file types. For text, image, Microsoft Office (Word, Excel, PowerPoint) files, .pdf files, and some other application file types, Azure RMS provides native protection that includes both encryption and enforcement of rights (permissions). For all other applications and file types, generic protection provides file encapsulation and authentication to verify if a user is authorized to open the file.
+## Jaká zařízení a které typy souborů jsou podporovány službou Azure RMS?
+Seznam podporovaných zařízení najdete v části [Klientská zařízení, které podporují službu Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedDevices) v oddílu [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tématu. Vzhledem k tomu, že všechny podporované zařízení aktuálně podporuje všechny možnosti RMS, nezapomeňte také zkontrolovat, zda [Možnosti zařízení klienta](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_ClientCapabilities) tabulky ve stejné téma.
 
-For a list of file name extensions that are natively supported by Azure RMS, see the [Supported file types and file name extensions](http://technet.microsoft.com/library/dn339003.aspx) section of the [Rights Management sharing application administrator guide](http://technet.microsoft.com/library/dn339003.aspx). File name extensions not listed are supported by using the RMS sharing application that automatically applies generic protection to these files.
+Azure RMS může podporovat všechny typy souborů. Pro text, obrázek, aplikace Microsoft Office (Word, Excel, PowerPoint) soubory, soubory .pdf a některé typy souborů jiných aplikací poskytuje Azure RMS nativní ochrany, která zahrnuje šifrování a prosazování práv (oprávnění). Pro všechny ostatní aplikace a typy souborů poskytuje Obecná ochrana souboru zapouzdření a ověřování k ověření, pokud je uživatel autorizovaný k otevření souboru.
 
-## When will you support migration from AD RMS?
-Initially, Azure RMS didn’t support migration from an on-premises deployment of Rights Management, such as AD RMS. But it’s supported now.
+Seznam přípon souborů, které jsou nativně podporovaný službou Azure RMS, naleznete [podporované typy souborů a přípony názvů souborů](http://technet.microsoft.com/library/dn339003.aspx) oddílu [Příručka správce aplikace pro sdílení obsahu Rights Management](http://technet.microsoft.com/library/dn339003.aspx). Neuvedené přípony názvů souborů jsou podporovány pomocí aplikace, která automaticky použije Obecná ochrana pro tyto soubory pro sdílení obsahu RMS.
 
-For more information, see [Migrating from AD RMS to Azure Rights Management](../Topic/Migrating_from_AD_RMS_to_Azure_Rights_Management.md).
+## Pokud bude podporovat migrace ze služby AD RMS?
+Zpočátku nebyl Azure RMS podporuje migraci z místního nasazení služby Rights Management, jako je například služba AD RMS. Ale je nyní podporován.
 
-## We really want to use BYOK with Azure RMS but learned that this isn’t compatible with Exchange Online—what’s your advice?
-Don’t let this current limitation delay your Azure RMS deployment. If you have Exchange Online and want to use bring your own key (BYOK), we recommend that you deploy Azure RMS in the default key management mode now, where Microsoft generates and manages your key. That way, you get all the benefits of protecting your important files and emails now, with the option to move to BYOK later (for example, when Exchange Online does support BYOK).
+Další informace naleznete v tématu [Migrace ze služby AD RMS na Azure Rights Management](../Topic/Migrating_from_AD_RMS_to_Azure_Rights_Management.md).
 
-However, if your company policies require you to use a hardware security module (HSM) and this would otherwise block your Azure RMS deployment, another option is to deploy Azure RMS with BYOK now, with reduced RMS functionality for Exchange. For more information, see the [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) section in the [Planning and Implementing Your Azure Rights Management Tenant Key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md) topic.
+## Jsme Opravdu chcete použít BYOK službou Azure RMS, ale se naučili, že to není kompatibilní se systémem Exchange Online – co je vaše Rady?
+Nenechte toto aktuální omezení zpoždění nasazení Azure RMS. Pokud máte Exchange Online a chcete použít převést vlastní klíč (BYOK), doporučujeme nasadit službu Azure RMS ve výchozím režimu správy klíčů nyní, kde společnost Microsoft generuje a spravuje váš klíč. Tímto způsobem získáte všechny výhody chrání důležité soubory a e-mailů nyní, s možností přejít BYOK později (například když Exchange Online podporu BYOK).
 
-## A feature I am looking for doesn’t seem to work with SharePoint protected libraries—is support for my feature planned?
-Currently, SharePoint supports RMS protected documents by using IRM protected libraries, which do not support custom templates, document tracking, and some other capabilities.  For more information, expand the   [SharePoint Online and OneDrive for Business: IRM Configuration](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_SharePointOnline) section in the [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) topic .
+Pokud zásady vaší společnosti vyžadují, abyste pomocí modulu hardwarového zabezpečení (hardwarového zabezpečení), a to by jinak blokovat nasazení Azure RMS, Další možností je však nasazení Azure RMS s BYOK nyní, s omezenou funkčností RMS pro server Exchange. Další informace naleznete v tématu [BYOK pricing and restrictions](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md#BKMK_Pricing) v oddílu [Plánování a implementaci váš Azure Rights Management klienta klíč](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md) tématu.
 
-If you are interested in a specific  capability that isn't yet supported,  be sure to keep an eye on announcements on the [RMS team blog](http://blogs.technet.com/b/rms/).
+## Funkce hledám asi není, pracovat se službou SharePoint chráněných knihoven – podpora pro moje funkce plánované?
+V současné době RMS chráněné dokumenty podporuje služby SharePoint pomocí IRM chráněná knihovny, které nepodporují vlastní šablony, pro sledování dokumentů a některé další možnosti.  Další informace, rozbalte   [SharePoint Online a Onedrivem pro společnost: Konfigurace IRM](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_SharePointOnline) v oddílu [Jak aplikace podporují Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) tématu.
 
-## How do I configure One Drive for Business in SharePoint Online, so that users can safely share their files with people inside and outside the company?
-By default, as an Office 365 administrator, you don’t configure this; users do.
+Pokud vás zajímají specifické možnosti, která ještě není podporována, je nutné sledovat na oznámení [blog týmu služby RMS](http://blogs.technet.com/b/rms/).
 
-Just as a SharePoint site administrator enables and configures IRM for a SharePoint library that they own, OneDrive for Business is designed for users to enable and configure IRM for their own OneDrive for Business library.  However, by using PowerShell, you can do this for them. For instructions, expand the [SharePoint Online and OneDrive for Business: IRM Configuration](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_SharePointOnline)  section in the [Configuring Applications for Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md) article.
+## Jak lze nakonfigurovat jednu jednotku pro firmy ve službě SharePoint Online tak, aby uživatelé mohou bezpečně sdílet své soubory s uživatelů uvnitř i vně společnosti?
+Ve výchozím nastavení jako správce služeb Office 365, nekonfigurujete uživatelé provádět.
 
-## Do you have any tips or tricks for a successful RMS deployment?
-After overseeing many deployments and listening to our customers, partners, consultants, and support engineers – one of the biggest tips we can pass on from experience: **Design and deploy simple rights policies**.
+Stejně jako správce webu služby SharePoint povolí a nakonfiguruje IRM knihovny služby SharePoint, kterou vlastní, Onedrivu pro firmy je určena uživatelům povolit a konfigurovat IRM pro své vlastní Onedrivu pro firmy knihovny.  Však pomocí prostředí PowerShell, můžete to provést u nich. Pokyny, rozbalte [SharePoint Online a Onedrivem pro společnost: Konfigurace IRM](../Topic/Configuring_Applications_for_Azure_Rights_Management.md#BKMK_SharePointOnline)  kapitoly [Konfigurace aplikací pro Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md) článku.
 
-Because Azure RMS supports sharing securely with anyone, you can afford to be ambitious with your information protection reach. But be conservative with your rights policies. For many organizations, the biggest business impact comes from preventing data leakage by applying the default rights policy template that restricts access to people in your organization. Of course, you can get much more granular than that if you need to – prevent people from printing, editing etc. But keep the more granular restrictions as the exception for documents that really need high-level security, and don’t implement these more restrictive policies on day one, but plan for a more phased approach.
+## Máte k dispozici žádné tipy nebo tipy pro úspěšné nasazení služby RMS?
+Po nasazení velkého počtu dohled nad a naslouchá na našich zákazníků, partnery, konzultanti a pracovníky technické podpory – jedním z největších tipů, které nám můžete předat na z zaznamenat: **Návrhu a nasazení zásad jednoduchá práva**.
 
-## What features can or can’t be used with the different subscriptions for Azure RMS?
-For the paid subscriptions that support Azure RMS (Office 365, Azure RMS Premium, and Enterprise Mobility Suite), there are some differences in the RMS features that are supported. For a list of these, see [Comparison of Rights Management Services (RMS) Offerings](http://technet.microsoft.com/dn858608).
+Protože Azure RMS podporuje sdílení bezpečně s kýmkoli, můžete si může dovolit být náročných s svůj dosah ochrany informací. Ale uvážlivě s vašimi zásadami práva. Pro mnoho organizací největší dopad na chod firmy pochází z zabránit úniku dat při použití výchozí šablony zásad práv, která omezuje přístup lidem ve vaší organizaci. Samozřejmě, můžete získat podrobnější než, pokud je potřeba – zabránit neoprávněným osobám v tisk, úpravy atd. Ale ponechat podrobnější omezení jako výjimka pro dokumenty, které skutečně potřebujete vysoké úrovně zabezpečení a neimplementují tyto přísnější zásady na jeden den, ale plán pro více několika fází rozdělený postup.
 
-The free subscription that supports Azure RMS (RMS for individuals) supports consuming content that has been protected by Azure RMS. For more information, see [RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md).
+## Jaké funkce lze nebo nelze použít s jinou odběry Azure RMS?
+Pro placené předplatné, které podporují Azure RMS (Office 365, Azure RMS Premium a sada Enterprise Mobility) jsou určité rozdíly v RMS funkce, které jsou podporovány. Seznam naleznete v tématu [Rights Management Services (RMS)-porovnání nabídek](http://technet.microsoft.com/dn858608).
 
-## Where can I get technical information about the free Azure RMS subscription (RMS for individuals)—for example, how it really works, how to take control of the accounts, and which domains can’t be used?
-You’ll find answers to these questions in the [RMS for Individuals and Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md) topic.
+Bezplatné předplatné, který podporuje Azure RMS (RMS pro jednotlivce) podporuje náročné obsah, který je chráněný službou Azure RMS. Další informace naleznete v tématu [RMS pro jednotlivce i Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md).
 
-## How do we regain access to files that were protected by an employee who has now left the organization?
-Use the super user feature of Azure RMS, which lets authorized users have full owner rights for all use licenses that were granted by your organization’s RMS tenant. This same feature lets authorized services index and inspect files, as needed.
+## Kde lze získat technické informace o bezplatné předplatné Azure RMS (RMS pro jednotlivce) – například jak skutečně funguje, jak řídit účty a které domény nelze použít?
+Zjistíte odpovědi na tyto otázky v [RMS pro jednotlivce i Azure Rights Management](../Topic/RMS_for_Individuals_and_Azure_Rights_Management.md) tématu.
 
-For more information, see [Configuring Super Users for Azure Rights Management and Discovery Services or Data Recovery](../Topic/Configuring_Super_Users_for_Azure_Rights_Management_and_Discovery_Services_or_Data_Recovery.md).
+## Jak jsme získat přístup k souborům, které byly chráněny zaměstnanci, který nyní opustil organizaci?
+Použijte funkci superuživatele Azure RMS, který umožní oprávněným uživatelům mít úplná vlastnická práva na všechny licence udělená pomocí klienta služby RMS vaší organizace. Tato funkce stejný index ověřených služby umožňuje a kontrola souborů, podle potřeby.
 
-## Can Rights Management prevent screen captures?
-Rights Management does block screen captures from most of the commonly used screen capture tools, which can help to avoid accidental or negligent disclosure of confidential or sensitive information. However, there are many ways that a user can share data that is displayed on a screen, and taking a screen shot is only one method. For example, a user intent on sharing displayed information can take a picture of it using their camera phone, retype the data, or simply verbally relay it to somebody.
+Další informace naleznete v tématu [Konfigurace tito uživatelé pro Azure Rights Management a zjišťování služeb nebo obnovení dat](../Topic/Configuring_Super_Users_for_Azure_Rights_Management_and_Discovery_Services_or_Data_Recovery.md).
 
-As these examples demonstrate, technology alone cannot always prevent users from sharing data that they should not. While Rights Management can help to safeguard your important data by using authorization and usage policies, this enterprise rights management solution should be used with other controls. For example, implement physical security, carefully screen and monitor people who have authorized access to your organization's data, and invest in user education so users understand what data should not be shared.
+## Rights Management může zabránit zachycení obrazovky?
+Správa přístupových práv blokovat zachycení obrazovky od většiny nástrojů zachycení běžně používané obrazovky, které může pomoci, aby se zabránilo náhodnému nebo z nedbalosti zveřejnění důvěrné nebo citlivé informace. Existují však mnoha způsoby, že uživatel může sdílet data, která se zobrazí na obrazovce, a zabírá snímek obrazovky pouze jednu metodu. Uživatel s úmyslem sdílení zobrazené informace můžete například pořídit snímek pomocí svůj telefon fotoaparátu, znovu zadávat data nebo jednoduše ústně předávají někomu.
 
-## Where can I find supporting information for Azure RMS—such as legal, compliance, and SLAs?
-Azure RMS supports other services and also relies on other services. If you’re looking for information that is related to Azure RMS but not about how to use the Azure RMS service, check the following resources:
+Tyto příklady ukazují, jak je technologie samostatně nemůže vždy uživatelům zabránit sdílení dat, která by neměly. Zatímco Rights Management může pomoci k ochraně důležitých dat s použitím autorizace a zásad použití, je třeba použít toto řešení správy práv enterprise s jinými ovládacími prvky. Například implementaci fyzické zabezpečení, pečlivě obrazovky a sledování uživatelů, kteří mají oprávnění přístupu k datům vaší organizace a investovat do vzdělávání uživatelů uživatelům pochopit, jaká data by se neměly sdílet.
 
-**Legal and privacy:**
+## Kde lze najít informace o podpoře pro Azure RMS – například právní, dodržování předpisů a SLA?
+Azure RMS podporuje další služby a také závisí na jiné služby. Pokud hledáte informace týkající se na službu Azure RMS, ale nikoli o tom, jak pomocí služby Azure RMS, zkontrolujte následující prostředky:
 
--   For Microsoft Azure agreement information: [Microsoft Azure Agreement](http://azure.microsoft.com/support/legal/subscription-agreement/)
+**Právní a ochrana osobních údajů:**
 
--   For Microsoft Azure privacy information: [Microsoft Azure Privacy Statement](http://azure.microsoft.com/support/legal/privacy-statement/)
+-   Pro informace o smlouvě Microsoft Azure: [Smlouva Microsoft Azure](http://azure.microsoft.com/support/legal/subscription-agreement/)
 
-**Security, compliance, and auditing:**
+-   Informace o ochraně osobních údajů pro Microsoft Azure: [Prohlášení o ochraně osobních údajů Microsoft Azure](http://azure.microsoft.com/support/legal/privacy-statement/)
 
-See the [Security, compliance, and regulatory requirements](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScompliance) section in the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) topic. In addition:
+**Zabezpečení, dodržování předpisů a auditování:**
 
--   For external certifications for Azure RMS: [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/)
+Naleznete v části [Zabezpečení, dodržování předpisů a právních požadavků](../Topic/What_is_Azure_Rights_Management_.md#BKMK_RMScompliance) v oddílu [Co je Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) tématu. Navíc platí:
 
--   For FIPS 140 information: [FIPS 140 Validation](https://technet.microsoft.com/library/security/cc750357.aspx)
+-   Pro externí certifikace pro Azure RMS: [Centrum zabezpečení pro Microsoft Azure](http://azure.microsoft.com/support/trust-center/)
 
-**Service level agreements:**
+-   FIPS 140 informace: [FIPS 140 ověření](https://technet.microsoft.com/library/security/cc750357.aspx)
 
--   Service level agreement for Azure RMS, by selected country: [Service level agreement](http://microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&amp;DocumentTypeId=37)
+**Smlouvy o úrovni služeb:**
 
--   Service level agreement for Azure Active Directory: [Service Level Agreements](http://azure.microsoft.com/support/legal/sla/)
+-   Smlouvy o úrovni služeb pro Azure RMS pomocí vybranou zemi: [Smlouvy o úrovni služeb](http://microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&amp;DocumentTypeId=37)
 
-**Documentation:**
+-   Smlouvy o úrovni služeb pro Azure Active Directory: [Smlouvy o úrovni služeb](http://azure.microsoft.com/support/legal/sla/)
 
--   Azure Active Directory Documentation site: [Azure Active Directory](http://azure.microsoft.com/documentation/services/active-directory/)
+**Dokumentace:**
 
--   Azure Active Directory Library: [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx)
+-   Azure Active Directory dokumentace lokality: [Azure Active Directory](http://azure.microsoft.com/documentation/services/active-directory/)
 
--   Office 365 Library: [Office 365](http://technet.microsoft.com/library/dn127064%28v=office.14%29.aspx)
+-   Knihovna Azure Active Directory: [Azure Active Directory](http://msdn.microsoft.com/library/azure/jj673460.aspx)
 
-## What do I do if my question isn’t here?
-Use the links and resources listed in [Information and Support for Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
+-   Office 365 knihovna: [Office 365](http://technet.microsoft.com/library/dn127064%28v=office.14%29.aspx)
 
-In addition, there are FAQs designed for end-users:
+## Co mohu udělat, pokud zde není můj dotaz?
+Použijte odkazy a prostředky, které jsou uvedeny v [Informace a podpora nástroje Azure Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md).
 
--   [FAQ for Rights Management Sharing Application for Windows](https://technet.microsoft.com/dn467883)
+Kromě toho jsou navrženy pro koncové uživatele nejčastější dotazy:
 
--   [FAQ for Rights Management Sharing Application for Mobile and Mac Platforms](https://technet.microsoft.com/dn451248)
+-   [Nejčastější dotazy týkající se aplikace pro systém Windows pro sdílení obsahu Rights Management](https://technet.microsoft.com/dn467883)
 
--   [FAQ for Document Tracking](http://go.microsoft.com/fwlink/?LinkId=523977)
+-   [Nejčastější dotazy týkající se pro platformy Mac a mobilní aplikace pro sdílení obsahu Rights Management](https://technet.microsoft.com/dn451248)
 
-This FAQ page will be updated regularly, with new additions listed in the monthly documentation update announcements on the [Microsoft Rights Management (RMS) Team](http://blogs.technet.com/b/rms/) blog.
+-   [Nejčastější dotazy týkající se sledování dokumentů](http://go.microsoft.com/fwlink/?LinkId=523977)
+
+Tato stránka nejčastější dotazy týkající se bude aktualizován pravidelně, nové doplňky v uvedena v měsíční oznámení aktualizace dokumentace [týmu Microsoft Rights Management (RMS)](http://blogs.technet.com/b/rms/) blogu.
 
 > [!TIP]
-> You can use the [docs tag](http://blogs.technet.com/b/rms/archive/tags/docs/) on the blog, to more easily find these documentation announcements.
+> Můžete použít [dokumenty značka](http://blogs.technet.com/b/rms/archive/tags/docs/) na blogu, k více snadno najít Tato dokumentace oznámení.
 
-## See Also
-[Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
+## Viz také
+[Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
 

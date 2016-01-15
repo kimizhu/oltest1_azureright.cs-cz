@@ -3,52 +3,51 @@ description: na
 keywords: na
 title: Deploying the Azure Rights Management Connector
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 90e7e33f-9ecc-497b-89c5-09205ffc5066
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Deploying the Azure Rights Management Connector
-Use this information to learn about the Microsoft Rights Management (RMS) connector and how you can use it to provide information protection with existing on-premises deployments that use Microsoft Exchange Server, Microsoft SharePoint Server, or file servers that run Windows Server and use the File Classification Infrastructure (FCI) capability of File Server Resource Manager.
+# Nasazen&#237; konektoru Azure Rights Management
+Tyto informace použijte další informace o konektoru Microsoft Rights Management (RMS) a jeho použití pro poskytování ochrany informace s existující místní nasazení, které používají Microsoft Exchange Server, Microsoft SharePoint Server nebo souborové servery, které používají systém Windows Server a schopností soubor klasifikace infrastruktury (FCI) ze Správce prostředků souborového serveru.
 
 > [!TIP]
-> For a high-level example scenario with screenshots, see the [Automatically protecting files on file servers running Windows Server and File Classification Infrastructure](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_FCI) section in the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) topic.
+> Nejdůležitější ukázkový scénář s snímky obrazovky, naleznete v části [Automaticky chrání soubory na souborových serverech se systémem Windows Server a souboru klasifikace infrastruktury](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_FCI) v oddílu [Co je Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) tématu.
 
-## <a name="OverviewConnector"></a>Overview of the Microsoft Rights Management connector
-The Microsoft Rights Management (RMS) connector lets you quickly enable existing on-premises servers to use their Information Rights Management (IRM) functionality with the cloud-based Microsoft Rights Management service (Azure RMS). With this functionality, IT and users can easily protect documents and pictures both inside your organization and outside, without having to install additional infrastructure or establish trust relationships with other organizations. You can use this connector even if some of your users are connecting to online services, in a hybrid scenario. For example, some users' mailboxes use Exchange Online and some users' mailboxes use Exchange Server. After you install the RMS connector, all users can protect and consume emails and attachments by using Azure RMS, and information protection works seamlessly between the two deployment configurations.
+## <a name="OverviewConnector"></a>Přehled konektor Microsoft Rights Management
+Konektor Microsoft Rights Management (RMS) umožňuje rychle povolit existující na místní servery jejich funkce Správa informačních práv (IRM) pomocí (Azure RMS) cloudové služby Microsoft Rights Management. Pomocí této funkce IT a uživatelé mohli snadno chránit dokumenty a obrázky ve vaší organizaci a vně, aniž byste museli instalovat další infrastruktury nebo navazování vztahů důvěryhodnosti s dalšími organizacemi. I v případě, že někteří uživatelé se připojují k online službám ve scénáři hybridní, můžete použít tento konektor. Například použijte někteří uživatelé poštovních schránek Exchange Online a poštovních schránek někteří uživatelé používají Exchange Server. Po instalaci konektoru služby RMS všichni uživatelé lze chránit a využívat e-maily a přílohy pomocí Azure RMS, a ochrana informací funguje bez problémů mezi konfigurací dvě nasazení.
 
-The RMS connector is a small-footprint service that you install on-premises, on servers that run Windows Server 2012 R2, Windows Server 2012, or Windows Server 2008 R2. In addition to running the connector on physical computers, you can also run it on virtual machines, including Azure IaaS VMs. After you install and configure the connector, it acts as a communications interface (a relay) between the on-premises servers and the cloud service.
+Konektor služby RMS je služba malé nárokům nainstalovat místně, na serverech se systémem Windows Server 2012 R2, Windows Server 2012 nebo Windows Server 2008 R2. Kromě spuštěna konektor na fyzické počítače, jej můžete spustit také na virtuálních počítačů, včetně virtuálních počítačích Azure IaaS. Po instalaci a konfiguraci konektoru, funguje jako komunikační rozhraní (předávání) mezi servery pro místní a cloudové služby.
 
-If you manage your own tenant key for Azure RMS (the bring you own key, or BYOK scenario), the RMS connector and the on-premises servers that use it do not access the hardware security module (HSM) that contains your tenant key. This is because all cryptographic operations that use the tenant key are performed in Azure RMS, and not on-premises.
+Pokud spravujete klíč klienta pro službu Azure RMS (používání, které vlastníte klíč nebo BYOK scénář), konektor služby RMS a na místní servery, které ji používají nemají přístup k hardwaru zabezpečení modul (hardwarového zabezpečení), který obsahuje klíč klienta. Toto je vzhledem k tomu, že všechny kryptografické operace, které používají klienta klíč jsou prováděny v Azure RMS a není místní.
 
 ![](../Image/RMS_connector.png)
 
-The RMS connector supports the following on-premises servers: Exchange Server, SharePoint Server, and file servers that run Windows Server and use File Classification Infrastructure to classify and apply policies to Office documents in a folder. If you want to protect all files types using File Classification, do not use the RMS connector, but instead, use the [RMS Protection cmdlets](https://msdn.microsoft.com/library/azure/mt433195.aspx).
+Konektor služby RMS podporuje následující na místní servery: Exchange Server, SharePoint Server a souborové servery, které používají systém Windows Server a souboru klasifikace infrastruktury pro klasifikaci a aplikovat zásady do dokumentů Office ve složce. Pokud chcete chránit všechny typy souborů pomocí souboru klasifikace, nepoužívejte konektor služby RMS, ale místo toho použijte [ochranu RMS rutin](https://msdn.microsoft.com/library/azure/mt433195.aspx).
 
 > [!NOTE]
-> For supported versions of these on-premises servers, see “On-premises servers that support Azure RMS” in the [Applications that support Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedApplications) section of the [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) topic.
+> Podporované verze těchto na místní servery, naleznete v části "místní servery, které podporují Azure RMS" v [Aplikace, které podporují službu Azure RMS](../Topic/Requirements_for_Azure_Rights_Management.md#BKMK_SupportedApplications) oddílu [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md) tématu.
 
-Use the following sections to help you plan for, install, and configure the RMS connector. You must then do some post installation configuration so that your servers can use the connector.
+V následujících částech použijte při plánování, instalaci a konfiguraci konektoru služby RMS. Poté je nutné provést některé konfigurace instalace příspěvek tak, aby vaše servery můžete použít konektor.
 
 -   [Prerequisites for the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_Prereqs)
 
--   **Step 1:**  [Installing the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_InstallingConnector)
+-   **Krok 1:**  [Installing the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_InstallingConnector)
 
--   **Step 2:**  [Entering credentials](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#EnteringCredentials)
+-   **Krok 2:**  [Entering credentials](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#EnteringCredentials)
 
--   **Step 3:**  [Authorizing servers to use the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#AuthorizingServers)
+-   **Krok 3:**  [Authorizing servers to use the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#AuthorizingServers)
 
--   **Step 4:**  [Configuring load balancing and high availability](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#ConfiguringConnector)
+-   **Krok 4:**  [Configuring load balancing and high availability](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#ConfiguringConnector)
 
--   Optional: [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS)
+-   Volitelné: [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS)
 
--   Optional: [Configuring the RMS connector for a web proxy server](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringWebProxy)
+-   Volitelné: [Configuring the RMS connector for a web proxy server](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringWebProxy)
 
--   Optional: [Installing the RMS connector administration tool on administrative computers](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_InstallingStandaloneTool)
+-   Volitelné: [Installing the RMS connector administration tool on administrative computers](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_InstallingStandaloneTool)
 
--   **Step 5:**  [Configuring servers to use the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#ConfiguringServers)
+-   **Krok 5:**  [Configuring servers to use the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#ConfiguringServers)
 
     -   [Configuring an Exchange server to use the connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ExchangeServer)
 
@@ -58,66 +57,66 @@ Use the following sections to help you plan for, install, and configure the RMS 
 
 -   [Next steps](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_NextSteps)
 
-## <a name="BKMK_Prereqs"></a>Prerequisites for the RMS connector
-Before you install the RMS connector, make sure that the following requirements are in place.
+## <a name="BKMK_Prereqs"></a>Požadavky na konektor služby RMS
+Před instalací konektoru služby RMS, ujistěte se, že jsou splněny následující požadavky.
 
-|Requirement|More information|
-|---------------|--------------------|
-|The Rights Management (RMS) service is activated|[Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)|
-|Directory synchronization between your on-premises Active Directory forests and Azure Active Directory|After RMS is activated, Azure Active Directory must be configured to work with the users and groups in your Active Directory database.<br /><br />**Important**: You must do this directory synchronization step for the RMS connector to work, even for a test network. Although you can use Office 365 and Azure Active Directory by using accounts that you manually create in Azure Active Directory, this connector requires that the accounts in Azure Active Directory are synchronized with Active Directory Domain Services; manual password synchronization is not sufficient.<br /><br />For more information, see the following resources:<br /><br />[Instructions for configuring your Azure AD tenant](http://technet.microsoft.com/library/hh967611.aspx)<br /><br />[Instructions for enabling directory synchronization with AAD using DirSync](http://technet.microsoft.com/library/hh967642.aspx)|
-|Optional but recommended:<br /><br />Enable federation between your on-premises Active Directory and Azure Active Directory|You can enable identity federation between your on-premises directory and Azure Active Directory. This configuration enables a more seamless user experience by using single sign-on to the RMS service. Without single sign on, users are prompted for their credentials before they can use rights-protected content.<br /><br />For instructions to configure federation by using Active Directory Federation Services (AD FS) between Active Directory Domain Services and Azure Active Directory, see the [Checklist: Use AD FS to implement and manage single sign-on](http://technet.microsoft.com/library/jj205462.aspx) in the Windows Server library.|
-|A minimum of two member computers on which to install the RMS connector:<br /><br />A 64-bit physical or virtual computer running one of the following operating systems:  Windows Server 2012 R2,  Windows Server 2012, or Windows Server 2008 R2.<br /><br />At least 1 GB of RAM.<br /><br />A minimum of 64 GB of disk space<br /><br />At least one network interface.<br /><br />Access to the Internet via a firewall (or web proxy) that does not require authentication.<br /><br />Must be in a forest or domain that trusts other forests in the organization that contain installations of Exchange or SharePoint servers that you want to use with the RMS connector.|For fault tolerance and high availability, you must install the RMS connector on a minimum of two computers.<br /><br />**Tip**: If you are using Outlook Web Access or mobile devices that use Exchange ActiveSync IRM and it is critical that you maintain access to emails and attachments that are protected by Azure RMS, we recommend that you deploy a load-balanced group of connector servers to ensure high availability.<br /><br />You do not need dedicated servers to run the connector but you must install it on a separate computer from the servers that will use the connector.<br /><br />**Important**: Do not install the connector on a computer that runs Exchange Server, SharePoint Server, or a file server that is configured for file classification infrastructure if you want to use the functionality from these services with Azure RMS. Also, do not install this connector on a domain controller.|
+|Požadavek|Další informace|
+|-------------|-------------------|
+|Aktivaci služby Rights Management (RMS)|[Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)|
+|Synchronizaci adresářů mezi doménovými strukturami služby Active Directory a Azure Active Directory|Po aktivaci služby RMS Azure Active Directory byla nakonfigurována pro práci s uživateli a skupinami v databázi služby Active Directory. **Important:** Je nutné provést tento krok synchronizace adresáře pro konektor RMS pro práci i pro testovací síť. I když Office 365 a Azure Active Directory můžete používat pomocí účtů, které ručně vytvořit ve službě Azure Active Directory, vyžaduje tento konektor, že účty v Azure Active Directory jsou synchronizovány s Active Directory Domain Services; Synchronizace hesel ruční není dostatečná.<br />Další informace naleznete v následujících zdrojích:<br /><br />-   [Pokyny ke konfiguraci klientovi Azure AD](http://technet.microsoft.com/library/hh967611.aspx)<br />-   [Pokyny k povolení synchronizace adresáře s AAD pomocí DirSync](http://technet.microsoft.com/library/hh967642.aspx)|
+|Volitelné, ale doporučené:<br /><br />-   Povolit federaci mezi místní služby Active Directory a Azure Active Directory|Můžete povolit federaci identit mezi vaším místním adresářem a Azure Active Directory. Tato konfigurace umožňuje lepší zkušenosti uživatele pomocí jednotného přihlášení ke službě RMS. Bez jednotné přihlašování uživatelé jsou výzva k zadání přihlašovacích údajů před použitím obsahu chráněného právy.<br /><br />Pokyny ke konfiguraci federace pomocí služby Active Directory Federation Services (AD FS) mezi Active Directory Domain Services a Azure Active Directory naleznete v tématu [Kontrolní seznam: Pomocí služby AD FS implementace a Správa jednotného přihlašování](http://technet.microsoft.com/library/jj205462.aspx) v knihovně Windows Server.|
+|Nejméně dva členské počítače, na který chcete nainstalovat konektor služby RMS:<br /><br /><ul><li>64-bit fyzický nebo virtuální počítač spuštěn jeden z následujících operačních systémů:<br /><br /><ul><li>Windows Server 2012 R2</li><li>Windows Server 2012</li><li>Windows Server 2008 R2</li></ul></li><li>Alespoň 1 GB paměti RAM</li><li>Minimálně 64 GB místa na disku</li><li>Nejméně jedno síťové rozhraní</li><li>Přístup k Internetu prostřednictvím brány firewall (nebo webový proxy server), který nevyžaduje ověření</li><li>Musí být v doméně, která důvěřuje jiných doménových strukturách v organizaci, které obsahují instalace serverů Exchange nebo služby SharePoint, které chcete používat s konektorem služby RMS nebo doménové struktury</li></ul>|Pro vysokou dostupnost a odolnost proti chybám je třeba nainstalovat konektor služby RMS na nejméně dva počítače. **Tip:** Pokud používáte aplikaci Outlook Web Access nebo mobilní zařízení, které používají technologii Exchange ActiveSync IRM a je velmi důležité udržovat přístup k e-mailů a příloh, které jsou chráněné službou Azure RMS, doporučujeme vám, že nasadíte skupinu s vyrovnáváním zatížení serverů konektor k zajištění vysoké dostupnosti.<br />Není nutné vyhrazené servery pro spuštění konektoru, ale je nutné nainstalovat do samostatného počítače ze serverů, které budou používat konektor. **Important:** Neinstalujte konektoru na počítači se systémem Exchange Server, SharePoint Server nebo souborový server, který je nakonfigurován pro soubor klasifikace infrastruktury, pokud chcete použít funkci z těchto služeb službou Azure RMS. Tento konektor také neinstalujte na řadiči domény.|
 
-## <a name="BKMK_InstallingConnector"></a>Installing the RMS connector
-After you have confirmed the prerequisites in the preceding section, use the following instructions to install the RMS connector:
+## <a name="BKMK_InstallingConnector"></a>Instalace konektoru služby RMS
+Po potvrzení předpokladů v předchozí části, použijte následující pokyny k instalaci konektoru služby RMS:
 
-1.  Identify the computers (minimum of two) that will run the RMS connector. They must meet the minimum specification listed in the preceding section.
-
-    > [!NOTE]
-    > You will install a single RMS connector (consisting of multiple servers for high availability) per tenant (Office 365 tenant or Azure AD tenant). Unlike Active Directory RMS, you do not have to install an RMS connector in each forest.
-
-2.  Download the source files for the RMS connector from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=314106).
-
-    To install the RMS connector, download RMSConnectorSetup.exe.
-
-    In addition:
-
-    -   If you later want to configure the connector from a 32-bit computer, also download RMSConnectorAdminToolSetup_x86.exe.
-
-    -   If you want to use the server configuration tool for the RMS connector, to automate the configuration of registry settings on you on-premises servers, also download GenConnectorConfig.ps1.
-
-3.  On the computer on which you want to install the RMS connector, run **RMSConnectorSetup.exe** with Administrator privileges.
-
-4.  On the Welcome page of the Microsoft Rights Management Connector Setup page, select **Install Microsoft Rights Management connector on the computer**, and then click **Next**.
-
-5.  Read and agree to the RMS connector license terms, and then click **Next**.
-
-To continue, enter an account and password to configure the RMS connector.
-
-## <a name="EnteringCredentials"></a>Entering credentials
-Before you can configure the RMS connector, you must enter credentials for an account that has sufficient privileges to configure the RMS connector.
-
-In addition, if you have implemented [onboarding controls](https://technet.microsoft.com/library/jj658941.aspx), make sure that the account you specify is able to protect content. For example, if you restricted the ability to protect content to the “IT department” group, the account that you specify here must be a member of that group. If not, you will see the error message: **The attempt to discover the location of the administration service and organization failed. Make sure Microsoft Rights Management service is enabled for your organization.**
-
-You can use an account that has one of the following privileges:
-
--   **Office 365 tenant administrator**: An account that is a global admin for your Office 365 tenant.
-
--   **Azure Rights Management global administrator**: An account with administrator privileges for the Azure RMS tenant.
-
--   **Microsoft RMS connector Administrator**: An account in Azure Active Directory that has been granted rights to install and administer the RMS connector for your organization.
+1.  Zjistěte, které budou spuštěny služby RMS konektor počítače (nejméně dva). Musí splňovat minimální specifikace uvedené v předchozím oddílu.
 
     > [!NOTE]
-    > If you want to use the Microsoft RMS connector Administrator account, you must first do the following to assign the RMS connector administrator role:
+    > Jeden konektor služby RMS (který se skládá z více serverů pro zajištění vysoké dostupnosti) nainstaluje na klienta (Office 365 klienta nebo klienta Azure AD). Na rozdíl od Active Directory RMS není nutné instalovat konektoru služby RMS v každé doménové struktuře.
+
+2.  Stáhnout zdrojové soubory pro konektor služby RMS z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=314106).
+
+    Pokud chcete nainstalovat konektor služby RMS, stáhněte si RMSConnectorSetup.exe.
+
+    Navíc platí:
+
+    -   Pokud chcete později ke konfiguraci konektoru z 32bitového počítače, také stáhněte RMSConnectorAdminToolSetup_x86.exe.
+
+    -   Pokud chcete pomocí nástroje Konfigurace serveru pro konektor služby RMS, k automatické konfiguraci nastavení registru na můžete na místní servery, také stáhněte GenConnectorConfig.ps1.
+
+3.  V počítači, na kterém chcete nainstalovat konektor služby RMS, spusťte **RMSConnectorSetup.exe** s oprávněními správce.
+
+4.  Na stránce Vítejte Microsoft Rights Management konektor instalační stránce vyberte **nainstalovat Microsoft Rights Management konektoru na počítači**, a potom klikněte na tlačítko **Další**.
+
+5.  Číst a souhlasím s podmínkami licenční konektor služby RMS a potom klikněte na tlačítko **Další**.
+
+Chcete-li pokračovat, zadejte účet a heslo ke konfiguraci konektoru služby RMS.
+
+## <a name="EnteringCredentials"></a>Zadání pověření
+Před konfigurací konektoru služby RMS, musí zadat pověření pro účet, který má dostatečná oprávnění ke konfiguraci konektoru služby RMS.
+
+Kromě toho, pokud jste implementovali [Registrace ovládacích prvků](https://technet.microsoft.com/library/jj658941.aspx), ujistěte se, že účet zadáte moci chránit obsah. Například pokud jste omezili možnost chránit obsah do skupiny "IT oddělení", účet, který zde zadáte musí být členy této skupiny. Pokud tomu tak není, zobrazí se chybová zpráva: **Zjistit umístění služby správy a organizace se nezdařilo. Zkontrolujte, zda je povolena služba Microsoft Rights Management pro vaši organizaci.**
+
+Můžete použít účet, který má jednu z následujících oprávnění:
+
+-   **Správce klienta office 365**: Účet, který je globální správce pro vašeho klienta Office 365.
+
+-   **Globální správce azure Rights Management**: Účet s oprávněními správce pro klienta Azure RMS.
+
+-   **Konektor Microsoft RMS správce**: Účet v Azure Active Directory, které bylo uděleno oprávnění k instalaci a správě konektor služby RMS vaší organizace.
+
+    > [!NOTE]
+    > Pokud chcete použít konektor Microsoft RMS účet správce, je nutné provést následující přiřazení role správce konektor služby RMS:
     > 
-    > 1.  On the same computer, download and install Windows PowerShell for Rights Management. For more information, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+    > 1.  Ve stejném počítači stáhněte a nainstalujte prostředí Windows PowerShell pro Rights Management. Další informace naleznete v tématu [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
     > 
-    >     Start Windows PowerShell with the **Run as administrator** command, and connect to the Azure RMS service by using the [Connect-AadrmService](https://msdn.microsoft.com/library/azure/dn629415.aspx) command:
+    >     Spusťte prostředí Windows PowerShell se **Spustit jako správce** příkazů a připojit ke službě Azure RMS pomocí [Připojit AadrmService](https://msdn.microsoft.com/library/azure/dn629415.aspx) příkaz:
     > 
     >     ```
     >     Connect-AadrmService                   //provide Office 365 tenant administrator or Azure RMS global administrator credentials
     >     ```
-    > 2.  Then run the [Add-AadrmRoleBasedAdministrator](https://msdn.microsoft.com/library/azure/dn629417.aspx) command, using just one of the following parameters:
+    > 2.  Spusťte [Přidat AadrmRoleBasedAdministrator](https://msdn.microsoft.com/library/azure/dn629417.aspx) příkaz, pomocí právě jeden z následujících parametrů:
     > 
     >     ```
     >     Add-AadrmRoleBasedAdministrator -EmailAddress <email address> -Role "ConnectorAdministrator"
@@ -130,198 +129,198 @@ You can use an account that has one of the following privileges:
     >     ```
     >     Add-AadrmRoleBasedAdministrator -SecurityGroupDisplayName <group Name> -Role "ConnectorAdministrator"
     >     ```
-    >     For example, type: **Add-AadrmRoleBasedAdministrator -EmailAddress melisa@contoso.com -Role " ConnectorAdministrator "**
+    >     Například zadejte: **Add-AadrmRoleBasedAdministrator -EmailAddress melisa@contoso.com -Role " ConnectorAdministrator "**
     > 
-    >     Although these commands use the ConnectorAdministrator role, you could also use the GlobalAdministrator role here, as well.
+    >     Přestože tyto příkazy používat ConnectorAdministrator role, můžete také použít GlobalAdministrator role zde také.
 
-During the RMS connector installation process, all prerequisite software is validated and installed, Internet Information Services (IIS) is installed if not already present, and the connector software is installed and configured. In addition, Azure RMS is prepared for configuration by creating the following:
+Během procesu instalace konektoru služby RMS je ověřen a nainstalován veškerý požadovaný software, Internetové informační služby (IIS) je nainstalována Pokud již nejsou přítomny a software konektoru je nainstalován a nakonfigurován. Kromě toho Azure RMS je připraven pro konfiguraci vytvořením následující:
 
--   An empty table of servers that are authorized to use the connector to communicate with Azure RMS. You will add servers to this table later.
+-   Prázdná tabulka serverů, které jsou oprávnění k používání konektoru ke komunikaci s Azure RMS. Servery budou v této tabulce přidat později.
 
--   A set of security tokens for the connector, which authorize operations with Azure RMS. These tokens are downloaded from Azure RMS and installed on the local computer in the registry. They are protected by using the data protection application programming interface (DPAPI) and the Local System account credentials.
+-   Sada tokeny zabezpečení pro konektor nástroje, které povolují operace s Azure RMS. Tyto tokeny jsou staženy z Azure RMS a nainstalován v místním počítači v registru. Jsou chráněny pomocí pověření účtu Local System a rozhraní data protection application programming interface (DPAPI).
 
-On the final page of the wizard, do the following, and then click **Finish**:
+Na poslední stránce průvodce proveďte následující a potom klikněte na tlačítko **Dokončit**:
 
--   If this is the first connector that you have installed, do not select **Launch connector administrator console to authorize servers** at this time. You will select this option after you have installed your second (or final) RMS connector. Instead, run the wizard again on at least one other computer. You must install a minimum of two connectors.
+-   Pokud je to první konektor, který jste nainstalovali, nevybírejte **spuštění konzoly Správce konektoru ověřovat servery** v tomto okamžiku. Tuto možnost vyberete po instalaci konektoru RMS vaší druhý (nebo finální). Místo toho spusťte znovu Průvodce alespoň jeden další počítače. Je nutné nainstalovat minimálně dva konektory.
 
--   If you have installed your second (or final) connector, select **Launch connector administrator console to authorize servers**.
+-   Pokud jste nainstalovali konektor nástroje druhý (nebo poslední), vyberte možnost **spuštění konzoly Správce konektoru ověřovat servery**.
 
 > [!TIP]
-> At this point, there is a verification test that you can perform to test whether the web services for the RMS connector are operational:
+> V tomto okamžiku je ověřovací test, kterou lze provést testování, zda jsou funkční webové služby pro konektor služby RMS:
 > 
-> -   From a web browser, connect to **http://&lt;connectoraddress&gt;/_wmcs/certification/servercertification.asmx**, replacing *&lt;connectoraddress&gt;* with the server address or name that has the RMS connector installed. A successful connection displays a **ServerCertificationWebService** page.
+> -   Z webového prohlížeče připojit k **http://&lt;connectoraddress&gt;/_wmcs/certification/servercertification.asmx**, nahrazení *&lt; connectoraddress &gt;* adresu serveru nebo název, který má RMS konektor nainstalován. Zobrazuje úspěšné připojení **ServerCertificationWebService** stránky.
 
-If you need to uninstall the RMS connector, run the wizard again and select the uninstall option.
+Pokud je potřeba odinstalovat konektor služby RMS, spusťte průvodce znovu a vyberte možnost odinstalovat.
 
-## <a name="AuthorizingServers"></a>Authorizing servers to use the RMS connector
-When you have installed the RMS connector on at least two computers, you are ready to authorize the servers and services that you want to use the RMS connector. For example, servers running Exchange Server 2013 or SharePoint Server 2013.
+## <a name="AuthorizingServers"></a>Ověřování serverů k používání konektoru služby RMS
+Pokud jste nainstalovali konektor služby RMS na nejméně dva počítače, budete chtít povolit servery a služby, které chcete použít konektor služby RMS. Například servery se systémem Exchange Server 2013 nebo SharePoint Server 2013.
 
-To define these servers, run the RMS connector administration tool and add entries to the list of allowed servers. You can run this tool when you select **Launch connector administration console to authorize servers** at the end of the Microsoft Rights Management connector Setup wizard, or you can run it separately from the wizard.
+Pokud chcete definovat tyto servery, spusťte nástroj pro správu konektoru služby RMS a přidání položky do seznamu povolených serverů. Tento nástroj můžete spustit, když vyberete **spuštění konzoly pro správu konektoru ověřovat servery** na konci konektor Microsoft Rights Management nastavení průvodce, nebo jej lze spustit samostatně z průvodce.
 
-When you authorize these servers, be aware of the following considerations:
+Když autorizujete tyto servery, mějte na paměti následující pokyny:
 
--   Servers that you add will be granted special privileges. All accounts that you specify for the Exchange Server role in the connector configuration will be granted the [super user role](https://technet.microsoft.com/library/mt147272.aspx) in Azure RMS, which gives them access to all content for this RMS tenant. The super user feature is automatically enabled at this point, if necessary. To avoid the security risk of elevation of privileges, be careful to specify only the accounts that are used by your organization’s Exchange servers. All servers configured as SharePoint servers or file servers that use FCI will be granted regular user privileges.
+-   Servery, které přidáte, budou udělena zvláštní oprávnění. Všechny účty, které zadáte pro roli serveru Exchange Server v konfiguraci konektoru bude udělen [superuživatele role](https://technet.microsoft.com/library/mt147272.aspx) v Azure RMS, která jim uděluje přístup k celému obsahu pro tohoto klienta služby RMS. Funkci superuživatele automaticky povolena v tomto okamžiku v případě potřeby. Aby se zabránilo bezpečnostní riziko zvýšení oprávnění, dejte pozor, abyste zadejte pouze účty, které jsou používány servery Exchange v organizaci. Všechny servery, které jsou nakonfigurovány jako servery SharePoint nebo souborové servery, které používají FCI bude udělen pravidelné uživatelská oprávnění.
 
--   You can add multiple servers as a single entry by specifying an Active Directory security or distribution group, or a service account that is used by more than one server. When you use this configuration, the group of servers will share the same RMS certificates and will all be considered owners for content that any of them have protected. To minimize administrative overheads, we recommend that you use this configuration of a single group rather than individual servers to authorize your organization’s Exchange servers or a SharePoint server farm.
+-   Můžete přidat více serverů jako jediná položky zadáním zabezpečení služby Active Directory nebo distribuční skupinu nebo účet služby, který je používán pro více než jeden server. Při použití této konfigurace skupiny serverů budou sdílet stejnou certifikáty služby RMS a budou všechny považovány za vlastníky pro obsah, který některého z nich chráněna. Chcete-li minimalizovat správní režie, doporučujeme použití této konfigurace do jedné skupiny, nikoli jednotlivých serverů autorizovat servery Exchange v organizaci nebo serverové farmy služby SharePoint.
 
-On the **Servers allowed to utilize the connector** page, click **Add**.
+Na **servery povoleno využívat konektor** klikněte na tlačítko **Přidat**.
 
-### <a name="BKMK_AddServer"></a>Add a server to the list of allowed servers
-On the **Allow a server to utilize the connector** page, enter the name of the object, or browse to identify the object to authorize.
+### <a name="BKMK_AddServer"></a>Přidání serveru do seznamu povolených serverů
+Na **Povolit server využívat konektor** stránky, zadejte název objektu nebo procházením určete objekt, který chcete povolit.
 
-It is important that you authorize the correct object. For a server to use the connector, the account that runs the on-premises service (for example, Exchange or SharePoint) must be selected for authorization. For example, if the service is running as a configured service account, add the name of that service account to the list. If the service is running as Local System, add the name of the computer object (for example, SERVERNAME$). As a best practice, create a group that contains these accounts and specify the group instead of individual server names.
+Je důležité, že povolit správný objekt. Pro server k používání konektoru je třeba vybrat účet, který spouští službu na místě (například Exchange nebo SharePoint) pro autorizaci. Například pokud je služba spuštěna jako účet konfigurovaných služeb, přidejte do seznamu název tohoto účtu služby. Pokud je služba spuštěna jako místní systém, přidejte název objektu počítače (například SERVERNAME$). Jako nejlepší postup vytvoření skupiny, která obsahuje tyto účty a zadejte skupinu namísto názvy jednotlivých serverů.
 
-More information about the different server roles:
+Další informace o rolích jiný server:
 
--   For servers that run Exchange: You must specify a security group and you can use the default group (**Exchange Servers**) that Exchange automatically creates and maintains of all Exchange servers in the forest.
+-   U serverů se systémem Exchange: Je nutné zadat skupinu zabezpečení a můžete použít výchozí skupiny (**servery Exchange**), Exchange automaticky vytvoří a udržuje ve všech serverech Exchange v doménové struktuře.
 
--   For servers that run SharePoint:
+-   U serverů se systémem SharePoint:
 
-    -   If a SharePoint 2010 server is configured to run as Local System (it's not using a service account), manually create a security group in Active Directory Domain Services, and add the computer name object for the server in this configuration to this group.
+    -   Pokud server služby SharePoint 2010 je konfigurován pro spouštět jako místní systém (není pomocí účtu služby), ručně vytvořte skupinu zabezpečení ve službě Active Directory Domain Services a přidejte objekt názvu počítače pro server v této konfiguraci do této skupiny.
 
-    -   If a SharePoint server is configured to use a service account (the recommended practice for SharePoint 2010 and the only option for SharePoint 2013), do the following:
+    -   Pokud SharePoint server je konfigurován pro použití účtu služby (doporučený postup pro SharePoint 2010) a jedinou možností pro SharePoint 2013, postupujte takto:
 
-        1.  Add the service account that runs the SharePoint Central Administration service to enable SharePoint to be configured from its administrator console.
+        1.  Přidejte účet služby, který spouští službu Centrální správa SharePoint k povolení služby SharePoint nakonfigurováno z konzoly pro správu.
 
-        2.  Add the account that is configured for the SharePoint App Pool.
+        2.  Přidejte účet, který je nakonfigurován pro fond aplikací služby SharePoint.
 
         > [!TIP]
-        > If these two accounts are different, consider creating a single group that contains both accounts to minimize the administrative overheads.
+        > Pokud tyto dva účty jsou odlišné, zvažte vytvoření jedné skupiny, který obsahuje oba účty minimalizovat správní režie.
 
--   For file servers that use File Classification Infrastructure, the associated services run as the Local System account, so you must authorize the computer account for the file servers (for example, SERVERNAME$) or a group that contains those computer accounts.
+-   Pro souborové servery používající soubor klasifikace infrastrukturu přidružené služby spustit jako účet místní systém, je nutné autorizovat účet počítače pro souborové servery (například SERVERNAME$) nebo skupiny, která obsahuje tyto účty počítačů.
 
-When you have finished adding servers to the list, click **Close**.
+Po dokončení přidávání serverů do seznamu, klikněte na tlačítko **Zavřít**.
 
-If you haven’t already done so, you must now configure load balancing for the servers that have the RMS connector installed, and consider whether to use HTTPS for the connections between these servers and the servers that you have just authorized.
+Pokud jste tak již neučinili, musíte nyní konfigurace vyrovnávání zatížení pro servery, které mají nainstalovaný konektor služby RMS a zvážit, zda chcete používat protokol HTTPS pro připojení mezi tyto servery a servery, které jste právě autorizovali.
 
-## <a name="ConfiguringConnector"></a>Configuring load balancing and high availability
-After you have installed the second or final instance of the RMS connector, define a connector URL server name and configure a load balancing system.
+## <a name="ConfiguringConnector"></a>Konfigurace zatížení vyrovnávání a vysokou dostupnost
+Po instalaci druhý nebo konečné instanci konektoru služby RMS definovat název konektoru adresa URL serveru a konfigurovat systém Vyrovnávání zatížení.
 
-The connector URL server name can be any name under a namespace that you control. For example, you could create an entry in your DNS system for **rmsconnector.contoso.com** and configure this entry to use an IP address in your load balancing system. There are no special requirements for this name and it doesn’t need to be configured on the connector servers themselves. Unless your Exchange and SharePoint servers are going to be communicating with the connector over the Internet, this name doesn’t have to resolve on the Internet.
+Název konektoru adresa URL serveru může být jakýkoli název v rámci oboru názvů, který ovládáte. Můžete například vytvořit položku v systému DNS pro **rmsconnector.contoso.com** a nakonfigurujte tuto položku použít IP adresu v systému Vyrovnávání zatížení. Neexistují žádné zvláštní požadavky pro tento název a není třeba konfigurovat pro samotné servery konektor. Pokud vaše servery Exchange a SharePoint se chystáte komunikovat s konektorem přes Internet, tento název nemusí vyřešit na Internetu.
 
 > [!IMPORTANT]
-> We recommend that you don’t change this name after you have configured Exchange or SharePoint servers to use the connector, because you have to then clear these servers of all IRM configurations and then reconfigure them.
+> Doporučujeme neměnit tento název po konfiguraci serverů Exchange nebo SharePoint pro použití konektoru, protože je nutné tyto servery všechny konfigurace IRM zrušte zaškrtnutí a potom znovu nakonfigurovat.
 
-After the name is created in DNS and is configured for an IP address, configure load balancing for that address, which directs traffic to the connector servers. You can use any IP-based load balancer for this purpose, which includes  the Network Load Balancing (NLB) feature in Windows Server. For more information, see [Load Balancing Deployment Guide](http://technet.microsoft.com/library/cc754833%28v=WS.10%29.aspx).
+Po názvu je vytvořena ve službě DNS a je nakonfigurován pro IP adresu, nakonfigurujte Vyrovnávání zatížení pro tuto adresu, která bude směrovat přenosy do konektoru serverů. Můžete použít libovolný nástroj pro vyrovnávání zatížení založené na protokolu IP pro tento účel, který obsahuje funkci Network Load Balancing (NLB) v systému Windows Server. Další informace naleznete v tématu [Průvodce nasazením Vyrovnávání zatížení](http://technet.microsoft.com/library/cc754833%28v=WS.10%29.aspx).
 
-Use the following settings to configure the NLB cluster:
+Chcete-li konfigurovat cluster vyrovnávání zatížení sítě, použijte následující nastavení:
 
--   Ports: 80 (for HTTP) or 443 (for HTTPS)
+-   Porty: 80 (pro protokol HTTP) nebo 443 (pro protokol HTTPS)
 
-    For more information about whether to use HTTP or HTTPS, see the next section.
+    Další informace o tom, zda je k použití protokolu HTTP nebo HTTPS naleznete v další části.
 
--   Affinity: None
+-   Spřažení: Žádná
 
--   Distribution method: Equal
+-   Metoda distribuce: Rovná
 
-This name that you define for the load-balanced system (for the servers running the RMS connector service) is your organization’s RMS connector name that you will use later, when you configure the on-premises servers to use Azure RMS.
+Tento název, který definujete pro systém s vyrovnáváním zatížení (pro servery používající službu konektoru služby RMS) je název konektoru RMS vaší organizace, který budete používat později, při konfiguraci na místní servery používat Azure RMS.
 
-## <a name="BKMK_ConfiguringHTTPS"></a>Configuring the RMS connector to use HTTPS
+## <a name="BKMK_ConfiguringHTTPS"></a>Konfigurace služby RMS konektor na používání protokolu HTTPS
 > [!NOTE]
-> This configuration step is optional, but recommended for additional security.
+> Tento krok konfigurace je volitelná, avšak doporučená další úroveň zabezpečení.
 
-Although the use of TLS or SSL is optional for the RMS connector, we recommend it for any HTTP-based security-sensitive service. This configuration authenticates the servers running the connector to your Exchange and SharePoint servers that use the connector. In addition, all data that is sent from these servers to the connector is encrypted.
+Ačkoli použití protokolu TLS nebo SSL je volitelné pro konektor služby RMS, doporučujeme jej na jakoukoli službu citlivé na zabezpečení založené na protokolu HTTP. Tato konfigurace se ověřuje servery se spuštěnou službou konektoru na serverech Exchange a SharePoint, která používají konektor. Kromě toho je zašifrován všechna data, která je odeslána z těchto serverů s konektorem.
 
-To enable the RMS connector to use TLS, on each server that runs the RMS connector, install a server authentication certificate that contains the name that you will use for the connector. For example, if your RMS connector name that you defined in DNS is **rmsconnector.contoso.com**, deploy a server authentication certificate that contains **rmsconnector.contoso.com** in the certificate subject as the common name. Or, specify **rmsconnector.contoso.com** in the certificate alternative name as the DNS value. The certificate does not have to include the name of the server. Then in IIS, bind this certificate to the Default Web Site.
+Chcete-li povolit konektor služby RMS na používání protokolu TLS, na každém serveru, který spouští konektor služby RMS nainstalujte certifikát ověření serveru, který obsahuje název, který bude používat pro konektor. Například, pokud název vaší RMS konektoru, které definované v DNS je **rmsconnector.contoso.com**, nasaďte certifikát ověření serveru, který obsahuje **rmsconnector.contoso.com** v předmětu certifikátu jako běžný název. Nebo zadejte **rmsconnector.contoso.com** v alternativním názvu certifikátu jako hodnota DNS. Certifikát není nutné zahrnují název serveru. Ve službě IIS, tento certifikát pak vazbu pro výchozí webový server.
 
-If you use the HTTPS option, ensure that all servers that run the connector have a valid server authentication certificate that chains to a root CA that your Exchange and SharePoint servers trust. In addition, if the certification authority (CA) that issued the certificates for the connector servers publishes a certificate revocation list (CRL), the Exchange and SharePoint servers must be able to download this CRL.
+Pokud použijete možnost HTTPS, ujistěte se, zda mají všechny servery, které spuštění konektoru platný server ověřování certifikátu, který je zřetězen do kořenové CA, které vaše servery Exchange a SharePoint důvěřovat. Kromě toho pokud certifikační autorita (CA), která vydala certifikáty pro servery konektor publikuje seznam odvolaných certifikátů (CRL), serverů Exchange a SharePoint musí být schopen stáhnout tento seznam odvolaných certifikátů.
 
 > [!TIP]
-> You can use the following information and resources to help you request and install a server authentication certificate, and to bind this certificate to the Default Web Site in IIS:
+> Můžete požadovat a nainstalovat certifikát ověření serveru a tento certifikát vazbu na výchozí web ve službě IIS, můžete použít následující informace a prostředky:
 > 
-> -   If you use Active Directory Certificate Services (AD CS) and an enterprise certification authority (CA) to deploy these server authentication certificates, you can duplicate and then use the Web Server certificate template. This certificate template uses **Supplied in the request** for the certificate subject name, which means that you can provide the FQDN of the RMS connector name for the certificate subject name or subject alternative name when you request the certificate.
-> -   If you use a stand-alone CA or purchase this certificate from another company, see [Configuring Internet Server Certificates (IIS 7)](http://technet.microsoft.com/library/cc731977%28v=ws.10%29.aspx) in the [Web Server (IIS)](http://technet.microsoft.com/library/cc753433%28v=ws.10%29.aspx) documentation library on TechNet.
-> -   To configure IIS to use the certificate, see [Add a Binding to a Site (IIS 7)](http://technet.microsoft.com/library/cc731692.aspx) in the in the [Web Server (IIS)](http://technet.microsoft.com/library/cc753433%28v=ws.10%29.aspx) documentation library on TechNet.
+> -   Používáte-li nasadit tyto certifikáty pro ověřování serveru služby Active Directory Certificate Services (AD CS) a certifikační autority rozlehlé sítě (CA), můžete replikovat a potom pomocí šablony certifikátu webového serveru. Tato šablona certifikátu používá **dodán v žádosti** název subjektu certifikátu, což znamená, plně kvalifikovaný název domény název konektoru služby RMS pro název subjektu certifikátu nebo alternativní název předmětu můžete zadat, když žádost o certifikát.
+> -   Pokud používáte samostatné certifikační Autority nebo zakoupit tento certifikát od jiné společnosti, naleznete v části [Konfigurace certifikátů serveru Internet (IIS 7)](http://technet.microsoft.com/library/cc731977%28v=ws.10%29.aspx) v [webového serveru (IIS)](http://technet.microsoft.com/library/cc753433%28v=ws.10%29.aspx) knihovna dokumentace na webu TechNet.
+> -   Konfiguraci služby IIS na použití certifikátu naleznete v tématu [Přidat vazbu k serveru (IIS 7)](http://technet.microsoft.com/library/cc731692.aspx) v v [webového serveru (IIS)](http://technet.microsoft.com/library/cc753433%28v=ws.10%29.aspx) knihovna dokumentace na webu TechNet.
 
-## <a name="BKMK_ConfiguringWebProxy"></a>Configuring the RMS connector for a web proxy server
-If your connector servers are installed in a network that does not have direct Internet connectivity and requires manual configuration of a web proxy server for outbound Internet access, you must configure the registry on these servers for the RMS connector.
+## <a name="BKMK_ConfiguringWebProxy"></a>Konfigurace služby RMS konektor pro webový proxy server
+Pokud vaše servery konektor jsou nainstalovány v síti, která nemá přímé připojení k Internetu a vyžaduje ruční konfigurace webového proxy serveru pro odchozí přístup k Internetu, musíte nakonfigurovat v registru na tyto servery pro konektor služby RMS.
 
-#### To configure the RMS connector to use a web proxy server
+#### Ke konfiguraci konektoru služby RMS použití webového proxy serveru
 
-1.  On each server running the RMS connector, open a registry editor, such as Regedit.
+1.  Na každý server spouštějící konektor služby RMS otevřete editor registru, jako je například Regedit.
 
-2.  Navigate to **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AADRM\Connector**
+2.  Přejděte do **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AADRM\Connector**
 
-3.  Add the string value of **ProxyAddress** and then set the Data for this value to be **http://&lt;MyProxyDomainOrIPaddress&gt;:&lt;MyProxyPort&gt;**
+3.  Přidat hodnotu řetězce **ProxyAddress** a poté nastavte Data pro tuto hodnotu být **http://&lt;MyProxyDomainOrIPaddress&gt;:&lt;MyProxyPort&gt;**
 
-    For example: **http://proxyserver.contoso.com:8080**
+    Příklad: **http://proxyserver.contoso.com:8080**
 
-4.  Close the registry editor, and then restart the server or perform an IISReset command to restart IIS.
+4.  Zavřete editor registru a restartujte server nebo proveďte příkaz IISReset restartování služby IIS.
 
-## <a name="BKMK_InstallingStandaloneTool"></a>Installing the RMS connector administration tool on administrative computers
-You can run the RMS connector administration tool from a computer that does not have the RMS connector installed, if that computer meets the following requirements:
+## <a name="BKMK_InstallingStandaloneTool"></a>Instalace nástroje pro správu konektoru služby RMS na počítače pro správu
+Nástroj pro správu konektoru služby RMS můžete spustit z počítače, který nemá RMS konektor nainstalován, pokud tento počítač splňuje následující požadavky:
 
--   A physical or virtual computer running Windows Server 2012 or Windows Server 2012 R2 (all editions), Windows Server 2008 R2 or Windows Server 2008 R2 Service Pack 1 (all editions), Windows 8.1, Windows 8, or Windows 7.
+-   Fyzický nebo virtuální počítač se systémem Windows Server 2012 nebo Windows Server 2012 R2 (všechny edice), Windows Server 2008 R2 nebo Windows Server 2008 R2 Service Pack 1 (všechny edice), Windows 8.1, Windows 8 nebo Windows 7.
 
--   At least 1 GB of RAM.
+-   Alespoň 1 GB paměti RAM.
 
--   A minimum of 64 GB of disk space.
+-   Minimální 64 GB místa na disku.
 
--   At least one network interface.
+-   Nejméně jedno síťové rozhraní.
 
--   Access to the Internet via a firewall (or web proxy).
+-   Přístup k Internetu prostřednictvím brány firewall (nebo webový proxy server).
 
-To install the RMS connector administration tool, run the following files:
+Chcete-li nainstalovat nástroj pro správu konektoru služby RMS, spusťte následující soubory:
 
--   For a 32-bit computer: RMSConnectorAdminToolSetup_x86.exe
+-   32bitový počítač: RMSConnectorAdminToolSetup_x86.exe
 
--   For a 64-bit computer: RMSConnectorSetup.exe
+-   Pro 64bitový počítač: RMSConnectorSetup.exe
 
-If you haven’t already downloaded these files, you can do so from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=314106).
+Pokud tyto soubory nebyly staženy, můžete tak učinit z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=314106).
 
-## <a name="ConfiguringServers"></a>Configuring servers to use the RMS connector
-After you have installed and configured the RMS connector, you are ready to configure your on-premises servers that will use Rights Management and connect to Azure RMS by using the connector. This means configuring the following servers:
+## <a name="ConfiguringServers"></a>Konfigurace serverů k používání konektoru služby RMS
+Po instalaci a nakonfigurování konektoru služby RMS, jste připraveni ke konfiguraci vaší na místní servery, které budou používat Rights Management a připojte se k Azure RMS pomocí konektoru. To znamená, konfigurace následujících serverů:
 
--   For Exchange 2013: Client access servers and mailbox servers
+-   Pro server Exchange 2013: Client access server a Server poštovních schránek
 
--   For Exchange 2010: Client access servers and hub transport servers
+-   Pro systém Exchange 2010: Client access server a servery hub transport
 
--   For SharePoint: Front-end SharePoint webservers, including those hosting the Central Administration server
+-   Pro službu SharePoint: Webservers front-end služby SharePoint, včetně těch, který je hostitelem serveru centrální správy
 
--   For File Classification Infrastructure: Windows Server computers that have installed File Resource Manager
+-   Pro infrastrukturu klasifikace souboru: Windows Server počítače, které jste nainstalovali Správce prostředků souborového
 
-This configuration requires registry settings. To do this, you have two options:
+Tato konfigurace vyžaduje nastavení registru. Chcete-li to provést, máte dvě možnosti:
 
-|Configuration option|Advantages|Disadvantages|
-|------------------------|--------------|-----------------|
-|Automatically by using the server configuration tool for Microsoft RMS connector|No direct editing of the registry. This is automated for you by using a script.<br /><br />No need to run a Windows PowerShell cmdlet to obtain your Microsoft RMS URL.<br /><br />The prerequisites are automatically checked for you (but not automatically remediated) if you run it locally.|When you run the tool, you must make a connection to a server that is already running the RMS connector.|
-|Manually by editing the registry|No connectivity to a server running the RMS connector is required.|More administrative overheads that are error-prone.<br /><br />You must obtain your Microsoft RMS URL, which requires you to run a Windows PowerShell command.<br /><br />You must always make all the prerequisites checks yourself.|
+|Možnost konfigurace|Výhody|Nevýhody|
+|-----------------------|----------|------------|
+|Automaticky pomocí nástroje Konfigurace serveru pro konektor Microsoft RMS|Žádné přímé úpravy registru. Automatizované je pro vás pomocí skriptu.<br /><br />Není nutné spustit rutiny prostředí Windows PowerShell získat adresu URL svého Microsoft RMS.<br /><br />Požadavky jsou pro vás automaticky checked (ale nebude automaticky opravují) Pokud byste ho spustit místně.|Když spustíte nástroj, je třeba připojení k serveru, který je již spuštěn konektor služby RMS.|
+|Ručně pomocí úpravy registru|Žádné připojení k serveru se službou RMS konektoru je vyžadován.|Další správní režie, které jsou náchylná k chybám<br /><br />Je nutné získat vaše aplikace Microsoft RMS adresu URL, která vyžaduje spuštění příkazu prostředí Windows PowerShell.<br /><br />Je nutné vždy provést všechny požadované součásti kontroly sami.|
 > [!IMPORTANT]
-> In both cases, you must manually install any prerequisites and configure Exchange, SharePoint, and File Classification Infrastructure to use Rights Management.
+> V obou případech musíte ručně nainstalovat požadované součásti a konfigurace serveru Exchange, SharePoint a infrastruktury klasifikace souboru použít Rights Management.
 
-For most organizations, automatic configuration by using the server configuration tool for Microsoft RMS connector will be the better option, because it provides greater efficiency and reliability than manual configuration.
+Pro většinu organizací bude automatická konfigurace pomocí nástroje Konfigurace serveru pro konektor Microsoft RMS lepší volbou, protože poskytuje vyšší efektivitu a spolehlivost než ruční konfigurace.
 
-After making the configuration changes on these servers, you must restart them if they are running Exchange or SharePoint and previously configured to use AD RMS. There is no need to restart these servers if you are configuring them for Rights Management for the first time. You must always restart the file server that is configured to use File Classification Infrastructure after you make these configuration changes.
+Po provedení změny konfigurace na těchto serverech, musíte je restartovat, pokud mají systém Exchange nebo služby SharePoint a dříve konfigurovaná pro použití služby AD RMS. Není nutné tyto servery restartovat, pokud konfigurujete je Rights Management první. Vždy je nutné restartovat souborový server, který je konfigurován pro použití souboru klasifikace infrastruktury po provedení těchto změn konfigurace.
 
-#### How to use the server configuration tool for Microsoft RMS connector
+#### Tom, jak pomocí nástroje Konfigurace serveru pro konektor Microsoft RMS
 
-1.  If you haven’t already downloaded the script for the server configuration tool for Microsoft RMS connector (GenConnectorConfig.ps1), download it from the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=314106).
+1.  Pokud již nebyly staženy skriptu pro nástroje Konfigurace serveru pro konektor Microsoft RMS (GenConnectorConfig.ps1), ji stáhnout z [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=314106).
 
-2.  Save the GenConnectorConfig.ps1 file on the computer where you will run the tool. If you will run the tool locally, this must be the server that you want to configure to communicate with the RMS connector. Otherwise, you can save it on any computer.
+2.  Uložte soubor GenConnectorConfig.ps1 v počítači, kde jste spustili nástroj. Chcete-li spustit nástroj místně, musí se jednat serveru, který chcete konfigurovat pro komunikaci s konektorem služby RMS. Jinak můžete uložit na libovolném počítači.
 
-3.  Decide how to run the tool:
+3.  Rozhodněte se, jak spustit nástroj:
 
-    -   **Locally**: You can run the tool interactively, from the server to be configured to communicate with the RMS connector. This is useful for a one-off configuration, such as a testing environment.
+    -   **Místně**: Interaktivně, můžete spustit nástroj na serveru a být nakonfigurován pro komunikaci s konektorem služby RMS. To je užitečné pro jednorázová konfigurace, například testovací prostředí.
 
-    -   **Software deployment**: You can run the tool to produce registry files that you then deploy to one or more relevant servers by using a systems management application that supports software deployment, such as System Center Configuration Manager.
+    -   **Nasazení softwaru**: Je-li spustit nástroj pro vytvoření souborů registru, které pak nasadit na jeden nebo více příslušných serverů pomocí aplikace pro správu systémů, který podporuje nasazení softwaru, jako je například System Center Configuration Manager.
 
-    -   **Group Policy**: You can run the tool to produce a script that you give to an administrator who can create Group Policy objects for the servers to be configured. This script creates one Group Policy object for each server type to be configured, which the administrator can then assign to the relevant servers.
+    -   **Zásad skupiny**: Je-li spustit nástroj a vytvořit skript, který předat správce, který můžete vytvořit objekty zásad skupiny pro servery, které chcete konfigurovat. Tento skript vytvoří jeden objekt zásad skupiny pro každý typ server má být konfigurována, který pak může správce přiřadit odpovídající servery.
 
     > [!NOTE]
-    > This tool configures the servers that will communicate with the RMS connector and that are listed at the beginning of this section. Do not run this tool on the servers that run the RMS connector.
+    > Tento nástroj lze konfigurovat servery, které budou komunikovat s konektoru služby RMS a uvedené na začátku této části. Nespouštějte tento nástroj na servery, které spouští konektor služby RMS.
 
-4.  Start Windows PowerShell with the **Run as an administrator** option, and use the Get-help command to read instructions how to the use the tool for your chosen configuration method:
+4.  Spusťte prostředí Windows PowerShell s **Spustit jako správce** možnost a pomocí příkazu Get-help přečíst pokyny jak používat nástroj pro vaše metoda zvolené konfigurace:
 
     ```
     Get-help .\GenConnectorConfig.ps1 -detailed
     ```
 
-To run the script, you must enter the URL of the RMS connector for your organization. Enter the protocol prefix (HTTP:// or HTTPS://) and the name of the connector that you defined in DNS for the load balanced address of your connector. For example, https://connector.contoso.com. The tool then uses that URL to contact the servers running the RMS connector and obtain other parameters that are used to create the required configurations.
+Pro spuštění skriptu, musí zadejte adresu URL konektoru služby RMS vaší organizace. Zadejte název konektoru, který jste definovali ve službě DNS pro adresu s vyrovnáváním zatížení konektor nástroje a předpony protokolu (HTTP:// nebo HTTPS://). Například https://connector.contoso.com. Tento nástroj poté používá tuto adresu URL ke kontaktování servery se spuštěnou službou konektoru služby RMS a získat další parametry, které se používají k vytvoření požadované konfigurace.
 
 > [!IMPORTANT]
-> When you run this tool, make sure that you specify the name of the load-balanced RMS connector for your organization and not the name of a single server that runs the RMS connector service.
+> Spustíte-li tento nástroj, ujistěte se, zadejte název konektoru s vyrovnáváním zatížení služby RMS vaší organizace, a ne název jednoho serveru se spuštěnou službou konektoru služby RMS.
 
-Use the following sections for specific information for each service type:
+Konkrétní informace pro každý typ služby použijte v následujících částech:
 
 -   [Configuring an Exchange server to use the connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ExchangeServer)
 
@@ -330,204 +329,204 @@ Use the following sections for specific information for each service type:
 -   [Configuring a file server for File Classification Infrastructure to use the connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_FileServer)
 
 > [!NOTE]
-> After these servers are configured to use the connector, client applications that are installed locally on these servers might not work with RMS. When this happens, it is because the applications try to use the connector rather than use RMS directly, which is not supported.
+> Poté, co tyto servery jsou nakonfigurovány k používání konektoru, nemusí fungovat klientských aplikací, které jsou nainstalovány místně na tyto servery pomocí RMS. V takovém případě je to, protože aplikace pokusí použít konektor místo použít přímo, RMS, což není podporováno.
 > 
-> In addition, if Office 2010 is installed locally on an Exchange server, the client app’s IRM features might work from that computer after the server is configured to use the connector, but this is not supported.
+> Kromě toho pokud Office 2010 je nainstalován místně na serveru Exchange server, funkce IRM klientskou aplikaci může být z tohoto počítače po fungovat server je nakonfigurován k používání konektoru, ale to není podporováno.
 > 
-> In both scenarios, you must install the client applications on separate computers that are not configured to use the connector. They will then correctly use RMS directly.
+> V obou případech musí nainstalovat klientské aplikace na samostatných počítačích, které nejsou nakonfigurovány k používání konektoru. Budou poté správně používat RMS přímo.
 
-### <a name="BKMK_ExchangeServer"></a>Configuring an Exchange server to use the connector
-The following Exchange roles communicate with the RMS connector:
+### <a name="BKMK_ExchangeServer"></a>Konfigurace serveru Exchange k používání konektoru
+Následující role serveru Exchange komunikují s konektorem služby RMS:
 
--   For Exchange 2013: Client access server and mailbox server
+-   Pro server Exchange 2013: Server Client access server a server poštovní schránky
 
--   For Exchange 2010: Client access server and hub transport server
+-   Pro systém Exchange 2010: Server Client access server a server přenos rozbočovače
 
-To use the RMS connector, these servers running Exchange must be running one of the following software versions:
+K používání konektoru služby RMS, tyto servery se systémem Exchange Server musí používat jeden z následujících verzí softwaru:
 
--   Exchange Server 2013 with Exchange 2013 Cumulative Update 3
+-   Exchange Server 2013 s kumulativní aktualizací 3 Exchange 2013
 
--   Exchange Server 2010 with Exchange 2010 Service Pack 3 Rollup Update 6
+-   Exchange Server 2010 s kumulativní aktualizací Exchange 2010 Service Pack 3 6
 
-You will also need to install on these servers, a version of the RMS client that includes support for RMS Cryptographic Mode 2. The minimum version that is supported in Windows Server 2008 is included in the hotfix that you can download from [RSA key length is increased to 2048 bits for AD RMS in Windows Server 2008 R2 and in Windows Server 2008](http://support.microsoft.com/kb/2627272). The minimum version for Windows Server 2008 R2 can be downloaded from [RSA key length is increased to 2048 bits for AD RMS in Windows 7 or in Windows Server 2008 R2](http://support.microsoft.com/kb/2627273). Windows Server 2012 and Windows Server 2012 R2 natively support Cryptographic Mode 2.
+Budete také muset nainstalovat na těchto serverech, na verzi klienta služby RMS, který zahrnuje podporu pro kryptografický režim 2 RMS. Minimální verze, která je podporována v systému Windows Server 2008 je zahrnuta v opravu hotfix, která si můžete stáhnout z [Délka klíče RSA je zvýšena na 2 048 bitů pro službu AD RMS v systému Windows Server 2008 R2 a Windows Server 2008](http://support.microsoft.com/kb/2627272). Minimální verze systému Windows Server 2008 R2 lze stáhnout z [Délka klíče RSA je zvýšena na 2 048 bitů pro službu AD RMS v systému Windows 7 nebo Windows Server 2008 R2](http://support.microsoft.com/kb/2627273). Windows Server 2012 a Windows Server 2012 R2 nativně podporují kryptografický režim 2.
 
 > [!IMPORTANT]
-> If these versions or later versions of Exchange and the RMS client are not installed, you will not be able to configure Exchange to use the connector. Check that these versions are installed before you continue.
+> Pokud nejsou nainstalovány tyto verze nebo novější verze systému Exchange a klient služby RMS, nebudete moci konfigurovat Exchange k používání konektoru. Zkontrolujte, zda jsou nainstalovány tyto verze, než budete pokračovat.
 
-##### To configure Exchange servers to use the connector
+##### Chcete-li konfigurovat servery Exchange k používání konektoru
 
-1.  On the Exchange server roles that communicate with the RMS connector, do one of the following:
+1.  Na role serveru Exchange, které komunikují pomocí konektoru služby RMS proveďte jednu z následujících akcí:
 
-    -   Run the server configuration tool for Microsoft RMS connector. For more information, see [How to use the server configuration tool for Microsoft RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_HowToRunTheTool) in this topic.
+    -   Server spusťte nástroj konfigurace pro konektor Microsoft RMS. Další informace naleznete v tématu [How to use the server configuration tool for Microsoft RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_HowToRunTheTool) v tomto tématu.
 
-        For example, to run the tool locally to configure a server running Exchange 2013:
+        Chcete-li například spustit nástroj místně a konfigurace serveru se systémem Exchange 2013:
 
         ```
         .\GenConnectorConfig.ps1 -ConnectorUri https://rmsconnector.contoso.com -SetExchange2013
         ```
 
-    -   Make manual registry edits by using the tables in the following sections to manually add registry settings on the servers.
+    -   Proveďte ruční registru úpravy pomocí tabulek v následujících částech ručně přidat nastavení registru na serverech.
 
-2.  Enable IRM functionality in Exchange. For more information, see [Information Rights Management Procedures](https://technet.microsoft.com/library/dd351212%28v=exchg.150%29.aspx) in the Exchange library.
+2.  Povolte funkci IRM v systému Exchange. Další informace naleznete v tématu [informace Rights Management postupy](https://technet.microsoft.com/library/dd351212%28v=exchg.150%29.aspx) v knihovně serveru Exchange.
 
-Use the tables in the following sections only if you want to manually add or check registry settings on these servers, which configures the servers to use the RMS connector. Instructions for when you use these tables:
+Tabulky v následujících částech použijte, pouze pokud chcete ručně přidat nebo zkontrolovat nastavení registru na těchto serverech, které lze konfigurovat servery, které chcete použít konektor služby RMS. Pokyny pro při použití těchto tabulek:
 
--   *MicrosoftRMSURL* is your organization’s Microsoft RMS service URL. To find this value:
+-   *MicrosoftRMSURL* je adresa URL služby Microsoft RMS vaší organizace. Chcete-li najít tuto hodnotu:
 
-    1.  Run the [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet for Azure RMS. If you haven’t already installed the Windows PowerShell module for Azure RMS, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+    1.  Spuštění [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) rutiny pro Azure RMS. Pokud jste ještě nenainstalovali modul prostředí Windows PowerShell pro službu Azure RMS, naleznete v části [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-    2.  From the output, identify the **LicensingIntranetDistributionPointUrl** value.
+    2.  Z výstupu, určete **LicensingIntranetDistributionPointUrl** hodnotu.
 
-        For example: **LicensingIntranetDistributionPointUrl   : https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
+        Příklad: **LicensingIntranetDistributionPointUrl: https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
 
-    3.  From the value, remove **/_wmcs/licensing** from this string. The remaining string is your Microsoft RMS URL. In our example, the Microsoft RMS URL would be the following value:
+    3.  Od hodnoty, odeberte **/_wmcs/licensing** z tohoto řetězce. Zbývající řetězec je adresa URL aplikace Microsoft RMS. V našem příkladu adresu URL aplikace Microsoft RMS by byl následující hodnotu:
 
-        **https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com**
+        **https://5c6bb73b-1038-4eec-863d-49bded473437.RMS.na.aadrm.com**
 
--   *ConnectorFQDN* is the load-balancing name that you defined in DNS for the connector. For example, **rmsconnector.contoso.com**.
+-   *ConnectorFQDN* je název služby Vyrovnávání zatížení, který jste definovali ve službě DNS pro konektor. Například **rmsconnector.contoso.com**.
 
--   Use the HTTPS prefix for the connector URL if you have configured the connector to use HTTPS to communicate with your on-premises servers. For more information, see the [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS) section in this topic. The Microsoft RMS URLs always use HTTPS.
+-   Použijte předponu HTTPS pro adresu URL konektor, pokud jste nakonfigurovali konektor na používání HTTPS ke komunikaci se na místní servery. Další informace naleznete v tématu [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS) v tomto tématu. Adresy URL služby RMS Microsoft vždy používat protokol HTTPS.
 
-#### Table for Exchange 2013 registry settings
+#### Tabulku pro nastavení registru serveru Exchange 2013
 
-|Registry path|Type|Value|Data|
-|-----------------|--------|---------|--------|
-|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\Activation|Reg_SZ|Default|https://*MicrosoftRMSURL/_wmcs/certification*|
-|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\EnterprisePublishing|Reg_SZ|Default|https://MicrosoftRMSURL/_wmcs/Licensing|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v15\IRM\CertificationServerRedirection|Reg_SZ|https://*MicrosoftRMSURL*|One of the following, depending on whether you are using HTTP or HTTPS from your Exchange server to the RMS connector:<br /><br />http://*ConnectorFQDN*<br /><br />https://*ConnectorFQDN*|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v15\IRM\LicenseServerRedirection|Reg_SZ|https://*MicrosoftRMSURL*|One of the following, depending on whether you are using HTTP or HTTPS from your Exchange server to the RMS connector:<br /><br />http://*ConnectorFQDN*<br /><br />https://*ConnectorFQDN*|
+|Cesta v registru|Typ|Hodnota|Data|
+|--------------------|-------|-----------|--------|
+|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\Activation|REG_SZ|Výchozí|https://*MicrosoftRMSURL/_wmcs/certification*|
+|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\EnterprisePublishing|REG_SZ|Výchozí|https://MicrosoftRMSURL/_wmcs/licensing|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v15\IRM\CertificationServerRedirection|REG_SZ|https://*MicrosoftRMSURL*|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze systému Exchange server do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*<br />-   https://*ConnectorFQDN*|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v15\IRM\LicenseServerRedirection|REG_SZ|https://*MicrosoftRMSURL*|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze systému Exchange server do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*<br />-   https://*ConnectorFQDN*|
 
-#### Table for Exchange 2010 registry settings
+#### Tabulku pro nastavení registru Exchange 2010
 
-|Registry path|Type|Value|Data|
-|-----------------|--------|---------|--------|
-|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\Activation|Reg_SZ|Default|https://*MicrosoftRMSURL*/_wmcs/certification|
-|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\EnterprisePublishing|Reg_SZ|Default|https://*MicrosoftRMSURL*/_wmcs/Licensing|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v14\IRM\CertificationServerRedirection|Reg_SZ|https://*MicrosoftRMSURL*|One of the following, depending on whether you are using HTTP or HTTPS from your Exchange server to the RMS connector:<br /><br />http://*ConnectorFQDN*<br /><br />https://*ConnectorFQDN*|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v14\IRM\LicenseServerRedirection|Reg_SZ|https://*MicrosoftRMSURL*|One of the following, depending on whether you are using HTTP or HTTPS from your Exchange server to the RMS connector:<br /><br />http://*ConnectorFQDN*<br /><br />https://*ConnectorFQDN*|
+|Cesta v registru|Typ|Hodnota|Data|
+|--------------------|-------|-----------|--------|
+|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\Activation|REG_SZ|Výchozí|https://*MicrosoftRMSURL*/_wmcs/certification|
+|HKEY_LOCAL_MACHINE\Software\Microsoft\MSDRM\ServiceLocation\EnterprisePublishing|REG_SZ|Výchozí|https://*MicrosoftRMSURL*/_wmcs/Licensing|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v14\IRM\CertificationServerRedirection|REG_SZ|https://*MicrosoftRMSURL*|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze systému Exchange server do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*<br />-   https://*ConnectorFQDN*|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ExchangeServer\v14\IRM\LicenseServerRedirection|REG_SZ|https://*MicrosoftRMSURL*|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze systému Exchange server do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*<br />-   https://*ConnectorFQDN*|
 
-### <a name="BKMK_ConfiguringSharePoint"></a>Configuring a SharePoint server to use the connector
-The following SharePoint roles communicate with the RMS connector:
+### <a name="BKMK_ConfiguringSharePoint"></a>Konfigurace serveru služby SharePoint k používání konektoru
+Následující role SharePoint komunikují s konektorem služby RMS:
 
--   Front-end SharePoint webservers, including those hosting the Central Administration server
+-   Webservers front-end služby SharePoint, včetně těch, který je hostitelem serveru centrální správy
 
-To use the RMS connector, these servers running SharePoint must be running one of the following software versions:
+K používání konektoru služby RMS, tyto servery se systémem SharePoint musí používat jeden z následujících verzí softwaru:
 
--   SharePoint Server 2013
+-   SharePoint Server 2013
 
--   SharePoint Server 2010
+-   SharePoint Server 2010
 
-A SharePoint 2013 server must also be running a version of the MSIPC client 2.1 that is supported with the RMS connector. To make sure that you have a supported version, download the latest client from the [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=38396).
+Server SharePoint 2013 musí být také spuštěná verze klienta MSIPC 2.1, který je from1.0.622.34 prostřednictvím 1.0.10907.0.
 
 > [!WARNING]
-> There are multiple versions of the MSIPC 2.1 client, so make sure that you have version 1.0.2004.0 or later.
+> Existuje více verzích klienta MSIPC 2.1, takže Zkontrolujte instalaci verze odkazuje v tomto článku.
 > 
-> You can verify the client version by checking the version number of MSIPC.dll, which is located in **\Program Files\Active Directory Rights Management Services Client 2.1**. The properties dialog box  shows the version number of the MSIPC 2.1 client.
+> Verze klienta můžete ověřit kontrolou číslo verze MSIPC.dll, který je umístěn ve **\Program Files\Active Directory Rights Management Services Client 2.1**. Dialogové okno Vlastnosti se zobrazuje číslo verze klienta MSIPC 2.1.
 
-These servers running SharePoint 2010 must have installed a version of the MSDRM client that includes support for RMS Cryptographic Mode 2. The minimum version that is supported in Windows Server 2008 is included in the hotfix that you can download from [RSA key length is increased to 2048 bits for AD RMS in Windows Server 2008 R2 and in Windows Server 2008](http://support.microsoft.com/kb/2627272), and the minimum version for Windows Server 2008 R2 can be downloaded from [RSA key length is increased to 2048 bits for AD RMS in Windows 7 or in Windows Server 2008 R2](http://support.microsoft.com/kb/2627273). Windows Server 2012 and Windows Server 2012 R2 natively support Cryptographic Mode 2.
+Tyto servery se systémem SharePoint 2010 musí mít nainstalovanou verzi MSDRM klienta, který zahrnuje podporu pro kryptografický režim 2 RMS. Minimální verze, která je podporována v systému Windows Server 2008 je zahrnuta v opravu hotfix, která si můžete stáhnout z [Délka klíče RSA je zvýšena na 2 048 bitů pro službu AD RMS v systému Windows Server 2008 R2 a Windows Server 2008](http://support.microsoft.com/kb/2627272), a minimální verze systému Windows Server 2008 R2 lze stáhnout z [Délka klíče RSA je zvýšena na 2 048 bitů pro službu AD RMS v systému Windows 7 nebo Windows Server 2008 R2](http://support.microsoft.com/kb/2627273). Windows Server 2012 a Windows Server 2012 R2 nativně podporují kryptografický režim 2.
 
-##### To configure SharePoint servers to use the connector
+##### Ke konfiguraci serverů služby SharePoint k používání konektoru
 
-1.  On the SharePoint servers that communicate with the RMS connector, do one of the following:
+1.  Na serverech SharePoint, které komunikují pomocí konektoru služby RMS proveďte jednu z následujících akcí:
 
-    -   Run the server configuration tool for Microsoft RMS connector. For more information, see [How to use the server configuration tool for Microsoft RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_HowToRunTheTool) in this topic.
+    -   Server spusťte nástroj konfigurace pro konektor Microsoft RMS. Další informace naleznete v tématu [How to use the server configuration tool for Microsoft RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_HowToRunTheTool) v tomto tématu.
 
-        For example, to run the tool locally to configure a server running SharePoint 2013:
+        Chcete-li například spustit nástroj místně na server se službou SharePoint 2013 konfigurovat:
 
         ```
         .\GenConnectorConfig.ps1 -ConnectorUri https://rmsconnector.contoso.com -SetSharePoint2013
         ```
 
-    -   If you are using SharePoint 2013, make manual registry edits by using the table in the following section to manually add registry settings on the servers.
+    -   Pokud používáte SharePoint 2013, proveďte ruční registru úpravy pomocí tabulky v následující části ručně přidat nastavení registru na serverech.
 
-2.  Enable IRM in SharePoint. For more information, see [Configure Information Rights Management (SharePoint Server 2010)](https://technet.microsoft.com/library/hh545607%28v=office.14%29.aspx) in the SharePoint library.
+2.  Povolte IRM ve službě SharePoint. Další informace naleznete v tématu [Konfigurovat správu přístupových práv (SharePoint Server 2010)](https://technet.microsoft.com/library/hh545607%28v=office.14%29.aspx) v knihovně služby SharePoint.
 
-    When you follow these instructions, you must configure SharePoint to use the connector by specifying **Use this RMS server**, and then enter the load-balancing connector URL that you configured. Enter the protocol prefix (HTTP:// or HTTPS://) and the name of the connector that you defined in DNS for the load balanced address of your connector. For example, if your connector name is  https://connector.contoso.com, your configuration will look like the following picture:
+    Pokud budete postupovat podle těchto pokynů, je nutné nakonfigurovat služby SharePoint k používání konektoru zadáním **použít tento server RMS**, a pak zadejte URL konektor služby Vyrovnávání zatížení, kterou jste nakonfigurovali. Zadejte název konektoru, který jste definovali ve službě DNS pro adresu s vyrovnáváním zatížení konektor nástroje a předpony protokolu (HTTP:// nebo HTTPS://). Například pokud je název konektoru https://connector.contoso.com, konfigurace bude vypadat jako na následujícím obrázku:
 
     ![](../Image/AzRMS_SharePointConnector.png)
 
-    After IRM is enabled on a SharePoint farm, you can enable IRM on individual libraries by using the **Information Rights Management** option on the **Library Settings** page for each of the libraries.
+    Po povolení správy Přístupových práv na farmu služby SharePoint, můžete povolit IRM na jednotlivých knihoven pomocí **informace Rights Management** možnost na **Nastavení knihovny** stránky pro každou knihoven.
 
     > [!IMPORTANT]
-    > For SharePoint to access RMS by using the connector, you must authorize the corresponding accounts in the RMS connector administration tool. If you haven’t already done this, see [Authorizing servers to use the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#AuthorizingServers) in this topic.
+    > Pro službu SharePoint pro přístup k serveru RMS pomocí konektoru je nutné autorizovat odpovídající účty nástroje pro správu konektoru služby RMS. Pokud jste tak dosud neučinili, naleznete v části [Authorizing servers to use the RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#AuthorizingServers) v tomto tématu.
 
-Use the table in the following section only if you want to manually add or check registry settings on a server that runs SharePoint 2013.
+V následující části pomocí tabulky, pouze pokud chcete ručně přidat nebo zkontrolovat nastavení registru na serveru se systémem SharePoint 2013.
 
-#### Table for SharePoint 2013 registry settings
-Instructions for when you use this table:
+#### Tabulka pro SharePoint 2013 nastavení registru
+Pokyny pro při použití této tabulce:
 
--   *MicrosoftRMSURL* is your organization’s Microsoft RMS service URL. To find this value:
+-   *MicrosoftRMSURL* je adresa URL služby Microsoft RMS vaší organizace. Chcete-li najít tuto hodnotu:
 
-    1.  Run the [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) cmdlet for Azure RMS. If you haven’t already installed the Windows PowerShell module for Azure RMS, see [Installing Windows PowerShell for Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
+    1.  Spuštění [Get-AadrmConfiguration](http://msdn.microsoft.com/library/windowsazure/dn629410.aspx) rutiny pro Azure RMS. Pokud jste ještě nenainstalovali modul prostředí Windows PowerShell pro službu Azure RMS, naleznete v části [Instalace prostředí Windows PowerShell pro službu Azure Rights Management](../Topic/Installing_Windows_PowerShell_for_Azure_Rights_Management.md).
 
-    2.  From the output, identify the **LicensingIntranetDistributionPointUrl** value.
+    2.  Z výstupu, určete **LicensingIntranetDistributionPointUrl** hodnotu.
 
-        For example: **LicensingIntranetDistributionPointUrl   : https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
+        Příklad: **LicensingIntranetDistributionPointUrl: https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com/_wmcs/licensing**
 
-    3.  From the value, remove **/_wmcs/licensing** from this string. The remaining string is your Microsoft RMS URL. In our example, the Microsoft RMS URL would be the following value:
+    3.  Od hodnoty, odeberte **/_wmcs/licensing** z tohoto řetězce. Zbývající řetězec je adresa URL aplikace Microsoft RMS. V našem příkladu adresu URL aplikace Microsoft RMS by byl následující hodnotu:
 
-        **https://5c6bb73b-1038-4eec-863d-49bded473437.rms.na.aadrm.com**
+        **https://5c6bb73b-1038-4eec-863d-49bded473437.RMS.na.aadrm.com**
 
--   *ConnectorFQDN* is the load-balancing name that you defined in DNS for the connector. For example, **rmsconnector.contoso.com**.
+-   *ConnectorFQDN* je název služby Vyrovnávání zatížení, který jste definovali ve službě DNS pro konektor. Například **rmsconnector.contoso.com**.
 
--   Use the HTTPS prefix for the connector URL if you have configured the connector to use HTTPS to communicate with your on-premises servers. For more information, see the [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS) section in this topic. The Microsoft RMS URLs always use HTTPS.
+-   Použijte předponu HTTPS pro adresu URL konektor, pokud jste nakonfigurovali konektor na používání HTTPS ke komunikaci se na místní servery. Další informace naleznete v tématu [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS) v tomto tématu. Adresy URL služby RMS Microsoft vždy používat protokol HTTPS.
 
-|Registry path|Type|Value|Data|
-|-----------------|--------|---------|--------|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\LicensingRedirection|Reg_SZ|https://*MicrosoftRMSURL*/_wmcs/licensing|One of the following, depending on whether you are using HTTP or HTTPS from your SharePoint server to the RMS connector:<br /><br />http://*ConnectorFQDN*/_wmcs/licensing<br /><br />https://*ConnectorFQDN*/_wmcs/licensing|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification|Reg_SZ|Default|One of the following, depending on whether you are using HTTP or HTTPS from your SharePoint server to the RMS connector:<br /><br />http://*ConnectorFQDN*/_wmcs/certification<br /><br />https://*ConnectorFQDN*/_wmcs/certification|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing|Reg_SZ|Default|One of the following, depending on whether you are using HTTP or HTTPS from your SharePoint server to the RMS connector:<br /><br />http://*ConnectorFQDN*/_wmcs/licensing<br /><br />https://*ConnectorFQDN*/_wmcs/licensing|
+|Cesta v registru|Typ|Hodnota|Data|
+|--------------------|-------|-----------|--------|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\LicensingRedirection|REG_SZ|https://*MicrosoftRMSURL*/_wmcs/licensing|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze serveru služby SharePoint do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*/_wmcs/licensing<br />-   https://*ConnectorFQDN*/_wmcs/licensing|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification|REG_SZ|Výchozí|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze serveru služby SharePoint do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*/_wmcs/certification<br />-   https://*ConnectorFQDN*/_wmcs/certification|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing|REG_SZ|Výchozí|Jedna z následujících akcí v závislosti na tom, zda používáte protokol HTTP nebo HTTPS ze serveru služby SharePoint do konektoru služby RMS:<br /><br />-   http://*ConnectorFQDN*/_wmcs/licensing<br />-   https://*ConnectorFQDN*/_wmcs/licensing|
 
-### <a name="BKMK_FileServer"></a>Configuring a file server for File Classification Infrastructure to use the connector
-To use the RMS connector and File Classification Infrastructure to protect Office documents, the file server must be running one of the following operating systems:
+### <a name="BKMK_FileServer"></a>Konfigurace souborového serveru pro soubor klasifikace infrastrukturu k používání konektoru
+Chcete-li chránit dokumenty sady Office pomocí konektoru služby RMS a soubor klasifikace infrastruktury, souborový server musí používat jeden z následujících operačních systémů:
 
--   Windows Server 2012 R2
+-   Windows Server 2012 R2
 
--   Windows Server 2012
+-   Windows Server 2012
 
-##### To configure file servers to use the connector
+##### Konfigurace souborové servery k používání konektoru
 
-1.  On the file servers configured for File Classification Infrastructure and that will communicate with the RMS connector, do one of the following:
+1.  Na souborových serverech nakonfigurovaná pro klasifikaci infrastruktury souboru a že budou komunikovat s konektorem služby RMS, proveďte jednu z následujících akcí:
 
-    -   Run the server configuration tool for Microsoft RMS connector. For more information, see [How to use the server configuration tool for Microsoft RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_HowToRunTheTool) in this topic.
+    -   Server spusťte nástroj konfigurace pro konektor Microsoft RMS. Další informace naleznete v tématu [How to use the server configuration tool for Microsoft RMS connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_HowToRunTheTool) v tomto tématu.
 
-        For example, to run the tool locally to configure a file server running FCI:
+        Chcete-li například spustit nástroj místně a konfigurovat souborový server s FCI:
 
         ```
         .\GenConnectorConfig.ps1 -ConnectorUri https://rmsconnector.contoso.com -SetFCI2012
         ```
 
-    -   Make manual registry edits by using the table in the following section to manually add registry settings on the servers.
+    -   Proveďte ruční registru úpravy pomocí tabulky v následující části ručně přidat nastavení registru na serverech.
 
-2.  Create classification rules and file management tasks to protect documents with RMS Encryption, and then specify an RMS template to automatically apply RMS policies. For more information, see [File Server Resource Manager Overview](http://technet.microsoft.com/library/hh831701.aspx) in the Windows Server documentation library.
+2.  Vytvořit klasifikace pravidla a úlohy správy souborů k ochraně dokumentů s šifrování služby RMS a pak zadejte šablonu služby RMS automaticky uplatnit zásady RMS. Další informace naleznete v tématu [Přehled Správce prostředků souborového serveru](http://technet.microsoft.com/library/hh831701.aspx) v knihovně dokumentace k systému Windows Server.
 
-Use the table in the following section only if you want to manually add or check registry settings on a file server that uses the File Classification Infrastructure to protect documents.
+Pouze v případě, že chcete ručně přidat nebo zkontrolovat nastavení registru na souborový server, který využívá infrastrukturu klasifikace soubor chránit dokumenty pomocí tabulky v následující části.
 
-#### Table for file server and File Classification Infrastructure registry settings
-Instructions for when you use this table:
+#### Tabulka pro souborový server a nastavení registru souboru klasifikace infrastruktury
+Pokyny pro při použití této tabulce:
 
--   *ConnectorFQDN* is the load-balancing name that you defined in DNS for the connector. For example, **rmsconnector.contoso.com**.
+-   *ConnectorFQDN* je název služby Vyrovnávání zatížení, který jste definovali ve službě DNS pro konektor. Například **rmsconnector.contoso.com**.
 
--   Use the HTTPS prefix for the connector URL if you have configured the connector to use HTTPS to communicate with your on-premises servers. For more information, see the [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS) section in this topic. The Microsoft RMS URLs always use HTTPS.
+-   Použijte předponu HTTPS pro adresu URL konektor, pokud jste nakonfigurovali konektor na používání HTTPS ke komunikaci se na místní servery. Další informace naleznete v tématu [Configuring the RMS connector to use HTTPS](../Topic/Deploying_the_Azure_Rights_Management_Connector.md#BKMK_ConfiguringHTTPS) v tomto tématu. Adresy URL služby RMS Microsoft vždy používat protokol HTTPS.
 
-|Registry path|Type|Value|Data|
-|-----------------|--------|---------|--------|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDRM\ServiceLocation\EnterprisePublishing|Reg_SZ|Default|http://*ConnectorFQDN*/_wmcs/licensing|
-|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDRM\ServiceLocation\Activation|Reg_SZ|Default|http://*ConnectorFQDN*/_wmcs/certification|
+|Cesta v registru|Typ|Hodnota|Data|
+|--------------------|-------|-----------|--------|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDRM\ServiceLocation\EnterprisePublishing|REG_SZ|Výchozí|http://*ConnectorFQDN*/_wmcs/licensing|
+|HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDRM\ServiceLocation\Activation|REG_SZ|Výchozí|http://*ConnectorFQDN*/_wmcs/certification|
 
-## <a name="BKMK_NextSteps"></a>Next steps
-Now that the RMS connector is installed and configured, and your servers are configured to use it, IT administrators and users can protect and consume email message and documents by using Azure RMS. To make this easy for users, deploy the RMS sharing application, which installs an add-on for Office and adds new right-click options to File Explorer. For more information, see the [Rights Management sharing application administrator guide](http://technet.microsoft.com/library/%20dn339003%28v=ws.10%29.aspx).
+## <a name="BKMK_NextSteps"></a>Další kroky
+Nyní, je nainstalován a nakonfigurován konektor služby RMS a vaše servery jsou nakonfigurovány pro použití ji, správci IT a uživatelé může chránit a využívat e-mailové zprávy a dokumenty pomocí Azure RMS. Chcete-li to snadné pro uživatele, nasaďte aplikaci, která nainstaluje doplněk pro sadu Office a přidává nové možnosti klikněte pravým tlačítkem do Průzkumníka souborů sdílení RMS. Další informace naleznete v tématu [Příručka správce aplikace pro sdílení obsahu Rights Management](http://technet.microsoft.com/library/%20dn339003%28v=ws.10%29.aspx).
 
-In addition, you might consider the following to help you monitor the RMS connector and your organization’s usage of Azure RMS:
+Kromě toho můžete zvážit následující vám pomohou monitorovat konektor služby RMS a využití vaší organizace Azure RMS:
 
--   The built-in **Microsoft Rights Management connector** performance counters.
+-   Vestavěné **Konektor Microsoft Rights Management** čítače výkonu.
 
--   The [RMS Analyzer tool](https://www.microsoft.com/en-us/download/details.aspx?id=46437), using the RMS connector option to help you monitor the health of the connector and identify any configuration issues.
+-   [Nástroj Analyzátor RMS](https://www.microsoft.com/en-us/download/details.aspx?id=46437), pomocí možnosti RMS konektor vám pomohou sledovat stav konektoru a identifikovat problémy s konfigurací.
 
--   [Logging and Analyzing Azure Rights Management Usage](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md)
+-   [Protokolování a analýza využití Azure Rights Management](../Topic/Logging_and_Analyzing_Azure_Rights_Management_Usage.md)
 
-You can use the [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) to check whether there are other configuration steps that you might want to do before you roll out [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] to users and administrators. If there are no other configuration steps that you need to do, see [Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) for operational guidance to support a successful deployment for your organization.
+Můžete použít [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md) Zkontrolovat, zda jsou ostatní kroky konfigurace, které chcete provést předtím, než můžete přejít na [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] uživatelům a správcům. Pokud neexistují žádné další kroky konfigurace, které je třeba provést, naleznete v části [Použití služby Azure Rights Management](../Topic/Using_Azure_Rights_Management.md) provozní pokyny pro podporu úspěšné nasazení pro vaši organizaci.
 
-## See Also
-[Configuring Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
+## Viz také
+[Konfigurace Azure Rights Management](../Topic/Configuring_Azure_Rights_Management.md)
 

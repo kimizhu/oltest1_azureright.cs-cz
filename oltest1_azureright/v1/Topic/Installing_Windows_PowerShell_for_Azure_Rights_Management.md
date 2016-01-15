@@ -3,57 +3,56 @@ description: na
 keywords: na
 title: Installing Windows PowerShell for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0d665ed6-b1de-4d63-854a-bc57c1c49844
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Installing Windows PowerShell for Azure Rights Management
-Use the following information to help you install Windows PowerShell for Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS).
+# Instalace prostřed&#237; Windows PowerShell pro službu Azure Rights Management
+Následující informace použijte k pomoci při instalaci prostředí Windows PowerShell pro aplikaci Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS).
 
-You can use this Windows PowerShell module to administer [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] from the command line by using any computer that has an Internet connection and that meets the prerequisites listed in the next section. Windows PowerShell for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] supports scripting for automation or might be necessary for advanced configuration scenarios. For more information about the administration tasks and configurations that the module supports, see [Administering Azure Rights Management by Using Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md).
+Tento modul prostředí Windows PowerShell slouží ke správě [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] z příkazového řádku s použitím libovolného počítače, který má připojení k Internetu a který splňuje požadavky uvedené v následující části. Prostředí Windows PowerShell pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] podporuje skripty pro automatizaci nebo může být nutné pro scénáře pokročilé konfigurace. Další informace o úlohy správy a konfigurace, které modul podporuje naleznete v tématu [Správa Azure Rights Management pomocí prostředí Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md).
 
-## Prerequisites
-This table lists the prerequisites to install and use Windows PowerShell for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+## Požadované součásti
+V této tabulce jsou uvedeny požadavky na instalaci a použití prostředí Windows PowerShell pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
 
-|Requirement|More information|
-|---------------|--------------------|
-|A version of Windows that supports the [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] administration module|Check the list of supported operating systems in the **System Requirements** section of the [download page for the Azure Rights Management Administration Tool](http://go.microsoft.com/fwlink/?LinkId=257721).|
-|Minimum version of Windows PowerShell: 2.0|Support for the [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] administration module is introduced in Windows PowerShell 2.0.<br /><br />By default, most Windows operating systems install with at least version 2.0 of Windows PowerShell. If you need to install Windows PowerShell 2.0, see [Install Windows PowerShell 2.0](http://msdn.microsoft.com/library/ff637750.aspx).<br /><br />Tip: You can confirm the version of Windows PowerShell that you are running by typing **$PSVersionTable** in a Windows PowerShell session.|
-|Minimum version of the Microsoft .NET Framework: 4.5<br /><br />Note: This version of the Microsoft .NET Framework is included with the later operating systems, so you should  need to manually install it only if your client operating system is less than Windows 8.0 or your server operating system is less than Windows Server 2012.|If the minimum version of the  Microsoft .NET Framework is not already installed, you can download [Microsoft .NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653).<br /><br />This minimum version of the Microsoft .NET Framework is required for some of the classes that the [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] administration module uses.|
-|Microsoft Online Services Sign-In Assistant 7.0|The Microsoft Online Services Sign-In Assistant is required for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] authentication.<br /><br />For more information, see [Download Center: Microsoft Online Services Assistant for IT Professionals RTW](http://www.microsoft.com/en-us/download/details.aspx?id=41950).|
+|Požadavek|Další informace|
+|-------------|-------------------|
+|Verze systému Windows, který podporuje [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] modulu správy|V seznamu podporovaných operačních systémů v **požadavky na systém** část [stránce stažení pro nástroj pro správu Azure Rights Management](http://go.microsoft.com/fwlink/?LinkId=257721).|
+|Minimální verze prostředí Windows PowerShell: 2.0|Podpora [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] modulu správy je představen v prostředí Windows PowerShell 2.0.<br /><br />Ve výchozím nastavení většina operačních systémů Windows nainstalovat s alespoň verze 2.0 prostředí Windows PowerShell. Pokud potřebujete k instalaci prostředí Windows PowerShell 2.0, naleznete v části [instalaci prostředí Windows PowerShell 2.0](http://msdn.microsoft.com/library/ff637750.aspx). **Tip:** Můžete ověřit verzi prostředí Windows PowerShell, na kterých běží tak, že napíšete **$PSVersionTable** v relaci prostředí Windows PowerShell.|
+|Minimální verze rozhraní Microsoft .NET Framework: 4.5 **Tip:** Tato verze rozhraní Microsoft .NET Framework je součástí novějších operačních systémech, takže by měla pouze třeba ručně nainstalovat Pokud váš operační systém klienta je menší než Windows 8.0 nebo operačního systému serveru je nižší než Windows Server 2012.|Pokud již není nainstalováno, můžete stáhnout [rozhraní Microsoft .NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653).<br /><br />Je vyžadována pro některý ze třídy této verze rozhraní Microsoft .NET Framework, [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] Správa modul používá.|
+|Přihlášení asistent 7.0 služeb Microsoft Online Services|Společnost Microsoft Online Services přihlášení pomocníka, je nutné [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] ověřování.<br /><br />Další informace naleznete v tématu [Stažení softwaru: Služeb Microsoft Online Services Pomocníka pro IT specialisty RTW](http://www.microsoft.com/en-us/download/details.aspx?id=41950).|
 
-## How to install the Rights Management administration module
+## Postup instalace modulu správy Rights Management
 
-1.  Go to the Microsoft Download Center and [download the Azure Rights Management Administration Tool](https://go.microsoft.com/fwlink/?LinkId=257721), which contains the [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] administration module for Windows PowerShell.
+1.  Přejděte na Microsoft Download Center a [Stažení nástroje pro správu Azure Rights Management](https://go.microsoft.com/fwlink/?LinkId=257721), která obsahuje [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] modulu správy pro prostředí Windows PowerShell.
 
-2.  From the local folder where you downloaded and saved the [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] installer file, double-click the executable file that you downloaded for your platform (WindowsAzureADRightsManagementAdministration_x64 or WindowsAzureADRightsManagementAdministration_x86.exe) to start the Azure AD Rights Management Administration Setup Wizard.
+2.  Z místní složky, kde stáhnout a uložit [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)] instalační soubor, poklepejte na spustitelný soubor, který jste stáhli pro danou platformu (WindowsAzureADRightsManagementAdministration_x64 nebo WindowsAzureADRightsManagementAdministration_x86.exe) ke spuštění Azure AD Rights Management Správa Průvodce instalací.
 
-3.  Complete the wizard.
+3.  Dokončete průvodce.
 
-Windows PowerShell for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] is now installed.
+Prostředí Windows PowerShell pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] je nyní nainstalován.
 
-## Next steps
-To see which cmdlets are available, start Windows PowerShell with the **Run as administrator** option and type the following:
+## Další kroky
+Rutiny, které jsou k dispozici, spusťte prostředí Windows PowerShell s **Spustit jako správce** možnost a zadejte následující příkaz:
 
 ```
 Get-Command -Module aadrm
 ```
-Use `the Get-Help <cmdlet_name>` command to see the Help for a specific cmdlet.
+Použití `the Get-Help <cmdlet_name>` příkaz, který má v nápovědě pro konkrétní rutiny.
 
-For more information:
+Další informace:
 
--   Full list of cmdlets available: [Azure Rights Management Cmdlets](https://msdn.microsoft.com/library/windowsazure/dn629398.aspx)
+-   Úplný seznam rutin, které jsou k dispozici: [Rutiny Azure práva pro správu](https://msdn.microsoft.com/library/windowsazure/dn629398.aspx)
 
--   List of main configuration scenarios that support Windows PowerShell: [Administering Azure Rights Management by Using Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md)
+-   Seznam scénáře hlavní konfigurace, které podporují prostředí Windows PowerShell: [Správa Azure Rights Management pomocí prostředí Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md)
 
-Before you can run any commands that configure the [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] service, you must connect to the  service by using the [Connect-AadrmService](https://msdn.microsoft.com/library/windowsazure/dn629415.aspx) cmdlet. When you have finished running the configuration commands that you want, disconnect from the service by using the [Disconnect-AadrmService](https://msdn.microsoft.com/library/windowsazure/dn629416.aspx) cmdlet.
+Před spuštěním všechny příkazy, které slouží ke konfiguraci [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] služby, je nutné připojit ke službě s použitím [Připojit AadrmService](https://msdn.microsoft.com/library/windowsazure/dn629415.aspx) rutiny. Po dokončení spuštění příkazů konfigurace, které chcete odpojit od služby pomocí [odpojení AadrmService](https://msdn.microsoft.com/library/windowsazure/dn629416.aspx) rutiny.
 
 > [!NOTE]
-> If you have not yet activated [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], you can do this after you have connected to the service, by using the [Enable-Aadrm](https://msdn.microsoft.com/library/windowsazure/dn629412.aspx) cmdlet.
+> Pokud jste ještě neaktivovali [!INCLUDE[aad_rightsmanagement_2](../Token/aad_rightsmanagement_2_md.md)], lze provést po připojení ke službě, s použitím [Enable-službou Aadrm](https://msdn.microsoft.com/library/windowsazure/dn629412.aspx) rutiny.
 
-## See Also
-[Administering Azure Rights Management by Using Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md)
+## Viz také
+[Správa Azure Rights Management pomocí prostředí Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md)
 

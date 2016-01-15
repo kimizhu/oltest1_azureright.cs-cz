@@ -3,45 +3,44 @@ description: na
 keywords: na
 title: Configuring Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 206a0bfe-0912-4e0e-aa15-484b000b264c
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Configuring Azure Rights Management
+# Konfigurace Azure Rights Management
 > [!NOTE]
-> This information is for IT administrators and consultants who are deploying Microsoft Azure Rights Management for an organization. If you are looking for user help and information about how to use Rights Management with a specific application, use the help and guidance that accompanies your application.
+> Tyto informace jsou pro správci IT a konzultanty, kteří instalují Azure Rights Management pro organizaci. Pokud hledáte uživatele nápovědy a informací o tom, jak používat službu Rights Management s na konkrétní aplikaci, použijte nápovědu a pokyny, který doprovází vaší aplikace.
 > 
-> For example, for Office applications, click the Help icon and enter search terms such as **Rights Management** or **IRM**. For the RMS sharing application for Windows, see the [Rights Management sharing application user guide](http://technet.microsoft.com/library/dn339006.aspx).
+> Například pro aplikace systému Office, klikněte na ikonu Nápověda a zadejte hledané výrazy jako **Rights Management** nebo **IRM**. Sdílení obsahu RMS aplikace pro Windows, naleznete v části [Rights Management sdílení aplikace uživatelské příručce](http://technet.microsoft.com/library/dn339006.aspx).
 
-This section contains information to help you deploy and configure Microsoft Azure Rights Management (Azure RMS) for your organization. If you’re not sure which configuration steps you need to do, start with [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md), because this lists deployment steps in a logical order, with links to the relevant configuration topics and how-to instructions.
+Tento oddíl obsahuje informace, které pomohou při nasazení a konfiguraci Azure Rights Management (Azure RMS) pro vaši organizaci. Pokud si nejste jisti, jaké kroky konfigurace, je třeba provést, začněte s [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md), protože to jsou uvedeny kroky nasazení v logickém pořadí, s odkazy na témata příslušné konfigurace a návody.
 
--   [Azure Rights Management Deployment Roadmap](../Topic/Azure_Rights_Management_Deployment_Roadmap.md)
+-   [Plán nasazení Azure Rights Management](../Topic/Azure_Rights_Management_Deployment_Roadmap.md)
 
--   [Migrating from AD RMS to Azure Rights Management](../Topic/Migrating_from_AD_RMS_to_Azure_Rights_Management.md)
+-   [Migrace ze služby AD RMS na Azure Rights Management](../Topic/Migrating_from_AD_RMS_to_Azure_Rights_Management.md)
 
--   [Preparing for Azure Rights Management](../Topic/Preparing_for_Azure_Rights_Management.md)
+-   [Příprava na Azure Rights Management](../Topic/Preparing_for_Azure_Rights_Management.md)
 
--   [Planning and Implementing Your Azure Rights Management Tenant Key](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md)
+-   [Plánování a implementaci váš Azure Rights Management klienta klíč](../Topic/Planning_and_Implementing_Your_Azure_Rights_Management_Tenant_Key.md)
 
--   [Activating Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)
+-   [Aktivace Azure Rights Management](../Topic/Activating_Azure_Rights_Management.md)
 
--   [Configuring Custom Templates for Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md)
+-   [Konfigurace vlastních šablon pro Azure Rights Management](../Topic/Configuring_Custom_Templates_for_Azure_Rights_Management.md)
 
--   [Configuring Applications for Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md)
+-   [Konfigurace aplikací pro Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md)
 
--   [Configuring Usage Rights for Azure Rights Management](../Topic/Configuring_Usage_Rights_for_Azure_Rights_Management.md)
+-   [Konfigurace užívací práva pro Azure Rights Management](../Topic/Configuring_Usage_Rights_for_Azure_Rights_Management.md)
 
--   [Configuring Super Users for Azure Rights Management and Discovery Services or Data Recovery](../Topic/Configuring_Super_Users_for_Azure_Rights_Management_and_Discovery_Services_or_Data_Recovery.md)
+-   [Konfigurace tito uživatelé pro Azure Rights Management a zjišťování služeb nebo obnovení dat](../Topic/Configuring_Super_Users_for_Azure_Rights_Management_and_Discovery_Services_or_Data_Recovery.md)
 
--   [Deploying the Azure Rights Management Connector](../Topic/Deploying_the_Azure_Rights_Management_Connector.md)
+-   [Nasazení konektoru Azure Rights Management](../Topic/Deploying_the_Azure_Rights_Management_Connector.md)
 
--   [Decommissioning and Deactivating Azure Rights Management](../Topic/Decommissioning_and_Deactivating_Azure_Rights_Management.md)
+-   [Vyřazování z provozu a deaktivace Azure Rights Management](../Topic/Decommissioning_and_Deactivating_Azure_Rights_Management.md)
 
 > [!TIP]
-> If you’re new to Azure RMS, you might find the [Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md) section useful, because it contains information to help you learn more about Azure RMS and how it can help you to protect information in your organization.
+> Pokud jste nový na Azure RMS, můžete zjistit, [Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md) oddílu užitečná, protože obsahuje informace, které vám pomohou získat více informací o Azure RMS a jak se vám může pomoci chránit informace ve vaší organizaci.
 > 
-> If you’ve already deployed Azure RMS, see [Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md). And if you’re a Windows PowerShell user, or just want to see how you can administer Azure RMS from the command line, see [Administering Azure Rights Management by Using Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md).
+> Pokud jste již nasadili Azure RMS, naleznete v části [Použití služby Azure Rights Management](../Topic/Using_Azure_Rights_Management.md). A zjistit, zda chcete uživatele prostředí Windows PowerShell, nebo jen potřebujete, abyste viděli, jak můžete spravovat Azure RMS z příkazového řádku, [Správa Azure Rights Management pomocí prostředí Windows PowerShell](../Topic/Administering_Azure_Rights_Management_by_Using_Windows_PowerShell.md).
 

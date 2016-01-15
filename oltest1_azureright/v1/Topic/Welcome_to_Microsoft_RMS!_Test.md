@@ -6,38 +6,37 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: 23ca5ffe-a3c3-475a-a3c9-b77b898eef80
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Welcome to Microsoft RMS! Test
-You’re probably reading this because someone sent you a protected document and you clicked the sign in link in the email message, or your favorite search engine sent you here.
+# V&#237;t&#225; v&#225;s aplikace Microsoft RMS! Test
+Tento článek čtete nejspíš proto, že vám někdo poslal chráněný dokument a v e-mailové zprávě jste klikli na přihlašovací odkaz, nebo vás sem zavedl váš oblíbený vyhledávací web.
 
-Microsoft Rights Management (RMS) helps the sender of a document protect it from people who do not need to see it, or should not see it. The sender specifies who can access the document, and what they can do with it (for example, view only, print, etc).
+Služba Microsoft Rights Management (RMS) umožňuje odesílateli chránit dokument před lidmi, kteří ho nepotřebují nebo nemají vidět. Odesílatel určí, kdo má mít k dokumentu přístup a co s ním může dělat (například jenom prohlížet, tisknout atd.).
 
-**QUICK START**
+**RYCHLÉ ZAHÁJENÍ**
 
-To view a protected document, you must sign in and have a supported application:
+Abyste chráněný dokument mohli zobrazit, musíte se přihlásit a použít podporovanou aplikaci:
 
-1.  Sign in [here](https://portal.aadrm.com/) to get a free RMS account. If your company already has RMS, we’ll let you know.
+1.  Když se přihlásíte [tady](https://portal.aadrm.com/), získáte bezplatný účet služby RMS. Pokud vaše firma už službu RMS používá, dáme vám vědět.
 
-2.  Download the RMS application for your device by selecting the right icon on [this page](http://portal.aadrm.com/home/download). For Windows computers, you must be a local administrator (current limitation).
+2.  Aplikaci RMS pro své zařízení si stáhněte výběrem ikony napravo na [této stránce](http://portal.aadrm.com/home/download). U počítačů s Windows musíte být místním správcem (současné omezení).
 
-That’s it. You’re now ready to open protected files. Just go back to the original email and open the attachment.
+A je to. Teď můžete otevírat chráněné soubory. Jednoduše se vraťte na původní e-mail a otevřete přílohu.
 
 > [!NOTE]
-> In your email, you might see two files of the same name. They are the same except that one of them is a protected PDF file (.ppdf file name extension) that you can open on all platforms when you use our free RMS sharing application. To open the protected Office file, you must use an application that supports RMS. Currently, this means Office 2013 or Office 2010 running on Windows. Future versions of Office on mobile platforms will support RMS. Keep informed about updates via [@TheRMSGuy](https://twitter.com/TheRMSGuy).
+> V e-mailu můžete vidět dva soubory se stejným názvem. Tyto dva soubory jsou stejné až na to, že jeden z nich je chráněný soubor PDF (s příponou .ppdf), který můžete otevřít na všech platformách, kde používáte naši bezplatnou aplikaci Sdílení RMS. K otevření chráněného souboru Office musíte použít aplikaci, která podporuje službu RMS. V současnosti to umožňuje Office 2013 nebo Office 2010 ve Windows. Budoucí verze Office na mobilních platformách budou službu RMS podporovat. Aktuální novinky jsou dostupné na adrese [@TheRMSGuy](https://twitter.com/TheRMSGuy).
 
-**WANT MORE HELP?**
+**POTŘEBUJETE DALŠÍ NÁPOVĚDU?**
 
--   Our [desktop](http://technet.microsoft.com/dn467883) and [mobile](http://technet.microsoft.com/dn451248) application FAQs
+-   Nejčastější dotazy na naše [desktopové](http://technet.microsoft.com/en-us/dn467883) a [mobilní](http://technet.microsoft.com/en-us/dn451248) aplikace
 
--   Our general web site: [www.microsoft.com/RMS](http://www.microsoft.com/RMS)
+-   Náš všeobecný web: [www.microsoft.com/RMS](http://www.microsoft.com/RMS)
 
--   Our blog site: [http://blogs.technet.com/b/rms](http://blogs.technet.com/b/rms)
+-   Náš blog: [http://blogs.technet.com/b/rms](http://blogs.technet.com/b/rms)
 
--   Our Twitter feed: [https://twitter.com/TheRMSGuy](https://twitter.com/TheRMSGuy) (low volume, on-topic posts only)
+-   Náš informační kanál na Twitteru: [https://twitter.com/TheRMSGuy](https://twitter.com/TheRMSGuy) (jenom krátké zprávy týkající se tohoto tématu)
 
-**PROTECTING YOUR OWN DOCUMENTS**
+**OCHRANA VAŠICH VLASTNÍCH DOKUMENTŮ**
 
-Windows users can also send protected documents for free. It’s quite simple. To learn more, check out our [user guide](http://technet.microsoft.com/library/dn574735%28v=ws.10%29.aspx).
+Uživatelé Windows taky můžou zadarmo posílat chráněné dokumenty. Je to úplně jednoduché. Pokud chcete vědět víc, přečtěte si naši [uživatelskou příručku](http://technet.microsoft.com/library/dn574735%28v=ws.10%29.aspx).
 

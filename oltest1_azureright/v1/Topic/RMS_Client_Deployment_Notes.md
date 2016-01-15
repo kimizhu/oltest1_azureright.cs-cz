@@ -3,74 +3,73 @@ description: na
 keywords: na
 title: RMS Client Deployment Notes
 search: na
-ms.date: 2015-11-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03cc8c6f-3b63-4794-8d92-a5df4cdf598f
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# RMS Client Deployment Notes
-The  Rights Management Service client (RMS client) version 2 is also known as the MSIPC client. It is software for Windows computers that communicates with Microsoft Rights Management services on-premises or in the cloud to help protect access to and usage of information as it flows through applications and devices, within the boundaries of your organization, or outside  those managed boundaries. In addition to shipping with the [Rights Management sharing application for Windows](https://technet.microsoft.com/library/dn919648.aspx), the RMS client is  available [as an optional download](http://www.microsoft.com/download/details.aspx?id=38396) that can, with acknowledgment and acceptance of its license agreement, be freely distributed with  third-party software so that clients can  protect and consume content that has been  protected by Rights Management services.
+# Pozn&#225;mky k nasazen&#237; klienta služby RMS
+Služba Rights Management RMS (klient) verze 2 je také označována jako klient MSIPC. Je, že software pro počítače se systémem Windows, který komunikuje se službou Microsoft Rights Management services místně nebo v cloudu k ochraně přístup k a používání údajů jako prochází aplikací a zařízení, v rámci hranice vaší organizace nebo mimo těch spravované hranice. Kromě dodání s [Rights Management aplikace pro Windows pro sdílení](https://technet.microsoft.com/library/dn919648.aspx), klienta služby RMS je k dispozici [jako volitelně stáhnout](http://www.microsoft.com/download/details.aspx?id=38396) můžete v případě potvrzení a přijetí licenční smlouvy, volně distribuovat softwaru jiných dodavatelů, aby klienti mohli chránit a spotřebovávat obsah, který je chráněn Rights Management services.
 
-This topic includes the following sections:
+Toto téma obsahuje následující oddíly:
 
--   [Redistributing the RMS Client](#BKMK_RedistributeInstaller)
+-   [Další distribuci klienta služby RMS](#BKMK_RedistributeInstaller)
 
--   [Installing the RMS Client](#BKMK_InstallClient)
+-   [Instalace klienta služby RMS](#BKMK_InstallClient)
 
--   [Questions and Answers About the RMS Client](#BKMK_QA)
+-   [Dotazy a odpovědi týkající se klienta služby RMS](#BKMK_QA)
 
--   [RMS Client Settings](#BKMK_Settings)
+-   [Nastavení klienta služby RMS](#BKMK_Settings)
 
--   [AD RMS Only: Limiting the RMS Client to Use Trusted AD RMS Servers](#BKMK_UsingTrustedServers)
+-   [Služby AD RMS pouze: Omezení klienta služby RMS k použití Důvěryhodné servery služby AD RMS](#BKMK_UsingTrustedServers)
 
--   [RMS Service Discovery](#BKMK_ServiceDiscovery)
+-   [Zjišťování služby RMS](#BKMK_ServiceDiscovery)
 
-## <a name="BKMK_RedistributeInstaller"></a>Redistributing the RMS Client
-The RMS client can be freely redistributed and bundled with other applications and IT solutions. If you are an application developer or solution provider and want to redistribute the  RMS client, you have two options:
+## <a name="BKMK_RedistributeInstaller"></a>Další distribuci klienta služby RMS
+Klient služby RMS můžete volně dále distribuovat a v sadě, s jinými aplikacemi a řešení IT. Pokud jsou vývojář aplikace nebo poskytovatele řešení a chcete distribuovat klienta služby RMS, máte dvě možnosti:
 
--   Recommended: Embed the RMS client installer in your application installation and run it in silent mode (the **/quiet** switch, detailed in the next section).
+-   Doporučené: Vložit instalační program klienta služby RMS ve vaší instalaci aplikace a potom ho spusťte v tichém režimu ( **/quiet** přepínače, podrobně popsány v následující části).
 
--   Make the RMS client a prerequisite for your application. With this option, you might need to provide users with additional instructions for them to obtain, install, and update their computers with the client before they can use your application.
+-   Přesvědčte se, klienta služby RMS předpokladem pro vaši aplikaci. U tuto možnost budete možná muset poskytnout uživatelům další pokyny pro ně získat, nainstalovat a aktualizovat počítače s klientem, před použitím aplikace.
 
-## <a name="BKMK_InstallClient"></a>Installing the RMS Client
-The RMS client is contained in an installer executable file named **setup_msipc_***&lt;arch&gt;***.exe**, where *&lt;arch&gt;* is either **x86** (for 32-bit client computers) or **x64** (for 64-bit client computers). The 64-bit (x64) installer package installs both a 32-bit runtime executable for compatibility with 32-bit applications that run on a 64-bit operating system installation, as well as a 64-bit runtime executable for supporting native 64-bit applications. The 32-bit (x86) installer will not run on a 64-bit Windows installation.
+## <a name="BKMK_InstallClient"></a>Instalace klienta služby RMS
+Klient služby RMS je obsažen v spustitelný soubor Instalační služby s názvem **setup_msipc_***&lt; Hledat &gt;***.exe**, kde *&lt; Hledat &gt;* je buď **x86** (pro 32-bit klientské počítače) nebo **x64** (pro 64bitové klientské počítače). 64bitový (x 64) instalační balíček nainstaluje jak 32-bit spustitelného pro zajištění kompatibility se službou 32bitových aplikací, které běží na 64bitový operační systém instalace, tak i 64-bit spustitelného pro podporu nativní 64bitové aplikace. Instalační program 32bitový (x 86), budou spuštěny na instalaci 64bitová verze systému Windows.
 
 > [!NOTE]
-> You need elevated privileges to install the RMS client, such as a member of the Administrators group on the local computer.
+> Je nutné zvýšenými oprávněními k instalaci klienta služby RMS, jako je členem skupiny Administrators v místním počítači.
 
-You can install the  RMS client by using either of the following installation methods:
+Můžete nainstalovat klienta služby RMS pomocí některé z následujících způsobů instalace:
 
--   **Silent mode.** By using the **/quiet** switch as part of the command-line options, you can silently install the  RMS client on computers. The following  example  shows a silent mode installation for the  RMS client on a 64-bit client computer:
+-   **Tichém režimu.** S použitím **/quiet** Přepnout jako součást možnosti příkazového řádku, můžete v počítačích bezobslužném režimu instalace klienta služby RMS. Následující příklad ukazuje bezobslužném režimu instalace pro klienta služby RMS 64bitové klientské počítače:
 
     ```
     setup_msipc_x64.exe /quiet
     ```
 
--   **Interactive mode.** Alternately, you can install the  RMS client by using the GUI-based setup program that's provided by the  RMS Client  Installation Wizard. To do this, double-click the  RMS client installer package (**setup_msipc_***&lt;arch&gt;***.exe**) in the folder to which it was copied or downloaded on your local computer.
+-   **Interaktivní režim.** Alternativně můžete nainstalovat klienta služby RMS pomocí na základě GUI instalačního programu, která je poskytována Průvodce instalací klienta služby RMS. Chcete-li to provést, poklepejte na instalačního balíčku klienta služby RMS (**setup_msipc_***&lt; Hledat &gt;***.exe**) ve složce, do kterého byl zkopírován nebo staženy do místního počítače.
 
-## <a name="BKMK_QA"></a>Questions and Answers About the RMS Client
-The following section contains frequently asked questions about the RMS client and the answers to them.
+## <a name="BKMK_QA"></a>Dotazy a odpovědi týkající se klienta služby RMS
+V následující části obsahuje nejčastější dotazy týkající se klienta služby RMS a odpovědi na ně.
 
-### Which operating systems support the RMS client?
-The RMS client is supported with the following operating systems:
+### Jaké operační systémy podporují klienta služby RMS?
+Klient služby RMS je podporována v následujících operačních systémech:
 
-|Windows Server Operating System|Windows Client Operating System|
-|-----------------------------------|-----------------------------------|
-|Windows Server 2012 R2|Windows 8.1|
+|Serverový operační systém Windows|Klientský operační systém Windows|
+|-------------------------------------|-------------------------------------|
+|Windows Server 2012 R2|Windows 8.1.|
 |Windows Server 2012|Windows 8|
-|Windows Server 2008 R2|Windows 7 with minimum of SP1|
-|Windows Server 2008 (AD RMS only)|Windows Vista with minimum of SP2 (AD RMS only)|
+|Windows Server 2008 R2|Windows 7 s minimální s aktualizací SP1|
+|Windows Server 2008 (pouze služby AD RMS)|Windows Vista s minimální SP2 (AD RMS pouze)|
 
-### Which processors or platforms support the  RMS client?
-The  RMS client is supported on x86 and x64 computing platforms.
+### Které procesory nebo platformy podporovat klienta služby RMS?
+Klient služby RMS je podporován na x 86 a x 64 computing platformy.
 
-### Where is the  RMS client installed?
-By default, the RMS client is installed in %ProgramFiles%\Active Directory Rights Management Services Client 2.&lt;minor version number&gt;.
+### Kde je nainstalován klient služby RMS?
+Ve výchozím nastavení je nainstalován klient služby RMS v %ProgramFiles%\Active adresář Rights Management Services klienta 2. &lt; číslo podverze &gt;.
 
-### What files  are associated with the RMS client software?
-The following files  are installed as part of the  RMS client software:
+### Jaké soubory jsou přidruženy klientský software služby RMS?
+Jako součást klientského softwaru služby RMS jsou nainstalovány následující soubory:
 
 -   Msipc.dll
 
@@ -80,161 +79,161 @@ The following files  are installed as part of the  RMS client software:
 
 -   MSIPCEvents.man
 
-In addition to these files, the RMS client also installs multilingual user interface (MUI) support files in 44 languages. To verify the languages supported, run the RMS client installation and when the installation is complete, review the contents of the multilingual support folders under the default path.
+Kromě těchto souborů klienta služby RMS také nainstaluje soubory podporující sadu multilingual user interface (MUI) v 44 jazycích. Chcete-li ověřit jazyky podporované, spusťte instalaci klienta služby RMS a po dokončení instalace zkontrolujte obsah složky podpora více jazyků ve složce výchozí cestu.
 
-### Is the RMS client included by default when I install a supported operating system?
-No. This version of the  RMS client ships as an optional download that can be installed separately on computers running supported versions of the Microsoft Windows operating system.
+### Klient služby RMS zahrnuta ve výchozím nastavení je při instalaci na podporovaný operační systém?
+Číslo. Tato verze klienta služby RMS je dodávána volitelné ke stažení, který je možné nainstalovat odděleně v počítačích se systémem podporované verze operačního systému Microsoft Windows.
 
-### Is the RMS client automatically updated by Microsoft Update?
-If you installed this RMS client by using the silent installation option, the RMS client  inherits your current Microsoft Update settings. If you installed the RMS client by using the GUI-based setup program, the RMS client installation wizard  prompts you to enable Microsoft Update.
+### Je klient služby RMS automaticky aktualizován prostřednictvím služby Microsoft Update?
+Pokud jste nainstalovali tohoto klienta služby RMS pomocí možnosti tichou instalaci, dědí klienta služby RMS aktuální nastavení služby Microsoft Update. Pokud jste nainstalovali klienta služby RMS pomocí na základě GUI instalačního programu, Průvodce instalací klienta služby RMS vás vyzve k povolení služby Microsoft Update.
 
-## <a name="BKMK_Settings"></a>RMS Client Settings
-The following section contains settings information about the RMS client. This information might be helpful if you have problems with applications or services that use the RMS client.
+## <a name="BKMK_Settings"></a>Nastavení klienta služby RMS
+V následující části obsahuje nastavení informace o klienta služby RMS. Tyto informace mohou být užitečné, pokud dochází k problémům s aplikacemi a službami, které používají klienta služby RMS.
 
 > [!NOTE]
-> Some settings depend on whether the RMS-enlightened application runs as a client mode application (such as Microsoft Word and Outlook, or the RMS sharing application), or server mode application  (such as SharePoint and Exchange).  In the following tables, these settings are identified as **Client Mode** and **Server Mode**, respectively.
+> Některá nastavení, závisí na tom, zda spuštění aplikace RMS enlightened jako aplikace v režimu klienta (například aplikace Microsoft Word a aplikace Outlook nebo aplikaci sdílení RMS) nebo aplikace v režimu serveru (například služby SharePoint a Exchange).  V následujících tabulkách, tato nastavení jsou označeny jako **režim klienta** a **režim serveru**, v tomto pořadí.
 
-### Where the RMS Client Stores Licenses on Client Computers
-The RMS client stores licenses on the local disk and also caches some  information in the Windows registry.
+### Licence, kde úložiště klienta služby RMS v klientských počítačích
+Klient služby RMS ukládá licencí na místním disku a také ukládá do mezipaměti některé informace v registru systému Windows.
 
-|Description|Client Mode Paths|Server Mode Paths|
-|---------------|---------------------|---------------------|
-|License store location|%localappdata%\Microsoft\MSIPC|%allusersprofile%\Microsoft\MSIPC\Server\*&lt;SID&gt;*\|
-|Template store location|%localappdata%\Microsoft\MSIPC\Templates|%allusersprofile%\Microsoft\MSIPC\Server\Templates\*&lt;SID&gt;*\|
-|Registry location|HKEY_CURRENT_USER<br /> \Software<br /> \Classes<br /> \Local Settings<br /> \Software<br /> \Microsoft<br /> \MSIPC|HKEY_CURRENT_USER<br /> \Software<br /> \Microsoft<br /> \MSIPC<br /> \Server<br /> \*&lt;SID&gt;*|
+|Popis|Režim cest|Režim cesty k serveru|
+|---------|--------------|-------------------------|
+|Umístění úložiště licencí|%localappdata%\Microsoft\MSIPC|%ALLUSERSPROFILE%\Microsoft\MSIPC\Server\*&lt; SID &gt;*\|
+|Šablona umístění úložiště|%localappdata%\Microsoft\MSIPC\Templates|%ALLUSERSPROFILE%\Microsoft\MSIPC\Server\Templates\*&lt; SID &gt;*\|
+|Umístění v registru|HKEY_CURRENT_USER<br /> \Software<br /> \Classes<br /> nastavení \Local<br /> \Software<br /> \Microsoft<br /> \MSIPC|HKEY_CURRENT_USER<br /> \Software<br /> \Microsoft<br /> \MSIPC<br /> \Server<br /> /*&lt; SID &gt;*|
 > [!NOTE]
-> *&lt;SID&gt;* is the secure identifier (SID) for the account under which the server application is running. For example, if the application is running under the built-in Network Service account,    replace *&lt;SID&gt;* with the value of the well-known SID for that account (S-1-5-20).
+> *&lt; SID &gt;* je identifikátor zabezpečení (SID) pro účet, pod kterým běží serverové aplikace. Například pokud aplikace běží pod předdefinovaný účet síťové služby, nahradit *&lt; SID &gt;* s hodnotou známý SID pro tento účet (S-1-5-20).
 
-### Windows Registry Settings for the RMS Client
-You can use Windows registry keys to set or modify some RMS client configurations. For example, as an administrator for RMS-enlightened applications that communicate with AD RMS servers, you might want to update the enterprise service location (override the AD RMS server that is currently selected for publishing) depending on the client computer's current location within your Active Directory topology. Or, you might  want to enable  RMS tracing at the client computer, to help troubleshoot a problem with an RMS-enlightened application. Use the following table to identify the registry settings that you can change for the RMS client.
+### Nastavení registru systému Windows pro klienta služby RMS
+Klíče registru systému Windows slouží k nastavení nebo změna některé konfigurace klienta služby RMS. Můžete například jako správce pro službu RMS enlightened aplikace, které komunikovat se servery služby AD RMS, můžete aktualizovat umístění služby enterprise (přepsání AD RMS serveru, který je aktuálně vybraných pro publikování) v závislosti na klientském počítači aktuální umístění v rámci vaší topologie služby Active Directory. Nebo můžete chtít povolit trasování RMS v klientském počítači, které vám pomohou vyřešit problémy s aplikacemi RMS enlightened. V následující tabulce použijte k identifikaci nastavení registru, které můžete změnit pro klienta služby RMS.
 
-|Task|Settings|
-|--------|------------|
-|AD RMS only: To update the enterprise service location for a client computer|Update the following registry keys:<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification<br />REG_SZ: default<br /><br />**Value:**&lt;http or https&gt;:// *RMS_Cluster_Name*/_wmcs/Certification<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing<br />REG_SZ: default<br /><br />**Value:** &lt;http or https&gt;:// *RMS_Cluster_Name*/_wmcs/Licensing|
-|To enable and disable tracing|Update the following registry key:<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC<br />REG_DWORD: Trace<br /><br />**Value:** 1 to enable tracing, 0 to disable tracing (default)|
-|To change the frequency in days to refresh templates|The following registry values specify how often templates  will be refreshed on the user’s computer if the TemplateUpdateFrequencyInSeconds value is not set.  If neither of these values are set, the default refresh interval for applications using the RMS client  (version 1.0.1784.0) to download templates is 1 day. Versions prior to this have a default value of every 7 days.<br /><br />**Client Mode:**<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />REG_DWORD: TemplateUpdateFrequency<br /><br />**Value:** An integer value that specifies the number of days (minimum of 1) between downloads.<br /><br />**Server Mode:**<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt;SID&gt;*<br />REG_DWORD: TemplateUpdateFrequency<br /><br />**Value:** An integer value that specifies the number of days  (minimum of 1) between downloads.|
-|To change the frequency in seconds to refresh templates<br /><br />Important: If this is specified, the value to refresh templates in days is ignored. Specify one or the other,  not both.|The following registry values specify how often templates  will be refreshed on the user’s computer. If this value or the value to change the frequency in days (TemplateUpdateFrequency) is not set,  the default refresh interval for applications using the RMS client (version 1.0.1784.0) to download templates is 1 day. Versions prior to this have a default value of every 7 days.<br /><br />**Client Mode:**<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />REG_DWORD: TemplateUpdateFrequencyInSeconds<br /><br />**Value:** An integer value that specifies the number of seconds (minimum of 1) between downloads.<br /><br />**Server Mode:**<br /><br />HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt;SID&gt;*<br />REG_DWORD: TemplateUpdateFrequencyInSeconds<br /><br />**Value:** An integer value that specifies the number of seconds   (minimum of 1) between downloads.|
-|AD RMS only: To  download templates immediately at the next publishing request|During testing and evaluations, you might want the RMS client to download templates as soon as possible. To do this, remove the following registry key and the RMS client will download templates immediately at the next publishing request rather than wait for the time specified by the TemplateUpdateFrequency registry setting:<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\&lt;Server Name&gt;\Template<br /><br />**Note**: &lt;Server Name&gt; could have both external (corprights.contoso.com) and internal (corprights) URLs and therefore two different entries.|
-|AD RMS only: To enable support  for federated authentication|If the RMS client computer connects to an AD RMS cluster by using a federated trust, you must configure the federation home realm.<br /><br />HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />REG_SZ: FederationHomeRealm<br /><br />**Value:** The value of this registry entry is the uniform resource identifier (URI) for the federation service (for example, "https://fs-01.contoso.com").|
-|AD RMS only: To  support partner federation servers that require forms-based authentication for user input|By default, the  RMS client operates in silent mode and user input is not required. Partner federation servers, however, might be configured to require user input such as by way of forms-based authentication. In this case, you must configure the RMS client     ignore  silent mode so that the federated authentication form appears in a browser window and the user is promoted for authentication.<br /><br />HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />REG_DWORD: EnableBrowser<br /><br />**Note**: If the federation server is configured to use forms-based authentication, this key is required. If the federation server is configured to use Windows integrated authentication, this key is not required.|
-|AD RMS only: To  block ILS service consumption|By default, the RMS client enables consuming content protected by the ILS service but you can configure the client to block this service by setting the following registry key. If this registry key is set to block the ILS service, any attempts to open and consume content protected by the ILS service will return the following error:<br />HRESULT_FROM_WIN32(ERROR_ACCESS_DISABLED_BY_POLICY)<br /><br />HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />REG_DWORD: **DisablePassportCertification**<br /><br />**Value:** 1 to block ILS consumption, 0 to allow ILS consumption (default)|
+|Úloha|Nastavení|
+|---------|-------------|
+|Služby AD RMS pouze: Chcete-li aktualizovat umístění služby enterprise klientského počítače|Aktualizace následujících klíčů registru:<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterpriseCertification<br />    REG_SZ: výchozí<br />    **Hodnota:**&lt; protokolu http nebo https &gt; :// *RMS_Cluster_Name*/_wmcs/certifikaci<br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\ServiceLocation\EnterprisePublishing<br />    REG_SZ: výchozí<br />    **Hodnota:** &lt; protokolu http nebo https &gt; :// *RMS_Cluster_Name*/_wmcs/Licensing|
+|Povolení a zakázání trasování|Aktualizujte následující klíč registru:<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC<br />    REG_DWORD: Trasování<br />    **Hodnota:** 1, chcete-li povolit trasování, 0, chcete-li zakázat trasování (výchozí)|
+|Chcete-li změnit frekvenci ve dnech, chcete-li aktualizovat šablony|Následující hodnoty registru určit, jak často bude aktualizován šablony v počítači uživatele není nastavena hodnota TemplateUpdateFrequencyInSeconds.  Pokud jsou nastaveny ani jeden z těchto hodnot, je výchozí hodnota intervalu pro aplikace pomocí klienta služby RMS (verze 1.0.1784.0), chcete-li stáhnout šablony 1 den. Verze před to mít výchozí hodnota je každých 7 dnů.<br /><br />**Režim klienta:**<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />    REG_DWORD: TemplateUpdateFrequency<br />    **Hodnota:** Celočíselná hodnota, která určuje počet dní (minimálně 1) mezi soubory ke stažení.<br /><br />**Režim serveru:**<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt; SID &gt;*<br />    REG_DWORD: TemplateUpdateFrequency<br />    **Hodnota:** Celočíselná hodnota, která určuje počet dní (minimálně 1) mezi soubory ke stažení.|
+|Chcete-li změnit frekvenci v sekundách, chcete-li aktualizovat šablony **Important:** Pokud je tento parametr zadán, bude hodnota aktualizace šablony ve dnech je ignorována. Zadejte jednu nebo druhou, ne však obojí.|Následující hodnoty registru určit, jak často bude možné aktualizovat šablony v počítači uživatele. Pokud není nastavena tato hodnota nebo chcete-li změnit frekvenci ve dnech (TemplateUpdateFrequency), je výchozí hodnota intervalu pro aplikace pomocí klienta služby RMS (verze 1.0.1784.0), chcete-li stáhnout šablony 1 den. Verze před to mít výchozí hodnota je každých 7 dnů.<br /><br />**Režim klienta:**<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />    REG_DWORD: TemplateUpdateFrequencyInSeconds<br />    **Hodnota:** Celočíselná hodnota, která určuje počet sekund (minimálně 1) mezi soubory ke stažení.<br /><br />**Režim serveru:**<br /><br />-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC\Server\*&lt; SID &gt;*<br />    REG_DWORD: TemplateUpdateFrequencyInSeconds<br />    **Hodnota:** Celočíselná hodnota, která určuje počet sekund (minimálně 1) mezi soubory ke stažení.|
+|Služby AD RMS pouze: Chcete-li stáhnout šablony okamžitě v dalším publikování požadavku|Při testování a vyhodnocení měli byste klienta služby RMS na co nejdříve stáhnout šablony. Chcete-li to provést, odstraňte následující klíč registru a klienta služby RMS bude stáhnout šablony okamžitě v dalším požadavku publikování, nikoli počkejte za dobu určenou v závislosti na nastavení registru TemplateUpdateFrequency:<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC\ &lt; název serveru &gt; \Template **Note:** &lt; název serveru &gt; může mít externí (corprights.contoso.com) a adresy URL interní (corprights) a proto dvě různé položky.|
+|Služby AD RMS pouze: Chcete-li povolit podporu pro federovaného ověření|Je-li klientský počítač RMS připojí k clusteru služby AD RMS pomocí federovaného vztahu důvěryhodnosti, je nutné nakonfigurovat domovskou sféru federace.<br /><br />-   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />    REG_SZ: FederationHomeRealm<br />    **Hodnota:** Hodnota této položky registru je identifikátor (URI) služby federation service (například "https://fs-01.contoso.com").|
+|Služby AD RMS pouze: Pro podporu partnera federačních serverech, které vyžadují ověřování založené na formulářích na vstup uživatele|Ve výchozím nastavení klienta služby RMS provozované v tichém režimu a není vyžadováno vstup uživatele. Partner federačních serverech, však může nakonfigurovat tak, aby požadovat vstup uživatele, například jako pomocí ověřování na základě formulářů. V takovém případě musíte nakonfigurovat klienta služby RMS ignorovat v tichém režimu, aby formulář federovaného ověření se zobrazí v okně prohlížeče a uživatel je povýšen pro ověřování.<br /><br />-   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\Federation<br />    REG_DWORD: EnableBrowser **Note:** Je-li na federačním serveru konfigurován pro použití ověřování pomocí formulářů, je třeba zadat Tento klíč. Pokud na federačním serveru konfigurován pro použití integrovaného ověřování systému Windows, tento klíč není povinný.|
+|Služby AD RMS pouze: Chcete-li blokovat ILS služby spotřeba|Ve výchozím nastavení klienta služby RMS umožňuje náročných obsah chráněný službou ILS ale můžete nakonfigurovat klienta tak, aby tato služba blokovat nastavením následující klíč registru. Pokud tento klíč registru je nastavena na blokovat službu ILS, bude jakékoli pokusy o otevření a spotřebovávat obsah chráněný službou ILS vrátil následující chybu:<br />HRESULT_FROM_WIN32(ERROR_ACCESS_DISABLED_BY_POLICY)<br /><br />-   HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\MSIPC<br />    REG_DWORD: **DisablePassportCertification**<br />    **Hodnota:** 1 blokovat ILS spotřeby, 0, chcete-li povolit používání ILS (výchozí)|
 
-### Managing Template Distribution for the RMS Client
-Templates make it easy for users and administrators to quickly apply Rights Management protection and the RMS client automatically downloads templates from its RMS servers or service If you put the  templates in the following folder location, the RMS client will not download any templates from its default location and instead, download the templates that you have put in this folder. The RMS client might continue to download templates from other available RMS servers.
+### Správa distribuce šablony pro klienta služby RMS
+Šablony usnadnit uživatelům a správcům rychle použít Rights Management ochrany a klienta služby RMS automaticky stáhne šablony z jeho servery RMS nebo služby, je-li vložit šablony, které se v následujícím umístění složky, nebude klienta služby RMS stáhnout všechny šablony z výchozího umístění a namísto toho stáhnout šablony, které jste umístili v této složce. Klient služby RMS může nadále stáhnout šablony z jiných dostupných serverů RMS.
 
-**Client Mode:** %localappdata%\Microsoft\MSIPC\UnmanagedTemplates
+**Režim klienta:** %localappdata%\Microsoft\MSIPC\UnmanagedTemplates
 
-**Server Mode:** %allusersprofile%\Microsoft\MSIPC\Server\UnmanagedTemplates\*&lt;SID&gt;*
+**Režim serveru:** %allusersprofile%\Microsoft\MSIPC\Server\UnmanagedTemplates\*&lt; SID &gt;*
 
-When you use this folder, there is no special naming convention required except that the templates should be issued by the RMS server or service and they must have the  .xml file name extension. For example, Contoso-Confidential.xml or Contoso-ReadOnly.xml are valid names.
+Při použití v této složce neexistuje žádné speciální konvenci požadované s tím rozdílem, že šablony, které by měl být vydán RMS server nebo služby a jejich musí mít příponu názvu souboru XML. Můžete například Contoso Confidential.xml nebo Contoso ReadOnly.xml jsou platné názvy.
 
-## <a name="BKMK_UsingTrustedServers"></a>AD RMS Only: Limiting the RMS Client to Use Trusted AD RMS Servers
-The RMS client can be limited to using only specific trusted AD RMS servers by making the following changes to the Windows registry on local computers.
+## <a name="BKMK_UsingTrustedServers"></a>Služby AD RMS pouze: Omezení klienta služby RMS k použití Důvěryhodné servery služby AD RMS
+Klient služby RMS lze omezit pomocí konkrétní důvěryhodné služby AD RMS servery pouze tím, že tyto změny do registru systému Windows v místních počítačích.
 
-**To enable limiting RMS client to use only trusted AD RMS servers**
+**Chcete-li povolit omezení RMS klienta k použití pouze důvěryhodné servery služby AD RMS**
 
 -   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\TrustedServers\
     REG_DWORD: AllowTrustedServersOnly
 
-    **Value:** If a non-zero value is specified, the RMS client will trust only the specified servers that are configured in the TrustedServers list and the  Azure  Rights Management service.
+    **Hodnota:** Pokud je zadán nenulovou hodnotu, budou klienta služby RMS důvěřovat pouze zadané servery, které jsou nakonfigurovány v seznamu TrustedServers a službou Azure Rights Management.
 
-**To add members to the list of trusted AD RMS servers**
+**Chcete-li přidat členy do seznamu Důvěryhodné servery služby AD RMS**
 
 -   HKEY_LOCAL_MACHINE\Software\Microsoft\MSIPC\TrustedServers\
-    REG_SZ: *&lt;URL_or_HostName&gt;*
+    REG_SZ: *&lt; URL_or_HostName &gt;*
 
-    **Value:** The string values added in this registry key location can be either DNS domain name format (for example, **adrms.contoso.com**) or full URLs to trusted AD RMS servers (for example, **https://adrms.contoso.com**). If a specified URL starts with **https://**,  the RMS client will use SSL or TLS to contact   the specified AD RMS server.
+    **Hodnota:** Řetězcové hodnoty přidané v tomto umístění klíče registru může být buď formát název domény DNS (například **adrms.contoso.com**) nebo úplné adresy URL na důvěryhodné servery služby AD RMS (například **https://adrms.contoso.com**). Pokud zadaná adresa URL začíná **https://**,  klienta služby RMS bude používat protokol SSL nebo TLS se připojit k zadané serveru služby AD RMS.
 
-## <a name="BKMK_ServiceDiscovery"></a>RMS Service Discovery
-RMS service discovery lets the RMS client check which RMS server or service to communicate with before  protecting content. Service discovery might also happen when the RMS client consumes protected content, but this is less likely to happen because   the policy attached to the content  contains   the preferred RMS server or service and only if that is unsuccessful does the client then run service discovery.
+## <a name="BKMK_ServiceDiscovery"></a>Zjišťování služby RMS
+Zjišťování služby RMS vám umožní zkontrolovat, které RMS server nebo služby ke komunikaci se službou před chrání obsah klienta služby RMS. Zjišťování služby může také dojít, pokud klient služby RMS spotřebovává chráněný obsah, ale je méně pravděpodobné, že dojít, protože tyto zásady připojena k obsahu obsahuje upřednostňovaný server RMS nebo služby a pouze v případě, který neúspěšné nemá klient spusťte zjišťování služby.
 
-Service discovery first looks for an on-premises version of Rights Management (AD RMS). If that is unsuccessful, service discovery automatically looks for the cloud version of Rights Management (Azure RMS).
+Zjišťování služby hledá nejprve s místní verzí aplikace Rights Management (AD RMS). Pokud bude tento krok neúspěšný, zjišťování služby automaticky vyhledá verzi cloudu Rights Management (Azure RMS).
 
-To perform service discovery for an on-premises deployment, the RMS client checks the following:
+Při provádění zjišťování služby pro nasazení součásti místně, ověří klienta služby RMS následující:
 
-1.  The Windows registry on the local computer: If service discovery settings are configured in the registry, these settings are tried first.  By default, these settings are not configured in the registry.
+1.  Registru systému Windows v místním počítači: Pokud nastavení zjišťování služby jsou nakonfigurována v registru, tato nastavení, jsou použity jako první.  Ve výchozím nastavení nejsou konfigurována v registru.
 
-2.  Active Directory Domain Services: A domain-joined computer queries Active Directory for a service connection point (SCP). If an SCP is registered, the URL of the RMS server is returned to the RMS client to use.
+2.  Active Directory Domain Services: Počítač domény připojený k dotazuje služby Active Directory na spojovací bod služby (spojovací bod služby). Pokud je registrovaný spojovací bod služby, je vrácena RMS klienta k použití na adresu URL serveru RMS.
 
-### AD RMS Only: Enabling Server-Side Service Discovery by Using Active Directory
-If your account has  sufficient privileges (Enterprise Admins and  local administrator for the AD RMS server), you can automatically register a a service connection point (SCP) when you install the AD RMS root cluster server. If a SCP already exists in the forest, you must first delete the existing SCP before you can register  a new one.
+### Služby AD RMS pouze: Povolení zjišťování služby na straně serveru pomocí služby Active Directory
+Pokud váš účet nemá dostatečná oprávnění (skupiny Enterprise Admins a místní správce na serveru služby AD RMS), můžete automaticky zaregistrovat spojovací bod služby (spojovací bod) při instalaci serveru služby AD RMS kořenového clusteru. Pokud spojovací bod služby již existuje v doménové struktuře, musíte nejprve odstranit stávající spojovací bod předtím, než se můžete zaregistrovat nový.
 
-You can register and delete an SCP after AD RMS is installed by using the following procedure. Before you start, make sure that your account has the required privileges (Enterprise Admins and  local administrator for the AD RMS server).
+Můžete zaregistrovat a odstranit spojovací bod služby po instalaci služby AD RMS pomocí následujícího postupu. Než začnete, ujistěte se, že váš účet požadovaná oprávnění (skupiny Enterprise Admins a místní správce na serveru služby AD RMS).
 
-##### To enable AD RMS service discovery by registering an SCP in Active Directory
+##### Chcete-li povolit zjišťování služby AD RMS pomocí registrace spojovací bod služby ve službě Active Directory
 
-1.  Open the Active Directory Management Services console at the AD RMS server:
+1.  Otevřete konzolu pro správu služby Active Directory Services na serveru služby AD RMS:
 
-    -   If you are using Windows Server 2008 R2 or Windows Server 2008, click **Start**, click **Administrative Tools**, and then click **Active Directory Rights Management Services**.
+    -   Pokud používáte systém Windows Server 2008 R2 nebo Windows Server 2008, klikněte na tlačítko **Start**, klikněte na tlačítko **Nástroje pro správu**, a potom klikněte na tlačítko **Active Directory Rights Management Services**.
 
-    -   If you are using Windows Server 2012 R2 or Windows Server 2012,  in Server Manager, click **Tools**, and then click **Active Directory Rights Management Services**.
+    -   Pokud používáte systém Windows Server 2012 R2 nebo Windows Server 2012, v části správce serveru, klikněte na tlačítko **Nástroje**, a potom klikněte na tlačítko **Active Directory Rights Management Services**.
 
-2.  In the AD RMS console right-click the AD RMS cluster, and then click **Properties**.
+2.  V konzole služby AD RMS klikněte pravým tlačítkem na clusteru služby AD RMS a potom klikněte na tlačítko **Vlastnosti**.
 
-3.  Click the **SCP** tab.
+3.  Klikněte na tlačítko **spojovací bod** karty.
 
-4.  Select the **Change SCP** check box.
+4.  Vyberte **Změnit spojovací bod služby** zaškrtávací políčko.
 
-5.  Select the **Set SCP to current certification cluster** option, and then click **OK**.
+5.  Vyberte **Nastavit spojovací bod služby na aktuální certifikační cluster** možnost a potom klikněte na tlačítko **OK**.
 
-### Enabling Client-Side Service Discovery by Using the Windows Registry
-As an alternative to using an SCP or where an SCP does not exist, you can configure the registry on the client computer so that the RMS client can locate its AD RMS server.
+### Povolení zjišťování služby na straně klienta pomocí registru systému Windows
+Jako alternativu k použití spojovací bod služby nebo kde spojovací bod služby neexistuje můžete konfigurovat registru v klientském počítači, aby mohl klient služby RMS najít jeho serveru služby AD RMS.
 
-##### To enable client-side AD RMS service discovery by using the Windows registry
+##### Chcete-li povolit zjišťování služby AD RMS klientů pomocí registru systému Windows
 
-1.  Open the Windows registry editor, Regedit.exe:
+1.  Otevřete editor registru systému Windows, Regedit.exe:
 
-    -   On the client computer, in the Run window, type **regedit**, and then press ENTER to open the Registry Editor.
+    -   V klientském počítači, v okně Spustit zadejte **regedit**, a potom stiskněte klávesu ENTER otevřete Editor registru.
 
-2.  In the Registry Editor, navigate to **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC**.
+2.  V editoru registru přejděte do **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSIPC**.
 
     > [!IMPORTANT]
-    > If you are running a 32-bit application on a 64-bit computer, the path will be as follows: 
+    > Pokud používáte 32bitové aplikace v počítači se 64bitovou, cesta bude mít takto: 
     > **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\MSIPC**
 
-3.  To create the ServiceLocation subkey, right-click **MSIPC**, point to **New**, click **Key**, and then type **ServiceLocation**.
+3.  Chcete-li vytvořit podklíč ServiceLocation, klikněte pravým tlačítkem na **MSIPC**, přejděte na příkaz **Nový**, klikněte na tlačítko **klíč**, a poté zadejte **ServiceLocation**.
 
-4.  To create the EnterpriseCertification subkey, right-click **ServiceLocation**, point to **New**, click **Key**, and then type **EnterpriseCertification**.
+4.  Chcete-li vytvořit podklíč EnterpriseCertification, klikněte pravým tlačítkem na **ServiceLocation**, přejděte na příkaz **Nový**, klikněte na tlačítko **klíč**, a poté zadejte **EnterpriseCertification**.
 
-5.  To set the enterprise certification URL, double-click the **(Default)** value, under the **EnterpriseCertification** subkey, and when the **Edit String** dialog box appears,  for **Value data**, type &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Certification, and then click **OK**.
+5.  Nastavit adresu URL organizace certifikace, dvakrát klikněte na položku **(výchozí)** hodnota, v části **EnterpriseCertification** podklíč a pokud **Upravit řetězec** zobrazí se dialogové okno pro **Údaj hodnoty**, typ &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Certification, a potom klikněte na tlačítko **OK**.
 
-6.  To create the EnterprisePublishing subkey, right-click **ServiceLocation**, point to **New**, click **Key**, and then type EnterprisePublishing.
+6.  Chcete-li vytvořit podklíč EnterprisePublishing, klikněte pravým tlačítkem na **ServiceLocation**, přejděte na příkaz **Nový**, klikněte na tlačítko **klíč**, a poté zadejte EnterprisePublishing.
 
-7.  To set the enterprise publishing URL, double-click **(Default)** , under the **EnterprisePublishing** subkey, and when the **Edit String** dialog box appears, type for **Value data** the following &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Licensing, and then click **OK**.
+7.  Chcete-li nastavit enterprise publikování adresa URL, dvakrát klikněte na položku **(výchozí)** , v části **EnterprisePublishing** podklíč a pokud **Upravit řetězec** dialogového okna se zobrazí, zadejte pro **Údaj hodnoty** následující &lt;http or https&gt;://*AD RMS_cluster_name*/_wmcs/Licensing, a potom klikněte na tlačítko **OK**.
 
-8.  Close the Registry Editor.
+8.  Zavřete Editor registru.
 
-If the RMS client can't find an SCP by querying Active Directory and it's not specified in the registry, service discovery calls for AD RMS will fail.
+Pokud není zadán v registru klienta služby RMS nelze najít spojovací bod služby pomocí dotazu služby Active Directory, se nezdaří volání zjišťování služby pro službu AD RMS.
 
-### Redirecting Licensing Server Traffic
-In some cases, you might need to redirect traffic during service discovery, for example, when two organizations are merged and the old licensing server in one organization is retired and clients need to be redirected to a new licensing server. Or, you migrate from AD RMS to Azure RMS. To enable licensing redirection, use the following procedure.
+### Přesměrování licencování provozu serveru
+V některých případech je nutné přesměrovat provoz během zjišťování služby, například když jsou sloučeny dvěma organizacemi a původní licenční server v jedné organizaci je zastaralé a klienti musí být přesměrován na nový server správy licencí. Případně můžete provést migraci ze služby AD RMS k Azure RMS. Chcete-li povolit licencování přesměrování, pomocí následujícího postupu.
 
-##### To enable RMS licensing redirection by using the Windows registry
+##### Chcete-li povolit RMS licencování přesměrování pomocí registru systému Windows
 
-1.  Open the Windows registry editor, Regedit.exe:
+1.  Otevřete editor registru systému Windows, Regedit.exe:
 
-    -   On the client computer, in the Run window, type **regedit**, and then press ENTER to open the Registry Editor.
+    -   V klientském počítači, v okně Spustit zadejte **regedit**, a potom stiskněte klávesu ENTER otevřete Editor registru.
 
-2.  In the Registry Editor, navigate to one of the following:
+2.  V editoru registru přejděte do jednoho z následujících akcí:
 
-    -   For 64-bit version of Office on x64 platform: HKLM\SOFTWARE\Microsoft\MSIPC\Servicelocation
+    -   Pro 64bitové verze systému Office na platformě x 64 platformy: HKLM\SOFTWARE\Microsoft\MSIPC\Servicelocation
 
-    -   For 32-bit version of Office on x64 platform: HKLM\SOFTWARE\Wow6432Node\Microsoft\MSIPC\Servicelocation
+    -   Pro 32bitové verze systému Office na platformě x 64 platformy: HKLM\SOFTWARE\Wow6432Node\Microsoft\MSIPC\Servicelocation
 
-3.  Create a LicensingRedirection subkey, by right-clicking **Servicelocation**, point to **New**, click **Key**, and then type **LicensingRedirection**.
+3.  Vytvořit podklíč LicensingRedirection, kliknutím pravým tlačítkem myši **Servicelocation**, přejděte na příkaz **Nový**, klikněte na tlačítko **klíč**, a poté zadejte **LicensingRedirection**.
 
-4.  To set the licensing redirection, right-click the **LicensingRedirection** subkey, select **New**, and then select **String value**.  For **Name**, specify the previous server licensing URL and for **Value** specify the new server licensing URL.
+4.  Chcete-li nastavit licencování přesměrování, klikněte pravým tlačítkem myši **LicensingRedirection** podklíč, vyberte možnost **Nový**, a potom vyberte **Hodnota typu řetězec**.  Pro **název**, zadejte předchozí server licencování adresy URL a pro **hodnotu** zadejte nový server licencování adresy URL.
 
-    For example, to redirect licensing from a server at Contoso.com to one at Fabrikam.com, you might enter the following values:
+    Přesměrovat služby Licencování ze serveru Contoso.com postupně Fabrikam.com, je můžete například zadat následující hodnoty:
 
-    **Name:**`https://contoso.com/_wmcs/licensing`
+    **Název:** `https://contoso.com/_wmcs/licensing`
 
-    **Value:**`https://fabrikam.com/_wmcs/licensing`
+    **Hodnota:** `https://fabrikam.com/_wmcs/licensing`
 
     > [!NOTE]
-    > If the old licensing server has both intranet and extranet URLs specified then a new name and value mapping has to be set for both of these URLs under the LicensingRedirection key.
+    > Má-li původní licenční server intranetové a extranetové adresy URL potom zadat nový název a hodnotu mapování musí být nastavena pro obě tyto adresy URL v klíči LicensingRedirection.
 
-5.  Repeat the previous step for all servers that need to be redirected.
+5.  Opakujte předchozí krok pro všechny servery, které potřebují k přesměrování.
 
-6.  Close the Registry Editor.
+6.  Zavřete Editor registru.
 

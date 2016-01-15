@@ -8,43 +8,42 @@ ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 751e5e05-fbe2-4769-a5df-1362c0db2108
-ms.author: f459630d47d34d12a44295cd5237dc68
 ---
-# Privacy Statement for Microsoft Rights Management in RMS-Enlightened Applications
-Applies To: Microsoft Rights Management functionality which is embedded in applications
+# Prohl&#225;šen&#237; o ochraně osobn&#237;ch &#250;dajů pro Microsoft Rights Management v aplikac&#237;ch RMS Enlightened
+Platí pro: Funkce Microsoft Rights Management, který je vložen do aplikace
 
 > [!NOTE]
-> This privacy statement is available in additional languages from the [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=41668).
+> Toto prohlášení o ochraně osobních údajů je k dispozici v dalších jazycích z [Microsoft Download Center](http://www.microsoft.com/download/details.aspx?id=41668).
 
-Microsoft is committed to protecting your privacy, while delivering software that brings you the performance, power, and convenience you desire in your personal computing. This privacy statement explains many of the data collection and use practices of the Microsoft Rights Management client software or service and any other Microsoft products or services that display or link to this notice.
+Společnost Microsoft se zavazuje chránit vaše osobní údaje při vývoji softwaru, který přináší výkon, napájení a pohodlný práci s počítačem. Toto prohlášení o ochraně osobních údajů vysvětluje řadu postupů shromažďování a využití dat klientský software Microsoft Rights Management nebo služby a všechny ostatní produkty společnosti Microsoft nebo služby, které nebo neodkazují na toto oznámení.
 
-The Rights Management functionality is designed for client machines and mobile devices to help protect access to and usage of information flowing through enabled applications that use Microsoft Rights Management services, whether installed on premises or running in a Microsoft datacenter.
+Funkce Rights Management je určen pro klientské počítače a mobilní zařízení k ochraně přístup k a používání údajů odesílaných prostřednictvím povoleno aplikací, které používají služby Microsoft Rights Management, zda je nainstalována na místní nebo spuštěna v datacentru společnosti Microsoft.
 
-## Processing Your Information On Behalf of Our Customer
-In order to access protected files, you will be asked to log in to Microsoft Rights Management and provide your user name and password (“Credentials”). Microsoft may collect Read Receipt Information and “Standard Device Information” which includes information such as your operating system version and hardware ID, which indicates the device manufacturer, device name, and version, and IP address.
+## Zpracovává informace jménem našich zákazníků
+Chcete-li získat přístup k chráněné soubory, budete požádáni o přihlášení k Microsoft Rights Management a zadejte své uživatelské jméno a heslo ("pověření"). Společnost Microsoft může shromažďovat informace o příjemce ke čtení a "Standardní informace o zařízení" což zahrnuje informace, jako je vaše verze operačního systému a ID hardwaru, které označuje výrobce zařízení, název zařízení a verzi a IP adresu.
 
 > [!IMPORTANT]
-> We may disclose “Read Receipt Information” (such as email address, location, and timestamp associated with opening a file) and Standard Device Information to the person or company that protected the files.
+> Můžeme odtajnit "Informace o příjmu čtení" (například e-mailovou adresu, umístění a časové razítko přidružené k otevření souboru) a standardní informace o zařízení osobě nebo společnosti, která chráněné soubory.
 
-## Microsoft’s Collection and Use of Your Information
-The Credentials and Standard Device Information we collect from you may also be used by Microsoft and its controlled subsidiaries and affiliates to enable the features you are using and provide additional service(s) or carry out the transaction(s) you have requested or authorized. Standard Device Information may also be used to analyze and improve Microsoft products and services.
+## Shromažďování a používání vašich informací společnosti Microsoft
+Pověření a které od vás získáme standardní informace o zařízení může také použít společností Microsoft a její řízené pobočky a dceřiné k zajištění funkcí, kterou používáte a poskytování dalších služeb nebo provádění transakcí, které jste si vyžádali nebo autorizovali. Standardní informace o zařízení lze také analýzy a vylepšení produktů a služeb Microsoft.
 
-We will not disclose the Credentials, Read Receipt, and/or Standard Device Information we collect from you outside of Microsoft or its controlled subsidiaries and affiliates except as you direct, or as described in your agreement(s) or this privacy statement.
+Společnost Microsoft neodtajní na pověření, oznámení o přečtení nebo standardní informace o zařízení, které od vás získáme mimo společnost Microsoft nebo její řízené pobočky a dceřiné s výjimkou jako přímé nebo jak je popsáno ve smlouvách nebo toto prohlášení o ochraně osobních údajů.
 
-We occasionally contract with other companies to provide services (such as customer support) on our behalf. We may provide these companies with access to your information where necessary for their engagement. These companies are required to maintain the confidentiality of your information and are prohibited from using it for any purpose other than that for which they are engaged by Microsoft.
+Příležitostně spolupracujeme s jinými společnostmi k poskytování služeb (například zákaznickou podporu) naším jménem. Společnost Microsoft může poskytnout těmto společnostem přístup k informacím v případě potřeby pro jejich zapojení. Těmto společnostem jsou nezbytné k zachování důvěrnosti vašich informací a mají zakázáno používat pro účely, než v tom, pro které jsou zapojeny společností Microsoft.
 
-We will not disclose Credentials, Read Receipt, and/or Standard Device Information to a third party (including law enforcement, other government entity, or civil litigant; excluding our subcontractors) except as you direct, as described in this privacy statement, or unless required by law. Should a third party contact us with a demand for such information, we will attempt to redirect the third party to request it directly from you. As part of that, we may provide your basic contact information to the third party. If compelled to disclose your information to a third party, we will use commercially reasonable efforts to notify you in advance of a disclosure unless legally prohibited.
+Společnost Microsoft neodtajní pověření, oznámení o přečtení a standardní informace o zařízení k třetí straně (včetně policie a bezpečnostních složek, jiné státní či straně vedoucí občanskoprávní spor, s výjimkou našich dodavatelů) s výjimkou přímé, jak je popsáno v tomto prohlášení o ochraně osobních údajů, nebo pokud to není vyžadováno zákonem. Třetí strany na nás obrátí s žádostí o tyto údaje, pokusíme se třetí stranu odkázat na žádost ji přímo od vás. V rámci této snahy můžeme může poskytnout vaše základní kontaktní údaje třetí strany. Pokud nuceni zpřístupnit vaše vaše údaje třetí straně, vyvineme s vynaložením přiměřených finančních prostředků úsilí s upozorněním předem upozornili, pokud to není právními předpisy zakázáno.
 
-Information that is collected by or sent to Microsoft by Microsoft Rights Management enabled applications may be stored and processed in the United States or any other country in which Microsoft or its affiliates, subsidiaries, or service providers maintain facilities. Microsoft abides by the safe harbor framework as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of data from the European Union, the European Economic Area, and Switzerland.
+Informace, které jsou shromažďovány nebo odesílány společnosti Microsoft aplikací Microsoft Rights Management povoleno aplikace může uloženy a zpracovány ve Spojených státech amerických nebo jakékoli jiné zemi, ve které společnost Microsoft nebo její pobočky, dceřiné společnosti nebo poskytovatelů služeb. Společnost Microsoft dodržuje safe harbor framework stanovená ministerstvem obchodu USA Ministerstvem obchodu, týkající se shromažďování, používání a uchovávání dat z Evropské unie, Evropského hospodářského prostoru a Švýcarska.
 
 ## Microsoft Update
-When you use Microsoft Rights Management enabled applications with Windows, you may choose to participate in Microsoft Update. Microsoft Update (MU) is a service that provides updates for Microsoft software, including Microsoft Rights Management client for Windows. For details about what information is collected, how it is used and how to change your settings, see the [Update Services Privacy Statement](http://go.microsoft.com/fwlink/?linkid=50142) ([http://go.microsoft.com/fwlink/?linkid=50142](http://go.microsoft.com/fwlink/?linkid=50142)).
+Při použití aplikace Microsoft Rights Management povoleno se systémem Windows, můžete se účastnit programu Microsoft Update. Microsoft Update (MU) je služba, která poskytuje aktualizace softwaru společnosti Microsoft, včetně Microsoft Rights Management klienta pro systém Windows. Podrobnosti ohledně shromažďovaných informací, způsobu jejich použití a změně nastavení naleznete [prohlášení o ochraně osobních údajů v aktualizačních službách](http://go.microsoft.com/fwlink/?linkid=50142) ([http://go.microsoft.com/fwlink/?linkid=50142](http://go.microsoft.com/fwlink/?linkid=50142)).
 
-Choice/Control: For silent installation, Microsoft Rights Management enabled applications follow the same MU settings applied to the Windows desktop. For user installations, if MU is not turned on, you may receive a prompt during installation permitting you to turn on MU. If you choose to do so, these MU settings will apply across all Windows-based applications.
+Možnost volby: Pro tichou instalaci povolit Microsoft Rights Management aplikací podle stejné nastavení MU použity na ploše systému Windows. Pro uživatelské instalace pokud MU není zapnutý, můžete obdržet výzvou týkající se během instalace umožňující zapnutí MU. Pokud se rozhodnete provedete to tak, tyto MU nastavení bude použito ve všech aplikacích systému Windows.
 
-## Security of your information
-Microsoft is committed to helping protect the security of your information. We use a variety of security technologies and procedures to help protect your information from unauthorized access, use, or disclosure. For example, we store the information you provide on computer systems with limited access, which are located in controlled facilities.
+## Zabezpečení vašich informací
+Společnost Microsoft se zavazuje k ochraně zabezpečení vašich informací. Používáme řadu bezpečnostních technologií a postupů které pomáhají chránit vaše osobní údaje před neoprávněným přístupem, použitím nebo zpřístupnění. Můžete například ukládány informace, které poskytnete na počítačových serverech s omezeným přístupem, které jsou umístěny v kontrolovaných prostředích.
 
-## Changes to this privacy statement
-We will occasionally update this privacy statement to reflect changes in our products, services, and customer feedback. When we post changes, we will revise the "last updated" date at the top of this statement. If there are material changes to this statement or in how Microsoft will use your personal information, we will notify you either by posting a notice of such changes prior to implementing the change or by directly sending you a notification. We encourage you to periodically review this statement to be informed of how Microsoft is protecting your information.
+## Změny tohoto prohlášení o ochraně osobních údajů
+Příležitostně aktualizujeme tohoto prohlášení o ochraně osobních údajů, aby odpovídalo změnám našich produktů, služeb a názory zákazníků. Pokud dojde ke změnám, je bude upraveno datum "poslední aktualizace" na začátku tohoto prohlášení. Pokud dochází k vážným změnám tohoto prohlášení nebo způsobu, jakým společnost Microsoft používá vaše osobní údaje, oznámíme vám publikováním oznámení o změnách, než bude tato změna provedena, nebo zasláním přímého osobního oznámení. Doporučujeme vám pravidelně sledovat toto prohlášení, abyste byli informováni o tom, jak společnost Microsoft chrání vaše osobní údaje.
 

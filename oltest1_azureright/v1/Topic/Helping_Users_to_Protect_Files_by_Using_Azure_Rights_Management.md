@@ -3,103 +3,102 @@ description: na
 keywords: na
 title: Helping Users to Protect Files by Using Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 58f9a6ff-4121-4c8c-9865-1bb290604ad2
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Helping Users to Protect Files by Using Azure Rights Management
-After you have deployed and configured Azure Rights Management (Azure RMS) for your organization, provide help and guidance for users, administrators, and your help desk:
+# Pom&#225;h&#225; uživatelům k ochraně souborů pomoc&#237; Azure Rights Management
+Po nasazení a nakonfigurovat pro vaši organizaci Azure Rights Management (Azure RMS), zadejte nápovědy a pokyny pro uživatele, správci a vaše oddělení technické podpory:
 
--   **End-user information:**
+-   **Informace o koncovém uživateli:**
 
-    Let users know how and when to protect documents and emails that contain sensitive information. Whenever possible, provide this information for  their existing work flows so that they can incorporate the additional steps to an already-familiar process rather than introducing completely new processes . Be sure to let them know the benefits (and the risks) that are specific to your business, as well as providing guidance for when they should protect files and emails. If you have configured [custom templates](http://technet.microsoft.com/library/dn642472.aspx), provide instructions about which one to select if the template name and description is not sufficient for them to choose the correct one.
+    Upozornit uživatele, kdy a jak k ochraně dokumenty a e-mailů, které obsahují citlivé informace. Pokud je to možné, zadejte tyto informace pro své stávající pracovní toky, aby zahrnují další kroky procesu již dobře známé, nikoli představení zcela nové procesy. Ujistěte se, zda jste oznámit mu výhod (a rizika), které jsou specifické pro vaši společnost a také poskytuje pokyny pro kdy by měla chránit soubory a e-mailů. Pokud jste nakonfigurovali [vlastní šablony](http://technet.microsoft.com/library/dn642472.aspx), poskytuje pokyny, o který z nich zaškrtněte, pokud název a popis šablony není dostatečné, chcete-li zvolit ten správný.
 
     > [!TIP]
-    > Example videos for end users:
+    > Příklad videa pro koncové uživatele:
     > 
-    > -   [Azure RMS user experience](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-user-experience)
-    > -   [Azure RMS Document Tracking and Revocation](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)
+    > -   [Azure RMS uživatelské prostředí](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-user-experience)
+    > -   [Sledování Azure RMS dokumentů a zrušení](http://channel9.msdn.com/Series/Information-Protection/Azure-RMS-Document-Tracking-and-Revocation)
 
--   **Administrator information:**
+-   **Informace pro správce:**
 
-    Some applications automatically apply information protection, by using policies and settings that administrators configure. For these applications, you might need to provide instructions for other administrators who manage these applications and services. For more information, see [How Applications Support Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) and [Configuring Applications for Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md).
+    Některé aplikace automaticky použít ochrana informací pomocí zásady a nastavení, které správci konfigurovat. Pro tyto aplikace může být zapotřebí který poskytuje pokyny ostatním správcům, kteří spravují těchto aplikací a služeb. Další informace naleznete v tématu [Jak aplikace podporují Azure Rights Management](../Topic/How_Applications_Support_Azure_Rights_Management.md) a [Konfigurace aplikací pro Azure Rights Management](../Topic/Configuring_Applications_for_Azure_Rights_Management.md).
 
--   **Help desk information:**
+-   **Nápověda oddělení technické podpory:**
 
-    One of the most useful tools for the help desk is the [RMS Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=46437).   Help desk operators can run it with the Azure RMS administrator option, and they can ask users to run it with the Azure RMS user option. This tool can not only help identify problems, but also fix problems that it finds, and if still not fixed, record trace logs.
+    Jedním z velmi užitečné nástroje pro oddělení technické podpory je [RMS Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=46437).   Nápověda k oddělení technické podpory operátory lze spustit s možností Správce Azure RMS a jejich lze požádejte uživatele, aby jej spustit s možností uživatele Azure RMS. Tento nástroj můžete nejen pomáhá identifikovat problémy, ale také opravit problémy, zjistí, a pokud ještě není odstraněn, protokoly trasování záznamu.
 
-    If there are legitimate requests to have full rights access to protected documents, for example a request by the legal department or a manager after an employee has left the organization, make sure the help desk has processes to request this by using the Azure RMS [super user feature](https://technet.microsoft.com/en-us/library/mt147272.aspx).
+    Pokud je oprávněné požadavky na přístup úplná práva k chráněné dokumenty, například žádosti o právního oddělení nebo správce, poté, co zaměstnanec opustil organizaci, přesvědčte se oddělení technické podpory procesy žádost o to s využitím Azure RMS [funkce superuživatel](https://technet.microsoft.com/en-us/library/mt147272.aspx).
 
-    In  addition, these are some of the typical problems that users might report:
+    Kromě toho zde jsou některé z typické problémů, které uživatelé hlásit:
 
-    -   **Sign in help:**
+    -   **Přihlaste se nápovědy:**
 
-        Users might be prompted for credentials when Azure RMS needs to authenticate a user and cannot use cached credentials. This will be the user’s work or school account and password that is associated with your Office 365 tenant or Azure Active Directory tenant. It will not be a Microsoft account (formerly Microsoft Live ID) or their personal email account, because these are not currently supported by Azure RMS. Provide users and your help desk with instructions about which account to use when users are prompted for credentials when they use these applications with Azure RMS.
+        Uživatelé může vyzváni k zadání pověření při Azure RMS potřebuje k ověření uživatele a nelze použít pověření uložená v mezipaměti. Bude jím uživatele pracovní nebo školní účtu a hesla, který je přidružen k služeb Office 365 klienta nebo klienta služby Azure Active Directory. Účet Microsoft (dříve Microsoft Live ID) nebo jejich osobní e-mailového účtu, nesmí být vzhledem k tomu, že tyto nejsou aktuálně podporovány službou Azure RMS. Pokyny k účtu, který má být použita při uživatelé vyzváni k zadání pověření při použití těchto aplikací s Azure RMS poskytovat uživatelům i vaše oddělení technické podpory.
 
-    -   **Problems protecting or consuming content:**
+    -   **Problémy s chránit nebo spotřebovávat obsah:**
 
-        Make sure that users have the appropriate instructions for the applications that they use, and are using applications and devices that are supported by Azure RMS. For more information about supported applications and devices, see [Requirements for Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md).
+        Ujistěte se, zda mají uživatelé vhodné pokyny pro aplikace, použijte a používáte aplikací a zařízení, které jsou podporovány službou Azure RMS. Další informace o podporovaných aplikací a zařízení, naleznete v tématu [Požadavky pro Azure Rights Management](../Topic/Requirements_for_Azure_Rights_Management.md).
 
-        If users see an error when trying to protect or consume content, ask them to run the [RMS Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=46437) as an Azure RMS user.
+        Pokud uživatelé vidí chybu při pokusu o ochraně nebo spotřebovávat obsah, požádejte je ke spuštění [RMS Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=46437) jako uživatel Azure RMS.
 
-        If users report that they can open protected content but don't have the rights that they need, ask them to run the [RMS Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=46437) as an Azure RMS user and download and view the templates. This will confirm that they have successfully downloaded the templates and what rights the templates provide. The problem might be that the user is not in the correct group that's configured for the template, or that the template needs reconfiguring for the user.
+        Pokud uživatelé sestav, můžete otevřít chráněný obsah, ale nemáte oprávnění, která potřebují, požádejte je ke spuštění [RMS Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=46437) jako uživatel Azure RMS a stáhněte si a zobrazení šablon. Tímto způsobem potvrdíte, že se úspěšně stáhli šablony a co práv šablony, které poskytují. Tento problém může být, že uživatel není ve skupině správný, který je nakonfigurován pro šablonu, nebo že šablona potřebuje změny konfigurace pro daného uživatele.
 
-Use the following sections for application-specific information to help users protect sensitive documents and emails.
+Pomocí níže uvedených částech najdete informace o specifických pro aplikaci uživatelům pomáhá chránit citlivé dokumenty a e-mailů.
 
-## Using information protection with the Rights Management sharing application
-The Rights Management (RMS) sharing application is required for users to protect and consume protected content if they use Office 2010, but also recommended for all computers and mobile devices that support Azure RMS.
+## Použití ochrany informace k aplikaci sdílení Rights Management
+RMS (Rights Management) aplikace pro sdílení je vyžadována pro uživatele k ochraně a spotřebovávat chráněný obsah v případě, že používají systému Office 2010, ale také doporučuje pro všechny počítače a mobilní zařízení, které podporují Azure RMS.
 
-In addition to making it easier for users to protect important documents, the RMS sharing application lets users track the documents that they have protected, and if necessary, revoke access to them.
+Kromě usnadňují uživatelům chránit důležité dokumenty, aplikace pro sdílení obsahu RMS uživatelům umožňuje sledování dokumentů, které jsou chráněna a v případě potřeby odvolat přístup k nim.
 
-For instructions to use this application for Windows computers, see the [Rights Management sharing application user guide](http://technet.microsoft.com/library/dn339006.aspx).
+Chcete-li použít tuto aplikaci pro počítače se systémem Windows naleznete v tématu [Rights Management sdílení aplikace uživatelské příručce](http://technet.microsoft.com/library/dn339006.aspx).
 
-For mobile devices, see the [FAQ for Microsoft Rights Management Sharing Application for Mobile Platforms](http://technet.microsoft.com/dn451248).
-
-> [!TIP]
-> For a high-level example scenario with screenshots, see the [Users safely share attachments with mobile users](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_SharingApp) section in the [What is Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) topic.
-
-## Using information protection with Office 365, Office 2016, or Office 2013
-If you are using Azure RMS and have not installed the Rights Management sharing application, users will not see the **Share Protected** button on the ribbon or **Protect in-place** from File Explorer that makes it easier for them to protect files. For these users, they must follow instructions similar to these.
+Pro mobilní zařízení, naleznete [Nejčastější dotazy týkající se Microsoft Rights Management sdílení aplikace pro mobilní platformy](http://technet.microsoft.com/dn451248).
 
 > [!TIP]
-> To find application-specific help and instructions for using information protection with these applications, search for **IRM** and the application name and version.
+> Scénář vysoké úrovně příklad s snímky obrazovky, naleznete v části [Uživatelé bezpečně sdílet přílohy s mobilní uživatele](../Topic/What_is_Azure_Rights_Management_.md#BKMK_Example_SharingApp) v oddílu [Co je Azure Rights Management?](../Topic/What_is_Azure_Rights_Management_.md) tématu.
 
-#### To protect a document in Word 2013
+## Ochrana informací pomocí služeb Office 365, Office 2016 nebo Office 2013
+Pokud používáte Azure RMS a nenainstalovali Rights Management, aplikace pro sdílení, nebude zobrazeno **sdílet chráněné** na pásu karet na tlačítko nebo **chránit místně** z Průzkumníka soubor, který usnadňuje jejich k ochraně souborů. Pro tyto uživatele jsou musí postupujte podle pokynů, podobně jako na tyto.
 
-1.  Within Microsoft Word, create a new document.
+> [!TIP]
+> Chcete-li vyhledat konkrétní aplikace nápovědy a pokyny k používání ochrana údajů s těmito aplikacemi, vyhledejte **IRM** a název aplikace a verze.
 
-2.  From the **File** menu, click **Info**, click **Protect Document**, click **Restrict Access**, and then choose a template to quickly apply the appropriate usage rights, or select **Restrict Access** and select the usage rights yourself.
+#### K ochraně dokumentu v aplikaci Word 2013
+
+1.  Aplikace Microsoft Word vytvořte nový dokument.
+
+2.  Z **soubor** nabídky, klikněte na tlačítko **informace o**, klikněte na tlačítko **Zamknout dokument**, klikněte na tlačítko **omezení přístupu**, a poté zvolte šablonu, kterou chcete rychle použít správné použití práva, nebo vyberte **omezení přístupu** a vyberte práva k používání sami.
 
     > [!NOTE]
-    > If this is the first time that you have used Rights Management, you will contact the [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] service and will be prompted for credentials to configure the Office IRM client.
+    > Pokud je to poprvé, že jste použili Rights Management, obraťte [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] služeb a budete vyzváni k zadání pověření ke konfiguraci klienta IRM sady Office.
 
-3.  Save the document.
+3.  Uložte dokument.
 
-When others open the document, they are first authenticated. If they are not authorized to open the document, the document does not open. If they are authorized to open the document, it opens with the restricted usage rights that were specified for that user. For example, a usage right of View-only does not allow the user to edit or save the document, even if it is first copied to another location. The usage rights are displayed at the top of the document by using a restriction banner. The banner might display the permissions that are applied to the document, or it might provide a link to display them.
+Při otvírání dokumentu, je nejprve ověřen. Pokud nejste oprávněni otevřete dokument, dokument nebude možné otevřít. Pokud jsou oprávněni otevřete dokument, otevře se s právy využití s omezeným přístupem, které byly zadány pro daného uživatele. Můžete například využití vpravo od jen pro čtení neumožňuje uživatele, kterého chcete upravit nebo uložit dokument, i v případě, že je nejprve zkopírovat do jiného umístění. Práva k používání jsou zobrazeny v horní části dokumentu pomocí nápis omezení. Hlavičky může zobrazit oprávnění, které jsou použity k dokumentu nebo ho zadat odkaz na jejich zobrazení.
 
-#### To protect an email message using Outlook 2013 and Exchange Online
+#### K ochraně e-mailovou zprávu pomocí aplikace Outlook 2013 a systému Exchange Online
 
-1.  Within Outlook, create a new mail message addressed to a recipient within your organization.
+1.  V rámci aplikace Outlook vytvořte novou zprávu řešit příjemci v rámci vaší organizace.
 
-2.  From the **OPTIONS** tab,  click **Permission**, and then select an option. For example: **Do Not Forward**, **&lt;Company Name&gt; - Confidential** or **&lt;Company Name&gt; - Confidential View Only**.
+2.  Z **Možnosti** klikněte na tlačítko **oprávnění**, a potom vyberte možnost. Příklad: **Nešíří**, **&lt; název společnosti - &gt; důvěrné** nebo **&lt; název společnosti - &gt; pouze důvěrné zobrazení**.
 
-3.  Send the message.
+3.  Odešle zprávu.
 
-Similarly to viewing a protected document, when the recipients receive the email message, they are first authenticated. If they are authorized to see the email message, it opens with the restricted usage rights that were specified for that user. For example, if you selected **Do Not Forward**, the Forward button on the ribbon is not available.
+Podobně k prohlížení chráněný dokument, pokud příjemců přijímat e-mailovou zprávu, budou se nejprve ověřeni. Pokud jsou oprávněni najdete v e-mailová zpráva, otevře se s právy využití s omezeným přístupem, které byly zadány pro daného uživatele. Například pokud jste vybrali možnost **dál**, není k dispozici tlačítko Vpřed na pásu karet.
 
-#### To protect an email message using the Outlook Web App
+#### K ochraně e-mailovou zprávu pomocí webové aplikace Outlook
 
-1.  Within the Outlook Web App, create a new mail message addressed to a recipient within your organization.
+1.  V rámci webové aplikace Outlook vytvořte novou zprávu řešit příjemci v rámci vaší organizace.
 
-2.  Click  **…**,  click **set permission**, and then select an option. For example: **Do Not Forward**, **Do Not Reply All**, **&lt;Company Name&gt; - Confidential** or **&lt;Company Name&gt; - Confidential View Only**.
+2.  Klikněte na tlačítko  **...**,  klikněte na tlačítko **nastavit oprávnění**, a potom vyberte možnost. Příklad: **Nešíří**, **neodpovídejte všechny**, **&lt; název společnosti - &gt; důvěrné** nebo **&lt; název společnosti - &gt; pouze důvěrné zobrazení**.
 
-3.  Send the message.
+3.  Odešle zprávu.
 
-Similarly to viewing a protected document, when the recipients receive the email message, they are first authenticated. If they are authorized to see the email message, it opens with the restricted usage rights that were specified for that user. For example, if you selected **Do Not Reply All**, the **REPLY ALL** option in the message window is not available.
+Podobně k prohlížení chráněný dokument, pokud příjemců přijímat e-mailovou zprávu, budou se nejprve ověřeni. Pokud jsou oprávněni najdete v e-mailová zpráva, otevře se s právy využití s omezeným přístupem, které byly zadány pro daného uživatele. Například pokud jste vybrali možnost **proveďte není Odpovědět všem**,  **Odpovědět všem** možnost v okně zprávy není k dispozici.
 
-## See Also
-[Using Azure Rights Management](../Topic/Using_Azure_Rights_Management.md)
+## Viz také
+[Použití služby Azure Rights Management](../Topic/Using_Azure_Rights_Management.md)
 

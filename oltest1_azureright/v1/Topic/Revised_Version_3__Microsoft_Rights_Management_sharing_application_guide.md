@@ -6,67 +6,66 @@ search: na
 ms.date: na
 ms.tgt_pltfrm: na
 ms.assetid: 846f1895-1daf-4164-8cf6-e4a691384c41
-ms.author: e8f708ba3bce4153b61467184c747c7f
 robots: noindex,nofollow
 ---
-# Revised Version 3: Microsoft Rights Management sharing application guide
-Use this guide for the Microsoft Rights Management (RMS) sharing application for Windows to help you keep important documents and pictures safe from people who should not see them, even if you email them or save them to another device. Similarly, this application lets you open and use files that other people have protected by using the same Rights Management technology.
+# Revidovan&#225; verze 3: Př&#237;ručka aplikace pro sd&#237;len&#237; obsahu Microsoft Rights Management
+Tahle příručka k aplikaci pro sdílení obsahu Microsoft Rights Management (RMS) pro Windows vám pomůže ochránit důležité dokumenty a obrázky před lidmi, kteří by je neměli vidět, a to i když dokumenty nebo obrázky odešlete e-mailem nebo je uložíte na jiné zařízení. Tato aplikace umožňuje taky otvírat a používat soubory chráněné jinými lidmi pomocí stejné technologie Rights Management.
 
-This sharing application provides this protection for your files in the following ways:
+Tato aplikace pro sdílení obsahu chrání soubory následujícími způsoby:
 
--   It adds functionality to File Explorer (also known as Windows Explorer in Windows 7 and earlier versions) so that when you manage files in a folder, you can easily protect a single file, bulk-protect multiple files, or protect all files within a folder.
+-   Přidá do Průzkumníka souborů (ve Windows 7 a dřívějších verzích se nazývá Průzkumník Windows) takové funkce, abyste při správě souborů ve složce mohli snadno chránit jednotlivé soubory, hromadně chránit víc souborů nebo chránit všechny soubory ve složce.
 
--   It provides protection for all file types and has a built-in viewer for commonly used text and image file types.
+-   Poskytuje ochranu pro všechny typy souborů a má integrovaný prohlížeč pro běžně používané typy textových a obrázkových souborů.
 
--   It adds the **Share Protected** button to the Microsoft Office toolbar for Word, PowerPoint, and Excel.
+-   Přidá na panel nástrojů Microsoft Office pro Word, PowerPoint a Excel tlačítko **Sdílet chráněné**.
 
-All you need is a computer that runs Windows 7 or Windows 8, and a local administrator account to install the RMS sharing application. Then download and install this free application from Microsoft.
+Abyste mohli aplikaci Sdílení RMS nainstalovat, potřebujete jenom počítač s Windows 7 nebo Windows 8 a místní účet správce. Pak si tuto bezplatnou aplikaci od Microsoftu stáhněte a nainstalujte.
 
-If you have questions that are not answered by this guide, see [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+Pokud máte nějaké otázky, na které jste v této příručce nenašli odpověď, podívejte se na článek [Nejčastější dotazy k aplikaci pro sdílení obsahu Microsoft Rights Management pro Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-## Examples for using the RMS sharing application
-Here are just some examples of how you might use the RMS sharing application, to help protect your files.
+## Příklady použití aplikace Sdílení RMS
+Tady je pár příkladů, jak můžete pomocí aplikace Sdílení RMS chránit svoje soubory.
 
-|Scenario|Solution using the RMS sharing application|
-|------------|----------------------------------------------|
-|**I want to safely copy a company-confidential document to another device**<br /><br />You’re using your PC to work on a strategy paper that is company-confidential and you want to copy it to a USB thumb drive so that you can continue to work on it when you leave the office and do not have access to the company network.|You have the RMS sharing application installed on both your PC and your laptop. You use File Explorer on your PC to protect the file by using a template, so that it cannot be accessed by people outside your company. You then copy the file to your thumb drive, attach the thumb drive to you laptop and continue to work on the document. If you drop the thumb drive or your laptop is stolen, nobody outside your company can access the document.|
-|**I want to safely share financial information with somebody I trust who is outside my organization**<br /><br />You work with a partner company and want to email them an Excel spreadsheet that contains projected sales figures. You want them to be able to view the figures but not change them.|You use the **Share Protected** button on the ribbon in Excel, type the email addresses of the two people that you work with in the partner company, select **Viewer** on the slider, and click **Send**.<br /><br />When the email arrives at the partner company, only the recipients in the email can view the spreadsheet and they cannot save, edit, print, or forward it.|
-|**I need to safely send an engineering diagram by email to somebody who uses an iOS device**<br /><br />Your company uses a custom engineering application and you want to email a highly confidential diagram to a coworker, who you know, regularly checks email on their iOS device.|You use File Explorer to right-click the file, and select **Share Protected**. The RMS sharing application recognizes that the file extension is not from an application that natively supports RMS, so when it attaches the file to an email message, it automatically converts it to a generically protected file, and automatically selects the **Allow consumption on all devices** option.<br /><br />The recipient receives the email on their iOS device, clicks the link in the email that tells them how to download the RMS sharing application, installs the version for iOS devices, and then views the diagram.|
-|**My company doesn’t use Rights Management, but I’ve received an email message with an attachment that’s protected by RMS**<br /><br />The email sender is somebody who you trust because you’ve done business with them in the past and you suspect that they might be sending you information about a potential new business opportunity.|You click the link in the email that tells you how to download the RMS sharing application for your computer, install it, and then sign up for RMS for individuals. Microsoft confirms that your organization does not have a subscription to Office 365, sends you an email to complete the free signup process, and you sign in with your new account. You can then open the email attachment to read about the new business opportunity.|
+|Scénář|Řešení využívající aplikaci Sdílení RMS|
+|----------|-------------------------------------------|
+|**Chci bezpečně zkopírovat důvěrný dokument společnosti na jiné zařízení.**<br /><br />Na počítači PC pracujete na strategickém dokumentu vaší společnosti, který je důvěrný, a chcete ho zkopírovat na USB flash disk, abyste mohli v práci pokračovat, až opustíte kancelář a nebudete mít přístup k síti společnosti.|Na počítači PC i na přenosném počítači máte nainstalovanou aplikaci Sdílení RMS. Na počítači PC použijete Průzkumník souborů a ochráníte soubor pomocí šablony, aby k němu nemohli získat přístup lidé mimo vaši společnost. Soubor pak zkopírujete na flash disk, ten připojíte k přenosnému počítači a budete pokračovat v práci na dokumentu. Pokud byste flash disk ztratili nebo by vám někdo přenosný počítač ukradl, nikomu cizímu by se nepodařilo získat k dokumentu přístup.|
+|**Chci bezpečně sdílet finanční informace s někým, kdo není z mojí organizace, ale komu důvěřuju.**<br /><br />Spolupracujete s partnerskou společností a chcete jí e-mailem poslat excelovou tabulku s plánovanými prodejními čísly. Chcete, aby mohli čísla zobrazit, ale nemohli je měnit.|Použijete v Excelu na pásu karet tlačítko **Sdílet chráněné**, zadáte e-mailové adresy dvou osob, se kterými v partnerské firmě spolupracujete, vyberete na posuvníku možnost **Čtenář** a kliknete na **Odeslat**.<br /><br />Až e-mail dorazí do partnerské společnosti, můžou tabulku zobrazit jenom příjemci uvedení v e-mailu – a nemůžou ji uložit, upravit, vytisknout ani přeposlat.|
+|**Potřebuju e-mailem poslat inženýrský diagram někomu, kdo používá zařízení s iOS.**<br /><br />Vaše společnost používá vlastní inženýrskou aplikaci a vy chcete poslat e-mailem vysoce důvěrný diagram spolupracovníkovi, o kterém víte, že si pravidelně čte e-maily na svém zařízení s iOS.|V Průzkumníku souborů kliknete na soubor pravým tlačítkem a vyberete **Sdílet chráněné**. Aplikace Sdílení RMS rozpozná, že přípona souboru neodpovídá aplikaci, která nativně podporuje RMS. Proto soubor při připojování k e-mailové zprávě automaticky převede na obecně chráněný soubor a automaticky vybere možnost **Povolit používání na všech zařízeních**.<br /><br />Příjemce obdrží e-mail na svém zařízení s iOS, klikne ve zprávě na odkaz a dozví se, jak stáhnout aplikaci Sdílení RMS, nainstaluje si verzi pro zařízení s iOS a pak zobrazí diagram.|
+|**Moje společnost nepoužívá službu Rights Management, ale přišla mi e-mailová zpráva s přílohou, která je chráněná technologií RMS.**<br /><br />Odesílatel e-mailu je někdo, komu důvěřujete, protože jste s ním dřív obchodovali. Předpokládáte, že vám posílá informace o nové potenciální obchodní příležitosti.|Kliknete ve zprávě na odkaz a dozvíte se, jak si do počítače stáhnout aplikaci Sdílení RMS, aplikaci nainstalujete a pak se zaregistrujete ke službě RMS pro jednotlivce. Microsoft ověří, jestli vaše organizace nemá předplatné na Office 365, pošle vám e-mailovou zprávu k provedení bezplatného procesu registrace a vy se pak pomocí svého nového účtu přihlásíte. Pak si můžete přílohu e-mailu otevřít a přečíst si o nové obchodní příležitosti.|
 
-## <a name="BKMK_Install"></a>How to download and install the RMS sharing application
+## <a name="BKMK_Install"></a>Jak mám stáhnout a nainstalovat aplikaci Sdílení RMS?
 > [!IMPORTANT]
-> You must have a local administrator account to install the RMS sharing application. If you do not log in as a local administrator, you can use the **Run as administrator** option when you run Setup.exe in step 3.
+> Abyste mohli nainstalovat aplikaci Sdílení RMS, musíte mít místní účet správce. Pokud se nepřihlásíte jako místní správce, můžete při spuštění souboru Setup.exe v kroku 3 použít možnost **Spustit jako správce**.
 
-To install the RMS sharing application, follow these steps:
+Při instalaci aplikace Sdílení RMS postupujte takto:
 
-1.  Go to the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website.
+1.  Přejděte na stránku [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) na webu Microsoftu.
 
-2.  In the **Computers** section, click the icon for the **RMS app for Windows** and save the Microsoft Rights Management sharing application installation package to your computer.
+2.  V části **Počítače** klikněte na ikonu  **Aplikace RMS pro systém Windows** a uložte instalační balíček aplikace pro sdílení obsahu Microsoft Rights Management do počítače.
 
-3.  Double click the compressed file that was downloaded, and then double-click **setup.exe**. If you are prompted to continue, click **Yes**.
+3.  Poklikejte na stažený komprimovaný soubor a pak poklikejte na soubor **setup.exe**. Při zobrazení výzvy k pokračování klikněte na **Ano**.
 
-4.  On the **Setup Microsoft RMS** page, click **Next**, and wait for the installation to finish.
+4.  Na stránce **Instalace aplikace Microsoft RMS** klikněte na **Další** a počkejte na dokončení instalace.
 
-5.  When the installation finishes, click **Restart** to restart your computer and complete the installation. Or, click **Close** and restart your computer later to complete the installation.
+5.  Až instalace skončí, klikněte na **Restartovat** a dokončete instalaci restartováním počítače. Nebo klikněte na **Zavřít** a dokončete instalaci restartováním počítače později.
 
-You’re now ready to start protecting your files or read files that others have protected.
+Teď můžete začít chránit svoje soubory nebo prohlížet soubory chráněné jinými uživateli.
 
-## <a name="BKMK_UsingMSRMSApp"></a>What do you want to do?
-Use the following instructions to help you work with protected files.
+## <a name="BKMK_UsingMSRMSApp"></a>Co chcete udělat?
+Při práci s chráněnými soubory vám pomůžou následující pokyny.
 
-### <a name="BKMK_CreatePTXT"></a>Create a protected text file
-You can convert a regular text (.txt) file into a protected file that then has a .ptxt file extension.
+### <a name="BKMK_CreatePTXT"></a>Vytvoření chráněného textového souboru
+Běžný textový soubor (.txt) můžete převést na chráněný soubor s příponou souboru .ptxt.
 
-##### To create a protected text (.ptxt) file
+##### Chráněný textový soubor (.ptxt) vytvoříte tak, že
 
-1.  In File Explorer, right-click in a folder, click **New**, and then click **Text Document**.
+1.  V Průzkumníku souborů klikněte pravým tlačítkem na složku, klikněte na **Nový** a potom na **Textový dokument**.
 
-2.  Rename the file (for example, Sample.txt).
+2.  Přejmenujte soubor (třeba na Ukázka.txt).
 
-3.  Double-click the file to open it in Notepad.
+3.  Poklikáním soubor otevřete v Poznámkovém bloku.
 
-4.  In Notepad, add a few lines of text to the file, and then save it. You can use the following as your example text.
+4.  V Poznámkovém bloku přidejte do tohoto souboru pár řádků textu a pak ho uložte. Jako ukázkový text můžete použít následující text.
 
     ```
     This is a sample text file.
@@ -77,114 +76,114 @@ You can convert a regular text (.txt) file into a protected file that then has a
     This is a sample text file.
     ```
 
-5.  Right-click the file, click **Protect in-place**, and select a template from the list. If this is the first time you have used the RMS sharing application, you will first need to select **Company- Protection**, which downloads the templates for your organization.
+5.  Klikněte na soubor pravým tlačítkem, klikněte na **Chránit místně** a v seznamu vyberte šablonu. Pokud aplikaci pro sdílení obsahu RMS používáte poprvé, bude nejdřív potřeba vybrat **Ochrana definovaná společností**. Tím stáhnete šablony pro organizaci.
 
-6.  On the **Microsoft Rights Management sharing application** screen, confirm the policy you want to apply, click **Apply**, and after the file is protected, click **Close**.
+6.  Na obrazovce **Aplikace pro sdílení obsahu Microsoft Rights Management** potvrďte zásady, které chcete použít, klikněte na **Použít** a po aktivaci ochrany souboru klikněte na **Zavřít**.
 
-### <a name="BKMK_ViewPTXT"></a>View a protected text file (.ptxt) or a protected image file
-To view a protected text (.ptxt) file, in File Explorer, double-click the file (for example, Sample.ptxt). You might be prompted for credentials. When the file opens, you’ll see the file’s protection policy at the top of the file.
+### <a name="BKMK_ViewPTXT"></a>Zobrazení chráněného textového souboru (.ptxt) nebo chráněného souboru obrázku
+Pokud si chcete prohlédnout chráněný textový soubor (.ptxt), v Průzkumníku souborů na tento soubor poklikejte (například na soubor Ukázka.ptxt). Možná budete vyzváni k zadání pověření. Po otevření souboru se nahoře zobrazí jeho zásady ochrany.
 
-You view and open protected images in the same way.
+Chráněné obrázky zobrazíte a otevřete stejným způsobem.
 
-### <a name="BKMK_CreatePFILE"></a>Create a generic protected file
-Use the generic protection (.pfile) file format to offer a generic level of protection for file types that are not directly supported by the RMS sharing application or other applications that provide built-in RMS-type protection. You can use the [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) page on the Microsoft website to quickly check which applications support RMS built-in protection.
+### <a name="BKMK_CreatePFILE"></a>Vytvoření obecně chráněného souboru
+Použitím formátu souboru obecné ochrany (.pfile) poskytnete obecnou úroveň ochrany pro typy souborů, které nejsou přímo podporované aplikací Sdílení RMS nebo jinými aplikacemi s integrovanou ochranou typu RMS. Na stránce [Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970) na webu Microsoftu můžete rychle zkontrolovat, které aplikace podporují integrovanou ochranu RMS.
 
-For example, because Microsoft Visio does not currently support built-in protection for RMS, you can use generic protection for .vsd files that you create with Microsoft Visio.
+Protože například Microsoft Visio v současnosti nepodporuje integrovanou ochranu RMS, můžete obecnou ochranu použít pro soubory .vsd, které vytvoříte v Microsoft Visiu.
 
 > [!TIP]
-> What’s the difference between built-in (native) protection and generic protection?
+> Jaký je rozdíl mezi integrovanou (nativní) ochranou a obecnou ochranou?
 > 
-> -   When you generically protect a file, unauthorized people cannot open the file. But after authorized people open the file, they could then forward it unprotected to other people or save it in a location that others could access. They do, however, see a message at the top of the file that tells them  what permissions they have for the file, and they are asked to honor these, but this protection cannot be enforced. In addition, when you generically protect a file, you cannot restrict the permissions further than authorization. For example, if you use custom permissions, the slider in the RMS sharing application automatically selects **CO_OWNER** and you cannot change this for more restrictive permissions, such as **VIEWER** or **CO-AUTHOR**.
-> -   In comparison, when you use the built-in protection of RMS with applications that support this (for example, Office files), the protection applies to the file even if the file is then sent to somebody else or saved in another location. And, when you protect these files, you can use restrictive permissions such as read-only, or the permission to edit but not print or copy. For example, if you use custom permissions, the slider in the RMS sharing application automatically selects **REVIEWER** for the permissions, which you can then change to be more or less restrictive.
+> -   Při obecné ochraně souboru nemůžou soubor otevřít neoprávnění lidé. Když ale oprávnění lidé soubor otevřou, můžou ho poslat dál nechráněný dalším lidem nebo ho uložit na místo, ke kterému mají ostatní přístup. Sice se jim v horní části souboru zobrazí zpráva s informacemi o jejich oprávnění k souboru a s žádostí, aby tato oprávnění respektovali, ale tato ochrana se nedá vynutit. Při obecné ochraně souboru taky platí, že nemůžete oprávnění omezit nad rámec autorizace. Když třeba používáte vlastní oprávnění, jezdec v aplikaci Sdílení RMS je automaticky nastavený na **SPOLUVLASTNÍK** a nedá se změnit na víc omezující oprávnění, jako je nebo **ČTENÁŘ** nebo **SPOLUAUTOR**.
+> -   Když pro srovnání použijete integrovanou ochranu RMS u aplikací, které ji podporují (třeba u souborů Office), platí ochrana pro soubor i v případě, že bude odeslaný někomu jinému nebo uložený na jiné místo. Při ochraně těchto souborů můžete používat omezující oprávnění (jako třeba jen pro čtení) nebo oprávnění k úpravám, ale ne k tisku nebo kopírování. Když třeba používáte vlastní oprávnění, jezdec v aplikaci pro sdílení je z hlediska oprávnění automaticky nastavený na **REVIDUJÍCÍ**, ale dá se změnit na víc nebo míň omezující oprávnění.
 
-##### Example: To create a generic protected file (.pfile) from a Visio drawing (.vsd) file
+##### Příklad: Obecný chráněný soubor (.pfile) vytvoříte ze souboru výkresu Visia (.vsd) tak, že
 
-1.  In File Explorer, right-click in a folder, click **New**, and then click **New Visio Document**.
+1.  V Průzkumníku souborů klikněte pravým tlačítkem na složku, klikněte na **Nový** a potom na **Nový dokument Visia**.
 
-2.  Rename the file (for example, Sample.vsd).
+2.  Přejmenujte soubor (třeba na Ukázka.vsd).
 
-3.  Double-click the file to open it in Visio.
+3.  Poklikáním soubor otevřete ve Visiu.
 
-4.  In Visio, add elements to the drawing, and then save and close the file.
+4.  Ve Visiu přidejte do výkresu prvky a pak soubor uložte a zavřete.
 
-5.  Right-click the file, click **Protect in-place**, and select a policy template from the list. If this is the first time you have used the RMS sharing application, you will first need to select **Company- Protection**, which downloads the templates for your organization.
+5.  Klikněte na soubor pravým tlačítkem, klikněte na **Chránit místně** a v seznamu vyberte šablonu zásad. Pokud aplikaci pro sdílení obsahu RMS používáte poprvé, bude nejdřív potřeba vybrat **Ochrana definovaná společností**. Tím stáhnete šablony pro organizaci.
 
-6.  On the **Microsoft Rights Management sharing application** screen, select the policy you want to apply, and then click **Apply**.
+6.  Na obrazovce **Aplikace pro sdílení obsahu Microsoft Rights Management** vyberte zásadu, kterou chcete použít, a klikněte na **Použít**.
 
-7.  A message states your protected file was saved as a .pfile file (for example, Sample.vsd.pfile). The original file is deleted.
+7.  Zobrazí se zpráva s oznámením, že chráněný soubor byl uložený jako soubor .pfile (například soubor Ukázka.vsd.pfile). Původní soubor se odstraní.
 
-### <a name="BKMK_ViewPFILE"></a>View a generic protected (.pfile) file
-To view a generic protected (.pfile) file, in File Explorer, double-click the generic protected (.pfile) file (for example, Sample.vsd.pfile), and click **Open**.
+### <a name="BKMK_ViewPFILE"></a>Zobrazení obecně chráněného souboru (.pfile)
+Obecný chráněný soubor (.pfile) si prohlédnete tak, že v Průzkumníku souborů na tento soubor (například Ukázka.vsd.pfile) poklikáte a pak kliknete na **Otevřít**.
 
-### <a name="BKMK_Unprotect"></a>Remove protection from a file
-To remove protection from a file (that is, unprotect a file) that was previously protected, use the **Remove Protection** option:
+### <a name="BKMK_Unprotect"></a>Odebrání ochrany souboru
+Pokud chcete ochranu souboru odebrat (soubor odemknout) použijte možnost **Odebrat ochranu**:
 
-1.  Right-click the file (for example, Sample.ptxt), click **Protect in-place**, and then click **Remove Protection**. You might be prompted for credentials.
+1.  Klikněte na soubor (třeba Sample.ptxt) pravým tlačítkem, klikněte na **Chránit místně** a potom klikněte na **Odebrat ochranu**. Možná budete vyzváni k zadání pověření.
 
-2.  The original protected file is deleted (for example, Sample.ptxt) and replaced with a file that has the same name but with the unprotected file name extension (for example, Sample.txt).
+2.  Původní chráněný soubor (například Ukázka.ptxt) se odstraní a nahradí se souborem, který má stejný název, ale příponu nechráněného souboru (například Ukázka.txt).
 
-### <a name="BKMK_ProtectCustom"></a>Protect a file with your own custom permissions
-The easiest way to protect a file is to use templates but you can also specify your own permissions. This is called user-authored protection and it is useful for the following situations:
+### <a name="BKMK_ProtectCustom"></a>Ochrana souboru pomocí vlastních oprávnění
+Nejjednodušším způsobem ochrany souboru je použití šablony, ale můžete taky zadat vlastní oprávnění. Tento způsob se nazývá uživatelem definovaná ochrana a je užitečný v těchto situacích:
 
--   You want to limit file access to only a specific list of individual users that are identified by their email addresses.
+-   Chcete omezit přístup k souboru jenom na konkrétní seznam jednotlivých uživatelů určených jejich e-mailovými adresami.
 
--   You want to limit the use of the file to only specific rights, such as read-only rights to a document.
+-   Chcete omezit použití souboru jenom na konkrétní práva, třeba jen na čtení určitého dokumentu.
 
-To protect a file with user-authored permissions, right-click the file, click **Protect in-place**, and then click **Custom Permissions**. You will see the following screen:
+Pokud chcete soubor ochránit pomocí uživatelem definovaných oprávnění, klikněte na něho pravým tlačítkem, klikněte na **Chránit místně** a potom klikněte na **Vlastní oprávnění**. Zobrazí se tato obrazovka:
 
 ![](../Image/ADRMS_MSRMSApp_ProtectCustom.gif)
 
-Type the email addresses of the users, use the slider to select permissions for the file, and then click **Apply**.
+Zadejte e-mailové adresy uživatelů, posuvníkem vyberte oprávnění k tomuto souboru a klikněte na **Použít**.
 
-### <a name="BKMK_UserDefined"></a>Use files that have custom protection
-Most protected files that you open will have been protected by applying templates. However, users can also protect files by using their own custom permissions, which is called user-authored protection.
+### <a name="BKMK_UserDefined"></a>Používání souborů, které mají vlastní ochranu
+Většina chráněných souborů, které otvíráte, je chráněná pomocí šablon. Uživatelé ale můžou soubory chránit taky pomocí vlastních oprávnění. Tento způsob se nazývá uživatelem definovaná ochrana.
 
-For text and image file formats, this level of protection requires that any applications that you use to edit, save, or restrict these files have been designed to support RMS protection and that they implement the protection APIs that are provided in the AD RMS SDK.
+U textových a obrázkových formátů souborů tato úroveň ochrany vyžaduje, aby všechny aplikace sloužící k úpravám, ukládání nebo omezení těchto souborů byly navržené tak, aby podporovaly ochranu RMS a implementovaly ochranná rozhraní API, která poskytuje sada AD RMS SDK.
 
-When you view a protected text file that has user-authored protection, you will notice a slight difference in the permissions as they are displayed for the file as shown in the following example.
+Při zobrazení chráněného textového souboru, který má uživatelem definovanou ochranu, si všimnete malého rozdílu v oprávněních zobrazených u souboru, jak ukazuje následující příklad.
 
-For files that are protected by using the generic protection (.pfile) file format, the specific rights or permissions that were specified by the user appears in the confirmation screen instead of the name of the template that was used to protect the file, as shown in the following picture.
+U souborů, které jsou chráněné formátem souboru obecné ochrany (.pfile), se konkrétní práva nebo oprávnění definovaná uživatelem zobrazují na potvrzovací obrazovce a ne v názvu šablony, která se použila k ochraně souboru, jak ukazuje následující obrázek.
 
 ![](../Image/ADRMS_MSRMSApp_SP_ConsumePfile.gif)
 
-### <a name="BKMK_ShareProtected"></a>Protect content to share by email
-To protect content that you want to share by using an email message, right-click the file, and click **Share Protected**. You will see the following screen:
+### <a name="BKMK_ShareProtected"></a>Ochrana obsahu pro sdílení e-mailem
+Pokud chcete chránit obsah, který se má sdílet pomocí e-mailové zprávy, klikněte na soubor pravým tlačítkem a pak klikněte na **Sdílet chráněné**. Zobrazí se tato obrazovka:
 
 ![](../Image/ADRMS_MSRMSAPP_SP_ShareProtected.gif)
 
-Type the email addresses of the list of users, use the slider to select permissions for the file, and click **Send**. Outlook then creates an email message for the recipients with a short message that you can change, and attaches the protected file attached. The original file is not protected.
+Zadejte e-mailové adresy seznamu uživatelů, posuvníkem vyberte oprávnění k tomuto souboru a klikněte na **Odeslat**. Outlook pak pro příjemce vytvoří e-mailovou zprávu s krátkým sdělením, které můžete změnit, a připojí k ní chráněný soubor. Původní soubor není chráněný.
 
-To let people view protected files on non-Windows devices, click **Allow consumption on all devices**. Users might have to download the RMS sharing application for their device, and there is a link to do this in the email.
+Pokud chcete lidem umožnit zobrazení chráněných souborů na zařízení, která nepoužívají Windows, klikněte na **Povolit používání na všech zařízeních**. Uživatelé si možná budou do zařízení muset stáhnout aplikaci Sdílení RMS. Příslušný odkaz najdou v e-mailu.
 
-### <a name="BKMK_Multiple"></a>Apply protection to multiple files and folders
-You don’t have to apply protection to files one-by one when you use File Explorer. Instead, you can select multiple files, or all files in a folder if these files are not already protected.
+### <a name="BKMK_Multiple"></a>Použití ochrany u několika souborů a složek
+V Průzkumníku souborů nemusíte chránit soubory jednotlivě. Místo toho můžete vybrat několik souborů nebo všechny soubory ve složce (pokud už nejsou chráněné).
 
-##### To protect multiple files or all files within a selected folder
+##### Ochrana několika nebo všech souborů ve vybrané složce
 
-1.  In File Explorer, either select multiple files or select a folder that contains files to be protected.
+1.  V Průzkumníku souborů vyberte několik souborů nebo vyberte složku obsahující soubory, které chcete chránit.
 
-2.  Right-click the selected folder or files, click **Protect in-place**, and select a template from the list. If this is the first time you have used the RMS sharing application, you will first need to select **Company- Protection**, which downloads the templates for your organization.
+2.  Klikněte na vybranou složku nebo soubory pravým tlačítkem, klikněte na **Chránit místně** a v seznamu vyberte šablonu. Pokud aplikaci pro sdílení obsahu RMS používáte poprvé, bude nejdřív potřeba vybrat **Ochrana definovaná společností**. Tím stáhnete šablony pro organizaci.
 
-3.  On the **Microsoft Rights Management sharing application** screen, confirm the files have been protected.
+3.  Na obrazovce **Aplikace pro sdílení obsahu Microsoft Rights Management** zkontrolujte, jestli už jsou soubory chráněné.
 
 > [!TIP]
-> If you see any errors, refer to [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
+> Pokud uvidíte nějaké chyby, podívejte se na [Nejčastější dotazy k aplikaci pro sdílení obsahu Microsoft  Rights Management pro Windows](http://go.microsoft.com/fwlink/?LinkId=303971).
 
-### <a name="BKMK_OfficeToolbar"></a>Use the Office toolbar add-in
-You can protect and share files in Word, PowerPoint, and Excel  directly from within Microsoft Office by using the Office ribbon add-in for Microsoft Rights Management sharing application.
+### <a name="BKMK_OfficeToolbar"></a>Používání doplňku pro panel nástrojů Office
+Soubory Wordu, PowerPointu a Excelu můžete chránit přímo v Microsoft Office pomocí doplňku na pásu karet Office pro aplikaci pro sdílení obsahu Microsoft Rights Management.
 
-In the **Protection** group, click **Share Protected** to start the Microsoft Rights Management sharing application.
+Ve skupině **Ochrana** klikněte na **Sdílet chráněné** a spusťte tak aplikaci pro sdílení obsahu Microsoft Rights Management.
 
 ![](../Image/ADRMS_MSRMSApp_SP_OfficeToolbar.png)
 
-### <a name="BKMK_AccessKeys"></a>Use keyboard shortcuts
-Press the **Alt** key to see the available access keys, and then press **Alt** + the access key to select an option.
+### <a name="BKMK_AccessKeys"></a>Používání klávesových zkratek
+Stisknutím klávesy **Alt** zobrazíte dostupné přístupové klávesy a potom stisknutím klávesy **Alt** + přístupové klávesy vyberete příslušnou možnost.
 
-For example, in the **share protected** dialog box, press **Alt** to see the access keys, and then press **Alt + u** to select the **Users must login every time they open this file** check box.
+Například v dialogovém okně **sdílet chráněné** stisknutím klávesy **Alt** zobrazte přístupové klíče a pak stisknutím kombinace **Alt + u** zaškrtněte políčko **Pokaždé, když budou uživatelé chtít tento soubor otevřít, se budou muset přihlásit**.
 
 ![](../Image/ADRMS_MSRMSApp_AccessKeys.png)
 
-## See Also
-[Microsoft Rights Management sharing application download](http://go.microsoft.com/fwlink/?LinkId=303970)
- [FAQ for Microsoft Rights Management Sharing Application for Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
+## Viz také
+[Stažení aplikace pro sdílení obsahu Microsoft Rights Management](http://go.microsoft.com/fwlink/?LinkId=303970)
+ [Nejčastější dotazy k aplikaci pro sdílení obsahu Microsoft  Rights Management pro Windows](http://go.microsoft.com/fwlink/?LinkId=303971)
 

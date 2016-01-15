@@ -3,118 +3,117 @@ description: na
 keywords: na
 title: Information and Support for Azure Rights Management
 search: na
-ms.date: 2015-12-01
+ms.date: na
 ms.service: rights-management
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7cc73d92-27d6-49ff-a8ab-2fae73519b4b
-ms.author: e8f708ba3bce4153b61467184c747c7f
 ---
-# Information and Support for Azure Rights Management
-Use the following resources for additional information about Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS).
+# Informace a podpora n&#225;stroje Azure Rights Management
+Použít následující prostředky pro další informace o aplikaci Microsoft [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] (Azure RMS).
 
-|To do this …|.. do this:|
-|----------------|---------------|
-|… read the most current [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] product documentation →|Use the TechNet documentation library for  [Azure Rights Management](../Topic/Azure_Rights_Management.md)|
-|… provide feedback about the documentation or ask a question about the documentation →|Email [askipteam](mailto:%20askipteam@microsoft.com?subject=Documentation%20feedback)|
-|… receive tweets about Rights Management and announcements about documentation updates from the product group →|Follow Dan Plastina, who helps lead the Microsoft Rights Management Team. See [Dan Plastina @TheRMSGuy](https://twitter.com/TheRMSGuy)|
-|… get a trial version of [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] →|[Sign up for free 30-day trial](https://portal.microsoftonline.com/Signup/MainSignUp15.aspx?&amp;OfferId=A43415D3-404C-4df3-B31B-AAD28118A778&amp;dl=RIGHTSMANAGEMENT&amp;ali=1)|
-The following sections provide additional information about [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)]:
+|Chcete-li to provést...|.. postupujte takto:|
+|---------------------------|------------------------|
+|… Přečtěte si nejaktuálnější [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] → dokumentaci produktu|Použijte dokumentaci v knihovně TechNet  [Azure Rights Management](../Topic/Azure_Rights_Management.md)|
+|… názor na dokumentaci nebo položit otázku o → dokumentace|E-mailu [askipteam](mailto:%20askipteam@microsoft.com?subject=Documentation%20feedback)|
+|… přijímat tweety o Rights Management a oznámení o aktualizacích dokumentace z → skupiny produktů|Postupujte podle Plastina daň, která pomáhá vést týmů ve společnosti Microsoft Rights Management. Podívejte se na téma [daň Plastina @TheRMSGuy](https://twitter.com/TheRMSGuy)|
+|… Získejte zkušební verzi aplikace [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] →|[Zaregistrujte se zdarma 30denní zkušební verze](https://portal.microsoftonline.com/Signup/MainSignUp15.aspx?&amp;OfferId=A43415D3-404C-4df3-B31B-AAD28118A778&amp;dl=RIGHTSMANAGEMENT&amp;ali=1)|
+V následujících částech Další informace o [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)]:
 
--   [Search the documentation library](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_SearchTips)
+-   [Hledání v knihovně dokumentace](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_SearchTips)
 
--   [Downloadable documentation](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_Download)
+-   [Dokumentace ke stažení](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_Download)
 
--   [The Rights Management product group blog](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_ProductGroupBlog)
+-   [Blog skupiny pro produkt Rights Management](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_ProductGroupBlog)
 
--   [Support options and community resources](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_SupportOptions)
+-   [Možnosti podpory a materiály z komunity](../Topic/Information_and_Support_for_Azure_Rights_Management.md#BKMK_SupportOptions)
 
-## <a name="BKMK_SearchTips"></a>Search the documentation library
-[Use this scoped search query](http://www.bing.com/search?q=%28"Rights%20Management"%29%20site:technet.microsoft.com/library%20meta:search.MSCategory%28jj619159%29) to find documentation in the TechNet Library that is scoped to [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] only.
+## <a name="BKMK_SearchTips"></a>Hledání v knihovně dokumentace
+[Pomocí tohoto dotazu cílené vyhledání](http://www.bing.com/search?q=%28"Rights%20Management"%29%20site:technet.microsoft.com/library%20meta:search.MSCategory%28jj619159%29) lze vyhledat dokumentaci v knihovně TechNet, který je zaměřená na [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] pouze.
 
-The search results for that query do not include results about Active Directory Rights Management Services (AD RMS) or Windows Rights Management, or community resources. You can narrow the search results further by replacing the string, “Rights Management,” in the URL with your own search string.
+Výsledky hledání pro tento dotaz nezahrnují výsledky o službě Active Directory Rights Management Services (AD RMS) nebo Windows Rights Management nebo materiály z komunity. Můžete zúžit výsledky hledání dále nahradí řetězec "Rights Management," v adrese URL s hledanému řetězci.
 
-### Example searches
-[Use this search query](http://www.bing.com/search?q=%28"Rights%20Management"%29%20site:technet.microsoft.com/library%20meta:search.MSCategory%28jj619159%29) and then customize the search by using the following examples.
+### Příklad vyhledávání
+[Pomocí tohoto dotazu vyhledávání](http://www.bing.com/search?q=%28"Rights%20Management"%29%20site:technet.microsoft.com/library%20meta:search.MSCategory%28jj619159%29) a poté si můžete upravit hledání pomocí následující příklady.
 
--   Single search string: To search for topics that contain the search string **RMS connector**, replace **“Rights Management”** with **“RMS connector”**:
+-   Jeden hledaný řetězec: Chcete-li hledat témata, které obsahují hledaný řetězec **konektor služby RMS**, nahradit **“Rights Management”** s **“RMS connector”**:
 
     ```
     ("RMS connector") site:technet.microsoft.com/library meta:search.MSCategory(jj619159)
     ```
 
--   Combining search strings: To search for topics that contain the search strings **Exchange** and **SharePoint**, use the **AND** operator:
+-   Kombinování vyhledávací řetězce: Chcete-li hledat témata, které obsahují vyhledávací řetězce **Exchange** a **SharePoint**, použít **AND** operátor:
 
     ```
     ("Exchange") AND ("SharePoint") site:technet.microsoft.com/library meta:search.MSCategory(jj619159)
     ```
 
--   Alternative search strings: To search for topics that contain the search string **Exchange** or **SharePoint**, use the **OR** operator:
+-   Alternativní vyhledávací řetězce: Chcete-li hledat témata, které obsahují hledaný řetězec **Exchange** nebo **SharePoint**, použít **OR** operátor:
 
     ```
     ("Exchange" OR "SharePoint") site:technet.microsoft.com/library meta:search.MSCategory(jj619159)
     ```
 
--   Exclude search strings: To search for topics that contain the search string **Exchange** and exclude topics about **SharePoint**, use the **NOT** operator:
+-   Vylučte vyhledávací řetězce: Chcete-li hledat témata, které obsahují hledaný řetězec **Exchange** a vyloučení témata o **SharePoint**, použít **NOT** operátor:
 
     ```
     ("Exchange)" NOT ("SharePoint") site:technet.microsoft.com/library meta:search.MSCategory(jj619159)
     ```
 
-### Search tips
-Use the following search tips to help you find the information that you need:
+### Tipy pro vyhledávání
+Aby vám pomohl najít informace, které je nutné použijte následující tipy pro vyhledávání:
 
--   When you are searching for official documentation, use search terms that match those that you see in the user interface (UI) and TechNet documentation, rather than unofficial terms or abbreviations that you might see in community content. For example, search for "Azure Rights Management" rather than "AADRMS" or other unofficial abbreviations for this cloud service. Although you might often hear and see “RMS”, the full name is Rights Management service, so try searching for “rights management” rather than RMS when you are looking for official documentation. You can use the [Terminology for Azure Rights Management](../Topic/Terminology_for_Azure_Rights_Management.md) to help identify official terms that are specific to [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+-   Při hledání pro oficiální dokumentaci, použijte hledané výrazy, které odpovídají těch, které se zobrazí v uživatelském rozhraní (UI) a dokumentace TechNet, nikoli neoficiální termíny nebo zkratky, které mohou se zobrazit v obsahu vytvořeného komunitou. Můžete například hledat "Azure Rights Management" a "AADRMS" nebo jiné neoficiální zkratky pro tuto službu cloudu. Ačkoli může často poslechněte si a podívejte se na téma "RMS", úplný název je služba Rights Management, vyzkoušejte proto hledání "rights management" a RMS v případě, že hledáte oficiální dokumentaci. Můžete použít [Terminologie Azure Rights Management](../Topic/Terminology_for_Azure_Rights_Management.md) k identifikaci oficiální podmínky, které jsou specifické pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
 
--   When you search on a page in TechNet (press Ctrl-F, and enter search terms in the **Find** box), the results exclude text that is in collapsed sections. To search for text in collapsed sections, expand the sections before you search the page. To do this, you can click the **Expand All** button at the top of the page, or double-click any collapsed section. When all sections are expanded, a search of the page will then search all sections on that page.
+-   Při vyhledávání stránky na webu TechNet (stiskněte klávesy Ctrl + F a zadejte hledané výrazy v **Najít** pole), text, který je v částech sbaleného vyloučit výsledky. K vyhledání textu v částech sbalené, rozbalte v částech před Hledat stránky. Chcete-li to provést, klepněte **Rozbalit vše** tlačítko v horní části stránky, nebo poklepejte na libovolné sbaleného části. Pokud jsou všechny oddíly rozbaleny, vyhledávání stránky prohledá všechny oddíly na této stránce.
 
--   Whenever possible, use the TechNet library online rather than downloaded documentation. TechNet Library online contains the most up-to-date information, and the information that you are searching for might not be in the downloaded documentation or there might be corrections or additional information online.
+-   Kdykoli je to možné, použijte dokumentaci online, nikoli stažené knihovna TechNet. Online v knihovně TechNet obsahuje nejnovější informace a informace, které chcete vyhledat nemusí být v stažené dokumentaci nebo může být oprav nebo Další informace naleznete online.
 
--   If you find it easier and faster to search documentation when it is stored locally, you can select multiple topics on TechNet and save them locally. For more information, see the next section.
+-   Pokud zjistíte, je jednodušší a rychlejší vyhledávání dokumentace, když je uložena místně, můžete vybrat více témat na webu TechNet a uložit místně. Další informace naleznete v části Další.
 
-## <a name="BKMK_Download"></a>Downloadable documentation
-You can download pages from TechNet and save them locally —for example, save them to a PDF file to read on your laptop, tablet, or phone when you don’t have Internet connectivity. Or, annotate them yourself and print the information. Using this method, you can effectively create your own white papers or project documentation by grouping together the topics that you need for a specific set of tasks, or for an end-to-end scenario.
+## <a name="BKMK_Download"></a>Dokumentace ke stažení
+Můžete stáhnout stránek na webu TechNet a uložit místně – například je uložit do souboru PDF ke čtení na přenosné počítače, tablety nebo telefon, pokud nemáte připojení k Internetu. Můžete také anotaci sami a vytisknout informace. Při použití této metody můžete efektivně vytvořit vlastní dokumenty white paper nebo dokumentace k projektům podle seskupování témata, která je nutné pro konkrétní nastavit úlohy, případně scénáři začátku do konce.
 
-This method works for all documentation libraries on TechNet, not just [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+Tuto metodu lze použít pro všechny knihovny dokumentace na webu TechNet, nikoli pouze [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
 
-#### To download the docs from TechNet:
+#### Chcete-li stáhnout dokumenty na webu TechNet:
 
-1.  Sign in to TechNet.
+1.  Přihlaste se k webu TechNet.
 
-2.  On the top of the page that you want to save locally, click **Export** (next to **Print**).
+2.  Horní části stránky, který chcete uložit místně, klikněte na tlačítko **Exportovat** (vedle **Tisk**).
 
-    You then see the **Export multiple sets of pages** banner that lets you add and remove pages that you want to save.
+    Zobrazí se **Export více sad stránek** hlavičky, která umožňuje přidávat a odebírat stránky, které chcete uložit.
 
-3.  Click **Manage pages** to export them.
+3.  Klikněte na tlačítko **Spravovat stránky** exportovat je.
 
-For more information, click **Help** on the banner.
+Další informace získáte kliknutím na tlačítko **pomoci** do hlavičky.
 
 > [!NOTE]
-> Information on TechNet is frequently updated, so use the online version whenever possible to ensure that you have the latest information.
+> Informace na webu TechNet jsou pravidelně aktualizovány, proto použít online verzi vždy, když je možné zajistit, abyste měli nejnovější informace.
 > 
-> You can use the monthly documentation announcements on the [Microsoft Rights Management (RMS) Team Blog and the docs tag](http://blogs.technet.com/b/rms/archive/tags/docs/) to check whether topics that you have previously downloaded for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] are now revised, and what changes were made.
+> Měsíční hlášení dokumentaci můžete používat na [Blog týmu Microsoft Rights Management (RMS) a dokumentace značkou](http://blogs.technet.com/b/rms/archive/tags/docs/) ke kontrole zda témata, které jste dříve stáhli pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)] jsou nyní upravit, a jaké změny byly provedeny.
 
-## <a name="BKMK_ProductGroupBlog"></a>The Rights Management product group blog
-The Rights Management product group uses the [Microsoft Rights Management (RMS) Team Blog](http://blogs.technet.com/b/rms/) to provide you with technical information and other news about [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], AD RMS, and related technologies. These blog posts supplement the product documentation and support information.
+## <a name="BKMK_ProductGroupBlog"></a>Blog skupiny pro produkt Rights Management
+Skupina produktů Rights Management používá [Blog týmu Microsoft Rights Management (RMS)](http://blogs.technet.com/b/rms/) k poskytování technických informací a dalších novinek o [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)], služby AD RMS a související technologie. Tyto příspěvky blogu doplňují informace o dokumentaci a podpory produktu.
 
 > [!TIP]
-> If you are developing applications for Azure RMS or AD RMS, you might also be interested in the [Active Directory Rights Management Services (AD RMS) Developer's Corner Blog](http://blogs.msdn.com/b/rms/).
+> Pokud při vývoji aplikací pro Azure RMS nebo služby AD RMS, bude také pravděpodobně zájem [Active Directory Rights Management Services (AD RMS) Developer rohu blogu](http://blogs.msdn.com/b/rms/).
 
-## <a name="BKMK_SupportOptions"></a>Support options and community resources
-The following links provide information about support and troubleshooting options, and community resources:
+## <a name="BKMK_SupportOptions"></a>Možnosti podpory a materiály z komunity
+Následující odkazy poskytují informace o podpoře a Poradce při potížích s možností a materiály z komunity:
 
--   [RMS Analyzer tool](http://www.microsoft.com/en-us/download/details.aspx?id=46437)
+-   [Nástroj RMS Analyzer](http://www.microsoft.com/en-us/download/details.aspx?id=46437)
 
 -   [Yammer: Microsoft Rights Management (RMS)](http://www.yammer.com/AskIPTeam)
 
--   [Forum: Microsoft RMS (Cloud)](https://social.technet.microsoft.com/Forums/en-US/home?forum=rmscloud)
+-   [Fóra: Aplikace Microsoft RMS (cloudu)](https://social.technet.microsoft.com/Forums/en-US/home?forum=rmscloud)
 
--   [Forum: RMS for Users (applications)](https://social.technet.microsoft.com/Forums/en-US/home?forum=rmsapps)
+-   [Fóra: RMS pro uživatele (aplikace)](https://social.technet.microsoft.com/Forums/en-US/home?forum=rmsapps)
 
--   [Microsoft Help and Support](http://go.microsoft.com/fwlink/?LinkId=243064)
+-   [Společnost Microsoft Nápověda a odborná pomoc](http://go.microsoft.com/fwlink/?LinkId=243064)
 
-In addition, visit the [Microsoft Rights Management services portal](http://www.microsoft.com/rms) to find other supporting resources for [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
+Kromě toho naleznete [Microsoft Rights Management services portál](http://www.microsoft.com/rms) najít další doprovodné materiály pro [!INCLUDE[aad_rightsmanagement_1](../Token/aad_rightsmanagement_1_md.md)].
 
-## See Also
-[Getting Started with Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
+## Viz také
+[Začínáme s Azure Rights Management](../Topic/Getting_Started_with_Azure_Rights_Management.md)
 
